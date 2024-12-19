@@ -205,7 +205,7 @@ clean-template:
 	@echo Cleaning $(TEMPLATE_DIR)
 	-$Drm -rf $(TEMPLATE_DIR)
 
-$(LIBAR):: $(call GETALLOBJ,$(EXCLUDE_SRC_FROM_LIB)) $(EXTRA_LIB_DEPS)
+$(LIBAR): $(call GETALLOBJ,$(EXCLUDE_SRC_FROM_LIB)) $(EXTRA_LIB_DEPS)
 	-$Drm -f $@
 	$(call test_output_2,Creating $@ ,$(AR) rcs $@ $^, $(DONE_STRING))
 
