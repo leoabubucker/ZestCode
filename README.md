@@ -10,9 +10,9 @@ ZestCode is a truly open-source framework for the VEX V5. It's a PROS fork, and 
 
 ## Features (WIP)
 
-- [] CMake builds
-- [] vcpkg support
-- [] can be built from source
+- [ ] CMake builds
+- [ ] vcpkg support
+- [ ] can be built from source
 
 ## Acknowledgements
 
