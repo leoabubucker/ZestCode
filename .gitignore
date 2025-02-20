@@ -14,4 +14,5 @@ temp.errors
 .clangd/
 .cache/
 .DS_Store
+*.zip
 firmware/libv5rt
