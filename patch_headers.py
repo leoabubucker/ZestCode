@@ -8,7 +8,7 @@ from os.path import isfile, join, exists, dirname, realpath
 
 def print_and_exit(message):
     print(message)
-    print("Failed to patch libv5rts")
+    print("Failed to patch libv5rt")
     exit(1)
 
 # get the current directory
@@ -17,17 +17,17 @@ try:
 except:
     print_and_exit("Could not get working directory!")
 # set the include path and the include path of the patched SDK
-include_path = current_dir + "/firmware/libv5rts/sdk/vexv5/include/"
-patched_include_path = current_dir + "/firmware/libv5rts/sdk/vexv5/patched_include/"
+include_path = current_dir + "/firmware/libv5rt/sdk/vexv5/include/"
+patched_include_path = current_dir + "/firmware/libv5rt/sdk/vexv5/patched_include/"
 # create the include path if it does not exist already
 if exists(patched_include_path):
-    print("libv5rts already patched")
+    print("libv5rt already patched")
     exit(0)
 else:
     try:
         makedirs(patched_include_path)
     except:
-        print_and_exit("Could not create directory for patched libv5rts")
+        print_and_exit("Could not create directory for patched libv5rt")
 
 # get a list of files in the include path
 try:
@@ -90,4 +90,4 @@ for file_name in files:
     except:
         print_and_exit("Failed to write patched file")
 
-print("libv5rts patched successfully")
+print("libv5rt patched successfully")
