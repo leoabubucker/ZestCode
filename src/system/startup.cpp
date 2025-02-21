@@ -24,7 +24,8 @@ extern void rtos_initialize();
 extern void vfs_initialize();
 extern void system_daemon_initialize();
 extern void graphical_context_daemon_initialize(void);
-extern __attribute__((weak)) void display_initialize(void) {}
+[[gnu::weak]]
+extern void display_initialize(void) {}
 extern void rtos_sched_start();
 extern void vdml_initialize();
 extern void invoke_install_hot_table();
@@ -42,17 +43,7 @@ int main();
 void vexSystemExitRequest();
 void vexTasksRun();
 
-void vexMain2() {
-	// main();
-
-	vexSystemExitRequest();
-
-	while (1) {
-		vexTasksRun();
-	}
-}
-
-void startup_routine() {
+[[gnu::section(".boot")]] void startup() {
 	uint32_t* bss = &__bss_start;
 	while (bss < &__bss_end) *bss++ = 0;
 
@@ -61,7 +52,15 @@ void startup_routine() {
 
 	__libc_init_array();
 
-	vexMain2();
+	{
+		main();
+
+		vexSystemExitRequest();
+
+		while (1) {
+			vexTasksRun();
+		}
+	}
 
 	__libc_fini_array();
 
@@ -77,7 +76,8 @@ void startup_routine() {
 // from 0-~65k. The first 0-100 priorities are reserved for language
 // implementation. Priority 101 is not used to allow functions such as
 // banner_enable to run before PROS initializes.
-__attribute__((constructor(102))) static void pros_init(void) {
+[[gnu::constructor(102)]]
+static void pros_init(void) {
 	rtos_initialize();
 
 	vfs_initialize();

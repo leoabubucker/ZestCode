@@ -30,4 +30,4 @@ MEMORY
 
 REGION_ALIAS("RAM", COLD_MEMORY);
 
-ENTRY(startup_routine)
+ENTRY(startup)
