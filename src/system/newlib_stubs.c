@@ -31,13 +31,48 @@
 
 void vexTasksRun();
 
+void _init() {}
+
+void _fini() {}
+
+int _getpid() {
+	return 1;
+}
+
+int _kill(int pid, int sig) {
+	if (pid == 1) {
+		_exit(sig);  // _exit does not return
+	}
+	return 0;
+}
+
+/* These symbols are defined in the linker script */
+extern char _HEAP_START;
+extern char _HEAP_END;
+
+caddr_t _sbrk(int incr) {
+	static char* current_heap = &_HEAP_START;
+	char* prev_heap = current_heap;
+
+	/* Check if incrementing current_heap would exceed the HEAP region */
+	if (current_heap + incr > &_HEAP_END) {
+		errno = ENOMEM;
+		return (caddr_t)-1;
+	}
+
+	current_heap += incr;
+	return (caddr_t)prev_heap;
+}
+
+const void* const __dso_handle __attribute__((__visibility__("hidden"))) = &__dso_handle;
+
 void _exit(int status) {
+	if (status != 0) dprintf(3, "Error");  // kprintf
 	extern void flush_output_streams();
 	flush_output_streams();
 	extern void ser_output_flush();
 	ser_output_flush();
 	rtos_suspend_all();
-	if (status != 0) dprintf(3, "Error %d\n", status);  // kprintf
 	uint32_t start_time = millis();
 	static const uint32_t max_flush_time = 50;
 	while (vexSerialWriteFree(1) != 2048 || millis() - start_time > max_flush_time) {

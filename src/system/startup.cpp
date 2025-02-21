@@ -43,6 +43,12 @@ int main();
 void vexSystemExitRequest();
 void vexTasksRun();
 
+/**
+ * @brief program entry point
+ *
+ * It sets up th
+ *
+ */
 [[gnu::section(".boot")]] void startup() {
 	uint32_t* bss = &__bss_start;
 	while (bss < &__bss_end) *bss++ = 0;

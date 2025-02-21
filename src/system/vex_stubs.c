@@ -1,0 +1,1 @@
+void __vex_function_prolog() {}

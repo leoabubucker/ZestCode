@@ -30,7 +30,7 @@ EXTRA_CXXFLAGS=
 USE_PACKAGE:=0
 
 # object files to keep in libv5rt.a
-RETAIN_OBJECTS:= v5_startup.c.obj v5_fstubs.c.obj v5_util.c.obj v5_apijump.c.obj v5_apiuser.c.obj v5_apigraphics.c.obj v5_apiversions.c.obj
+RETAIN_OBJECTS:= v5_fstubs.c.obj v5_util.c.obj v5_apijump.c.obj v5_apiuser.c.obj v5_apigraphics.c.obj v5_apiversions.c.obj
 
 # Set this to 1 to add additional rules to compile your project as a PROS library template
 IS_LIBRARY:=1
