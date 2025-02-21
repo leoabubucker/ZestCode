@@ -1,5 +1,8 @@
 ################################################################################
 ######################### User configurable parameters #########################
+# VEX SDK version
+SDK_VERSION:=V5_20240802_15_00_00 
+
 # filename extensions
 CEXTS:=c
 ASMEXTS:=s S
@@ -53,19 +56,23 @@ EXTRA_LIB_DEPS=$(INCDIR)/api.h $(PATCHED_SDK)
 ########## Nothing below this line should be edited by typical users ###########
 -include ./common.mk
 
-.PHONY: $(INCDIR)/pros/version.h patch_sdk_headers clean
+.PHONY: $(INCDIR)/pros/version.h download_sdk patch_sdk_headers clean
 $(INCDIR)/pros/version.h: version.py
 	$(VV)python version.py
 
-patch_sdk_headers: patch_headers.py
+download_sdk: get_libv5rt.py
+	@echo "Downloading SDK"
+	$(VV)python get_libv5rt.py $(SDK_VERSION)
+
+patch_sdk_headers: download_sdk patch_headers.py
 	@echo "Patching SDK headers"
 	$(VV)python patch_headers.py
 
 # Override clean, necessary to remove patched sdk on clean
 clean::
-	@echo "Cleaning patched SDK"
-	@rm -f $(PATCHED_SDK)
+	@echo "Cleaning SDK"
 	@rm -rf $(EXTRA_INCDIR)
+	@rm -rf $(FWDIR)/libv5rt
 
 $(PATCHED_SDK): $(FWDIR)/libv5rt/sdk/vexv5/libv5rt.a
 	$(call test_output_2,Stripping unwanted symbols from libv5rt.a ,$(STRIP) $^ @libv5rt-strip-options.txt -o $@, $(DONE_STRING))
