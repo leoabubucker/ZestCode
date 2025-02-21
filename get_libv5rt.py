@@ -90,10 +90,39 @@ def main():
         print("Manifest does not contain 'latest' field.")
         sys.exit(1)
     
-    latest_version = manifest["latest"]
-    print(f"Latest version from manifest: {latest_version}")
+    # The online manifest uses a format like "V5_20240802_15_00_00"
+    latest_version_online = manifest["latest"]
+    # Normalize the version (remove "V5_" and replace "_" with ".")
+    normalized_latest_version = latest_version_online.replace("V5_", "").replace("_", ".")
+    print(f"Latest version from manifest: {latest_version_online} (normalized: {normalized_latest_version})")
     
-    zip_file = download_zip(latest_version)
+    # Determine the SDK installation directory.
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    sdk_dir = os.path.join(script_dir, "firmware", "libv5rt", "sdk")
+    
+    # If the SDK directory exists, check its version.
+    if os.path.exists(sdk_dir):
+        local_manifest_path = os.path.join(sdk_dir, "manifest.json")
+        if os.path.exists(local_manifest_path):
+            try:
+                with open(local_manifest_path, "r") as f:
+                    local_manifest = json.load(f)
+                local_version = local_manifest.get("version", "")
+                if local_version == normalized_latest_version:
+                    print("SDK is already at the latest version. No update is necessary.")
+                    sys.exit(0)
+                else:
+                    print(f"Local SDK version ({local_version}) is outdated. Deleting old installation...")
+                    shutil.rmtree(sdk_dir)
+            except Exception as e:
+                print(f"Error reading local manifest: {e}. Removing SDK directory.")
+                shutil.rmtree(sdk_dir)
+        else:
+            print("SDK directory exists but manifest.json not found. Removing directory.")
+            shutil.rmtree(sdk_dir)
+    
+    # Download and extract the new SDK version using the online version string for the file name.
+    zip_file = download_zip(latest_version_online)
     extract_zip(zip_file)
     
     try:
