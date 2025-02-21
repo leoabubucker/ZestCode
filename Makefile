@@ -29,6 +29,9 @@ EXTRA_CXXFLAGS=
 .DEFAULT_GOAL=quick
 USE_PACKAGE:=0
 
+# object files to keep in libv5rt.a
+RETAIN_OBJECTS:=v5_startup.c.obj v5_fstubs.c.obj v5_util.c.obj v5_apijump.c.obj v5_apiuser.c.obj v5_apigraphics.c.obj v5_apiversions.c.obj
+
 # Set this to 1 to add additional rules to compile your project as a PROS library template
 IS_LIBRARY:=1
 LIBNAME:=libpros
@@ -102,6 +105,8 @@ $(LIBAR): patch_sdk_headers $(call GETALLOBJ,$(EXCLUDE_SRC_FROM_LIB)) $(EXTRA_LI
 	$(VV)mkdir -p $(libv5rt_EXTRACTION_DIR)
 	$(call test_output_2,Extracting libv5rt ,cd $(libv5rt_EXTRACTION_DIR) && $(AR) x ../../$(PATCHED_SDK),$(DONE_STRING))
 	$(eval libv5rt_OBJECTS := $(shell $(AR) t $(PATCHED_SDK)))
+# Only retain the specified object files (and therefore their contained symbols)
+	$(eval libv5rt_OBJECTS := $(filter $(RETAIN_OBJECTS),$(libv5rt_OBJECTS)))
 	-$Drm -f $@
 	$(call test_output_2,Creating $@ ,$(AR) rcs $@ $(addprefix $(libv5rt_EXTRACTION_DIR)/, $(libv5rt_OBJECTS)) $(call GETALLOBJ,$(EXCLUDE_SRC_FROM_LIB)),$(DONE_STRING))
 # @echo -n "Stripping non-public symbols "
