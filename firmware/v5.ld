@@ -30,4 +30,4 @@ MEMORY
 
 REGION_ALIAS("RAM", COLD_MEMORY);
 
-ENTRY(vexStartup)
+ENTRY(startup_routine)

@@ -18,6 +18,8 @@
 #include "kapi.h"
 #include "v5_api.h"
 
+extern "C" {
+
 extern void rtos_initialize();
 extern void vfs_initialize();
 extern void system_daemon_initialize();
@@ -26,6 +28,47 @@ extern __attribute__((weak)) void display_initialize(void) {}
 extern void rtos_sched_start();
 extern void vdml_initialize();
 extern void invoke_install_hot_table();
+
+extern uint32_t __bss_start;
+extern uint32_t __bss_end;
+extern uint32_t __sbss_start;
+extern uint32_t __sbss_end;
+
+void __libc_init_array();
+void __libc_fini_array();
+
+int main();
+
+void vexSystemExitRequest();
+void vexTasksRun();
+
+void vexMain2() {
+	// main();
+
+	vexSystemExitRequest();
+
+	while (1) {
+		vexTasksRun();
+	}
+}
+
+void startup_routine() {
+	uint32_t* bss = &__bss_start;
+	while (bss < &__bss_end) *bss++ = 0;
+
+	uint32_t* sbss = &__sbss_start;
+	while (sbss < &__sbss_end) *sbss++ = 0;
+
+	__libc_init_array();
+
+	vexMain2();
+
+	__libc_fini_array();
+
+	while (1) {
+		asm volatile("nop");
+	}
+}
 
 // XXX: pros_init happens inside __libc_init_array, and before any global
 // C++ constructors are invoked. This is accomplished by instructing
@@ -60,6 +103,6 @@ int main() {
 	vexDisplayPrintf(10, 60, 1, "failed to start scheduler\n");
 
 	printf("Failed to start Scheduler\n");
-	for (;;)
-		;
+	for (;;);
+}
 }
