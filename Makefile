@@ -1,5 +1,8 @@
 ################################################################################
 ######################### User configurable parameters #########################
+# VEX SDK version
+SDK_VERSION:=V5_20240802_15_00_00 
+
 # filename extensions
 CEXTS:=c
 ASMEXTS:=s S
@@ -11,7 +14,7 @@ FWDIR:=$(ROOT)/firmware
 BINDIR=$(ROOT)/bin
 SRCDIR=$(ROOT)/src
 INCDIR=$(ROOT)/include
-EXTRA_INCDIR=$(FWDIR)/libv5rts/sdk/vexv5/patched_include
+EXTRA_INCDIR=$(FWDIR)/libv5rt/sdk/vexv5/patched_include
 
 # Directories to be excluded from all builds
 EXCLUDE_SRCDIRS+=$(SRCDIR)/tests
@@ -44,7 +47,7 @@ TEMPLATE_FILES+= $(INCDIR)/api.h $(INCDIR)/main.h $(INCDIR)/pros/*.*
 TEMPLATE_FILES+= $(SRCDIR)/main.cpp
 TEMPLATE_FILES+= $(ROOT)/template-gitignore
 
-PATCHED_SDK=$(FWDIR)/libv5rts/sdk/vexv5/libv5rts.patched.a
+PATCHED_SDK=$(FWDIR)/libv5rt/sdk/vexv5/libv5rt.patched.a
 
 EXTRA_LIB_DEPS=$(INCDIR)/api.h $(PATCHED_SDK)
 
@@ -53,22 +56,26 @@ EXTRA_LIB_DEPS=$(INCDIR)/api.h $(PATCHED_SDK)
 ########## Nothing below this line should be edited by typical users ###########
 -include ./common.mk
 
-.PHONY: $(INCDIR)/pros/version.h patch_sdk_headers clean
+.PHONY: $(INCDIR)/pros/version.h download_sdk patch_sdk_headers clean
 $(INCDIR)/pros/version.h: version.py
 	$(VV)python version.py
 
-patch_sdk_headers: patch_headers.py
+download_sdk: get_libv5rt.py
+	@echo "Downloading SDK"
+	$(VV)python get_libv5rt.py $(SDK_VERSION)
+
+patch_sdk_headers: download_sdk patch_headers.py
 	@echo "Patching SDK headers"
 	$(VV)python patch_headers.py
 
 # Override clean, necessary to remove patched sdk on clean
 clean::
-	@echo "Cleaning patched SDK"
-	@rm -f $(PATCHED_SDK)
+	@echo "Cleaning SDK"
 	@rm -rf $(EXTRA_INCDIR)
+	@rm -rf $(FWDIR)/libv5rt
 
-$(PATCHED_SDK): $(FWDIR)/libv5rts/sdk/vexv5/libv5rts.a
-	$(call test_output_2,Stripping unwanted symbols from libv5rts.a ,$(STRIP) $^ @libv5rts-strip-options.txt -o $@, $(DONE_STRING))
+$(PATCHED_SDK): $(FWDIR)/libv5rt/sdk/vexv5/libv5rt.a
+	$(call test_output_2,Stripping unwanted symbols from libv5rt.a ,$(STRIP) $^ @libv5rt-strip-options.txt -o $@, $(DONE_STRING))
 
 CREATE_TEMPLATE_ARGS=--system "./**/*"
 CREATE_TEMPLATE_ARGS+=--user "src/main.{cpp,c,cc}" --user "include/main.{hpp,h,hh}" --user "Makefile" --user ".gitignore"
@@ -90,12 +97,12 @@ template:: patch_sdk_headers clean-template library
 	@echo "Creating template"
 	$Dpros c create-template $(TEMPLATE_DIR) kernel $(shell cat $(ROOT)/version) $(CREATE_TEMPLATE_ARGS)
 
-LIBV5RTS_EXTRACTION_DIR=$(BINDIR)/libv5rts
+libv5rt_EXTRACTION_DIR=$(BINDIR)/libv5rt
 $(LIBAR): patch_sdk_headers $(call GETALLOBJ,$(EXCLUDE_SRC_FROM_LIB)) $(EXTRA_LIB_DEPS)
-	$(VV)mkdir -p $(LIBV5RTS_EXTRACTION_DIR)
-	$(call test_output_2,Extracting libv5rts ,cd $(LIBV5RTS_EXTRACTION_DIR) && $(AR) x ../../$(PATCHED_SDK),$(DONE_STRING))
-	$(eval LIBV5RTS_OBJECTS := $(shell $(AR) t $(PATCHED_SDK)))
+	$(VV)mkdir -p $(libv5rt_EXTRACTION_DIR)
+	$(call test_output_2,Extracting libv5rt ,cd $(libv5rt_EXTRACTION_DIR) && $(AR) x ../../$(PATCHED_SDK),$(DONE_STRING))
+	$(eval libv5rt_OBJECTS := $(shell $(AR) t $(PATCHED_SDK)))
 	-$Drm -f $@
-	$(call test_output_2,Creating $@ ,$(AR) rcs $@ $(addprefix $(LIBV5RTS_EXTRACTION_DIR)/, $(LIBV5RTS_OBJECTS)) $(call GETALLOBJ,$(EXCLUDE_SRC_FROM_LIB)),$(DONE_STRING))
+	$(call test_output_2,Creating $@ ,$(AR) rcs $@ $(addprefix $(libv5rt_EXTRACTION_DIR)/, $(libv5rt_OBJECTS)) $(call GETALLOBJ,$(EXCLUDE_SRC_FROM_LIB)),$(DONE_STRING))
 # @echo -n "Stripping non-public symbols "
 # $(call test_output,$D$(OBJCOPY) -S -D -g --strip-unneeded --keep-symbols public_symbols.txt $@,$(DONE_STRING))
