@@ -18,6 +18,9 @@ def fetch_manifest(manifest_url):
             data = response.read().decode('utf-8')
             manifest = json.loads(data)
             return manifest
+    except urllib.error.URLError:
+        print("No internet connection detected. Assuming the downloaded SDK is the latest version.")
+        return None
     except Exception as e:
         print(f"Error fetching manifest: {e}")
         sys.exit(1)
@@ -84,7 +87,21 @@ def extract_zip(zip_filename):
 
 def main():
     manifest_url = "https://content.vexrobotics.com/vexos/public/V5/vscode/sdk/cpp/manifest.json"
+    
+    # Determine the SDK installation directory.
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    sdk_dir = os.path.join(script_dir, "firmware", "libv5rt", "sdk")
+    
     manifest = fetch_manifest(manifest_url)
+    
+    # If no internet is available, assume the local SDK (if present) is the latest.
+    if manifest is None:
+        if os.path.exists(sdk_dir):
+            print("No internet available. Using the existing SDK as the latest version.")
+            sys.exit(0)
+        else:
+            print("No internet available and no local SDK is installed. Cannot proceed.")
+            sys.exit(1)
     
     if "latest" not in manifest:
         print("Manifest does not contain 'latest' field.")
@@ -95,10 +112,6 @@ def main():
     # Normalize the version (remove "V5_" and replace "_" with ".")
     normalized_latest_version = latest_version_online.replace("V5_", "").replace("_", ".")
     print(f"Latest version from manifest: {latest_version_online} (normalized: {normalized_latest_version})")
-    
-    # Determine the SDK installation directory.
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-    sdk_dir = os.path.join(script_dir, "firmware", "libv5rt", "sdk")
     
     # If the SDK directory exists, check its version.
     if os.path.exists(sdk_dir):
