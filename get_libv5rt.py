@@ -1,16 +1,32 @@
 import urllib.request
 import urllib.error
+import json
 import sys
 import os
 import zipfile
 import shutil
 
-def download_zip(name):
-    # Construct the URL using the provided file name.
-    url = f"https://content.vexrobotics.com/vexos/public/V5/vscode/sdk/cpp/{name}.zip"
+def fetch_manifest(manifest_url):
+    headers = {
+        "User-Agent": ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                       "AppleWebKit/537.36 (KHTML, like Gecko) "
+                       "Chrome/114.0.0.0 Safari/537.36")
+    }
+    req = urllib.request.Request(manifest_url, headers=headers)
+    try:
+        with urllib.request.urlopen(req) as response:
+            data = response.read().decode('utf-8')
+            manifest = json.loads(data)
+            return manifest
+    except Exception as e:
+        print(f"Error fetching manifest: {e}")
+        sys.exit(1)
+
+def download_zip(file_name):
+    # Construct the URL using the file name from the manifest.
+    url = f"https://content.vexrobotics.com/vexos/public/V5/vscode/sdk/cpp/{file_name}.zip"
     print(f"Downloading from: {url}")
 
-    # Set up headers to mimic a browser.
     headers = {
         "User-Agent": ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
                        "AppleWebKit/537.36 (KHTML, like Gecko) "
@@ -18,7 +34,7 @@ def download_zip(name):
     }
     req = urllib.request.Request(url, headers=headers)
 
-    zip_filename = f"{name}.zip"
+    zip_filename = f"{file_name}.zip"
     try:
         with urllib.request.urlopen(req) as response:
             with open(zip_filename, "wb") as out_file:
@@ -29,16 +45,17 @@ def download_zip(name):
                     out_file.write(chunk)
     except urllib.error.URLError as e:
         print(f"Error downloading file: {e}")
-        return False
+        sys.exit(1)
 
     print(f"Downloaded file saved as: {zip_filename}")
-    
+    return zip_filename
+
+def extract_zip(zip_filename):
     # Set extraction path to firmware/libv5rt/sdk relative to the script's location.
     script_dir = os.path.dirname(os.path.abspath(__file__))
     extract_path = os.path.join(script_dir, "firmware", "libv5rt", "sdk")
     os.makedirs(extract_path, exist_ok=True)
 
-    # Extract the ZIP file manually, removing any common top-level directory.
     try:
         with zipfile.ZipFile(zip_filename, 'r') as zip_ref:
             members = zip_ref.namelist()
@@ -51,12 +68,9 @@ def download_zip(name):
             for member in members:
                 # Remove the common prefix if it exists.
                 member_new = member[len(common_prefix):] if common_prefix and member.startswith(common_prefix) else member
-                # Skip entries that result in an empty name.
                 if not member_new:
                     continue
-                # Determine the full target path.
                 target_path = os.path.join(extract_path, member_new)
-                # Create directory if the member is a directory.
                 if member.endswith('/'):
                     os.makedirs(target_path, exist_ok=True)
                 else:
@@ -66,20 +80,27 @@ def download_zip(name):
         print(f"Extracted file contents to: {extract_path}")
     except zipfile.BadZipFile as e:
         print(f"Error extracting ZIP file: {e}")
-        return False
+        sys.exit(1)
 
-    # Delete the zip file after extraction.
+def main():
+    manifest_url = "https://content.vexrobotics.com/vexos/public/V5/vscode/sdk/cpp/manifest.json"
+    manifest = fetch_manifest(manifest_url)
+    
+    if "latest" not in manifest:
+        print("Manifest does not contain 'latest' field.")
+        sys.exit(1)
+    
+    latest_version = manifest["latest"]
+    print(f"Latest version from manifest: {latest_version}")
+    
+    zip_file = download_zip(latest_version)
+    extract_zip(zip_file)
+    
     try:
-        os.remove(zip_filename)
-        print(f"Deleted zip file: {zip_filename}")
+        os.remove(zip_file)
+        print(f"Deleted zip file: {zip_file}")
     except Exception as e:
         print(f"Error deleting zip file: {e}")
 
-    return True
-
 if __name__ == "__main__":
-    if len(sys.argv) < 2:
-        print("Usage: python download_zip.py <filename_without_extension>")
-        sys.exit(1)
-    file_name = sys.argv[1]
-    download_zip(file_name)
+    main()
