@@ -84,5 +84,5 @@ int main() {
 	// If execution reaches here, the scheduler has failed.
 	vexDisplayPrintf(10, 60, 1, "failed to start scheduler\n");
 	std::printf("Failed to start Scheduler\n");
-	_exit(0);
+	_exit(0);  // exit with code 0 to stop spinlock
 }

@@ -20,6 +20,8 @@
 #include <sys/time.h>
 #include <unistd.h>
 
+#include <iostream>
+
 #include "hot.h"
 #include "pros/misc.h"
 #include "rtos/task.h"
@@ -28,6 +30,8 @@
 #define SEC_TO_MSEC 1000
 #define SEC_TO_MICRO 1000000
 #define MICRO_TO_NANO 1000
+
+extern "C" {
 
 void vexTasksRun();
 void __libc_fini_array();
@@ -67,7 +71,14 @@ caddr_t _sbrk(int incr) {
 
 const void* const __dso_handle __attribute__((__visibility__("hidden"))) = &__dso_handle;
 
+void flush_output_streams() {
+	fflush(stdout);
+	std::cout.flush();
+}
+
 void _exit(int status) {
+	// dprintf doesn't work after freeRTOS is suspended
+	// so it's run first
 	if (status != 0) dprintf(3, "Error");  // kprintf
 	extern void flush_output_streams();
 	flush_output_streams();
@@ -203,7 +214,7 @@ int _gettimeofday(struct timeval* tp, void* tzvp) {
 		tp->tv_sec = user_time_spec.tv_sec;
 		tp->tv_usec = user_time_spec.tv_nsec * 1000;
 		tp->tv_usec += vexSystemHighResTimeGet() - set_microseconds;
-	} else if (competition_is_connected()) {
+	} else if (pros::c::competition_is_connected()) {
 		// TODO: update this to get the date/time through VexOS. Apparently,
 		// the time is kept properly only when competition controls are
 		// connected. I haven't had time to check or confirm this.
@@ -220,4 +231,5 @@ int _gettimeofday(struct timeval* tp, void* tzvp) {
 	}
 
 	return 1;
+}
 }
