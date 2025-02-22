@@ -15,11 +15,9 @@
 
 #include <sys/unistd.h>
 
-#include <algorithm>
 #include <cstdint>
 #include <cstdio>
 #include <cstdlib>
-#include <span>
 
 #include "v5_api.h"
 
@@ -35,12 +33,6 @@ void display_initialize() {}  // weak definition
 void rtos_sched_start();
 void vdml_initialize();
 void invoke_install_hot_table();
-
-// Symbols provided by the linker script
-extern uint32_t __bss_start;
-extern uint32_t __bss_end;
-extern uint32_t __sbss_start;
-extern uint32_t __sbss_end;
 
 // libc initialization
 void __libc_init_array();
@@ -65,15 +57,16 @@ static void pros_init() {
 
 [[gnu::section(".boot")]]
 int main() {
-	// Calculate the number of uint32_t elements in the BSS and SBSS sections.
-	const auto bssCount = static_cast<size_t>(&__bss_end - &__bss_start);
-	const auto sbssCount = static_cast<size_t>(&__sbss_end - &__sbss_start);
-
-	// Create spans for the BSS and SBSS memory ranges and zero them out.
-	const std::span<uint32_t> bssSpan(&__bss_start, bssCount);
-	const std::span<uint32_t> sbssSpan(&__sbss_start, sbssCount);
-	std::fill(bssSpan.begin(), bssSpan.end(), 0);
-	std::fill(sbssSpan.begin(), sbssSpan.end(), 0);
+	// Symbols provided by the linker script
+	extern uint32_t __bss_start;
+	extern uint32_t __bss_end;
+	extern uint32_t __sbss_start;
+	extern uint32_t __sbss_end;
+	// don't try refactoring this code with stuff like std::fill or std::span.
+	// It's been tried before, and it causes UB.
+	// It's suspected that this is due to libc not being initialized yet.
+	for (uint32_t* bss = &__bss_start; bss < &__bss_end; bss++) *bss = 0;
+	for (uint32_t* sbss = &__sbss_start; sbss < &__sbss_end; sbss++) *sbss = 0;
 
 	// Initialize libc
 	__libc_init_array();
