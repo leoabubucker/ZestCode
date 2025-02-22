@@ -13,6 +13,8 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
 
+#include <sys/unistd.h>
+
 #include <algorithm>
 #include <cstdint>
 #include <cstdio>
@@ -82,5 +84,5 @@ int main() {
 	// If execution reaches here, the scheduler has failed.
 	vexDisplayPrintf(10, 60, 1, "failed to start scheduler\n");
 	std::printf("Failed to start Scheduler\n");
-	std::abort();
+	_exit(0);
 }
