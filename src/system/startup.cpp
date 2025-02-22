@@ -1,5 +1,5 @@
 /**
- * \file system/startup.c
+ * \file system/startup.cpp
  *
  * Contains the main startup code for PROS 3.0. main is called from vexStartup
  * code. Our main() initializes data structures and starts the FreeRTOS
@@ -13,102 +13,74 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
 
-#include <stdio.h>
+#include <algorithm>
+#include <cstdint>
+#include <cstdio>
+#include <cstdlib>
+#include <span>
 
-#include "kapi.h"
 #include "v5_api.h"
 
 extern "C" {
 
-extern void rtos_initialize();
-extern void vfs_initialize();
-extern void system_daemon_initialize();
-extern void graphical_context_daemon_initialize(void);
+// Initialization routines provided elsewhere
+void rtos_initialize();
+void vfs_initialize();
+void system_daemon_initialize();
+void graphical_context_daemon_initialize();
 [[gnu::weak]]
-extern void display_initialize(void) {}
-extern void rtos_sched_start();
-extern void vdml_initialize();
-extern void invoke_install_hot_table();
+void display_initialize() {}  // weak definition
+void rtos_sched_start();
+void vdml_initialize();
+void invoke_install_hot_table();
 
+// Symbols provided by the linker script
 extern uint32_t __bss_start;
 extern uint32_t __bss_end;
 extern uint32_t __sbss_start;
 extern uint32_t __sbss_end;
 
+// libc initialization
 void __libc_init_array();
-void __libc_fini_array();
 
-int main();
-
-void vexSystemExitRequest();
+// tick vex tasks
 void vexTasksRun();
+}  // extern "C"
 
-/**
- * @brief program entry point
- *
- * It sets up th
- *
- */
-[[gnu::section(".boot")]] void startup() {
-	uint32_t* bss = &__bss_start;
-	while (bss < &__bss_end) *bss++ = 0;
-
-	uint32_t* sbss = &__sbss_start;
-	while (sbss < &__sbss_end) *sbss++ = 0;
-
-	__libc_init_array();
-
-	{
-		main();
-
-		vexSystemExitRequest();
-
-		while (1) {
-			vexTasksRun();
-		}
-	}
-
-	__libc_fini_array();
-
-	while (1) {
-		asm volatile("nop");
-	}
-}
-
-// XXX: pros_init happens inside __libc_init_array, and before any global
-// C++ constructors are invoked. This is accomplished by instructing
-// GCC to include this function in the __init_array. The 102 argument
-// gives the compiler instructions on the priority of the constructor,
-// from 0-~65k. The first 0-100 priorities are reserved for language
-// implementation. Priority 101 is not used to allow functions such as
-// banner_enable to run before PROS initializes.
+// The pros_init function is executed early (via constructor attribute)
+// before most global C++ constructors are run.
 [[gnu::constructor(102)]]
-static void pros_init(void) {
+static void pros_init() {
 	rtos_initialize();
-
 	vfs_initialize();
-
 	vdml_initialize();
-
 	graphical_context_daemon_initialize();
-
 	display_initialize();
-
-	// NOTE: this function should be called after all other initialize
-	// functions. for an example of what could happen if this is not
-	// the case, see
-	// https://github.com/purduesigbots/pros/pull/144/#issuecomment-496901942
+	// Note: system_daemon_initialize must be called last, per design requirements.
 	system_daemon_initialize();
-
 	invoke_install_hot_table();
 }
 
+[[gnu::section(".boot")]]
 int main() {
+	// Calculate the number of uint32_t elements in the BSS and SBSS sections.
+	const auto bssCount = static_cast<size_t>(&__bss_end - &__bss_start);
+	const auto sbssCount = static_cast<size_t>(&__sbss_end - &__sbss_start);
+
+	// Create spans for the BSS and SBSS memory ranges and zero them out.
+	const std::span<uint32_t> bssSpan(&__bss_start, bssCount);
+	const std::span<uint32_t> sbssSpan(&__sbss_start, sbssCount);
+	std::fill(bssSpan.begin(), bssSpan.end(), 0);
+	std::fill(sbssSpan.begin(), sbssSpan.end(), 0);
+
+	// Initialize libc
+	__libc_init_array();
+
+	// Start freeRTOS
 	rtos_sched_start();
 
+	// If execution reaches here, the scheduler has failed.
 	vexDisplayPrintf(10, 60, 1, "failed to start scheduler\n");
-
-	printf("Failed to start Scheduler\n");
-	for (;;);
-}
+	std::printf("Failed to start Scheduler\n");
+	std::abort();
 }

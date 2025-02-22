@@ -30,6 +30,7 @@
 #define MICRO_TO_NANO 1000
 
 void vexTasksRun();
+void __libc_fini_array();
 
 void _init() {}
 
@@ -78,6 +79,7 @@ void _exit(int status) {
 	while (vexSerialWriteFree(1) != 2048 || millis() - start_time > max_flush_time) {
 		vexTasksRun();
 	}
+	__libc_fini_array();
 	vexSystemExitRequest();
 	while (1) vexTasksRun();
 }
