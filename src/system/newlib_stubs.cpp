@@ -22,105 +22,122 @@
 
 #include <iostream>
 
-#include "hot.h"
 #include "pros/misc.h"
 #include "rtos/task.h"
 #include "v5_api.h"
 
-#define SEC_TO_MSEC 1000
-#define SEC_TO_MICRO 1000000
-#define MICRO_TO_NANO 1000
+constexpr uint32_t SEC_TO_MSEC = 1000;
+constexpr uint32_t SEC_TO_MICRO = 1000000;
+constexpr uint32_t MICRO_TO_NANO = 1000;
 
 extern "C" {
 
+// external functions
 void vexTasksRun();
 void __libc_fini_array();
 
+// We don't need these functions to do anything,
+// we just need it to exist so everything links
 void _init() {}
-
 void _fini() {}
 
+// There's only ever one process
 int _getpid() {
 	return 1;
 }
 
+// kill a process, but since there's only
+// one process, if the ID isn't 1,
+// then don't do anything
 int _kill(int pid, int sig) {
 	if (pid == 1) {
-		_exit(sig);  // _exit does not return
+		_exit(sig);
 	}
 	return 0;
 }
 
-/* These symbols are defined in the linker script */
-extern char _HEAP_START;
-extern char _HEAP_END;
-
 caddr_t _sbrk(int incr) {
+	// these addresses are defined in the v5.ld (the linker script)
+	extern char _HEAP_START;
+	extern char _HEAP_END;
+
 	static char* current_heap = &_HEAP_START;
 	char* prev_heap = current_heap;
 
-	/* Check if incrementing current_heap would exceed the HEAP region */
+	// Check if incrementing current_heap would exceed the HEAP region.
 	if (current_heap + incr > &_HEAP_END) {
 		errno = ENOMEM;
-		return (caddr_t)-1;
+		return reinterpret_cast<caddr_t>(-1);
 	}
-
 	current_heap += incr;
-	return (caddr_t)prev_heap;
+	return reinterpret_cast<caddr_t>(prev_heap);
 }
 
-const void* const __dso_handle __attribute__((__visibility__("hidden"))) = &__dso_handle;
+// We don't have to deal with shared objects, so this is only here
+// so everything links properly.
+// See https://stackoverflow.com/questions/34308720/where-is-dso-handle-defined
+[[gnu::visibility("hidden")]]
+extern const void* const __dso_handle = &__dso_handle;
 
-void flush_output_streams() {
-	fflush(stdout);
-	std::cout.flush();
-}
-
+// This function is called by functions like std::abort.
+// it's not called on a normal program exit,
+// even though it probably should.
 void _exit(int status) {
 	// dprintf doesn't work after freeRTOS is suspended
 	// so it's run first
 	if (status != 0) dprintf(3, "Error");  // kprintf
-	extern void flush_output_streams();
-	flush_output_streams();
+
+	// flush stdio
+	fflush(stdout);
+	std::cout.flush();
+	// flush intermediary buffers
 	extern void ser_output_flush();
 	ser_output_flush();
+
+	// suspend all tasks
 	rtos_suspend_all();
-	uint32_t start_time = millis();
-	static const uint32_t max_flush_time = 50;
+
+	// wait for vexos to flush the serial buffers
+	const uint32_t start_time = millis();
+	constexpr uint32_t max_flush_time = 50;
 	while (vexSerialWriteFree(1) != 2048 || millis() - start_time > max_flush_time) {
 		vexTasksRun();
 	}
+
+	// call libc destructors
 	__libc_fini_array();
+
+	// request to exit the program
 	vexSystemExitRequest();
-	while (1) vexTasksRun();
+	// the exit request isn't instant,
+	// so we poll vexTasksRun() while we wait
+	while (true) vexTasksRun();
 }
 
+// sleep for a number of microseconds
 int usleep(useconds_t period) {
 	// Compromise: If the delay is in microsecond range, it will block threads.
 	// if not, it will not block threads but not be accurate to the microsecond range.
+	// This limitation is due to the scheduler quanta being 1 millisecond
 	if (period >= 1000) {
 		task_delay(period / SEC_TO_MSEC);
 		return 0;
 	}
 	uint64_t endTime = vexSystemHighResTimeGet() + period;
-	while (vexSystemHighResTimeGet() < endTime) asm("YIELD");
+	while (vexSystemHighResTimeGet() < endTime) asm volatile("nop");
 	return 0;
 }
 
+// sleep for a number of seconds
 unsigned sleep(unsigned period) {
 	task_delay(period * SEC_TO_MSEC);
 	return 1;
 }
 
+// get entropy. Not implemented
 int getentropy(void* _buffer, size_t _length) {
 	errno = ENOSYS;
 	return -1;
-}
-
-// HACK: this helps confused libc++ functions call the right instruction. for
-// info see https://github.com/purduesigbots/pros/issues/153#issuecomment-519335375
-void __sync_synchronize(void) {
-	__sync_synchronize();
 }
 
 // These variables are used to store the user-set time.
@@ -206,7 +223,7 @@ void set_get_timestamp_int_func(const int (*func)(void)) {
 }
 
 int _gettimeofday(struct timeval* tp, void* tzvp) {
-	if (get_timestamp_int_func == NULL) {
+	if (get_timestamp_int_func == nullptr) {
 		return -1;
 	}
 
@@ -232,4 +249,4 @@ int _gettimeofday(struct timeval* tp, void* tzvp) {
 
 	return 1;
 }
-}
+}  // extern "C"
