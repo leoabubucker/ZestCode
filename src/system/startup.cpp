@@ -55,6 +55,10 @@ static void pros_init() {
 	invoke_install_hot_table();
 }
 
+// this goes in the first 16 bytes of a user code binary
+[[gnu::section(".boot_data")]]
+vcodesig vexCodeSig = {V5_SIG_MAGIC, V5_SIG_TYPE_USER, V5_SIG_OWNER_PARTNER, V5_SIG_OPTIONS_NONE};
+
 [[gnu::section(".boot")]]
 int main() {
 	// Symbols provided by the linker script

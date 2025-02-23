@@ -1,10 +1,12 @@
 /**
- * \file system/newlib_stubs.c
+ * \file system/stubs.cpp
  *
  * Port of newlib to PROS for the V5
  *
  * Contains the various methods needed to enable standard C library support
  * through the use of the Arm-distributed implementation of newlib.
+ *
+ * Also implements some VEX SDK functions that need custom functionality
  *
  * \copyright Copyright (c) 2017-2024, Purdue University ACM SIGBots.
  * All rights reserved.
@@ -31,6 +33,11 @@ constexpr uint32_t SEC_TO_MICRO = 1000000;
 constexpr uint32_t MICRO_TO_NANO = 1000;
 
 extern "C" {
+
+[[gnu::used]]
+void __vex_function_prolog() {}
+[[gnu::used]]
+void __vex_critical_section() {}
 
 // external functions
 void vexTasksRun();
