@@ -59,17 +59,15 @@ EXTRA_LIB_DEPS=$(INCDIR)/api.h $(PATCHED_SDK)
 ########## Nothing below this line should be edited by typical users ###########
 -include ./common.mk
 
-.PHONY: $(INCDIR)/pros/version.h download_sdk patch_sdk_headers clean
-$(INCDIR)/pros/version.h: version.py
-	$(VV)python version.py
+.PHONY: download_sdk patch_sdk_headers clean
 
-download_sdk: get_libv5rt.py
+download_sdk: scripts/get_libv5rt.py
 	@echo "Downloading SDK"
-	$(VV)python get_libv5rt.py $(SDK_VERSION)
+	$(VV)python scripts/get_libv5rt.py $(SDK_VERSION)
 
-patch_sdk_headers: download_sdk patch_headers.py
+patch_sdk_headers: download_sdk scripts/patch_headers.py
 	@echo "Patching SDK headers"
-	$(VV)python patch_headers.py
+	$(VV)python scripts/patch_headers.py
 
 # Override clean, necessary to remove patched sdk on clean
 clean::
@@ -78,7 +76,7 @@ clean::
 	@rm -rf $(FWDIR)/libv5rt
 
 $(PATCHED_SDK): $(FWDIR)/libv5rt/sdk/vexv5/libv5rt.a
-	$(call test_output_2,Stripping unwanted symbols from libv5rt.a ,$(STRIP) $^ @libv5rt-strip-options.txt -o $@, $(DONE_STRING))
+	$(call test_output_2,Stripping unwanted symbols from libv5rt.a ,$(STRIP) $^ @scripts/libv5rt-strip-options.txt -o $@, $(DONE_STRING))
 
 CREATE_TEMPLATE_ARGS=--system "./**/*"
 CREATE_TEMPLATE_ARGS+=--user "src/main.{cpp,c,cc}" --user "include/main.{hpp,h,hh}" --user "Makefile" --user ".gitignore"
