@@ -88,7 +88,7 @@ extern const void* const __dso_handle = &__dso_handle;
 void _exit(int status) {
 	// dprintf doesn't work after freeRTOS is suspended
 	// so it's run first
-	if (status != 0) dprintf(3, "Error");  // kprintf
+	if (status != 0) dprintf(3, "FATAL ERROR, status %d", status);  // kprintf
 
 	// flush stdio
 	fflush(stdout);
