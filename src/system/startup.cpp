@@ -71,8 +71,7 @@ int main() {
 }
 
 // program entrypoint. This is the first function that is run
-// it sets up memory, initializes libc, and then calls main when ready
-
+// it sets up memory, initializes libc, and then calls main
 extern "C" [[gnu::section(".boot")]] void _start() {
 	// Symbols provided by the linker script
 	extern uint32_t __bss_start;
