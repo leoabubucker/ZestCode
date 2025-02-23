@@ -28,8 +28,7 @@ void rtos_initialize();
 void vfs_initialize();
 void system_daemon_initialize();
 void graphical_context_daemon_initialize();
-[[gnu::weak]]
-void display_initialize() {}  // weak definition
+[[gnu::weak]] void display_initialize() {}
 void rtos_sched_start();
 void vdml_initialize();
 void invoke_install_hot_table();
