@@ -41,6 +41,11 @@ void __libc_init_array();
 void vexTasksRun();
 }  // extern "C"
 
+// this goes in the first 16 bytes of a user code binary
+// see the vcodesig definition in the SDK for more details
+[[gnu::section(".boot_data")]]
+vcodesig vexCodeSig = {V5_SIG_MAGIC, V5_SIG_TYPE_USER, V5_SIG_OWNER_PARTNER, V5_SIG_OPTIONS_NONE};
+
 // The pros_init function is executed early (via constructor attribute)
 // before most global C++ constructors are run.
 [[gnu::constructor(102)]]
@@ -55,12 +60,21 @@ static void pros_init() {
 	invoke_install_hot_table();
 }
 
-// this goes in the first 16 bytes of a user code binary
-[[gnu::section(".boot_data")]]
-vcodesig vexCodeSig = {V5_SIG_MAGIC, V5_SIG_TYPE_USER, V5_SIG_OWNER_PARTNER, V5_SIG_OPTIONS_NONE};
-
-[[gnu::section(".boot")]]
+// the main function, starts the scheduler and ensures the program exits gracefully if it fails
 int main() {
+	// Start freeRTOS
+	rtos_sched_start();
+
+	// If execution reaches here, the scheduler has failed.
+	vexDisplayPrintf(10, 60, 1, "failed to start scheduler\n");
+	std::printf("Failed to start Scheduler\n");
+	_exit(0);  // exit with code 0 to stop spinlock
+}
+
+// program entrypoint. This is the first function that is run
+// it sets up memory, initializes libc, and then calls main when ready
+
+extern "C" [[gnu::section(".boot")]] void _start() {
 	// Symbols provided by the linker script
 	extern uint32_t __bss_start;
 	extern uint32_t __bss_end;
@@ -75,11 +89,6 @@ int main() {
 	// Initialize libc
 	__libc_init_array();
 
-	// Start freeRTOS
-	rtos_sched_start();
-
-	// If execution reaches here, the scheduler has failed.
-	vexDisplayPrintf(10, 60, 1, "failed to start scheduler\n");
-	std::printf("Failed to start Scheduler\n");
-	_exit(0);  // exit with code 0 to stop spinlock
+	// call the main function
+	main();
 }
