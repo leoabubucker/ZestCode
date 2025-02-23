@@ -2,7 +2,7 @@
 
 # when running this script, there should be nothing red or dark blue on the right panel (what's the in header files) with the following exceptions
 
-# the pros::c::* functions. They're #ifdef __cplusplus'd out into a namespace. The C linkages demonsrtate that it's fine
+# the pros::c::* functions. They're #ifdef __cplusplus'd out into a namespace. The C linkages demonstrate that it's fine
 # Default arguments exist in the constructor in the header file, but not in the implementation
 
 shopt -s globstar
