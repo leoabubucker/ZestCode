@@ -27,7 +27,7 @@ EXTRA_CFLAGS=
 EXTRA_CXXFLAGS=
 
 .DEFAULT_GOAL=quick
-USE_PACKAGE:=1
+USE_PACKAGE:=0
 
 # object files to keep in libv5rt.a
 RETAIN_OBJECTS:= v5_fstubs.c.obj v5_util.c.obj v5_apijump.c.obj v5_apiuser.c.obj v5_apigraphics.c.obj v5_apiversions.c.obj

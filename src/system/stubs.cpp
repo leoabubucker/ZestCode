@@ -34,19 +34,15 @@ constexpr uint32_t MICRO_TO_NANO = 1000;
 
 extern "C" {
 
-[[gnu::used]]
-void __vex_function_prolog() {}
-[[gnu::used]]
-void __vex_critical_section() {}
-
 // external functions
 void vexTasksRun();
 void __libc_fini_array();
 
-// We don't need these functions to do anything,
-// we just need it to exist so everything links
+// We just need these symbols so the program can link
 void _init() {}
 void _fini() {}
+void __vex_function_prolog() {}
+uint32_t __vex_critical_section = 0;
 
 // There's only ever one process
 int _getpid() {
