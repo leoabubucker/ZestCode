@@ -40,7 +40,9 @@ void __libc_init_array();
 void vexTasksRun();
 }  // extern "C"
 
-// this goes in the first 16 bytes of a user code binary
+// this goes in the first 32-byte chunk of the user program
+// which is why the entrypoint is offset from 0x3800000 by 0x20
+// only the first 16 bytes of this chunk is used however
 // see the vcodesig definition in the SDK for more details
 [[gnu::section(".boot_data")]]
 vcodesig vexCodeSig = {V5_SIG_MAGIC, V5_SIG_TYPE_USER, V5_SIG_OWNER_PARTNER, V5_SIG_OPTIONS_NONE};
