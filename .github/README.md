@@ -2,6 +2,14 @@
 
 ZestCode is a truly open-source framework for the VEX V5. It's a PROS fork, and exists to address some PROS issues, particularly in reliability, tooling, and community input.
 
+### Contributing
+
+Want to contribute? Check out [CONTRIBUTING.md](CONTRIBUTING.md)
+
+### License
+
+ZestCode is licensed under the [Mozilla Public License 2.0](LICENSE)
+
 ### FAQ
 
 > Why can ZestCode be compiled from source, but PROS can't?
@@ -50,4 +58,4 @@ Yup, 100% legal. It is not prohibited in the V5RC, VURC, or VAIRC game manual, a
 
 ### Acknowledgements
 
-The authors of ZestCode would like to thank the developers of PROS for their years of service, and for paving the way for alternatives like ZestCode to even exist in the first place. We'd also like to thank the developers of Vexide, ZestCode wouldn't exist if not for their feats
+The authors of ZestCode would like to thank the developers of PROS for their years of service, and for paving the way for alternatives like ZestCode to even exist in the first place. We'd also like to thank the developers of vexide, ZestCode wouldn't exist if not for their feats.
