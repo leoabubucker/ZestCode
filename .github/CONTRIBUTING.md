@@ -49,9 +49,9 @@ First, you need to get a development environment set up. Below is a list of soft
 
 In order to propose changes to ZestCode, you'll need your own copy of ZestCode with version tracking. This is called a "fork". [Click Here](https://github.com/ZestCommunity/ZestCode/fork) to create your fork, and then press the green button. Now, clone your fork.
 
-### Opening a PR
+### Opening a Draft Pull Request
 
-When you think your changes are ready to be proposed, open a 
+Next, open a draft pull request to let everyone know you are working on an issue. [Click Here](https://github.com/ZestCommunity/ZestCode0/compare/main...ZestCommunity:ZestCode:main), then click on head repository on the right, then click on your fork.
 
 ### Building
 
