@@ -6,7 +6,7 @@ ZestCode is a truly open-source framework for the VEX V5. It's a PROS fork, and 
 
 > Why can ZestCode be compiled from source, but PROS can't?
 
-PROS depends on `libv5rts`, which is a private version of the VEX SDK. ZestCode depends on `libv5rt.a`, which is public
+PROS depends on `libv5rts`, which is a private version of the VEX SDK. ZestCode depends on `libv5rt.a`, which is public.
 
 <br>
 
