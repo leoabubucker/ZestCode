@@ -1,79 +1,17 @@
-# Contributing
+# Contributor's Guide
 
-> [!IMPORTANT]
-> We welcome all potential contributors regardless of their skill level :)
+> [!TIP]
+> Consider joining our [Discord Server](https://discord.gg/vNMXCvVwdY), it's the best place to discuss use/development of ZestCode.
 
-Thanks for taking the time to contribute to ZestCode! ZestCode is written and maintained by the community, and relies on people like you to stay up to date and bug-free.
-We highly recommend you join our [Discord Server](https://discord.gg/vNMXCvVwdY) so you can talk to other contributors, ask questions, and join discussion in development discussion. This guide may not answer all your questions, but you will be able to ask anything on the discord server.
+First off, thanks for taking the time to contribute! ZestCode relies on people like **you**.
 
-## Submitting a bug, feature request, or task
+## Ways to contribute
 
-Simply open a [new issue](https://github.com/ZestCommunity/ZestCode/issues/new).
+### Bug Reports & Feature Requests
 
-## Finding Stuff to Work On
+[Click Here]()
 
-We use GitHub projects to keep track of what needs to be worked on. Take a quick look:
+### Discussion
 
-- [PROS Refactor](https://github.com/orgs/ZestCommunity/projects/8)
-- [Build System Overhaul](https://github.com/orgs/ZestCommunity/projects/1)
-- [FreeRTOS decoupling](https://github.com/orgs/ZestCommunity/projects/5)
-
-Additional tasks which may not be grouped in one of these projects may be found in the [issues tab](https://github.com/ZestCommunity/ZestCode/issues)
-
-There are 5 categories these items may be group in:
-- Backlog
-  - need other items to be completed first before we can start working on them
-- Ready
-  - these items can be worked on, and no-one is currently working on them
-- In progress
-  - these items are currently being worked on
-- In review
-  - these items are almost done, and are currently being reviewed
-- Done
-  - these items have been completed
-
-## Your First Pull Request (PR)
-
-### Development Environment
-
-First, you need to get a development environment set up. Below is a list of software you'll need:
-
-- Python
-- Visual Studio Code with these extensions
-  - clangd
-  - PROS
-
-### Creating a fork
-
-> [!IMPORTANT] 
-> You'll need a [GitHub account](https://github.com/) for this step.
-
-In order to propose changes to ZestCode, you'll need your own copy of ZestCode with version tracking. This is called a "fork". [Click Here](https://github.com/ZestCommunity/ZestCode/fork) to create your fork, and then press the green button. Now, clone your fork.
-
-### Opening a Draft Pull Request
-
-Next, open a draft pull request to let everyone know you are working on an issue. [Click Here](https://github.com/ZestCommunity/ZestCode0/compare/main...ZestCommunity:ZestCode:main), then click on head repository on the right, then click on your fork.
-
-### Building
-
-The first thing you'll need to do is run the following command in the PROS integrated terminal:
-
-```
-make clean; pros build-compile-commands
-```
-
-This will download the VEX SDK, set up clangd (the linting tool), and of course build ZestCode. When you want to build ZestCode again after making changes, simply run
-
-```
-make -j
-```
-
-in the PROS integrated terminal.
-
-### Requesting a Review
-
-Once you think your code is ready to be reviewed, head on over to your Pull Request on the [ZestCode GitHub Repo](https://github.com/ZestCommunity/ZestCode/pulls) and mark it as Ready For Review. On the top right, it will suggest some people to request a review from. Request a review from all of them, and they'll probably submit reviews within a couple hours.
-
-Usually it takes a couple reviews before proposed changes are accepted, so don't worry if it takes 2 or 3 cycles. Mistakes are going to be made, and people are going to point out a better way to do something. This is normal, so don't worry about it :)
-
-When the PR is approved, it will almost certainly be merged. The exception to this is if someone submits another review requesting changes before it's merged but this is rare.
+Discussion and decision making regarding the development of ZestCode happens mostly on the [ZestCode Discord Server](https://discord.gg/vNMXCvVwdY).
+Just asking questions, proposing new ideas, and sharing your thoughts make a positive impact.
