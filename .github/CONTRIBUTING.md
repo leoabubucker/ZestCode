@@ -4,7 +4,7 @@
 > We welcome all potential contributors regardless of their skill level :)
 
 Thanks for taking the time to contribute to ZestCode! ZestCode is written and maintained by the community, and relies on people like you to stay up to date and bug-free.
-We highly recommend you join our [Discord Server](https://discord.gg/vNMXCvVwdY) so you can talk to other contributors, ask questions, and join discussion in development discussion.
+We highly recommend you join our [Discord Server](https://discord.gg/vNMXCvVwdY) so you can talk to other contributors, ask questions, and join discussion in development discussion. This guide may not answer all your questions, but you will be able to ask anything on the discord server.
 
 ## Submitting a bug, feature request, or task
 
