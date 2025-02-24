@@ -1,28 +1,70 @@
-# Contributing to PROS
+# Contributing
 
-:tada: :+1: :steam_locomotive: Thanks for taking the time to contribute! :steam_locomotive: :+1: :tada:
+> [!IMPORTANT]
+> We welcome all potential contributors regardless of their skill level :)
 
-**Did you find a bug?**
-- **Before opening an issue, make sure you are in the right repository!**
-  purduesigbots maintains four repositories related to PROS:
-  - [purduesigbots/pros](https://github.com/purduesigbots/pros): the repository containing the source code for the kernel the user-facing API. Issues should be opened here if they affect the code you write (e.g., "I would like to be able to do X with PROS," or "when I call <PROS function> X doesn't work as I expect")
-  - [purduesigbots/pros-cli](https://github.com/purduesigbots/pros-cli): the repository containing the source code for the command line interface (CLI). Issues should be opened here if they concern the PROS CLI (e.g., problems with commands like `pros make`), as well as project creation and management.
-  - [purduesigbots/pros-atom](https://github.com/purduesigbots/pros-vsc): the repository containing the source code for the VSCode extension. Issues should be opened here if they concern the coding experience within VSCode (e.g., "there is no button to do X," or "the linter is spamming my interface with errors").
-  - [purduesigbots/pros-docs](https://github.com/purduesigbots/pros-docs): the repository containing the source code for [our documentation website](https://pros.cs.purdue.edu). Issues should be opened here if they concern available documentation (e.g., "there is not guide on using <PROS feature>," or "the documentation says to do X, but only Y works")
-- **Verify the bug lies in PROS.** We receive quite a few reports that are due to bugs in user code, not the kernel.
-- Ensure the bug wasn't already reported by searching GitHub [issues](https://github.com/purduesigbots/pros/issues)
-- If you're unable to find an issue, [open](https://github.com/purduesigbots/pros/issues/new) a new one.
+Thanks for taking the time to contribute to ZestCode! ZestCode is written and maintained by the community, and relies on people like you to stay up to date and bug-free.
+We highly recommend you join our [Discord Server](https://discord.gg/vNMXCvVwdY) so you can talk to other contributors, ask questions, and join discussion in development discussion.
 
-**Did you patch a bug or add a new feature?**
-1. [Fork](https://github.com/purduesigbots/pros/fork) and clone the repository
-2. Create a new branch: `git checkout -b my-branch-name`
-3. Make your changes.
-4. Push to your fork and submit a pull request.
-5. Wait for your pull request to be reviewed. In order to ensure that the PROS kernel is stable, we take extra time to test pull requests. As a result, your pull request may take some time to be merged into master.
+## Submitting a bug, feature request, or task
 
-Here are a few tips that can help expedite your pull request being accepted:
-- Follow existing code's style.
-- Document why you made the changes you did.
-- Keep your change as focused as possible. If you have multiple independent changes, make a pull request for each.
-- If you did some testing, describe your procedure and results.
-- If you're fixing an issue, reference it by number.
+Simply open a [new issue](https://github.com/ZestCommunity/ZestCode/issues/new)
+
+## Finding Stuff to Work On
+
+We use GitHub projects to keep track of what needs to be worked on. Take a quick look:
+
+- [PROS Refactor](https://github.com/orgs/ZestCommunity/projects/8)
+- [Build System Overhaul](https://github.com/orgs/ZestCommunity/projects/1)
+- [FreeRTOS decoupling](https://github.com/orgs/ZestCommunity/projects/5)
+
+Additional tasks which may not be grouped in one of these projects may be found in the [issues tab](https://github.com/ZestCommunity/ZestCode/issues)
+
+There are 5 categories these items may be group in:
+- Backlog
+  - need other items to be completed first before we can start working on them
+- Ready
+  - these items can be worked on, and no-one is currently working on them
+- In progress
+  - these items are currently being worked on
+- In review
+  - these items are almost done, and are currently being reviewed
+- Done
+  - these items have been completed
+
+## Your First Pull Request (PR)
+
+### Development Environment
+
+First, you need to get a development environment set up. Below is a list of software you'll need:
+
+- Python
+- Visual Studio Code with these extensions
+  - clangd
+  - PROS
+
+### Creating a fork
+
+> [!IMPORTANT] you'll need a [GitHub account](https://github.com/) for this step
+
+In order to propose changes to ZestCode, you'll need your own copy of ZestCode with version tracking. This is called a "fork". [Click Here](https://github.com/ZestCommunity/ZestCode/fork) to create your fork, and then press the green button. Now, clone your fork.
+
+### Opening a PR
+
+When you think your changes are ready to be proposed, open a 
+
+### Building
+
+The first thing you'll need to do is run the following command in the PROS integrated terminal:
+
+```
+make clean; pros build-compile-commands
+```
+
+This will download the VEX SDK, set up clangd (the linting tool), and of course build ZestCode. When you want to build ZestCode again after making changes, simply run
+
+```
+make -j
+```
+
+in the PROS integrated terminal.
