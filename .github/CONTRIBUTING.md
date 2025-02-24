@@ -9,7 +9,7 @@ First off, thanks for taking the time to contribute! ZestCode relies on people l
 
 ### Bug Reports & Feature Requests
 
-[Click Here](https://github.com/ZestCommunity/ZestCode/issues/new/choose)
+[Click Here](https://github.com/ZestCommunity/ZestCode/issues/new/choose) to submit a bug report, feature request, or privately report a security concern.
 
 ### Discussion
 
