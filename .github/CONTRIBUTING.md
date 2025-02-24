@@ -68,3 +68,11 @@ make -j
 ```
 
 in the PROS integrated terminal.
+
+### Requesting a Review
+
+Once you think your code is ready to be reviewed, head on over to your Pull Request on the [ZestCode GitHub Repo](https://github.com/ZestCommunity/ZestCode/pulls) and mark it as Ready For Review. On the top right, it will suggest some people to request a review from. Request a review from all of them, and they'll probably submit reviews within a couple hours.
+
+Usually it takes a couple reviews before proposed changes are accepted, so don't worry if it takes 2 or 3 cycles. Mistakes are going to be made, and people are going to point out a better way to do something. This is normal, so don't worry about it :)
+
+When the PR is approved, it will almost certainly be merged. The exception to this is if someone submits another review requesting changes before it's merged but this is rare.
