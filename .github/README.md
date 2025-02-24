@@ -50,4 +50,4 @@ Yup, 100% legal. It is not prohibited in the V5RC, VURC, or VAIRC game manual, a
 
 ### Acknowledgements
 
-The authors of ZestCode would like to thank the developers of PROS for their years of service, and for paving the way for alternatives like ZestCode to even exist in the first place. We'd also like to thank the developers of Vexide, ZestCode wouldn't exist if not for their feats
+The authors of ZestCode would like to thank the developers of PROS for their years of service, and for paving the way for alternatives like ZestCode to even exist in the first place. We'd also like to thank the developers of Vexide, ZestCode wouldn't exist if not for their feats.
