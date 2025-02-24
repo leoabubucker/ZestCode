@@ -8,7 +8,7 @@ We highly recommend you join our [Discord Server](https://discord.gg/vNMXCvVwdY)
 
 ## Submitting a bug, feature request, or task
 
-Simply open a [new issue](https://github.com/ZestCommunity/ZestCode/issues/new)
+Simply open a [new issue](https://github.com/ZestCommunity/ZestCode/issues/new).
 
 ## Finding Stuff to Work On
 
@@ -45,7 +45,8 @@ First, you need to get a development environment set up. Below is a list of soft
 
 ### Creating a fork
 
-> [!IMPORTANT] you'll need a [GitHub account](https://github.com/) for this step
+> [!IMPORTANT] 
+> You'll need a [GitHub account](https://github.com/) for this step.
 
 In order to propose changes to ZestCode, you'll need your own copy of ZestCode with version tracking. This is called a "fork". [Click Here](https://github.com/ZestCommunity/ZestCode/fork) to create your fork, and then press the green button. Now, clone your fork.
 
