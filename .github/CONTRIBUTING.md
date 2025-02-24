@@ -19,3 +19,6 @@ Just asking questions, proposing new ideas, and sharing your thoughts make a pos
 ### Pull Requests
 
 Pull Requests (short form: "PRs") are used to make changes to ZestCode. The rest of this guide is dedicated to submitting a PR.
+
+## Your First PR: a step-by-step guide
+
