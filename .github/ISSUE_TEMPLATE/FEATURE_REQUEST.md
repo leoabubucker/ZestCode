@@ -1,3 +1,11 @@
+---
+name: Feature Request
+about: Suggest an idea for the project
+title: ":sparkles: "
+labels: "triage"
+assignees: ""
+---
+
 #### Overview
 <!-- Briefly describe the feature/change you are proposing -->
 
