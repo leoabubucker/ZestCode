@@ -30,7 +30,7 @@ EXTRA_CXXFLAGS=
 USE_PACKAGE:=0
 
 # object files to keep in libv5rt.a
-RETAIN_OBJECTS:=v5_startup.c.obj v5_fstubs.c.obj v5_util.c.obj v5_apijump.c.obj v5_apiuser.c.obj v5_apigraphics.c.obj v5_apiversions.c.obj
+RETAIN_OBJECTS:= v5_fstubs.c.obj v5_util.c.obj v5_apijump.c.obj v5_apiuser.c.obj v5_apigraphics.c.obj v5_apiversions.c.obj
 
 # Set this to 1 to add additional rules to compile your project as a PROS library template
 IS_LIBRARY:=1
@@ -59,17 +59,15 @@ EXTRA_LIB_DEPS=$(INCDIR)/api.h $(PATCHED_SDK)
 ########## Nothing below this line should be edited by typical users ###########
 -include ./common.mk
 
-.PHONY: $(INCDIR)/pros/version.h download_sdk patch_sdk_headers clean
-$(INCDIR)/pros/version.h: version.py
-	$(VV)python version.py
+.PHONY: download_sdk patch_sdk_headers clean
 
-download_sdk: get_libv5rt.py
+download_sdk: scripts/get_libv5rt.py
 	@echo "Downloading SDK"
-	$(VV)python get_libv5rt.py $(SDK_VERSION)
+	$(VV)python scripts/get_libv5rt.py $(SDK_VERSION)
 
-patch_sdk_headers: download_sdk patch_headers.py
+patch_sdk_headers: download_sdk scripts/patch_headers.py
 	@echo "Patching SDK headers"
-	$(VV)python patch_headers.py
+	$(VV)python scripts/patch_headers.py
 
 # Override clean, necessary to remove patched sdk on clean
 clean::
@@ -78,7 +76,7 @@ clean::
 	@rm -rf $(FWDIR)/libv5rt
 
 $(PATCHED_SDK): $(FWDIR)/libv5rt/sdk/vexv5/libv5rt.a
-	$(call test_output_2,Stripping unwanted symbols from libv5rt.a ,$(STRIP) $^ @libv5rt-strip-options.txt -o $@, $(DONE_STRING))
+	$(call test_output_2,Stripping unwanted symbols from libv5rt.a ,$(STRIP) $^ @scripts/libv5rt-strip-options.txt -o $@, $(DONE_STRING))
 
 CREATE_TEMPLATE_ARGS=--system "./**/*"
 CREATE_TEMPLATE_ARGS+=--user "src/main.{cpp,c,cc}" --user "include/main.{hpp,h,hh}" --user "Makefile" --user ".gitignore"
@@ -103,11 +101,14 @@ template:: patch_sdk_headers clean-template library
 libv5rt_EXTRACTION_DIR=$(BINDIR)/libv5rt
 $(LIBAR): patch_sdk_headers $(call GETALLOBJ,$(EXCLUDE_SRC_FROM_LIB)) $(EXTRA_LIB_DEPS)
 	$(VV)mkdir -p $(libv5rt_EXTRACTION_DIR)
-	$(call test_output_2,Extracting libv5rt ,cd $(libv5rt_EXTRACTION_DIR) && $(AR) x ../../$(PATCHED_SDK),$(DONE_STRING))
+	$(call test_output_2,Extracting libv5rt, cd $(libv5rt_EXTRACTION_DIR) && $(AR) x ../../$(PATCHED_SDK), $(DONE_STRING))
+
 	$(eval libv5rt_OBJECTS := $(shell $(AR) t $(PATCHED_SDK)))
-# Only retain the specified object files (and therefore their contained symbols)
 	$(eval libv5rt_OBJECTS := $(filter $(RETAIN_OBJECTS),$(libv5rt_OBJECTS)))
+	
 	-$Drm -f $@
-	$(call test_output_2,Creating $@ ,$(AR) rcs $@ $(addprefix $(libv5rt_EXTRACTION_DIR)/, $(libv5rt_OBJECTS)) $(call GETALLOBJ,$(EXCLUDE_SRC_FROM_LIB)),$(DONE_STRING))
+	$(call test_output_2,Creating $@, $(AR) rcs $@ $(addprefix $(libv5rt_EXTRACTION_DIR)/, $(libv5rt_OBJECTS)) $(call GETALLOBJ,$(EXCLUDE_SRC_FROM_LIB)), $(DONE_STRING))
+
+
 # @echo -n "Stripping non-public symbols "
 # $(call test_output,$D$(OBJCOPY) -S -D -g --strip-unneeded --keep-symbols public_symbols.txt $@,$(DONE_STRING))

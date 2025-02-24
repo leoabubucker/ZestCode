@@ -57,7 +57,7 @@ def download_zip(file_name):
 def extract_zip(zip_filename):
     # Set extraction path to firmware/libv5rt/sdk relative to the script's location.
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    extract_path = os.path.join(script_dir, "firmware", "libv5rt", "sdk")
+    extract_path = os.path.join(script_dir, "..", "firmware", "libv5rt", "sdk")
     os.makedirs(extract_path, exist_ok=True)
 
     try:
@@ -117,7 +117,7 @@ def main():
     
     # Determine the SDK installation directory.
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    sdk_dir = os.path.join(script_dir, "firmware", "libv5rt", "sdk")
+    sdk_dir = os.path.join(script_dir, "..", "firmware", "libv5rt", "sdk")
     
     # If the SDK directory exists, check its version.
     if os.path.exists(sdk_dir):

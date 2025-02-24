@@ -17,8 +17,8 @@ try:
 except:
     print_and_exit("Could not get working directory!")
 # set the include path and the include path of the patched SDK
-include_path = current_dir + "/firmware/libv5rt/sdk/vexv5/include/"
-patched_include_path = current_dir + "/firmware/libv5rt/sdk/vexv5/patched_include/"
+include_path = current_dir + "/../firmware/libv5rt/sdk/vexv5/include/"
+patched_include_path = current_dir + "/../firmware/libv5rt/sdk/vexv5/patched_include/"
 # create the include path if it does not exist already
 if exists(patched_include_path):
     print("libv5rt already patched")
