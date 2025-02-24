@@ -3,7 +3,7 @@
 > [!TIP]
 > Consider joining our [Discord Server](https://discord.gg/vNMXCvVwdY), it's the best place to discuss use/development of ZestCode.
 
-First off, thanks for taking the time to contribute! ZestCode relies on people like **you**.
+First off, thanks for taking the time to contribute! ZestCode relies on people like **YOU** to stay bug-free and updated.
 
 ## Ways to contribute
 
