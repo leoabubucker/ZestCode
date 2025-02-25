@@ -22,3 +22,11 @@ Pull Requests (short form: "PRs") are used to make changes to ZestCode. The rest
 
 ## Your First PR: a step-by-step guide
 
+### Step 1: Fork
+
+> [!IMPORTANT]
+> You'll need a GitHub account for this step
+
+[Click Here](https://github.com/ZestCommunity/ZestCode/fork) to create your fork of ZestCode. Click on the green button on the bottom right.
+
+![fork creation screen](./assets/contributing/create-fork.png)
