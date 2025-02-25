@@ -25,8 +25,19 @@ Pull Requests (short form: "PRs") are used to make changes to ZestCode. The rest
 ### Step 1: Fork
 
 > [!IMPORTANT]
-> You'll need a GitHub account for this step
+> You'll need a GitHub account for this step.
 
-[Click Here](https://github.com/ZestCommunity/ZestCode/fork) to create your fork of ZestCode. Click on the green button on the bottom right.
+[Click Here](https://github.com/ZestCommunity/ZestCode/fork), then click the green button on the bottom right to create your fork, as shown in the image below.
 
 ![fork creation screen](./assets/contributing/create-fork.png)
+
+After waiting a couple of seconds, you'll be redirected to your fork of ZestCode on GitHub.
+
+### Step 2: Clone
+
+> [!IMPORTANT]
+> you'll need git, and [Visual Studio Code](https://code.visualstudio.com/) for this step.
+
+In Visual Studio Code, open the command palette with (`ctrl+shift+p` or `command+shift+p`). Type `Git: Clone`, and hit enter. Select `Clone from GitHub`, and then click `<your_username_here>/ZestCode`.
+
+![vsc repo selection](./assets/contributing/clone.png)
