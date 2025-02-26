@@ -54,3 +54,16 @@ After waiting a couple of seconds, you'll be redirected to your fork of ZestCode
 In Visual Studio Code, open the command palette with (`ctrl+shift+p` or `command+shift+p`). Type `Git: Clone`, and hit enter. Select `Clone from GitHub`, and then click `<your_username_here>/ZestCode`.
 
 ![VSC repo selection](./assets/contributing/clone.png)
+
+### Step 3: Compile
+
+> [!IMPORTANT]
+> You'll need the [clangd](https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd) and [PROS](https://marketplace.visualstudio.com/items?itemName=sigbots.pros) VSCode extensions for this step
+
+Once you have your ZestCode fork open in VSCode, you'll need to compile it so clangd (your linting tool) works properly. Open the PROS Integrated Terminal, and it should already be busy compiling. If not, run the following command:
+
+```
+make clean; pros build-compile-commands
+```
+
+It might take a while for the first build, but subsequent builds will be many times faster. After the build is done, open the command palette and run `clangd: Restart language server`. The linter should now be working properly.
