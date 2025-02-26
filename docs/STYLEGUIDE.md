@@ -25,10 +25,11 @@ Some additional notes follow:
 
 ## Naming Conventions
 
-= **files, folders** - snake_case
+- **files, folders** - snake_case
 - **classes, structs, enums, unions, concepts, etc** - PascalCase
 - **functions** - snake_case
 - **variables** - snake_case
+- **member variable** - m_snake_case (not a typo)
 - **macros** - SCREAMING_SNAKE_CASE
 - **compile-time constants** - SCREAMING_SNAKE_CASE
 - **enum members** - SCREAMING_SNAKE_CASE
