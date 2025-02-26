@@ -63,11 +63,11 @@ EXTRA_LIB_DEPS=$(INCDIR)/api.h $(PATCHED_SDK)
 
 download_sdk: scripts/get_libv5rt.py
 	@echo "Downloading SDK"
-	$(VV)python scripts/get_libv5rt.py $(SDK_VERSION)
+	$(VV)python3 scripts/get_libv5rt.py $(SDK_VERSION)
 
 patch_sdk_headers: download_sdk scripts/patch_headers.py
 	@echo "Patching SDK headers"
-	$(VV)python scripts/patch_headers.py
+	$(VV)python3 scripts/patch_headers.py
 
 # Override clean, necessary to remove patched sdk on clean
 clean::
