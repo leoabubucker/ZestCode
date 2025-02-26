@@ -1,5 +1,8 @@
 # ZestCode
 
+> [!IMPORTANT]
+> ZestCode is under heavy development, and we'd greatly appreciate any contributors! Consider joining our [Discord Server](https://discord.gg/vNMXCvVwdY) if you are interested.
+
 ZestCode is a truly open-source framework for the VEX V5. It's a PROS fork, and exists to address some PROS issues, particularly in reliability, tooling, and community input.
 
 ### (WIP) Why ZestCode?
