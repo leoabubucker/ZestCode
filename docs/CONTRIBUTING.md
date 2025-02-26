@@ -78,6 +78,13 @@ You should also be testing your code regularly, and write tests for it in the `s
 
 ### Step 5: Open a PR
 
-Once you think your PR is ready to be reviewed, go to your fork on GitHub, and click the "contribute" button, as shown below
+Once you think your PR is ready to be reviewed, go to your fork on GitHub, and click the "contribute" button, as shown below.
 
 [contribute button](./assets/contributing/contribute.png)
+
+Then, fill out the PR description template, and remember to prefix the title with a [Gitmoji](https://gitmoji.dev/). Your PR might receive a review within a minutes, or hours. The longest you'll spend waiting is a week but this is rare.
+
+Reviewers might request changes to the PR before it's merged. In fact, your PR might need several review cycles as we hold our code to a high standard.
+Once your PR is approved though, it will be merged shortly.
+
+And that's it! thanks again for taking the time to contribute.
