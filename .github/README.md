@@ -30,7 +30,7 @@ ZestCode is licensed under the [Mozilla Public License 2.0](LICENSE)
 
 ### Contributing
 
-Want to contribute? Check out [CONTRIBUTING.md](CONTRIBUTING.md)
+Want to contribute? Check out [CONTRIBUTING.md](../docs/CONTRIBUTING.md)
 
 ### Acknowledgements
 
