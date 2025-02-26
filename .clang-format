@@ -46,7 +46,7 @@ EmptyLineBeforeAccessModifier: Always
 FixNamespaceComments: true
 IndentAccessModifiers: false
 IndentCaseBlocks: false
-IndentCaseLabels: false
+IndentCaseLabels: true
 IndentExternBlock: NoIndent
 IndentGotoLabels: false
 IndentPPDirectives: BeforeHash
