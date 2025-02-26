@@ -1,5 +1,6 @@
 ---
 # inspired by rustfmt
+# implemented for clang-format 19
 Language: Cpp
 Standard: Latest
 AccessModifierOffset: -2
