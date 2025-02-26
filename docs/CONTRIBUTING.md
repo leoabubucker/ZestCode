@@ -67,3 +67,17 @@ make clean; pros build-compile-commands
 ```
 
 It might take a while for the first build, but subsequent builds will be many times faster. After the build is done, open the command palette and run `clangd: Restart language server`. The linter should now be working properly.
+
+### Step 4: Making your changes
+
+The project file structure is explained in [STRUCTURE.md](./STRUCTURE.md). Read through it so you know where you should make your changes.
+Details on the code style can be found in [STYLEGUIDE.md](./STYLEGUIDE.md).
+
+You should commit changes regularly. This isn't a requirement, but it will make your life easier, especially for more complex PRs.
+You should also be testing your code regularly, and write tests for it in the `src/tests` folder if needed.
+
+### Step 5: Open a PR
+
+Once you think your PR is ready to be reviewed, go to your fork on GitHub, and click the "contribute" button, as shown below
+
+[contribute button](./assets/contributing/contribute.png)
