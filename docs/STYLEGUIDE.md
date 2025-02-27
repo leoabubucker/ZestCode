@@ -32,7 +32,7 @@ Some additional notes follow:
 - **member variable** - m_snake_case (not a typo)
 - **macros** - SCREAMING_SNAKE_CASE
 - **compile-time constants** - SCREAMING_SNAKE_CASE
-- **enum members** - SCREAMING_SNAKE_CASE
+- **enum members** - snake_case
 
 ## Documentation
 
