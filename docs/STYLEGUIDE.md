@@ -1,4 +1,4 @@
-# PROS Kernel Styleguide
+# ZestCode Styleguide
 
 > [!TIP]
 > ZestCode is in the process of migrating to this new style, some older code may not yet be using this new style.
