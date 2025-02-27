@@ -113,11 +113,19 @@ These should be placed immediately before the function prototype they are descri
  * reached:
  * ERRNO_VALUE - Description of what causes this error
  *
+ * @tparam T the type of the parameters
+ *
  * @param parameter_name The parameter description
  * @param other_parameter_name The parameter description
  *
  * @return The description of the return value, if this is longer than one line
  * then it will wrap around under the return statement
+ *
+ * @code
+ * // example code here
+ * @endcode
+ *
+ * @see src/referenced_file.cpp
  */
 ```
 
