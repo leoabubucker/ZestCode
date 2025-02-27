@@ -80,7 +80,7 @@ You should also be testing your code regularly, and write tests for it in the `s
 
 Once you think your PR is ready to be reviewed, go to your fork on GitHub, and click the "contribute" button, as shown below.
 
-[contribute button](./assets/contributing/contribute.png)
+![contribute button](./assets/contributing/contribute.png)
 
 Then, fill out the PR description template, and remember to prefix the title with a [Gitmoji](https://gitmoji.dev/). Your PR might receive a review within a minutes, or hours. The longest you'll spend waiting is a week but this is rare.
 
