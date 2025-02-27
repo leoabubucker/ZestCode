@@ -5,11 +5,23 @@
 
 Maintaining a consistent coding style is important. It helps make the code more readable. ZestCode's style guide is largely inspired by [rustfmt](https://doc.rust-lang.org/stable/style-guide/).
 
-ZestCode uses [clang-format](https://releases.llvm.org/19.1.0/tools/clang/docs/ClangFormat.html) to format its source code.
-We recommend using [clangd](https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd) to automatically format your code while you are working on it.
-Some contributors have set up VSCode so it format their code whenever they save or make a commit.
+## General Rules
 
-Some additional notes follow:
+> [!TIP]
+> [clangd](https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd) can be used to automatically format your code using the ZestCode styleguide
+
+Some basic rules are as follows:
+
+- indent using 4 spaces, not tabs
+- no more than 100 columns per line
+- write tests for your code
+- always use `enum class` over `enum`
+- a `struct` should only have member variables, and no access modifiers
+- don't use `typedef`
+- use [C++11 attributes](https://en.cppreference.com/w/cpp/language/attributes)
+- only use macros as a last resort
+
+For more details, see [.clang-format](../.clang-format).
 
 ## File extensions
 
