@@ -74,12 +74,12 @@ These should be placed immediately before the declaration of the enum.
  * Extended description of the enum goes here. This should explain general usage
  * patterns for the enum.
  */
-enum my_enum {
-        E_MEMBER_0, // short description of member 0 goes here.
-        E_MEMBER_1, // these can be omitted if it's painfully obvious
-        E_MEMBER_2, // what each is for, or if there are just so many of
-        E_MEMBER_3, // them it doesn't make practical sense to
-        E_MEMBER_4 // document them all.
+enum class MyEnum {
+        member_0, ///< short description of member 0 goes here.
+        member_1, ///< these can be omitted if it's painfully obvious
+        member_2, ///< what each is for, or if there are just so many of
+        member_3, ///< them it doesn't make practical sense to
+        member_4, ///< document them all.
 }
 ```
 
