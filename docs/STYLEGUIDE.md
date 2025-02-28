@@ -8,7 +8,7 @@ Maintaining a consistent coding style is important. It helps make the code more 
 ## General Rules
 
 > [!TIP]
-> [clangd](https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd) can be used to automatically format your code using the ZestCode styleguide
+> The [clangd VSCode extension](https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd) can be used to automatically format your code using the ZestCode styleguide
 
 Some basic rules are as follows:
 
