@@ -41,7 +41,7 @@ For more details, see [.clang-format](../.clang-format).
 - **classes, structs, enums, unions, concepts, etc** - PascalCase
 - **functions** - snake_case
 - **variables** - snake_case
-- **member variable** - m_snake_case (not a typo)
+- **member variables** - m_snake_case (The `m_` is intentional)
 - **macros** - SCREAMING_SNAKE_CASE
 - **compile-time constants** - SCREAMING_SNAKE_CASE
 - **enum members** - snake_case
