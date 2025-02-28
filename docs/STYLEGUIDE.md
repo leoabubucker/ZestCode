@@ -33,7 +33,9 @@ For more details, see [.clang-format](../.clang-format).
 - C header files will have the extension `.h`
 - C++ header files will have the extension `.hpp`
 - Assembly source files will have the extension `.s`
-- markdown documents will have the extension `.md`
+- Linkerscripts will have the extension `.ld`
+- Markdown documents will have the extension `.md`
+- Python files will have the extension `.py`
 
 ## Naming Conventions
 
