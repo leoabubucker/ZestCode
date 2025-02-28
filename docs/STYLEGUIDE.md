@@ -1,7 +1,7 @@
 # ZestCode Styleguide
 
 > [!TIP]
-> ZestCode is in the process of migrating to this new style, some older code may not yet be using this new style.
+> ZestCode is in the process of migrating to this new style; some older code may not yet be using this new style.
 
 Maintaining a consistent coding style is important. It helps make the code more readable. ZestCode's style guide is largely inspired by [rustfmt](https://doc.rust-lang.org/stable/style-guide/).
 
