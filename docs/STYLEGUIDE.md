@@ -106,31 +106,43 @@ These should be placed immediately before the function prototype they are descri
  */
 ```
 
-### Inline Implementation Comments
+### Implementation Comments
 
-Sometimes it is necessary to explain a particularly complex statement or series of statements. In this case, you should use inline comments, placed either immediately before or trailing the line or lines in question. In general, prefer placing such comments before offending lines, unless the comment is quite short. These comments should start with a `//` followed by a space. If they are placed trailing a line, they should be separated from the end of the line by one space.
+Sometimes it is necessary to explain statement or series of statements.
+In this case, comment it! Prefer adding comments before the offending code,
+rather than next to it.
+Add as much documentation as you think is necessary, rather too much than too little.
+
+For example:
 
 ```c++
-float Q_rsqrt(float number) {
-    long i;
-    float x2, y;
-    const float threehalfs = 1.5F;
-    x2 = number * 0.5F;
-    y  = number;
-    // perform some absolute magic on these numbers to get the inverse square root
-    i  = *(long*)&y; // evil floating point bit level hacking
-    i  = 0x5f3759df - (i >> 1); // what the [heck]?
-    y  = *(float*)&i;
-    y  = y * (threehalfs - (x2 * y * y)); // 1st iteration
-    //y  = y * (threehalfs - (x2 * y * y)); // 2nd iteration, this can be removed
-    return y;
+// program entrypoint. This is the first function that is run
+// it sets up memory, initializes libc, and then calls main
+extern "C" [[gnu::section(".boot")]]
+void _start() {
+    // Symbols provided by the linker script
+    extern uint32_t __bss_start;
+    extern uint32_t __bss_end;
+    extern uint32_t __sbss_start;
+    extern uint32_t __sbss_end;
+    // don't try refactoring this code with stuff like std::fill or std::span.
+    // It's been tried before, and it causes UB.
+    // It's suspected that this is due to libc not being initialized yet.
+    for (uint32_t* bss = &__bss_start; bss < &__bss_end; bss++)
+        *bss = 0;
+    for (uint32_t* sbss = &__sbss_start; sbss < &__sbss_end; sbss++)
+        *sbss = 0;
+
+    // Initialize libc
+    __libc_init_array();
+
+    // call the main function
+    main();
 }
 ```
-> [!TIP]
-> In the above example, there is a line of code that has been commented out.
-> This is fine to do while testing, but any commented out lines of code should be removed before any merge into the master branch takes place, unless a compelling reason can be presented for them to remain.
 
-Keep inline comments to a minimum. When possible, avoid writing complex code that can't be understood without inline comments.
+> [!TIP]
+> commenting out lines is fine during testing, but should be removed when you mark your PR as ready for review!
 
 #### Notes to Other Developers (Or Yourself)
 
