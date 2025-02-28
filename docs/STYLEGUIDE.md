@@ -17,7 +17,7 @@ Some basic rules are as follows:
 - write tests for your code
 - always use `enum class` over `enum`
 - a `struct` should only have member variables, and no access modifiers
-- don't use `typedef`
+- don't use `typedef`, use `using` instead
 - use [C++11 attributes](https://en.cppreference.com/w/cpp/language/attributes)
 - only use macros as a last resort
 
