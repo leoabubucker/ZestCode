@@ -12,6 +12,8 @@ Maintaining a consistent coding style is important. It helps make the code more 
 
 Some basic rules are as follows:
 
+- use [fixed width integer types](https://en.cppreference.com/w/cpp/types/integer) instead of `int` or `unsigned int`
+  - don't use `int_fast_t` or `int_smallest_t` unless you document why its necessary
 - indent using 4 spaces, not tabs
 - no more than 100 columns per line
 - write tests for your code
