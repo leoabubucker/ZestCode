@@ -116,8 +116,8 @@ Add as much documentation as you think is necessary, rather too much than too li
 For example:
 
 ```c++
-// program entrypoint. This is the first function that is run
-// it sets up memory, initializes libc, and then calls main
+// Program entrypoint. This is the first function that is run.
+// It sets up memory, initializes libc, and then calls main
 extern "C" [[gnu::section(".boot")]]
 void _start() {
     // Symbols provided by the linker script
@@ -125,7 +125,7 @@ void _start() {
     extern uint32_t __bss_end;
     extern uint32_t __sbss_start;
     extern uint32_t __sbss_end;
-    // don't try refactoring this code with stuff like std::fill or std::span.
+    // Don't try refactoring this code with stuff like std::fill or std::span.
     // It's been tried before, and it causes UB.
     // It's suspected that this is due to libc not being initialized yet.
     for (uint32_t* bss = &__bss_start; bss < &__bss_end; bss++)
@@ -136,7 +136,7 @@ void _start() {
     // Initialize libc
     __libc_init_array();
 
-    // call the main function
+    // call the main function, which sets up the scheduler
     main();
 }
 ```
