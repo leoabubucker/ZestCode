@@ -50,31 +50,6 @@ For more details, see [.clang-format](../.clang-format).
 
 Use Doxygen-style comments as shown in the sections below.
 
-### File-Level Comments
-
-These should be placed at the very start of a file.
-
-```c
-/**
- * @file filename.h
- *
- * @brief Short description of the file
- *
- * Extended description goes here. This should explain what the functions (etc)
- * in the file contains and a general description of what they do (no specifics,
- * but they should all have something in common anyway).
- *
- * This file should not be modified by users, since it gets replaced whenever
- * a kernel upgrade occurs.
- *
- * @copyright Copyright (c) 2017-2024, Purdue University ACM SIGBots.
- *
- * This Source Code Form is subject to the terms of the Mozilla Public
- * License, v. 2.0. If a copy of the MPL was not distributed with this
- * file, You can obtain one at http://mozilla.org/MPL/2.0/.
- */
-```
-
 ### Enum-Level Comments
 
 These should be placed immediately before the declaration of the enum.
