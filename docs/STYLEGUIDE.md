@@ -153,7 +153,7 @@ float Q_rsqrt(float number) {
 > In the above example, there is a line of code that has been commented out.
 > This is fine to do while testing, but any commented out lines of code should be removed before any merge into the master branch takes place, unless a compelling reason can be presented for them to remain.
 
-All that being said, try to avoid code that is so complex that it requires inline comments for its purpose to be clear.
+Keep inline comments to a minimum. When possible, avoid writing complex code that can't be understood without inline comments.
 
 #### Notes to Other Developers (Or Yourself)
 
