@@ -162,5 +162,5 @@ When writing code, it can sometimes be useful to leave notes to other developers
 - `// TODO: something that should be done`
 - `// HACK: used to describe a particularly nasty way of solving a problem-- could be improved, but it works for now`
 
-While it is not strictly necessary to use these keywords in comments, they can be helpful-- modern editors either highlight some of these keywords by default or have extensions that do.
+While it is not strictly necessary to use these keywords in comments, they can be helpful - modern editors either highlight some of these keywords by default or have extensions that do.
 This can make certain comments stand out even more when developers are "grepping" the codebase (visually or otherwise).
