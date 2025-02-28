@@ -18,7 +18,7 @@ Some basic rules are as follows:
 - no more than 100 columns per line
 - write tests for your code
 - always use `enum class` over `enum`
-- a `struct` should only have member variables, and no access modifiers
+- a `struct` should have only public member variables and no methods
 - don't use `typedef`, use `using` instead
 - use [C++11 attributes](https://en.cppreference.com/w/cpp/language/attributes) instead of the older GCC attribute syntax: `__attribute__((...))`
 - only use macros as a last resort
