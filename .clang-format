@@ -1,5 +1,5 @@
 ---
-# inspired by rustfmt
+# inspired by rustfmt's default style
 # implemented for clang-format 19
 Language: Cpp
 Standard: Latest
