@@ -1,4 +1,4 @@
-# ZestCode
+# ZestCode test commit
 
 > [!IMPORTANT]
 > ZestCode is under heavy development, and we'd greatly appreciate any contributors! Consider joining our [Discord Server](https://discord.gg/vNMXCvVwdY) if you are interested.
