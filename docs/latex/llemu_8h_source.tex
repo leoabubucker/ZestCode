@@ -1,0 +1,37 @@
+\doxysection{llemu.\+h}
+\hypertarget{llemu_8h_source}{}\label{llemu_8h_source}\index{C:/Users/leoku/OneDrive/Personal\_Coding\_Projects/ZestCode/include/pros/llemu.h@{C:/Users/leoku/OneDrive/Personal\_Coding\_Projects/ZestCode/include/pros/llemu.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_PROS\_LLEMU\_H\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_PROS\_LLEMU\_H\_}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ TODO:?\ Should\ there\ be\ weak\ symbols\ for\ the\ C\ api\ in\ here\ as\ well?}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}stdbool.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}stdint.h"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{comment}{/******************************************************************************/}}
+\DoxyCodeLine{00016\ \textcolor{comment}{/******************************************************************************/}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifdef\ \_PROS\_INCLUDE\_LIBLVGL\_LLEMU\_H}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}liblvgl/llemu.h"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00022\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00023\ \textcolor{keyword}{namespace\ }pros\ \{}
+\DoxyCodeLine{00024\ \textcolor{keyword}{namespace\ }c\ \{}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#endif}\textcolor{comment}{//\_\_cplusplus}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00045\ \textcolor{keywordtype}{bool}\ \_\_attribute\_\_((weak))\ lcd\_print(\_\_attribute\_\_((unused))\ int16\_t\ line,\ \_\_attribute\_\_((unused))\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ fmt,\ ...)\ \ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00047\ \}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00050\ \}\ \textcolor{comment}{//\ namespace\ c}}
+\DoxyCodeLine{00051\ \}\ \textcolor{comment}{//\ namespace\ pros}}
+\DoxyCodeLine{00052\ \}\ \textcolor{comment}{//\ extern\ "{}C"{}}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#endif}\textcolor{comment}{//\_\_cplusplus}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_PROS\_LLEMU\_H\_}}
+
+\end{DoxyCode}

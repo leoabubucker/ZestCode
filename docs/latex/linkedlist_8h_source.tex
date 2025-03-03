@@ -1,0 +1,60 @@
+\doxysection{linkedlist.\+h}
+\hypertarget{linkedlist_8h_source}{}\label{linkedlist_8h_source}\index{C:/Users/leoku/OneDrive/Personal\_Coding\_Projects/ZestCode/include/common/linkedlist.h@{C:/Users/leoku/OneDrive/Personal\_Coding\_Projects/ZestCode/include/common/linkedlist.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \(\backslash\)file\ common/linkedlist.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Linked\ list\ implementation\ for\ internal\ use}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ This\ file\ defines\ a\ linked\ list\ implementation\ that\ operates\ on\ the\ FreeRTOS}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ heap,\ and\ is\ able\ to\ generically\ store\ function\ pointers\ and\ data}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ \(\backslash\)copyright\ Copyright\ (c)\ 2017-\/2024,\ Purdue\ University\ ACM\ SIGBots.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ This\ Source\ Code\ Form\ is\ subject\ to\ the\ terms\ of\ the\ Mozilla\ Public}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ License,\ v.\ 2.0.\ If\ a\ copy\ of\ the\ MPL\ was\ not\ distributed\ with\ this}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ file,\ You\ can\ obtain\ one\ at\ http://mozilla.org/MPL/2.0/.}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{typedef}\ void\ (*generic\_fn\_t)(void);}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structll__node__s}{ll\_node\_s}}\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{union\ }\{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ generic\_fn\_t\ func;\ \textcolor{comment}{//\ Note:\ a\ list\ should\ not\ contain\ both\ data/funcs}}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}*\ data;}
+\DoxyCodeLine{00024\ \ \ \ \ \}\ payload;}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structll__node__s}{ll\_node\_s}}*\ next;}
+\DoxyCodeLine{00026\ \}\ ll\_node\_s\_t;}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00029\ \ \ \ \ ll\_node\_s\_t*\ head;}
+\DoxyCodeLine{00030\ \}\ \mbox{\hyperlink{structlinked__list__s__t}{linked\_list\_s\_t}};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00040\ ll\_node\_s\_t*\ linked\_list\_init\_func\_node(generic\_fn\_t\ func);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00050\ ll\_node\_s\_t*\ linked\_list\_init\_data\_node(\textcolor{keywordtype}{void}*\ data);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00057\ \mbox{\hyperlink{structlinked__list__s__t}{linked\_list\_s\_t}}*\ linked\_list\_init();}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00069\ \textcolor{keywordtype}{void}\ linked\_list\_prepend\_func(\mbox{\hyperlink{structlinked__list__s__t}{linked\_list\_s\_t}}*\ list,\ generic\_fn\_t\ func);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00081\ \textcolor{keywordtype}{void}\ linked\_list\_prepend\_data(\mbox{\hyperlink{structlinked__list__s__t}{linked\_list\_s\_t}}*\ list,\ \textcolor{keywordtype}{void}*\ data);}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00093\ \textcolor{keywordtype}{void}\ linked\_list\_append\_func(\mbox{\hyperlink{structlinked__list__s__t}{linked\_list\_s\_t}}*\ list,\ generic\_fn\_t\ func);}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00103\ \textcolor{keywordtype}{void}\ linked\_list\_remove\_func(\mbox{\hyperlink{structlinked__list__s__t}{linked\_list\_s\_t}}*\ list,\ generic\_fn\_t\ func);}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00115\ \textcolor{keywordtype}{void}\ linked\_list\_append\_data(\mbox{\hyperlink{structlinked__list__s__t}{linked\_list\_s\_t}}*\ list,\ \textcolor{keywordtype}{void}*\ data);}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00125\ \textcolor{keywordtype}{void}\ linked\_list\_remove\_data(\mbox{\hyperlink{structlinked__list__s__t}{linked\_list\_s\_t}}*\ list,\ \textcolor{keywordtype}{void}*\ data);}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \textcolor{keyword}{typedef}\ void\ (*linked\_list\_foreach\_fn\_t)(ll\_node\_s\_t*,\ \textcolor{keywordtype}{void}*);}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00142\ \textcolor{keywordtype}{void}\ linked\_list\_foreach(\mbox{\hyperlink{structlinked__list__s__t}{linked\_list\_s\_t}}*\ list,\ linked\_list\_foreach\_fn\_t,\ \textcolor{keywordtype}{void}*\ extra\_data);}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00151\ \textcolor{keywordtype}{void}\ linked\_list\_free(\mbox{\hyperlink{structlinked__list__s__t}{linked\_list\_s\_t}}*\ list);}
+
+\end{DoxyCode}

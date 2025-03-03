@@ -1,0 +1,84 @@
+\doxysection{C\+:/\+Users/leoku/\+One\+Drive/\+Personal\+\_\+\+Coding\+\_\+\+Projects/\+Zest\+Code/include/common/cobs.h File Reference}
+\hypertarget{cobs_8h}{}\label{cobs_8h}\index{C:/Users/leoku/OneDrive/Personal\_Coding\_Projects/ZestCode/include/common/cobs.h@{C:/Users/leoku/OneDrive/Personal\_Coding\_Projects/ZestCode/include/common/cobs.h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{cobs_8h_a0608ea1c77616d0769bb8175ed5a6123}{COBS\+\_\+\+ENCODE\+\_\+\+MEASURE\+\_\+\+MAX}}(src\+\_\+len)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{cobs_8h_ae2d824ec37621f3cb020abacaf268d82}{cobs\+\_\+encode}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}restrict dest, const uint8\+\_\+t \texorpdfstring{$\ast$}{*}restrict src, const size\+\_\+t src\+\_\+len, const uint32\+\_\+t prefix)
+\item 
+size\+\_\+t \mbox{\hyperlink{cobs_8h_ada10fe2699a8483601dec03862960806}{cobs\+\_\+encode\+\_\+measure}} (const uint8\+\_\+t \texorpdfstring{$\ast$}{*}restrict src, const size\+\_\+t src\+\_\+len, const uint32\+\_\+t prefix)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Consistent Overhead Byte Stuffing header
+
+See common/cobs.\+c for discussion
+
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2017-\/2024, Purdue University ACM SIGBots. All rights reserved.
+\end{DoxyCopyright}
+This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.\+0. If a copy of the MPL was not distributed with this file, You can obtain one at \href{http://mozilla.org/MPL/2.0/}{\texttt{ http\+://mozilla.\+org/\+MPL/2.\+0/}}. 
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{cobs_8h_a0608ea1c77616d0769bb8175ed5a6123}\index{cobs.h@{cobs.h}!COBS\_ENCODE\_MEASURE\_MAX@{COBS\_ENCODE\_MEASURE\_MAX}}
+\index{COBS\_ENCODE\_MEASURE\_MAX@{COBS\_ENCODE\_MEASURE\_MAX}!cobs.h@{cobs.h}}
+\doxysubsubsection{\texorpdfstring{COBS\_ENCODE\_MEASURE\_MAX}{COBS\_ENCODE\_MEASURE\_MAX}}
+{\footnotesize\ttfamily \label{cobs_8h_a0608ea1c77616d0769bb8175ed5a6123} 
+\#define COBS\+\_\+\+ENCODE\+\_\+\+MEASURE\+\_\+\+MAX(\begin{DoxyParamCaption}\item[{}]{src\+\_\+len}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{((src\_len)\ +\ (((src\_len)\ +\ 253)\ /\ 254))}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{cobs_8h_ae2d824ec37621f3cb020abacaf268d82}\index{cobs.h@{cobs.h}!cobs\_encode@{cobs\_encode}}
+\index{cobs\_encode@{cobs\_encode}!cobs.h@{cobs.h}}
+\doxysubsubsection{\texorpdfstring{cobs\_encode()}{cobs\_encode()}}
+{\footnotesize\ttfamily \label{cobs_8h_ae2d824ec37621f3cb020abacaf268d82} 
+int cobs\+\_\+encode (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}restrict}]{dest}{, }\item[{const uint8\+\_\+t \texorpdfstring{$\ast$}{*}restrict}]{src}{, }\item[{const size\+\_\+t}]{src\+\_\+len}{, }\item[{const uint32\+\_\+t}]{prefix}{}\end{DoxyParamCaption})}
+
+Encodes src in the Consistent Overhead Byte Stuffing algorithm, and writes the result to dest. dest must be sufficiently long. use \doxylink{cobs_8h_ada10fe2699a8483601dec03862960806}{cobs\+\_\+encode\+\_\+measure()} to compute the size of the buff or use COBS\+\_\+\+ENCODE\+\_\+\+MEASURE\+\_\+\+MAX(src\+\_\+len) macro to get the max buffer size needed (e.\+g. for static allocation)
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em dest} & The location to write the stuffed data to \\
+\hline
+\mbox{\texttt{ in}}  & {\em src} & The location of the incoming data \\
+\hline
+ & {\em src\+\_\+len} & The length of the source data \\
+\hline
+ & {\em prefix} & The four character stream identifier\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes written 
+\end{DoxyReturn}
+\Hypertarget{cobs_8h_ada10fe2699a8483601dec03862960806}\index{cobs.h@{cobs.h}!cobs\_encode\_measure@{cobs\_encode\_measure}}
+\index{cobs\_encode\_measure@{cobs\_encode\_measure}!cobs.h@{cobs.h}}
+\doxysubsubsection{\texorpdfstring{cobs\_encode\_measure()}{cobs\_encode\_measure()}}
+{\footnotesize\ttfamily \label{cobs_8h_ada10fe2699a8483601dec03862960806} 
+size\+\_\+t cobs\+\_\+encode\+\_\+measure (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t \texorpdfstring{$\ast$}{*}restrict}]{src}{, }\item[{const size\+\_\+t}]{src\+\_\+len}{, }\item[{const uint32\+\_\+t}]{prefix}{}\end{DoxyParamCaption})}
+
+Same as \doxylink{cobs_8h_ae2d824ec37621f3cb020abacaf268d82}{cobs\+\_\+encode()} but doesn\textquotesingle{}t write to an output buffer. Used to determine how much space is needed for src.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em src} & The location of the incoming data \\
+\hline
+ & {\em src\+\_\+len} & The length of the source data \\
+\hline
+ & {\em prefix} & The four character stream identifier\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The size of src when encoded 
+\end{DoxyReturn}

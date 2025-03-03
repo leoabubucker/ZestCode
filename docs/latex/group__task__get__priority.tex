@@ -1,0 +1,47 @@
+\doxysection{task\+\_\+get\+\_\+priority}
+\hypertarget{group__task__get__priority}{}\label{group__task__get__priority}\index{task\_get\_priority@{task\_get\_priority}}
+task. h 
+\begin{DoxyPre}uint32\_t task\_get\_priority( task\_t xTask );\end{DoxyPre}
+
+
+INCLUDE\+\_\+ux\+Task\+Priority\+Get must be defined as 1 for this function to be available. See the configuration section for more information.
+
+Obtain the priority of any task.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Task} & Handle of the task to be queried. Passing a NULL handle results in the priority of the calling task being returned.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The priority of x\+Task.
+\end{DoxyReturn}
+Example usage\+: 
+\begin{DoxyPre}
+void vAFunction( void )
+\{
+task\_t xHandle;
+
+    // Create a task, storing the handle.
+    task\_create( vTaskCode, "{}NAME"{}, STACK\_SIZE, NULL, tskIDLE\_PRIORITY, \&xHandle );
+
+    // ...
+
+    // Use the handle to obtain the priority of the created task.
+    // It was created with tskIDLE\_PRIORITY, but may have changed
+    // it itself.
+    if( task\_get\_priority( xHandle ) != tskIDLE\_PRIORITY )
+    \{
+     // The task has changed it's priority.
+    \}
+
+    // ...
+
+    // Is our priority higher than the created task?
+    if( task\_get\_priority( xHandle ) < task\_get\_priority( NULL ) )
+    \{
+     // Our priority (obtained using NULL handle) is higher.
+    \}
+\}
+  \end{DoxyPre}
+ 

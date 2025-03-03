@@ -1,0 +1,44 @@
+\doxysection{C\+:/\+Users/leoku/\+One\+Drive/\+Personal\+\_\+\+Coding\+\_\+\+Projects/\+Zest\+Code/include/system/optimizers.h File Reference}
+\hypertarget{optimizers_8h}{}\label{optimizers_8h}\index{C:/Users/leoku/OneDrive/Personal\_Coding\_Projects/ZestCode/include/system/optimizers.h@{C:/Users/leoku/OneDrive/Personal\_Coding\_Projects/ZestCode/include/system/optimizers.h}}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{optimizers_8h_a0b73b1b40c12111a2483d07bb22bd855}{likely}}(cond)
+\item 
+\#define \mbox{\hyperlink{optimizers_8h_a6e951923c66693f5d308458676313f2e}{unlikely}}(cond)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Optimizers for the kernel
+
+Probably shouldn\textquotesingle{}t use anything from this header
+
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2017-\/2024, Purdue University ACM SIGBots. All rights reserved.
+\end{DoxyCopyright}
+This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.\+0. If a copy of the MPL was not distributed with this file, You can obtain one at \href{http://mozilla.org/MPL/2.0/}{\texttt{ http\+://mozilla.\+org/\+MPL/2.\+0/}}. 
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{optimizers_8h_a0b73b1b40c12111a2483d07bb22bd855}\index{optimizers.h@{optimizers.h}!likely@{likely}}
+\index{likely@{likely}!optimizers.h@{optimizers.h}}
+\doxysubsubsection{\texorpdfstring{likely}{likely}}
+{\footnotesize\ttfamily \label{optimizers_8h_a0b73b1b40c12111a2483d07bb22bd855} 
+\#define likely(\begin{DoxyParamCaption}\item[{}]{cond}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\_\_builtin\_expect(!!(cond),\ 1)}
+
+\end{DoxyCode}
+\Hypertarget{optimizers_8h_a6e951923c66693f5d308458676313f2e}\index{optimizers.h@{optimizers.h}!unlikely@{unlikely}}
+\index{unlikely@{unlikely}!optimizers.h@{optimizers.h}}
+\doxysubsubsection{\texorpdfstring{unlikely}{unlikely}}
+{\footnotesize\ttfamily \label{optimizers_8h_a6e951923c66693f5d308458676313f2e} 
+\#define unlikely(\begin{DoxyParamCaption}\item[{}]{cond}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\_\_builtin\_expect(!!(cond),\ 0)}
+
+\end{DoxyCode}

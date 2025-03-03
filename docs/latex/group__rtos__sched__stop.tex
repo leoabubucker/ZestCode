@@ -1,0 +1,44 @@
+\doxysection{rtos\+\_\+sched\+\_\+stop}
+\hypertarget{group__rtos__sched__stop}{}\label{group__rtos__sched__stop}\index{rtos\_sched\_stop@{rtos\_sched\_stop}}
+task. h 
+\begin{DoxyPre}void rtos\_sched\_stop( void );\end{DoxyPre}
+
+
+NOTE\+: At the time of writing only the x86 real mode port, which runs on a PC in place of DOS, implements this function.
+
+Stops the real time kernel tick. All created tasks will be automatically deleted and multitasking (either preemptive or cooperative) will stop. Execution then resumes from the point where rtos\+\_\+sched\+\_\+start () was called, as if rtos\+\_\+sched\+\_\+start () had just returned.
+
+See the demo application file main. c in the demo/\+PC directory for an example that uses rtos\+\_\+sched\+\_\+stop ().
+
+rtos\+\_\+sched\+\_\+stop () requires an exit function to be defined within the portable layer (see v\+Port\+End\+Scheduler () in port. c for the PC port). This performs hardware specific operations such as stopping the kernel tick.
+
+rtos\+\_\+sched\+\_\+stop () will cause all of the resources allocated by the kernel to be freed -\/ but will not free resources allocated by application tasks.
+
+Example usage\+: 
+\begin{DoxyPre}
+void vTaskCode( void * pvParameters )
+\{
+    for( ;; )
+    \{
+     // Task code goes here.
+
+     // At some point we want to end the real time kernel processing
+     // so call ...
+     rtos\_sched\_stop ();
+    \}
+\}
+
+void vAFunction( void )
+\{
+    // Create at least one task before starting the kernel.
+    task\_create( vTaskCode, "{}NAME"{}, STACK\_SIZE, NULL, tskIDLE\_PRIORITY, NULL );
+
+    // Start the real time kernel with preemption.
+    rtos\_sched\_start ();
+
+    // Will only get here when the vTaskCode () task has called
+    // rtos\_sched\_stop ().  When we get here we are back to single task
+    // execution.
+\}
+  \end{DoxyPre}
+ 
