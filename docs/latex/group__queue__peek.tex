@@ -2,12 +2,12 @@
 \hypertarget{group__queue__peek}{}\label{group__queue__peek}\index{queue\_peek@{queue\_peek}}
 queue. h 
 \begin{DoxyPre}
-int32\_t \doxylink{group__apix_gabb333bbc086fdac6213b34a2e019dde3}{queue\_peek(                          queue\_t xQueue,                          void * const pvBuffer,                          uint32\_t xTicksToWait                      )};\end{DoxyPre}
+int32\_t queue\_peek(                          queue\_t xQueue,                          void * const pvBuffer,                          uint32\_t xTicksToWait                      );\end{DoxyPre}
 
 
 Receive an item from a queue without removing the item from the queue. The item is received by copy so a buffer of adequate size must be provided. The number of bytes copied into the buffer was defined when the queue was created.
 
-Successfully received items remain on the queue so will be returned again by the next call, or a call to \doxylink{group__apix_gaca6420b7d656b9559a7d366eb58b8e57}{queue\+\_\+recv()}.
+Successfully received items remain on the queue so will be returned again by the next call, or a call to queue\+\_\+recv().
 
 This macro must not be used in an interrupt service routine. See x\+Queue\+Peek\+From\+ISR() for an alternative that can be called from an interrupt service routine.
 
@@ -17,7 +17,7 @@ This macro must not be used in an interrupt service routine. See x\+Queue\+Peek\
 \hline
 {\em pv\+Buffer} & Pointer to the buffer into which the received item will be copied.\\
 \hline
-{\em x\+Ticks\+To\+Wait} & The maximum amount of time the task should block waiting for an item to receive should the queue be empty at the time of the call. The time is defined in tick periods so the constant port\+TICK\+\_\+\+PERIOD\+\_\+\+MS should be used to convert to real time if this is required. \doxylink{group__apix_gabb333bbc086fdac6213b34a2e019dde3}{queue\+\_\+peek()} will return immediately if x\+Ticks\+To\+Wait is 0 and the queue is empty.\\
+{\em x\+Ticks\+To\+Wait} & The maximum amount of time the task should block waiting for an item to receive should the queue be empty at the time of the call. The time is defined in tick periods so the constant port\+TICK\+\_\+\+PERIOD\+\_\+\+MS should be used to convert to real time if this is required. queue\+\_\+peek() will return immediately if x\+Ticks\+To\+Wait is 0 and the queue is empty.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}

@@ -107,8 +107,8 @@ $(function(){initNavTree('group__x_semaphore_create_binary_static.html',''); ini
 <div class="contents">
 <p>semphr. h </p><pre>sem_t xSemaphoreCreateBinaryStatic( static_sem_s_t *pxSemaphoreBuffer )</pre><p>Creates a new binary semaphore instance, and returns a handle by which the new semaphore can be referenced.</p>
 <p>NOTE: In many usage scenarios it is faster and more memory efficient to use a direct to task notification in place of a binary semaphore! <a href="http://www.freertos.org/RTOS-task-notifications.html">http://www.freertos.org/RTOS-task-notifications.html</a></p>
-<p>Internally, within the FreeRTOS implementation, binary semaphores use a block of memory, in which the semaphore structure is stored. If a binary semaphore is created using <a class="el" href="group__apix.html#ga83c9a6c93e3bfce8f36e3f32a6dc8c4b">sem_binary_create()</a> then the required memory is automatically dynamically allocated inside the <a class="el" href="group__apix.html#ga83c9a6c93e3bfce8f36e3f32a6dc8c4b">sem_binary_create()</a> function. (see <a href="http://www.freertos.org/a00111.html">http://www.freertos.org/a00111.html</a>). If a binary semaphore is created using xSemaphoreCreateBinaryStatic() then the application writer must provide the memory. xSemaphoreCreateBinaryStatic() therefore allows a binary semaphore to be created without using any dynamic memory allocation.</p>
-<p>This type of semaphore can be used for pure synchronisation between tasks or between an interrupt and a task. The semaphore need not be given back once obtained, so one task/interrupt can continuously 'give' the semaphore while another continuously 'takes' the semaphore. For this reason this type of semaphore does not use a priority inheritance mechanism. For an alternative that does use priority inheritance see <a class="el" href="group__c-rtos.html#ga475d096afa3abcc9a276ca9fa54bafdf">mutex_create()</a>.</p>
+<p>Internally, within the FreeRTOS implementation, binary semaphores use a block of memory, in which the semaphore structure is stored. If a binary semaphore is created using sem_binary_create() then the required memory is automatically dynamically allocated inside the sem_binary_create() function. (see <a href="http://www.freertos.org/a00111.html">http://www.freertos.org/a00111.html</a>). If a binary semaphore is created using xSemaphoreCreateBinaryStatic() then the application writer must provide the memory. xSemaphoreCreateBinaryStatic() therefore allows a binary semaphore to be created without using any dynamic memory allocation.</p>
+<p>This type of semaphore can be used for pure synchronisation between tasks or between an interrupt and a task. The semaphore need not be given back once obtained, so one task/interrupt can continuously 'give' the semaphore while another continuously 'takes' the semaphore. For this reason this type of semaphore does not use a priority inheritance mechanism. For an alternative that does use priority inheritance see mutex_create().</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">pxSemaphoreBuffer</td><td>Must point to a variable of type static_sem_s_t, which will then be used to hold the semaphore's data structure, removing the need for the memory to be allocated dynamically.</td></tr>
@@ -122,7 +122,7 @@ static_sem_s_t xSemaphoreBuffer;
 
 void vATask( void * pvParameters )
 {
-   // Semaphore cannot be used before a call to <a class="el" href="group__apix.html#ga83c9a6c93e3bfce8f36e3f32a6dc8c4b">sem_binary_create()</a>.
+   // Semaphore cannot be used before a call to sem_binary_create().
    // The semaphore's data structures will be placed in the xSemaphoreBuffer
    // variable, the address of which is passed into the function.  The
    // function's parameter is not NULL, so the function will not attempt any

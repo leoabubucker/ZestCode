@@ -109,9 +109,9 @@ $(function(){initNavTree('group__x_queue_peek_from_i_s_r.html',''); initResizabl
 int32_t xQueuePeekFromISR(
                                 queue_t xQueue,
                                 void *pvBuffer,
-                            );</pre><p>A version of <a class="el" href="group__apix.html#gabb333bbc086fdac6213b34a2e019dde3">queue_peek()</a> that can be called from an interrupt service routine (ISR).</p>
+                            );</pre><p>A version of queue_peek() that can be called from an interrupt service routine (ISR).</p>
 <p>Receive an item from a queue without removing the item from the queue. The item is received by copy so a buffer of adequate size must be provided. The number of bytes copied into the buffer was defined when the queue was created.</p>
-<p>Successfully received items remain on the queue so will be returned again by the next call, or a call to <a class="el" href="group__apix.html#gaca6420b7d656b9559a7d366eb58b8e57">queue_recv()</a>.</p>
+<p>Successfully received items remain on the queue so will be returned again by the next call, or a call to queue_recv().</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">xQueue</td><td>The handle to the queue from which the item is to be received.</td></tr>

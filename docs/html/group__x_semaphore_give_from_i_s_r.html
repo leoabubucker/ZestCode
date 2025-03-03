@@ -109,8 +109,8 @@ $(function(){initNavTree('group__x_semaphore_give_from_i_s_r.html',''); initResi
 xSemaphoreGiveFromISR(
                          sem_t xSemaphore,
                          int32_t *pxHigherPriorityTaskWoken
-                     )</pre><p><em>Macro</em> to release a semaphore. The semaphore must have previously been created with a call to <a class="el" href="group__apix.html#ga83c9a6c93e3bfce8f36e3f32a6dc8c4b">sem_binary_create()</a> or <a class="el" href="group__apix.html#ga382f9b5dc6ba96dcecffdbd7f41d29ac">sem_create()</a>.</p>
-<p>Mutex type semaphores (those created using a call to <a class="el" href="group__c-rtos.html#ga475d096afa3abcc9a276ca9fa54bafdf">mutex_create()</a>) must not be used with this macro.</p>
+                     )</pre><p><em>Macro</em> to release a semaphore. The semaphore must have previously been created with a call to sem_binary_create() or sem_create().</p>
+<p>Mutex type semaphores (those created using a call to mutex_create()) must not be used with this macro.</p>
 <p>This macro can be used from an ISR.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">

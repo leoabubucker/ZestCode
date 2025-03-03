@@ -106,7 +106,7 @@ $(function(){initNavTree('group__x_task_get_tick_count_from_i_s_r.html',''); ini
 </div><!--header-->
 <div class="contents">
 <p>task. h </p><pre>uint32_t xTaskGetTickCountFromISR( void );</pre><dl class="section return"><dt>Returns</dt><dd>The count of ticks since rtos_sched_start was called.</dd></dl>
-<p>This is a version of <a class="el" href="group__c-rtos.html#gacd8d13c328bebdf9eddea27ff9448c2d">millis()</a> that is safe to be called from an ISR - provided that uint32_t is the natural word size of the microcontroller being used or interrupt nesting is either not supported or not being used. </p>
+<p>This is a version of millis() that is safe to be called from an ISR - provided that uint32_t is the natural word size of the microcontroller being used or interrupt nesting is either not supported or not being used. </p>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -2,7 +2,7 @@
 \hypertarget{group__queue__recv}{}\label{group__queue__recv}\index{queue\_recv@{queue\_recv}}
 queue. h 
 \begin{DoxyPre}
-int32\_t \doxylink{group__apix_gaca6420b7d656b9559a7d366eb58b8e57}{queue\_recv(                              queue\_t xQueue,                              void *pvBuffer,                              uint32\_t xTicksToWait                         )};\end{DoxyPre}
+int32\_t queue\_recv(                              queue\_t xQueue,                              void *pvBuffer,                              uint32\_t xTicksToWait                         );\end{DoxyPre}
 
 
 Receive an item from a queue. The item is received by copy so a buffer of adequate size must be provided. The number of bytes copied into the buffer was defined when the queue was created.
@@ -17,7 +17,7 @@ This function must not be used in an interrupt service routine. See x\+Queue\+Re
 \hline
 {\em pv\+Buffer} & Pointer to the buffer into which the received item will be copied.\\
 \hline
-{\em x\+Ticks\+To\+Wait} & The maximum amount of time the task should block waiting for an item to receive should the queue be empty at the time of the call. \doxylink{group__apix_gaca6420b7d656b9559a7d366eb58b8e57}{queue\+\_\+recv()} will return immediately if x\+Ticks\+To\+Wait is zero and the queue is empty. The time is defined in tick periods so the constant port\+TICK\+\_\+\+PERIOD\+\_\+\+MS should be used to convert to real time if this is required.\\
+{\em x\+Ticks\+To\+Wait} & The maximum amount of time the task should block waiting for an item to receive should the queue be empty at the time of the call. queue\+\_\+recv() will return immediately if x\+Ticks\+To\+Wait is zero and the queue is empty. The time is defined in tick periods so the constant port\+TICK\+\_\+\+PERIOD\+\_\+\+MS should be used to convert to real time if this is required.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}

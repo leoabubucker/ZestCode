@@ -6,7 +6,7 @@ task. h
 
 Resumes scheduler activity after it was suspended by a call to rtos\+\_\+suspend\+\_\+all().
 
-rtos\+\_\+resume\+\_\+all() only resumes the scheduler. It does not unsuspend tasks that were previously suspended by a call to \doxylink{group__c-rtos_ga50ab98e83c207eaab4c2b9eb56d9ba0c}{task\+\_\+suspend()}.
+rtos\+\_\+resume\+\_\+all() only resumes the scheduler. It does not unsuspend tasks that were previously suspended by a call to task\+\_\+suspend().
 
 \begin{DoxyReturn}{Returns}
 If resuming the scheduler caused a context switch then pd\+TRUE is returned, otherwise pd\+FALSE is returned.

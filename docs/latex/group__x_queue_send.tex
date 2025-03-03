@@ -69,7 +69,7 @@ struct AMessage *pxMessage;
 
 queue. h 
 \begin{DoxyPre}
-int32\_t \doxylink{group__apix_ga4519896ea7f4a5d2b3726fd172926a8f}{queue\_append(                                queue\_t  xQueue,                                const void       *pvItemToQueue,                                uint32\_t     xTicksToWait                            )};
+int32\_t queue\_append(                                queue\_t  xQueue,                                const void       *pvItemToQueue,                                uint32\_t     xTicksToWait                            );
   \end{DoxyPre}
 
 
@@ -142,7 +142,7 @@ int32\_t xQueueSend(                           queue\_t xQueue,                 
   \end{DoxyPre}
 
 
-This is a macro that calls x\+Queue\+Generic\+Send(). It is included for backward compatibility with versions of Free\+RTOS.\+org that did not include the queue\+\_\+prepend() and \doxylink{group__apix_ga4519896ea7f4a5d2b3726fd172926a8f}{queue\+\_\+append()} macros. It is equivalent to \doxylink{group__apix_ga4519896ea7f4a5d2b3726fd172926a8f}{queue\+\_\+append()}.
+This is a macro that calls x\+Queue\+Generic\+Send(). It is included for backward compatibility with versions of Free\+RTOS.\+org that did not include the queue\+\_\+prepend() and queue\+\_\+append() macros. It is equivalent to queue\+\_\+append().
 
 Post an item on a queue. The item is queued by copy, not by reference. This function must not be called from an interrupt service routine. See x\+Queue\+Send\+From\+ISR () for an alternative which may be used in an ISR.
 
@@ -211,7 +211,7 @@ int32\_t xQueueGenericSend(                                 queue\_t xQueue,    
   \end{DoxyPre}
 
 
-It is preferred that the macros x\+Queue\+Send(), queue\+\_\+prepend() and \doxylink{group__apix_ga4519896ea7f4a5d2b3726fd172926a8f}{queue\+\_\+append()} are used in place of calling this function directly.
+It is preferred that the macros x\+Queue\+Send(), queue\+\_\+prepend() and queue\+\_\+append() are used in place of calling this function directly.
 
 Post an item on a queue. The item is queued by copy, not by reference. This function must not be called from an interrupt service routine. See x\+Queue\+Send\+From\+ISR () for an alternative which may be used in an ISR.
 

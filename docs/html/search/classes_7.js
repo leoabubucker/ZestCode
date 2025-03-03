@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['heapregion_0',['HeapRegion',['../struct_heap_region.html',1,'']]],
-  ['hot_5ftable_1',['hot_table',['../structhot__table.html',1,'']]]
+  ['v5_5fsmart_5fdevice_5fs_5ft_0',['v5_smart_device_s_t',['../structv5__smart__device__s__t.html',1,'']]]
 ];

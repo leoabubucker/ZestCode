@@ -106,23 +106,9 @@ $(function(){initNavTree('apix_8h.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="api_8h_source.html">api.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="device_8h_source.html">pros/device.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="serial_8h_source.html">pros/serial.h</a>&quot;</code><br />
 </div>
 <p><a href="apix_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr><td colspan="2"><div class="groupHeader">Device Registration</div></td></tr>
-<tr class="memitem:gafdda25e2647e8606131e35ced80de099" id="r_gafdda25e2647e8606131e35ced80de099"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__apix.html#gafdda25e2647e8606131e35ced80de099">registry_bind_port</a> (uint8_t port, v5_device_e_t device_type)</td></tr>
-<tr class="separator:gafdda25e2647e8606131e35ced80de099"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0092551f3eff99f31535a657d2832a86" id="r_ga0092551f3eff99f31535a657d2832a86"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__apix.html#ga0092551f3eff99f31535a657d2832a86">registry_unbind_port</a> (uint8_t port)</td></tr>
-<tr class="separator:ga0092551f3eff99f31535a657d2832a86"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gadd54c9e7c708eee228f2edf67dbe17cb" id="r_gadd54c9e7c708eee228f2edf67dbe17cb"><td class="memItemLeft" align="right" valign="top">v5_device_e_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__apix.html#gadd54c9e7c708eee228f2edf67dbe17cb">registry_get_bound_type</a> (uint8_t port)</td></tr>
-<tr class="separator:gadd54c9e7c708eee228f2edf67dbe17cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga490c81f1c80b6655410f96a0a07f4b0b" id="r_ga490c81f1c80b6655410f96a0a07f4b0b"><td class="memItemLeft" align="right" valign="top">v5_device_e_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__apix.html#ga490c81f1c80b6655410f96a0a07f4b0b">registry_get_plugged_type</a> (uint8_t port)</td></tr>
-<tr class="separator:ga490c81f1c80b6655410f96a0a07f4b0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Startup options</h2></td></tr>
 <tr class="memitem:gacdfae2dad4da439b127fb6d123b29376" id="r_gacdfae2dad4da439b127fb6d123b29376"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__apix.html#gacdfae2dad4da439b127fb6d123b29376">PRE_PROS_INIT_PRIORITY</a>&#160;&#160;&#160;101</td></tr>
 <tr class="separator:gacdfae2dad4da439b127fb6d123b29376"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -156,6 +142,41 @@ Functions</h2></td></tr>
 <tr class="separator:ga2fa32fc79e297f90fa08d22c381c2972"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa01b06cd1235f48a058a6dae6dc188c5" id="r_gaa01b06cd1235f48a058a6dae6dc188c5"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__apix.html#gaa01b06cd1235f48a058a6dae6dc188c5">motor_is_reversed</a> (int8_t port)</td></tr>
 <tr class="separator:gaa01b06cd1235f48a058a6dae6dc188c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Device Registration</h2></td></tr>
+<tr class="memitem:gaaba853cd2f7eed658c07dafd7cc41a45" id="r_gaaba853cd2f7eed658c07dafd7cc41a45"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__apix.html#gaaba853cd2f7eed658c07dafd7cc41a45">v5_device_e</a> { <br />
+&#160;&#160;<a class="el" href="group__apix.html#ggaaba853cd2f7eed658c07dafd7cc41a45a929153c5f75689b1d957d06074b5fae8">E_DEVICE_NONE</a> = 0
+, <a class="el" href="group__apix.html#ggaaba853cd2f7eed658c07dafd7cc41a45a467b42f234e0a690ffe8cb36136afd8a">E_DEVICE_MOTOR</a> = 2
+, <a class="el" href="group__apix.html#ggaaba853cd2f7eed658c07dafd7cc41a45ae9951d109e5a13e91fa928aca02b8882">E_DEVICE_ROTATION</a> = 4
+, <a class="el" href="group__apix.html#ggaaba853cd2f7eed658c07dafd7cc41a45a3eb6fb1ce8dc100664a443aab43a8a45">E_DEVICE_IMU</a> = 6
+, <br />
+&#160;&#160;<a class="el" href="group__apix.html#ggaaba853cd2f7eed658c07dafd7cc41a45acb1d4484e6d3c426554103850ffd0558">E_DEVICE_DISTANCE</a> = 7
+, <a class="el" href="group__apix.html#ggaaba853cd2f7eed658c07dafd7cc41a45a42aa9d24679cd762cb25dea691bac391">E_DEVICE_RADIO</a> = 8
+, <a class="el" href="group__apix.html#ggaaba853cd2f7eed658c07dafd7cc41a45a32cb9f019c5d7a71a891efd00382f223">E_DEVICE_VISION</a> = 11
+, <a class="el" href="group__apix.html#ggaaba853cd2f7eed658c07dafd7cc41a45aaf0a34b25623b86363823c284133b1e1">E_DEVICE_ADI</a> = 12
+, <br />
+&#160;&#160;<a class="el" href="group__apix.html#ggaaba853cd2f7eed658c07dafd7cc41a45af335796b1126951c9fa1aba19987b0b9">E_DEVICE_OPTICAL</a> = 16
+, <a class="el" href="group__apix.html#ggaaba853cd2f7eed658c07dafd7cc41a45a1188eeeddb1369a5b208366aeb612ee5">E_DEVICE_GPS</a> = 20
+, <a class="el" href="group__apix.html#ggaaba853cd2f7eed658c07dafd7cc41a45ae5fca55109385ea79695410ed5c57d99">E_DEVICE_AIVISION</a> = 29
+, <a class="el" href="group__apix.html#ggaaba853cd2f7eed658c07dafd7cc41a45a9512b3799968456e47dfa3e8c8957094">E_DEVICE_SERIAL</a> = 129
+, <br />
+&#160;&#160;<b>__attribute__</b> =((deprecated("use E_DEVICE_SERIAL instead"))) = E_DEVICE_SERIAL
+, <a class="el" href="group__apix.html#ggaaba853cd2f7eed658c07dafd7cc41a45a4a089975a8d1abaaf4c4bf0c35512cd3">E_DEVICE_UNDEFINED</a> = 255
+<br />
+ }</td></tr>
+<tr class="memdesc:gaaba853cd2f7eed658c07dafd7cc41a45"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of possible v5 devices.  <a href="group__apix.html#gaaba853cd2f7eed658c07dafd7cc41a45">More...</a><br /></td></tr>
+<tr class="separator:gaaba853cd2f7eed658c07dafd7cc41a45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga411015851cfc982d345c3447edd2c468" id="r_ga411015851cfc982d345c3447edd2c468"><td class="memItemLeft" align="right" valign="top">
+typedef enum <a class="el" href="group__apix.html#gaaba853cd2f7eed658c07dafd7cc41a45">v5_device_e</a>&#160;</td><td class="memItemRight" valign="bottom"><b>v5_device_e_t</b></td></tr>
+<tr class="separator:ga411015851cfc982d345c3447edd2c468"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafdda25e2647e8606131e35ced80de099" id="r_gafdda25e2647e8606131e35ced80de099"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__apix.html#gafdda25e2647e8606131e35ced80de099">registry_bind_port</a> (uint8_t port, v5_device_e_t device_type)</td></tr>
+<tr class="separator:gafdda25e2647e8606131e35ced80de099"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0092551f3eff99f31535a657d2832a86" id="r_ga0092551f3eff99f31535a657d2832a86"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__apix.html#ga0092551f3eff99f31535a657d2832a86">registry_unbind_port</a> (uint8_t port)</td></tr>
+<tr class="separator:ga0092551f3eff99f31535a657d2832a86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadd54c9e7c708eee228f2edf67dbe17cb" id="r_gadd54c9e7c708eee228f2edf67dbe17cb"><td class="memItemLeft" align="right" valign="top">v5_device_e_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__apix.html#gadd54c9e7c708eee228f2edf67dbe17cb">registry_get_bound_type</a> (uint8_t port)</td></tr>
+<tr class="separator:gadd54c9e7c708eee228f2edf67dbe17cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga490c81f1c80b6655410f96a0a07f4b0b" id="r_ga490c81f1c80b6655410f96a0a07f4b0b"><td class="memItemLeft" align="right" valign="top">v5_device_e_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__apix.html#ga490c81f1c80b6655410f96a0a07f4b0b">registry_get_plugged_type</a> (uint8_t port)</td></tr>
+<tr class="separator:ga490c81f1c80b6655410f96a0a07f4b0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">RTOS Facilities</h2></td></tr>
 <tr class="memitem:ga2d363eefb03348f96e985eadcfb184ab" id="r_ga2d363eefb03348f96e985eadcfb184ab"><td class="memItemLeft" align="right" valign="top">

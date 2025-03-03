@@ -1,4 +1,8 @@
 var searchData=
 [
-  ['0_3a_20choose_20what_20to_20work_20on_0',['Step 0: Choose what to work on',['../md__c_o_n_t_r_i_b_u_t_i_n_g.html#autotoc_md6',1,'']]]
+  ['acknowledgements_0',['Acknowledgements',['../index.html#autotoc_md5',1,'']]],
+  ['api_1',['API',['../group__c-colors.html',1,'Colors C API'],['../group__apix.html',1,'Extended API'],['../group__c-misc.html',1,'Miscellaneous C API'],['../group__c-rtos.html',1,'RTOS Facilities C API'],['../group__c-screen.html',1,'Simplified Brain Screen C API']]],
+  ['api_2eh_2',['api.h',['../api_8h.html',1,'']]],
+  ['apix_2eh_3',['apix.h',['../apix_8h.html',1,'']]],
+  ['autonomous_4',['autonomous',['../main_8h.html#a2df3d06bc5bced154da27fce393f991f',1,'main.h']]]
 ];

@@ -105,7 +105,7 @@ $(function(){initNavTree('group__task__resume.html',''); initResizable(true); })
   <div class="headertitle"><div class="title">task_resume</div></div>
 </div><!--header-->
 <div class="contents">
-<p>task. h </p><pre>void <a class="el" href="group__c-rtos.html#ga58bdeeedfe2d98fa57721bb7dad16fee">task_resume( task_t xTaskToResume )</a>;</pre><p>INCLUDE_vTaskSuspend must be defined as 1 for this function to be available. See the configuration section for more information.</p>
+<p>task. h </p><pre>void task_resume( task_t xTaskToResume );</pre><p>INCLUDE_vTaskSuspend must be defined as 1 for this function to be available. See the configuration section for more information.</p>
 <p>Resumes a suspended task.</p>
 <p>A task that has been suspended by one or more calls to task_suspend () will be made available for running again by a single call to task_resume ().</p>
 <dl class="params"><dt>Parameters</dt><dd>

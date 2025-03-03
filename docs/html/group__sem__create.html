@@ -105,9 +105,9 @@ $(function(){initNavTree('group__sem__create.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">sem_create</div></div>
 </div><!--header-->
 <div class="contents">
-<p>semphr. h </p><pre>sem_t <a class="el" href="group__apix.html#ga382f9b5dc6ba96dcecffdbd7f41d29ac">sem_create( uint32_t uxMaxCount, uint32_t uxInitialCount )</a></pre><p>Creates a new counting semaphore instance, and returns a handle by which the new counting semaphore can be referenced.</p>
+<p>semphr. h </p><pre>sem_t sem_create( uint32_t uxMaxCount, uint32_t uxInitialCount )</pre><p>Creates a new counting semaphore instance, and returns a handle by which the new counting semaphore can be referenced.</p>
 <p>In many usage scenarios it is faster and more memory efficient to use a direct to task notification in place of a counting semaphore! <a href="http://www.freertos.org/RTOS-task-notifications.html">http://www.freertos.org/RTOS-task-notifications.html</a></p>
-<p>Internally, within the FreeRTOS implementation, counting semaphores use a block of memory, in which the counting semaphore structure is stored. If a counting semaphore is created using <a class="el" href="group__apix.html#ga382f9b5dc6ba96dcecffdbd7f41d29ac">sem_create()</a> then the required memory is automatically dynamically allocated inside the <a class="el" href="group__apix.html#ga382f9b5dc6ba96dcecffdbd7f41d29ac">sem_create()</a> function. (see <a href="http://www.freertos.org/a00111.html">http://www.freertos.org/a00111.html</a>). If a counting semaphore is created using sem_create_static() then the application writer can instead optionally provide the memory that will get used by the counting semaphore. sem_create_static() therefore allows a counting semaphore to be created without using any dynamic memory allocation.</p>
+<p>Internally, within the FreeRTOS implementation, counting semaphores use a block of memory, in which the counting semaphore structure is stored. If a counting semaphore is created using sem_create() then the required memory is automatically dynamically allocated inside the sem_create() function. (see <a href="http://www.freertos.org/a00111.html">http://www.freertos.org/a00111.html</a>). If a counting semaphore is created using sem_create_static() then the application writer can instead optionally provide the memory that will get used by the counting semaphore. sem_create_static() therefore allows a counting semaphore to be created without using any dynamic memory allocation.</p>
 <p>Counting semaphores are typically used for two things:</p>
 <p>1) Counting events.</p>
 <p>In this usage scenario an event handler will 'give' a semaphore each time an event occurs (incrementing the semaphore count value), and a handler task will 'take' a semaphore each time it processes an event (decrementing the semaphore count value). The count value is therefore the difference between the number of events that have occurred and the number that have been processed. In this case it is desirable for the initial count value to be zero.</p>
@@ -128,7 +128,7 @@ void vATask( void * pvParameters )
 {
 sem_t xSemaphore = NULL;
 
-   // Semaphore cannot be used before a call to <a class="el" href="group__apix.html#ga382f9b5dc6ba96dcecffdbd7f41d29ac">sem_create()</a>.
+   // Semaphore cannot be used before a call to sem_create().
    // The max value to which the semaphore can count should be 10, and the
    // initial value assigned to the count should be 0.
    xSemaphore = sem_create( 10, 0 );

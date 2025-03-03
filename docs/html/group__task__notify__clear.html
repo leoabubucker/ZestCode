@@ -105,7 +105,7 @@ $(function(){initNavTree('group__task__notify__clear.html',''); initResizable(tr
   <div class="headertitle"><div class="title">task_notify_clear</div></div>
 </div><!--header-->
 <div class="contents">
-<p>task. h </p><pre>int32_t <a class="el" href="group__c-rtos.html#gae8697be0d552a81063536c88c0358f38">task_notify_clear( task_t xTask )</a>;</pre><p>If the notification state of the task referenced by the handle xTask is eNotified, then set the task's notification state to eNotWaitingNotification. The task's notification value is not altered. Set xTask to NULL to clear the notification state of the calling task.</p>
+<p>task. h </p><pre>int32_t task_notify_clear( task_t xTask );</pre><p>If the notification state of the task referenced by the handle xTask is eNotified, then set the task's notification state to eNotWaitingNotification. The task's notification value is not altered. Set xTask to NULL to clear the notification state of the calling task.</p>
 <dl class="section return"><dt>Returns</dt><dd>pdTRUE if the task's notification state was set to eNotWaitingNotification, otherwise pdFALSE. </dd></dl>
 </div><!-- contents -->
 </div><!-- doc-content -->

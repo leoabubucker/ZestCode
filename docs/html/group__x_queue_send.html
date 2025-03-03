@@ -165,11 +165,11 @@ struct AMessage *pxMessage;
    // ... Rest of task code.
 }
 </pre><p>queue. h </p><pre>
-int32_t <a class="el" href="group__apix.html#ga4519896ea7f4a5d2b3726fd172926a8f">queue_append(
+int32_t queue_append(
                                queue_t  xQueue,
                                const void       *pvItemToQueue,
                                uint32_t     xTicksToWait
-                           )</a>;
+                           );
   </pre><p>This is a macro that calls xQueueGenericSend().</p>
 <p>Post an item to the back of a queue. The item is queued by copy, not by reference. This function must not be called from an interrupt service routine. See xQueueSendFromISR () for an alternative which may be used in an ISR.</p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -230,7 +230,7 @@ int32_t xQueueSend(
                           const void * pvItemToQueue,
                           uint32_t xTicksToWait
                      );
-  </pre><p>This is a macro that calls xQueueGenericSend(). It is included for backward compatibility with versions of FreeRTOS.org that did not include the queue_prepend() and <a class="el" href="group__apix.html#ga4519896ea7f4a5d2b3726fd172926a8f">queue_append()</a> macros. It is equivalent to <a class="el" href="group__apix.html#ga4519896ea7f4a5d2b3726fd172926a8f">queue_append()</a>.</p>
+  </pre><p>This is a macro that calls xQueueGenericSend(). It is included for backward compatibility with versions of FreeRTOS.org that did not include the queue_prepend() and queue_append() macros. It is equivalent to queue_append().</p>
 <p>Post an item on a queue. The item is queued by copy, not by reference. This function must not be called from an interrupt service routine. See xQueueSendFromISR () for an alternative which may be used in an ISR.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -291,7 +291,7 @@ int32_t xQueueGenericSend(
                                 uint32_t xTicksToWait
                                 int32_t xCopyPosition
                             );
-  </pre><p>It is preferred that the macros xQueueSend(), queue_prepend() and <a class="el" href="group__apix.html#ga4519896ea7f4a5d2b3726fd172926a8f">queue_append()</a> are used in place of calling this function directly.</p>
+  </pre><p>It is preferred that the macros xQueueSend(), queue_prepend() and queue_append() are used in place of calling this function directly.</p>
 <p>Post an item on a queue. The item is queued by copy, not by reference. This function must not be called from an interrupt service routine. See xQueueSendFromISR () for an alternative which may be used in an ISR.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">

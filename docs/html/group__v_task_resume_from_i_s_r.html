@@ -106,7 +106,7 @@ $(function(){initNavTree('group__v_task_resume_from_i_s_r.html',''); initResizab
 </div><!--header-->
 <div class="contents">
 <p>task. h </p><pre>void xTaskResumeFromISR( task_t xTaskToResume );</pre><p>INCLUDE_xTaskResumeFromISR must be defined as 1 for this function to be available. See the configuration section for more information.</p>
-<p>An implementation of <a class="el" href="group__c-rtos.html#ga58bdeeedfe2d98fa57721bb7dad16fee">task_resume()</a> that can be called from within an ISR.</p>
+<p>An implementation of task_resume() that can be called from within an ISR.</p>
 <p>A task that has been suspended by one or more calls to task_suspend () will be made available for running again by a single call to xTaskResumeFromISR ().</p>
 <p>xTaskResumeFromISR() should not be used to synchronise a task with an interrupt if there is a chance that the interrupt could arrive prior to the task being suspended - as this can lead to interrupts being missed. Use of a semaphore as a synchronisation mechanism would avoid this eventuality.</p>
 <dl class="params"><dt>Parameters</dt><dd>

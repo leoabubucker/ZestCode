@@ -1,13 +1,18 @@
 var searchData=
 [
-  ['naming_20conventions_0',['Naming Conventions',['../md__s_t_y_l_e_g_u_i_d_e.html#autotoc_md16',1,'']]],
-  ['none_1',['none',['../group__cpp-device.html#gga0a7387ba6156c831ba1e61d75a04c3d9a334c4a4c42fdb79d7ebc3e73b517e6f8',1,'pros::v5']]],
-  ['notes_20to_20other_20developers_20or_20yourself_2',['Notes to Other Developers (Or Yourself)',['../md__s_t_y_l_e_g_u_i_d_e.html#autotoc_md21',1,'']]],
-  ['notify_3',['notify',['../group__cpp-rtos.html#gaf7ce264851745a555bb141884a1a61ab',1,'pros::rtos::Task']]],
-  ['notify_5faction_5fe_5ft_4',['notify_action_e_t',['../group__c-rtos.html#ga42ea99b5e5d38da0b98154609cf6c570',1,'rtos.h']]],
-  ['notify_5fclear_5',['notify_clear',['../group__cpp-rtos.html#ga69c4d78a733f65cff31d7ab19d3f42f5',1,'pros::rtos::Task']]],
-  ['notify_5fdelete_5faction_6',['notify_delete_action',['../structnotify__delete__action.html',1,'']]],
-  ['notify_5fext_7',['notify_ext',['../group__cpp-rtos.html#gadd5bc6272aaa903fdf8ae6656d8ffddb',1,'pros::rtos::Task']]],
-  ['notify_5ftake_8',['notify_take',['../group__cpp-rtos.html#gab0424664979128a156fbcd2533a75da2',1,'pros::rtos::Task']]],
-  ['now_9',['now',['../group__cpp-rtos.html#ga422da55e9dc03e5e37b05f7f74d097b5',1,'pros::rtos::Clock']]]
+  ['v5_5fdevice_5fe_0',['v5_device_e',['../group__apix.html#gaaba853cd2f7eed658c07dafd7cc41a45',1,'apix.h']]],
+  ['v5_5fsmart_5fdevice_5fs_5ft_1',['v5_smart_device_s_t',['../structv5__smart__device__s__t.html',1,'']]],
+  ['validate_5fport_5fno_2',['VALIDATE_PORT_NO',['../vdml_8h.html#ab8b236bcd58ebb7cdd0a26cdeaf671c3',1,'vdml.h']]],
+  ['vdml_2eh_3',['vdml.h',['../vdml_8h.html',1,'']]],
+  ['vdml_5fget_5fport_5ferror_4',['vdml_get_port_error',['../vdml_8h.html#a9b8bc94d616e0f915c2930698e64c4bc',1,'vdml.h']]],
+  ['vdml_5fset_5fport_5ferror_5',['vdml_set_port_error',['../vdml_8h.html#ab164b06ea2d6c77fac6d1afc8bfa78f4',1,'vdml.h']]],
+  ['vdml_5funset_5fport_5ferror_6',['vdml_unset_port_error',['../vdml_8h.html#a041f91b4d998392918864e26df946f32',1,'vdml.h']]],
+  ['version_2eh_7',['version.h',['../version_8h.html',1,'']]],
+  ['vfs_2eh_8',['vfs.h',['../vfs_8h.html',1,'']]],
+  ['vsemaphorecreatebinary_9',['vSemaphoreCreateBinary',['../group__v_semaphore_create_binary.html',1,'']]],
+  ['vstreambufferdelete_10',['vStreamBufferDelete',['../group__v_stream_buffer_delete.html',1,'']]],
+  ['vtaskgetinfo_11',['vTaskGetInfo',['../group__v_task_get_info.html',1,'']]],
+  ['vtaskgetruntimestats_12',['vTaskGetRunTimeStats',['../group__v_task_get_run_time_stats.html',1,'']]],
+  ['vtasklist_13',['vTaskList',['../group__v_task_list.html',1,'']]],
+  ['vtaskresumefromisr_14',['vTaskResumeFromISR',['../group__v_task_resume_from_i_s_r.html',1,'']]]
 ];

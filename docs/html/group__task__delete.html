@@ -105,7 +105,7 @@ $(function(){initNavTree('group__task__delete.html',''); initResizable(true); })
   <div class="headertitle"><div class="title">task_delete</div></div>
 </div><!--header-->
 <div class="contents">
-<p>task. h </p><pre>void <a class="el" href="group__c-rtos.html#gacf328f16126485ade810e438db996180">task_delete( task_t xTask )</a>;</pre><p>INCLUDE_vTaskDelete must be defined as 1 for this function to be available. See the configuration section for more information.</p>
+<p>task. h </p><pre>void task_delete( task_t xTask );</pre><p>INCLUDE_vTaskDelete must be defined as 1 for this function to be available. See the configuration section for more information.</p>
 <p>Remove a task from the RTOS real time kernel's management. The task being deleted will be removed from all ready, blocked, suspended and event lists.</p>
 <p>NOTE: The idle task is responsible for freeing the kernel allocated memory from tasks that have been deleted. It is therefore important that the idle task is not starved of microcontroller processing time if your application makes any calls to task_delete (). Memory allocated by the task code is not automatically freed, and should be freed before the task is deleted.</p>
 <p>See the demo application file death.c for sample code that utilises task_delete ().</p>

@@ -12,15 +12,15 @@ Events can be sent to a task using an intermediary object. Examples of such obje
 
 A notification sent to a task can optionally perform an action, such as update, overwrite or increment the task\textquotesingle{}s notification value. In that way task notifications can be used to send data to a task, or be used as light weight and fast binary or counting semaphores.
 
-\doxylink{group__c-rtos_gaabfb0111c671a56176bc83bb1437635b}{task\+\_\+notify\+\_\+take()} is intended for use when a task notification is used as a faster and lighter weight binary or counting semaphore alternative. Actual Free\+RTOS semaphores are taken using the \doxylink{group__apix_gaee36a9729a21b6ad0de78985a16c4f03}{sem\+\_\+wait()} API function, the equivalent action that instead uses a task notification is \doxylink{group__c-rtos_gaabfb0111c671a56176bc83bb1437635b}{task\+\_\+notify\+\_\+take()}.
+task\+\_\+notify\+\_\+take() is intended for use when a task notification is used as a faster and lighter weight binary or counting semaphore alternative. Actual Free\+RTOS semaphores are taken using the \doxylink{group__apix_gaee36a9729a21b6ad0de78985a16c4f03}{sem\+\_\+wait()} API function, the equivalent action that instead uses a task notification is task\+\_\+notify\+\_\+take().
 
 When a task is using its notification value as a binary or counting semaphore other tasks should send notifications to it using the x\+Task\+Notify\+Give() macro, or x\+Task\+Notify() function with the e\+Action parameter set to E\+\_\+\+NOTIFY\+\_\+\+ACTION\+\_\+\+INCR.
 
-\doxylink{group__c-rtos_gaabfb0111c671a56176bc83bb1437635b}{task\+\_\+notify\+\_\+take()} can either clear the task\textquotesingle{}s notification value to zero on exit, in which case the notification value acts like a binary semaphore, or decrement the task\textquotesingle{}s notification value on exit, in which case the notification value acts like a counting semaphore.
+task\+\_\+notify\+\_\+take() can either clear the task\textquotesingle{}s notification value to zero on exit, in which case the notification value acts like a binary semaphore, or decrement the task\textquotesingle{}s notification value on exit, in which case the notification value acts like a counting semaphore.
 
-A task can use \doxylink{group__c-rtos_gaabfb0111c671a56176bc83bb1437635b}{task\+\_\+notify\+\_\+take()} to \mbox{[}optionally\mbox{]} block to wait for a the task\textquotesingle{}s notification value to be non-\/zero. The task does not consume any CPU time while it is in the Blocked state.
+A task can use task\+\_\+notify\+\_\+take() to \mbox{[}optionally\mbox{]} block to wait for a the task\textquotesingle{}s notification value to be non-\/zero. The task does not consume any CPU time while it is in the Blocked state.
 
-Where as task\+\_\+notify\+\_\+wait() will return when a notification is pending, \doxylink{group__c-rtos_gaabfb0111c671a56176bc83bb1437635b}{task\+\_\+notify\+\_\+take()} will return when the task\textquotesingle{}s notification value is not zero.
+Where as task\+\_\+notify\+\_\+wait() will return when a notification is pending, task\+\_\+notify\+\_\+take() will return when the task\textquotesingle{}s notification value is not zero.
 
 See \href{http://www.FreeRTOS.org/RTOS-task-notifications.html}{\texttt{ http\+://www.\+Free\+RTOS.\+org/\+RTOS-\/task-\/notifications.\+html}} for details.
 
@@ -28,7 +28,7 @@ See \href{http://www.FreeRTOS.org/RTOS-task-notifications.html}{\texttt{ http\+:
 \begin{DoxyParams}{Parameters}
 {\em x\+Clear\+Count\+On\+Exit} & if x\+Clear\+Count\+On\+Exit is pd\+FALSE then the task\textquotesingle{}s notification value is decremented when the function exits. In this way the notification value acts like a counting semaphore. If x\+Clear\+Count\+On\+Exit is not pd\+FALSE then the task\textquotesingle{}s notification value is cleared to zero when the function exits. In this way the notification value acts like a binary semaphore.\\
 \hline
-{\em x\+Ticks\+To\+Wait} & The maximum amount of time that the task should wait in the Blocked state for the task\textquotesingle{}s notification value to be greater than zero, should the count not already be greater than zero when \doxylink{group__c-rtos_gaabfb0111c671a56176bc83bb1437635b}{task\+\_\+notify\+\_\+take()} was called. The task will not consume any processing time while it is in the Blocked state. This is specified in kernel ticks, the macro pd\+MS\+\_\+\+TO\+\_\+\+TICSK( value\+\_\+in\+\_\+ms ) can be used to convert a time specified in milliseconds to a time specified in ticks.\\
+{\em x\+Ticks\+To\+Wait} & The maximum amount of time that the task should wait in the Blocked state for the task\textquotesingle{}s notification value to be greater than zero, should the count not already be greater than zero when task\+\_\+notify\+\_\+take() was called. The task will not consume any processing time while it is in the Blocked state. This is specified in kernel ticks, the macro pd\+MS\+\_\+\+TO\+\_\+\+TICSK( value\+\_\+in\+\_\+ms ) can be used to convert a time specified in milliseconds to a time specified in ticks.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}

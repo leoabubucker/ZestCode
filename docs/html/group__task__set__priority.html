@@ -105,7 +105,7 @@ $(function(){initNavTree('group__task__set__priority.html',''); initResizable(tr
   <div class="headertitle"><div class="title">task_set_priority</div></div>
 </div><!--header-->
 <div class="contents">
-<p>task. h </p><pre>void <a class="el" href="group__c-rtos.html#gaa906731a0dbda5c2382ca7e3cc32cc97">task_set_priority( task_t xTask, uint32_t uxNewPriority )</a>;</pre><p>INCLUDE_vTaskPrioritySet must be defined as 1 for this function to be available. See the configuration section for more information.</p>
+<p>task. h </p><pre>void task_set_priority( task_t xTask, uint32_t uxNewPriority );</pre><p>INCLUDE_vTaskPrioritySet must be defined as 1 for this function to be available. See the configuration section for more information.</p>
 <p>Set the priority of any task.</p>
 <p>A context switch will occur before the function returns if the priority being set is higher than the currently executing task.</p>
 <dl class="params"><dt>Parameters</dt><dd>

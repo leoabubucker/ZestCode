@@ -5,9 +5,9 @@ semphr. h
 xSemaphoreGiveFromISR(                          sem\_t xSemaphore,                          int32\_t *pxHigherPriorityTaskWoken                      )\end{DoxyPre}
 
 
-{\itshape Macro} to release a semaphore. The semaphore must have previously been created with a call to \doxylink{group__apix_ga83c9a6c93e3bfce8f36e3f32a6dc8c4b}{sem\+\_\+binary\+\_\+create()} or \doxylink{group__apix_ga382f9b5dc6ba96dcecffdbd7f41d29ac}{sem\+\_\+create()}.
+{\itshape Macro} to release a semaphore. The semaphore must have previously been created with a call to sem\+\_\+binary\+\_\+create() or sem\+\_\+create().
 
-Mutex type semaphores (those created using a call to \doxylink{group__c-rtos_ga475d096afa3abcc9a276ca9fa54bafdf}{mutex\+\_\+create()}) must not be used with this macro.
+Mutex type semaphores (those created using a call to mutex\+\_\+create()) must not be used with this macro.
 
 This macro can be used from an ISR.
 

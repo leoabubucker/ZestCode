@@ -7,7 +7,7 @@ task\_t task\_create\_static( task\_fn\_t pvTaskCode,                           
 
 Create a new task and add it to the list of tasks that are ready to run.
 
-Internally, within the Free\+RTOS implementation, tasks use two blocks of memory. The first block is used to hold the task\textquotesingle{}s data structures. The second block is used by the task as its stack. If a task is created using \doxylink{group__c-rtos_ga2e3ed8f26b8c1edcff493bc583f0a76a}{task\+\_\+create()} then both blocks of memory are automatically dynamically allocated inside the \doxylink{group__c-rtos_ga2e3ed8f26b8c1edcff493bc583f0a76a}{task\+\_\+create()} function. (see \href{http://www.freertos.org/a00111.html}{\texttt{ http\+://www.\+freertos.\+org/a00111.\+html}}). If a task is created using task\+\_\+create\+\_\+static() then the application writer must provide the required memory. task\+\_\+create\+\_\+static() therefore allows a task to be created without using any dynamic memory allocation.
+Internally, within the Free\+RTOS implementation, tasks use two blocks of memory. The first block is used to hold the task\textquotesingle{}s data structures. The second block is used by the task as its stack. If a task is created using task\+\_\+create() then both blocks of memory are automatically dynamically allocated inside the task\+\_\+create() function. (see \href{http://www.freertos.org/a00111.html}{\texttt{ http\+://www.\+freertos.\+org/a00111.\+html}}). If a task is created using task\+\_\+create\+\_\+static() then the application writer must provide the required memory. task\+\_\+create\+\_\+static() therefore allows a task to be created without using any dynamic memory allocation.
 
 
 \begin{DoxyParams}{Parameters}

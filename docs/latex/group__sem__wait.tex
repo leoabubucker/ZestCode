@@ -1,10 +1,10 @@
 \doxysection{sem\+\_\+wait}
 \hypertarget{group__sem__wait}{}\label{group__sem__wait}\index{sem\_wait@{sem\_wait}}
 semphr. h 
-\begin{DoxyPre}\doxylink{group__apix_gaee36a9729a21b6ad0de78985a16c4f03}{sem\_wait(                     sem\_t xSemaphore,                     uint32\_t xBlockTime                 )}\end{DoxyPre}
+\begin{DoxyPre}sem\_wait(                     sem\_t xSemaphore,                     uint32\_t xBlockTime                 )\end{DoxyPre}
 
 
-{\itshape Macro} to obtain a semaphore. The semaphore must have previously been created with a call to \doxylink{group__apix_ga83c9a6c93e3bfce8f36e3f32a6dc8c4b}{sem\+\_\+binary\+\_\+create()}, \doxylink{group__c-rtos_ga475d096afa3abcc9a276ca9fa54bafdf}{mutex\+\_\+create()} or \doxylink{group__apix_ga382f9b5dc6ba96dcecffdbd7f41d29ac}{sem\+\_\+create()}.
+{\itshape Macro} to obtain a semaphore. The semaphore must have previously been created with a call to sem\+\_\+binary\+\_\+create(), mutex\+\_\+create() or sem\+\_\+create().
 
 
 \begin{DoxyParams}{Parameters}
@@ -24,7 +24,7 @@ sem\_t xSemaphore = NULL;
 void vATask( void * pvParameters )
 \{
    // Create the semaphore to guard a shared resource.
-   xSemaphore = \doxylink{group__apix_ga83c9a6c93e3bfce8f36e3f32a6dc8c4b}{sem\_binary\_create()};
+   xSemaphore = sem\_binary\_create();
 \}
 
 // A task that uses the semaphore.
@@ -46,63 +46,6 @@ void vAnotherTask( void * pvParameters )
            // We have finished accessing the shared resource.  Release the
            // semaphore.
            sem\_post( xSemaphore );
-       \}
-       else
-       \{
-           // We could not obtain the semaphore and can therefore not access
-           // the shared resource safely.
-       \}
-   \}
-\}
-\end{DoxyPre}
-
-
-semphr. h 
-\begin{DoxyPre}\doxylink{group__apix_gaee36a9729a21b6ad0de78985a16c4f03}{sem\_wait(                     sem\_t sem,                     uint32\_t xBlockTime                 )}\end{DoxyPre}
-
-
-{\itshape Macro} to obtain a semaphore. The semaphore must have previously been created with a call to \doxylink{group__apix_ga83c9a6c93e3bfce8f36e3f32a6dc8c4b}{sem\+\_\+binary\+\_\+create()}, \doxylink{group__c-rtos_ga475d096afa3abcc9a276ca9fa54bafdf}{mutex\+\_\+create()} or \doxylink{group__apix_ga382f9b5dc6ba96dcecffdbd7f41d29ac}{sem\+\_\+create()}.
-
-
-\begin{DoxyParams}{Parameters}
-{\em sem} & A handle to the semaphore being taken -\/ obtained when the semaphore was created.\\
-\hline
-{\em x\+Block\+Time} & The time in ticks to wait for the semaphore to become available. The macro port\+TICK\+\_\+\+PERIOD\+\_\+\+MS can be used to convert this to a real time. A block time of zero can be used to poll the semaphore. A block time of port\+MAX\+\_\+\+DELAY can be used to block indefinitely (provided INCLUDE\+\_\+v\+Task\+Suspend is set to 1 in \doxylink{_free_r_t_o_s_config_8h_source}{Free\+RTOSConfig.\+h}).\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-pd\+TRUE if the semaphore was obtained. pd\+FALSE if x\+Block\+Time expired without the semaphore becoming available.
-\end{DoxyReturn}
-Example usage\+: 
-\begin{DoxyPre}
-sem\_t sem = NULL;
-
-// A task that creates a semaphore.
-void vATask( void * pvParameters )
-\{
-   // Create the semaphore to guard a shared resource.
-   sem = \doxylink{group__apix_ga83c9a6c93e3bfce8f36e3f32a6dc8c4b}{sem\_binary\_create()};
-\}
-
-// A task that uses the semaphore.
-void vAnotherTask( void * pvParameters )
-\{
-   // ... Do other things.
-
-   if( sem != NULL )
-   \{
-       // See if we can obtain the semaphore.  If the semaphore is not available
-       // wait 10 ticks to see if it becomes free.
-       if( sem\_wait( sem, ( uint32\_t ) 10 ) == pdTRUE )
-       \{
-           // We were able to obtain the semaphore and can now access the
-           // shared resource.
-
-           // ...
-
-           // We have finished accessing the shared resource.  Release the
-           // semaphore.
-           sem\_post( sem );
        \}
        else
        \{

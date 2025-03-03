@@ -105,7 +105,7 @@ $(function(){initNavTree('group__sem__delete.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">sem_delete</div></div>
 </div><!--header-->
 <div class="contents">
-<p>semphr. h </p><pre>void <a class="el" href="group__apix.html#ga0dfcd8007428b4249931d0d78157490b">sem_delete( sem_t xSemaphore )</a>;</pre><p>Delete a semaphore. This function must be used with care. For example, do not delete a mutex type semaphore if the mutex is held by a task.</p>
+<p>semphr. h </p><pre>void sem_delete( sem_t xSemaphore );</pre><p>Delete a semaphore. This function must be used with care. For example, do not delete a mutex type semaphore if the mutex is held by a task.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">xSemaphore</td><td>A handle to the semaphore to be deleted. </td></tr>

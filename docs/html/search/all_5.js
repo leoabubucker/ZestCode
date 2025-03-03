@@ -1,4 +1,8 @@
 var searchData=
 [
-  ['5_3a_20open_20a_20pr_0',['Step 5: Open a PR',['../md__c_o_n_t_r_i_b_u_t_i_n_g.html#autotoc_md11',1,'']]]
+  ['facilities_20c_20api_0',['RTOS Facilities C API',['../group__c-rtos.html',1,'']]],
+  ['faq_1',['FAQ',['../index.html#autotoc_md2',1,'']]],
+  ['fdctl_2',['fdctl',['../group__apix.html#ga8287028141d5265105a25d899280a8e1',1,'apix.h']]],
+  ['file_5fentry_3',['file_entry',['../structfile__entry.html',1,'']]],
+  ['fs_5fdriver_4',['fs_driver',['../structfs__driver.html',1,'']]]
 ];

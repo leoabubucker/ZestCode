@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['expander_20c_20api_0',['ADI Expander C API',['../group__ext-adi.html',1,'']]],
-  ['extended_20api_1',['Extended API',['../group__apix.html',1,'']]]
+  ['facilities_20c_20api_0',['RTOS Facilities C API',['../group__c-rtos.html',1,'']]]
 ];

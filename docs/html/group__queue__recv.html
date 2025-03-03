@@ -106,18 +106,18 @@ $(function(){initNavTree('group__queue__recv.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 <p>queue. h </p><pre>
-int32_t <a class="el" href="group__apix.html#gaca6420b7d656b9559a7d366eb58b8e57">queue_recv(
+int32_t queue_recv(
                              queue_t xQueue,
                              void *pvBuffer,
                              uint32_t xTicksToWait
-                        )</a>;</pre><p>Receive an item from a queue. The item is received by copy so a buffer of adequate size must be provided. The number of bytes copied into the buffer was defined when the queue was created.</p>
+                        );</pre><p>Receive an item from a queue. The item is received by copy so a buffer of adequate size must be provided. The number of bytes copied into the buffer was defined when the queue was created.</p>
 <p>Successfully received items are removed from the queue.</p>
 <p>This function must not be used in an interrupt service routine. See xQueueReceiveFromISR for an alternative that can.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">xQueue</td><td>The handle to the queue from which the item is to be received.</td></tr>
     <tr><td class="paramname">pvBuffer</td><td>Pointer to the buffer into which the received item will be copied.</td></tr>
-    <tr><td class="paramname">xTicksToWait</td><td>The maximum amount of time the task should block waiting for an item to receive should the queue be empty at the time of the call. <a class="el" href="group__apix.html#gaca6420b7d656b9559a7d366eb58b8e57">queue_recv()</a> will return immediately if xTicksToWait is zero and the queue is empty. The time is defined in tick periods so the constant portTICK_PERIOD_MS should be used to convert to real time if this is required.</td></tr>
+    <tr><td class="paramname">xTicksToWait</td><td>The maximum amount of time the task should block waiting for an item to receive should the queue be empty at the time of the call. queue_recv() will return immediately if xTicksToWait is zero and the queue is empty. The time is defined in tick periods so the constant portTICK_PERIOD_MS should be used to convert to real time if this is required.</td></tr>
   </table>
   </dd>
 </dl>

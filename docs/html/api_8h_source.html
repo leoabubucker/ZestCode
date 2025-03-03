@@ -130,78 +130,25 @@ $(function(){initNavTree('api_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#include &lt;unistd.h&gt;</span></div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#endif </span><span class="comment">/* __cplusplus */</span><span class="preprocessor"></span></div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#include &quot;<a class="code" href="adi_8h.html">pros/adi.h</a>&quot;</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">#include &quot;pros/ai_vision.h&quot;</span></div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#include &quot;<a class="code" href="colors_8h.html">pros/colors.h</a>&quot;</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">#include &quot;<a class="code" href="device_8h.html">pros/device.h</a>&quot;</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">#include &quot;<a class="code" href="distance_8h.html">pros/distance.h</a>&quot;</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#include &quot;<a class="code" href="error_8h.html">pros/error.h</a>&quot;</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">#include &quot;<a class="code" href="ext__adi_8h.html">pros/ext_adi.h</a>&quot;</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">#include &quot;<a class="code" href="gps_8h.html">pros/gps.h</a>&quot;</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">#include &quot;<a class="code" href="imu_8h.html">pros/imu.h</a>&quot;</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">#include &quot;<a class="code" href="link_8h.html">pros/link.h</a>&quot;</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#include &quot;pros/llemu.h&quot;</span></div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">#include &quot;<a class="code" href="misc_8h.html">pros/misc.h</a>&quot;</span></div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">#include &quot;<a class="code" href="motors_8h.html">pros/motors.h</a>&quot;</span></div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="preprocessor">#include &quot;<a class="code" href="optical_8h.html">pros/optical.h</a>&quot;</span></div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="preprocessor">#include &quot;<a class="code" href="rotation_8h.html">pros/rotation.h</a>&quot;</span></div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="preprocessor">#include &quot;<a class="code" href="rtos_8h.html">pros/rtos.h</a>&quot;</span></div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="preprocessor">#include &quot;<a class="code" href="screen_8h.html">pros/screen.h</a>&quot;</span></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="preprocessor">#include &quot;<a class="code" href="vision_8h.html">pros/vision.h</a>&quot;</span></div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="preprocessor">#include &quot;<a class="code" href="adi_8hpp.html">pros/adi.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="preprocessor">#include &quot;pros/ai_vision.hpp&quot;</span></div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="preprocessor">#include &quot;<a class="code" href="colors_8hpp.html">pros/colors.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="preprocessor">#include &quot;<a class="code" href="device_8hpp.html">pros/device.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="preprocessor">#include &quot;<a class="code" href="distance_8hpp.html">pros/distance.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="preprocessor">#include &quot;<a class="code" href="gps_8hpp.html">pros/gps.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="preprocessor">#include &quot;<a class="code" href="imu_8hpp.html">pros/imu.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="preprocessor">#include &quot;<a class="code" href="link_8hpp.html">pros/link.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="preprocessor">#include &quot;<a class="code" href="llemu_8hpp.html">pros/llemu.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="preprocessor">#include &quot;<a class="code" href="misc_8hpp.html">pros/misc.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="preprocessor">#include &quot;<a class="code" href="motor__group_8hpp.html">pros/motor_group.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="preprocessor">#include &quot;<a class="code" href="motors_8hpp.html">pros/motors.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="preprocessor">#include &quot;<a class="code" href="optical_8hpp.html">pros/optical.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="preprocessor">#include &quot;<a class="code" href="rotation_8hpp.html">pros/rotation.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="preprocessor">#include &quot;<a class="code" href="rtos_8hpp.html">pros/rtos.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="preprocessor">#include &quot;<a class="code" href="screen_8hpp.html">pros/screen.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="preprocessor">#include &quot;<a class="code" href="vision_8hpp.html">pros/vision.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="preprocessor">#endif  </span><span class="comment">// _PROS_API_H_</span></div>
-<div class="ttc" id="aadi_8h_html"><div class="ttname"><a href="adi_8h.html">adi.h</a></div></div>
-<div class="ttc" id="aadi_8hpp_html"><div class="ttname"><a href="adi_8hpp.html">adi.hpp</a></div></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#include &quot;<a class="code" href="colors_8h.html">pros/colors.h</a>&quot;</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">#include &quot;<a class="code" href="error_8h.html">pros/error.h</a>&quot;</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#include &quot;pros/llemu.h&quot;</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">#include &quot;<a class="code" href="misc_8h.html">pros/misc.h</a>&quot;</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">#include &quot;<a class="code" href="rtos_8h.html">pros/rtos.h</a>&quot;</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">#include &quot;pros/colors.hpp&quot;</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">#include &quot;pros/llemu.hpp&quot;</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">#include &quot;pros/misc.hpp&quot;</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#include &quot;pros/rtos.hpp&quot;</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">#include &quot;pros/screen.hpp&quot;</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="preprocessor">#endif  </span><span class="comment">// _PROS_API_H_</span></div>
 <div class="ttc" id="acolors_8h_html"><div class="ttname"><a href="colors_8h.html">colors.h</a></div></div>
-<div class="ttc" id="acolors_8hpp_html"><div class="ttname"><a href="colors_8hpp.html">colors.hpp</a></div></div>
-<div class="ttc" id="adevice_8h_html"><div class="ttname"><a href="device_8h.html">device.h</a></div></div>
-<div class="ttc" id="adevice_8hpp_html"><div class="ttname"><a href="device_8hpp.html">device.hpp</a></div></div>
-<div class="ttc" id="adistance_8h_html"><div class="ttname"><a href="distance_8h.html">distance.h</a></div></div>
-<div class="ttc" id="adistance_8hpp_html"><div class="ttname"><a href="distance_8hpp.html">distance.hpp</a></div></div>
 <div class="ttc" id="aerror_8h_html"><div class="ttname"><a href="error_8h.html">error.h</a></div></div>
-<div class="ttc" id="aext__adi_8h_html"><div class="ttname"><a href="ext__adi_8h.html">ext_adi.h</a></div></div>
-<div class="ttc" id="agps_8h_html"><div class="ttname"><a href="gps_8h.html">gps.h</a></div></div>
-<div class="ttc" id="agps_8hpp_html"><div class="ttname"><a href="gps_8hpp.html">gps.hpp</a></div></div>
-<div class="ttc" id="aimu_8h_html"><div class="ttname"><a href="imu_8h.html">imu.h</a></div></div>
-<div class="ttc" id="aimu_8hpp_html"><div class="ttname"><a href="imu_8hpp.html">imu.hpp</a></div></div>
-<div class="ttc" id="alink_8h_html"><div class="ttname"><a href="link_8h.html">link.h</a></div></div>
-<div class="ttc" id="alink_8hpp_html"><div class="ttname"><a href="link_8hpp.html">link.hpp</a></div></div>
-<div class="ttc" id="allemu_8hpp_html"><div class="ttname"><a href="llemu_8hpp.html">llemu.hpp</a></div></div>
 <div class="ttc" id="amisc_8h_html"><div class="ttname"><a href="misc_8h.html">misc.h</a></div></div>
-<div class="ttc" id="amisc_8hpp_html"><div class="ttname"><a href="misc_8hpp.html">misc.hpp</a></div></div>
-<div class="ttc" id="amotor__group_8hpp_html"><div class="ttname"><a href="motor__group_8hpp.html">motor_group.hpp</a></div></div>
-<div class="ttc" id="amotors_8h_html"><div class="ttname"><a href="motors_8h.html">motors.h</a></div></div>
-<div class="ttc" id="amotors_8hpp_html"><div class="ttname"><a href="motors_8hpp.html">motors.hpp</a></div></div>
-<div class="ttc" id="aoptical_8h_html"><div class="ttname"><a href="optical_8h.html">optical.h</a></div></div>
-<div class="ttc" id="aoptical_8hpp_html"><div class="ttname"><a href="optical_8hpp.html">optical.hpp</a></div></div>
-<div class="ttc" id="arotation_8h_html"><div class="ttname"><a href="rotation_8h.html">rotation.h</a></div></div>
-<div class="ttc" id="arotation_8hpp_html"><div class="ttname"><a href="rotation_8hpp.html">rotation.hpp</a></div></div>
 <div class="ttc" id="artos_8h_html"><div class="ttname"><a href="rtos_8h.html">rtos.h</a></div></div>
-<div class="ttc" id="artos_8hpp_html"><div class="ttname"><a href="rtos_8hpp.html">rtos.hpp</a></div></div>
-<div class="ttc" id="ascreen_8h_html"><div class="ttname"><a href="screen_8h.html">screen.h</a></div></div>
-<div class="ttc" id="ascreen_8hpp_html"><div class="ttname"><a href="screen_8hpp.html">screen.hpp</a></div></div>
-<div class="ttc" id="avision_8h_html"><div class="ttname"><a href="vision_8h.html">vision.h</a></div></div>
-<div class="ttc" id="avision_8hpp_html"><div class="ttname"><a href="vision_8hpp.html">vision.hpp</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

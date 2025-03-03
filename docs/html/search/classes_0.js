@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['_5f_5feit_5fentry_0',['__EIT_entry',['../struct_____e_i_t__entry.html',1,'']]],
-  ['_5ffind_5ftask_5fargs_1',['_find_task_args',['../struct__find__task__args.html',1,'']]]
+  ['date_5fs_5ft_0',['date_s_t',['../structdate__s__t.html',1,'']]]
 ];

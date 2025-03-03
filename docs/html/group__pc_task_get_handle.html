@@ -105,7 +105,7 @@ $(function(){initNavTree('group__pc_task_get_handle.html',''); initResizable(tru
   <div class="headertitle"><div class="title">pcTaskGetHandle</div></div>
 </div><!--header-->
 <div class="contents">
-<p>task. h </p><pre>task_t <a class="el" href="group__c-rtos.html#gaad54400367541c9cf7f4eaaec235a9e9">task_get_by_name( const char *pcNameToQuery )</a>;</pre><p>NOTE: This function takes a relatively long time to complete and should be used sparingly.</p>
+<p>task. h </p><pre>task_t task_get_by_name( const char *pcNameToQuery );</pre><p>NOTE: This function takes a relatively long time to complete and should be used sparingly.</p>
 <dl class="section return"><dt>Returns</dt><dd>The handle of the task that has the human readable name pcNameToQuery. NULL is returned if no matching name is found. INCLUDE_xTaskGetHandle must be set to 1 in <a class="el" href="_free_r_t_o_s_config_8h_source.html">FreeRTOSConfig.h</a> for pcTaskGetHandle() to be available. </dd></dl>
 </div><!-- contents -->
 </div><!-- doc-content -->

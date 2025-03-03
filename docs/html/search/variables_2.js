@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['count_0',['count',['../structoptical__gesture__s.html#a4d4fef75138c16cc3249a1ebd97570a1',1,'optical_gesture_s']]]
+  ['release_5fcount_0',['release_count',['../structscreen__touch__status__s.html#af8e2122b4c9363c2e6f4666285bee71d',1,'screen_touch_status_s']]]
 ];

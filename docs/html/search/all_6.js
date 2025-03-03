@@ -1,9 +1,10 @@
 var searchData=
 [
-  ['_5f_5fattribute_5f_5f_0',['__attribute__',['../group__c-gps.html#gaf2a0dfb3b35ce0554ca2eabe96ccab6c',1,'__attribute__((__packed__)) gps_position_s:&#160;gps.h'],['../group__c-vision.html#gae55a6efc231c3cf6ab009c08ae920a8b',1,'__attribute__((__packed__)) vision_signature:&#160;vision.h'],['../cpp__support_8cpp.html#af4d0f8c3cb6c7d0e63e43c4cca58bfe2',1,'__attribute__((weak)) void autonomous():&#160;cpp_support.cpp']]],
-  ['_5f_5feit_5fentry_1',['__EIT_entry',['../struct_____e_i_t__entry.html',1,'']]],
-  ['_5fdev_5fdriver_2',['_dev_driver',['../dev__driver_8c.html#a76d325abcea081df3336fe10b9636a47',1,'dev_driver.c']]],
-  ['_5ffind_5ftask_5fargs_3',['_find_task_args',['../struct__find__task__args.html',1,'']]],
-  ['_5fser_5fdriver_4',['_ser_driver',['../ser__driver_8c.html#a5c5dcb763ee1b4b6cf9432ef39cc0010',1,'ser_driver.c']]],
-  ['_5fusd_5fdriver_5',['_usd_driver',['../usd__driver_8c.html#a7ab49a72f81d0b855e38dc950d097447',1,'usd_driver.c']]]
+  ['gid_2eh_0',['gid.h',['../gid_8h.html',1,'']]],
+  ['gid_5falloc_1',['gid_alloc',['../gid_8h.html#a478968c3f3f6331e439c22bd4b5d2eae',1,'gid.h']]],
+  ['gid_5fcheck_2',['gid_check',['../gid_8h.html#a0e4cee54097f33a9e6b7131aaf6e078e',1,'gid.h']]],
+  ['gid_5ffree_3',['gid_free',['../gid_8h.html#a1cb8b8f598352ca11f3d0ed13802cbc3',1,'gid.h']]],
+  ['gid_5finit_4',['gid_init',['../gid_8h.html#aef726bf821e4758f7b8ddb3fefe85384',1,'gid.h']]],
+  ['gid_5fmetadata_5',['gid_metadata',['../structgid__metadata.html',1,'']]],
+  ['gid_5fsize_5fto_5fwords_6',['gid_size_to_words',['../gid_8h.html#a6ed7681cb06b4aa7959bbfba9df53ec8',1,'gid.h']]]
 ];

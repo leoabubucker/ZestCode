@@ -1,20 +1,20 @@
 \doxysection{mutex\+\_\+create}
 \hypertarget{group__mutex__create}{}\label{group__mutex__create}\index{mutex\_create@{mutex\_create}}
 semphr. h 
-\begin{DoxyPre}sem\_t \doxylink{group__c-rtos_ga475d096afa3abcc9a276ca9fa54bafdf}{mutex\_create( void )}\end{DoxyPre}
+\begin{DoxyPre}sem\_t mutex\_create( void )\end{DoxyPre}
 
 
 Creates a new mutex type semaphore instance, and returns a handle by which the new mutex can be referenced.
 
-Internally, within the Free\+RTOS implementation, mutex semaphores use a block of memory, in which the mutex structure is stored. If a mutex is created using \doxylink{group__c-rtos_ga475d096afa3abcc9a276ca9fa54bafdf}{mutex\+\_\+create()} then the required memory is automatically dynamically allocated inside the \doxylink{group__c-rtos_ga475d096afa3abcc9a276ca9fa54bafdf}{mutex\+\_\+create()} function. (see \href{http://www.freertos.org/a00111.html}{\texttt{ http\+://www.\+freertos.\+org/a00111.\+html}}). If a mutex is created using mutex\+\_\+create\+\_\+static() then the application writer must provided the memory. mutex\+\_\+create\+\_\+static() therefore allows a mutex to be created without using any dynamic memory allocation.
+Internally, within the Free\+RTOS implementation, mutex semaphores use a block of memory, in which the mutex structure is stored. If a mutex is created using mutex\+\_\+create() then the required memory is automatically dynamically allocated inside the mutex\+\_\+create() function. (see \href{http://www.freertos.org/a00111.html}{\texttt{ http\+://www.\+freertos.\+org/a00111.\+html}}). If a mutex is created using mutex\+\_\+create\+\_\+static() then the application writer must provided the memory. mutex\+\_\+create\+\_\+static() therefore allows a mutex to be created without using any dynamic memory allocation.
 
-Mutexes created using this function can be accessed using the \doxylink{group__apix_gaee36a9729a21b6ad0de78985a16c4f03}{sem\+\_\+wait()} and \doxylink{group__apix_gaa2048694c50246f193a40b7e00ed1756}{sem\+\_\+post()} macros. The \doxylink{group__c-rtos_ga67f8421ccecb58c807762494efe10c3a}{mutex\+\_\+recursive\+\_\+take()} and \doxylink{group__c-rtos_gaaf82d93cd652b6173372970018fdc02d}{mutex\+\_\+recursive\+\_\+give()} macros must not be used.
+Mutexes created using this function can be accessed using the sem\+\_\+wait() and sem\+\_\+post() macros. The mutex\+\_\+recursive\+\_\+take() and mutex\+\_\+recursive\+\_\+give() macros must not be used.
 
 This type of semaphore uses a priority inheritance mechanism so a task \textquotesingle{}taking\textquotesingle{} a semaphore MUST ALWAYS \textquotesingle{}give\textquotesingle{} the semaphore back once the semaphore it is no longer required.
 
 Mutex type semaphores cannot be used from within interrupt service routines.
 
-See \doxylink{group__apix_ga83c9a6c93e3bfce8f36e3f32a6dc8c4b}{sem\+\_\+binary\+\_\+create()} for an alternative implementation that can be used for pure synchronisation (where one task or interrupt always \textquotesingle{}gives\textquotesingle{} the semaphore and another always \textquotesingle{}takes\textquotesingle{} the semaphore) and from within interrupt service routines.
+See sem\+\_\+binary\+\_\+create() for an alternative implementation that can be used for pure synchronisation (where one task or interrupt always \textquotesingle{}gives\textquotesingle{} the semaphore and another always \textquotesingle{}takes\textquotesingle{} the semaphore) and from within interrupt service routines.
 
 \begin{DoxyReturn}{Returns}
 If the mutex was successfully created then a handle to the created semaphore is returned. If there was not enough heap to allocate the mutex data structures then NULL is returned.
@@ -25,49 +25,11 @@ sem\_t xSemaphore;
 
 void vATask( void * pvParameters )
 \{
-   // Semaphore cannot be used before a call to \doxylink{group__c-rtos_ga475d096afa3abcc9a276ca9fa54bafdf}{mutex\_create()}.
+   // Semaphore cannot be used before a call to mutex\_create().
    // This is a macro so pass the variable in directly.
-   xSemaphore = \doxylink{group__c-rtos_ga475d096afa3abcc9a276ca9fa54bafdf}{mutex\_create()};
+   xSemaphore = mutex\_create();
 
    if( xSemaphore != NULL )
-   \{
-       // The semaphore was created successfully.
-       // The semaphore can now be used.
-   \}
-\}
-\end{DoxyPre}
-
-
-semphr. h 
-\begin{DoxyPre}sem\_t \doxylink{group__c-rtos_ga475d096afa3abcc9a276ca9fa54bafdf}{mutex\_create( void )}\end{DoxyPre}
-
-
-Creates a new mutex type semaphore instance, and returns a handle by which the new mutex can be referenced.
-
-Internally, within the Free\+RTOS implementation, mutex semaphores use a block of memory, in which the mutex structure is stored. If a mutex is created using \doxylink{group__c-rtos_ga475d096afa3abcc9a276ca9fa54bafdf}{mutex\+\_\+create()} then the required memory is automatically dynamically allocated inside the \doxylink{group__c-rtos_ga475d096afa3abcc9a276ca9fa54bafdf}{mutex\+\_\+create()} function. (see \href{http://www.freertos.org/a00111.html}{\texttt{ http\+://www.\+freertos.\+org/a00111.\+html}}). If a mutex is created using mutex\+\_\+create\+\_\+static() then the application writer must provided the memory. mutex\+\_\+create\+\_\+static() therefore allows a mutex to be created without using any dynamic memory allocation.
-
-Mutexes created using this function can be accessed using the \doxylink{group__apix_gaee36a9729a21b6ad0de78985a16c4f03}{sem\+\_\+wait()} and \doxylink{group__apix_gaa2048694c50246f193a40b7e00ed1756}{sem\+\_\+post()} macros. The \doxylink{group__c-rtos_ga67f8421ccecb58c807762494efe10c3a}{mutex\+\_\+recursive\+\_\+take()} and \doxylink{group__c-rtos_gaaf82d93cd652b6173372970018fdc02d}{mutex\+\_\+recursive\+\_\+give()} macros must not be used.
-
-This type of semaphore uses a priority inheritance mechanism so a task \textquotesingle{}taking\textquotesingle{} a semaphore MUST ALWAYS \textquotesingle{}give\textquotesingle{} the semaphore back once the semaphore it is no longer required.
-
-Mutex type semaphores cannot be used from within interrupt service routines.
-
-See \doxylink{group__apix_ga83c9a6c93e3bfce8f36e3f32a6dc8c4b}{sem\+\_\+binary\+\_\+create()} for an alternative implementation that can be used for pure synchronisation (where one task or interrupt always \textquotesingle{}gives\textquotesingle{} the semaphore and another always \textquotesingle{}takes\textquotesingle{} the semaphore) and from within interrupt service routines.
-
-\begin{DoxyReturn}{Returns}
-If the mutex was successfully created then a handle to the created semaphore is returned. If there was not enough heap to allocate the mutex data structures then NULL is returned.
-\end{DoxyReturn}
-Example usage\+: 
-\begin{DoxyPre}
-sem\_t sem;
-
-void vATask( void * pvParameters )
-\{
-   // Semaphore cannot be used before a call to \doxylink{group__c-rtos_ga475d096afa3abcc9a276ca9fa54bafdf}{mutex\_create()}.
-   // This is a macro so pass the variable in directly.
-   sem = \doxylink{group__c-rtos_ga475d096afa3abcc9a276ca9fa54bafdf}{mutex\_create()};
-
-   if( sem != NULL )
    \{
        // The semaphore was created successfully.
        // The semaphore can now be used.

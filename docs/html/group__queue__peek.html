@@ -106,18 +106,18 @@ $(function(){initNavTree('group__queue__peek.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 <p>queue. h </p><pre>
-int32_t <a class="el" href="group__apix.html#gabb333bbc086fdac6213b34a2e019dde3">queue_peek(
+int32_t queue_peek(
                          queue_t xQueue,
                          void * const pvBuffer,
                          uint32_t xTicksToWait
-                     )</a>;</pre><p>Receive an item from a queue without removing the item from the queue. The item is received by copy so a buffer of adequate size must be provided. The number of bytes copied into the buffer was defined when the queue was created.</p>
-<p>Successfully received items remain on the queue so will be returned again by the next call, or a call to <a class="el" href="group__apix.html#gaca6420b7d656b9559a7d366eb58b8e57">queue_recv()</a>.</p>
+                     );</pre><p>Receive an item from a queue without removing the item from the queue. The item is received by copy so a buffer of adequate size must be provided. The number of bytes copied into the buffer was defined when the queue was created.</p>
+<p>Successfully received items remain on the queue so will be returned again by the next call, or a call to queue_recv().</p>
 <p>This macro must not be used in an interrupt service routine. See xQueuePeekFromISR() for an alternative that can be called from an interrupt service routine.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">xQueue</td><td>The handle to the queue from which the item is to be received.</td></tr>
     <tr><td class="paramname">pvBuffer</td><td>Pointer to the buffer into which the received item will be copied.</td></tr>
-    <tr><td class="paramname">xTicksToWait</td><td>The maximum amount of time the task should block waiting for an item to receive should the queue be empty at the time of the call. The time is defined in tick periods so the constant portTICK_PERIOD_MS should be used to convert to real time if this is required. <a class="el" href="group__apix.html#gabb333bbc086fdac6213b34a2e019dde3">queue_peek()</a> will return immediately if xTicksToWait is 0 and the queue is empty.</td></tr>
+    <tr><td class="paramname">xTicksToWait</td><td>The maximum amount of time the task should block waiting for an item to receive should the queue be empty at the time of the call. The time is defined in tick periods so the constant portTICK_PERIOD_MS should be used to convert to real time if this is required. queue_peek() will return immediately if xTicksToWait is 0 and the queue is empty.</td></tr>
   </table>
   </dd>
 </dl>

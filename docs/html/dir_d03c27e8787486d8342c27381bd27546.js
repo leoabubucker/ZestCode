@@ -5,7 +5,7 @@ var dir_d03c27e8787486d8342c27381bd27546 =
     [ "list.h", "rtos_2list_8h_source.html", null ],
     [ "message_buffer.h", "message__buffer_8h_source.html", null ],
     [ "portable.h", "portable_8h_source.html", null ],
-    [ "portmacro.h", "include_2rtos_2portmacro_8h_source.html", null ],
+    [ "portmacro.h", "portmacro_8h_source.html", null ],
     [ "projdefs.h", "projdefs_8h_source.html", null ],
     [ "queue.h", "queue_8h_source.html", null ],
     [ "semphr.h", "semphr_8h_source.html", null ],

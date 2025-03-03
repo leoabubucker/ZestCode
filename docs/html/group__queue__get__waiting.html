@@ -105,7 +105,7 @@ $(function(){initNavTree('group__queue__get__waiting.html',''); initResizable(tr
   <div class="headertitle"><div class="title">queue_get_waiting</div></div>
 </div><!--header-->
 <div class="contents">
-<p>queue. h </p><pre>uint32_t <a class="el" href="group__apix.html#gadd6f8fb018cef82d19fb85425de0e0d2">queue_get_waiting( const queue_t xQueue )</a>;</pre><p>Return the number of messages stored in a queue.</p>
+<p>queue. h </p><pre>uint32_t queue_get_waiting( const queue_t xQueue );</pre><p>Return the number of messages stored in a queue.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">xQueue</td><td>A handle to the queue being queried.</td></tr>
@@ -113,7 +113,7 @@ $(function(){initNavTree('group__queue__get__waiting.html',''); initResizable(tr
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The number of messages available in the queue.</dd></dl>
-<p>queue. h </p><pre>uint32_t <a class="el" href="group__apix.html#gab6a0fede293e948f2a5b43a44238aab6">queue_get_available( const queue_t xQueue )</a>;</pre><p>Return the number of free spaces available in a queue. This is equal to the number of items that can be sent to the queue before the queue becomes full if no items are removed.</p>
+<p>queue. h </p><pre>uint32_t queue_get_available( const queue_t xQueue );</pre><p>Return the number of free spaces available in a queue. This is equal to the number of items that can be sent to the queue before the queue becomes full if no items are removed.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">xQueue</td><td>A handle to the queue being queried.</td></tr>

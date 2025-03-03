@@ -1,8 +1,11 @@
 var searchData=
 [
-  ['battery_5fget_5fcapacity_0',['battery_get_capacity',['../group__c-misc.html#gae692171cfb44885421dc1ef873701e05',1,'battery_get_capacity(void):&#160;battery.c'],['../group__c-misc.html#gae692171cfb44885421dc1ef873701e05',1,'battery_get_capacity(void):&#160;battery.c']]],
-  ['battery_5fget_5fcurrent_1',['battery_get_current',['../group__c-misc.html#ga20e84af87727a57282efd63cf76c8e78',1,'battery_get_current(void):&#160;battery.c'],['../group__c-misc.html#ga20e84af87727a57282efd63cf76c8e78',1,'battery_get_current(void):&#160;battery.c']]],
-  ['battery_5fget_5ftemperature_2',['battery_get_temperature',['../group__c-misc.html#ga60d32e15ea7ab1b2d7fa6b63c44a5027',1,'battery_get_temperature(void):&#160;battery.c'],['../group__c-misc.html#ga60d32e15ea7ab1b2d7fa6b63c44a5027',1,'battery_get_temperature(void):&#160;battery.c']]],
-  ['battery_5fget_5fvoltage_3',['battery_get_voltage',['../group__c-misc.html#ga3e2a84e664eb602bd21a481259a94f56',1,'battery_get_voltage(void):&#160;battery.c'],['../group__c-misc.html#ga3e2a84e664eb602bd21a481259a94f56',1,'battery_get_voltage(void):&#160;battery.c']]],
-  ['brake_4',['brake',['../group__cpp-abstract-motor.html#gae09915ddb101c8b67f7a8dc2a360006c',1,'pros::v5::AbstractMotor::brake()'],['../group__cpp-motor-group.html#ga00d78105ce7e5958ef3710488a077cc6',1,'pros::v5::MotorGroup::brake()'],['../group__cpp-motors.html#ga1bba4ab70560af1e4e98e373f79dd5c8',1,'pros::v5::Motor::brake()']]]
+  ['claim_5fport_5ftry_0',['claim_port_try',['../vdml_8h.html#a0086020993f44c165e8e2a6cd7e5eeaa',1,'vdml.h']]],
+  ['cobs_5fencode_1',['cobs_encode',['../cobs_8h.html#ae2d824ec37621f3cb020abacaf268d82',1,'cobs.h']]],
+  ['cobs_5fencode_5fmeasure_2',['cobs_encode_measure',['../cobs_8h.html#ada10fe2699a8483601dec03862960806',1,'cobs.h']]],
+  ['competition_5fget_5fstatus_3',['competition_get_status',['../group__c-misc.html#ga71a09bfc4dbfb9c07c917c701dc3e994',1,'misc.h']]],
+  ['competition_5fis_5fautonomous_4',['competition_is_autonomous',['../group__c-misc.html#gabefe28014a85f9c430468c6ca944dd5a',1,'misc.h']]],
+  ['competition_5fis_5fconnected_5',['competition_is_connected',['../group__c-misc.html#ga048efc863026021d9710441065ecb359',1,'misc.h']]],
+  ['competition_5fis_5fdisabled_6',['competition_is_disabled',['../group__c-misc.html#ga61c606d7f3c52e88d2e1a192fce950b0',1,'misc.h']]],
+  ['competition_5fis_5ffield_7',['competition_is_field',['../group__c-misc.html#gab32495bd9fafc0ee5238704ff95817eb',1,'misc.h']]]
 ];

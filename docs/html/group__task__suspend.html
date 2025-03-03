@@ -105,7 +105,7 @@ $(function(){initNavTree('group__task__suspend.html',''); initResizable(true); }
   <div class="headertitle"><div class="title">task_suspend</div></div>
 </div><!--header-->
 <div class="contents">
-<p>task. h </p><pre>void <a class="el" href="group__c-rtos.html#ga50ab98e83c207eaab4c2b9eb56d9ba0c">task_suspend( task_t xTaskToSuspend )</a>;</pre><p>INCLUDE_vTaskSuspend must be defined as 1 for this function to be available. See the configuration section for more information.</p>
+<p>task. h </p><pre>void task_suspend( task_t xTaskToSuspend );</pre><p>INCLUDE_vTaskSuspend must be defined as 1 for this function to be available. See the configuration section for more information.</p>
 <p>Suspend any task. When suspended a task will never get any microcontroller processing time, no matter what its priority.</p>
 <p>Calls to task_suspend are not accumulative - i.e. calling task_suspend () twice on the same task still only requires one call to task_resume () to ready the suspended task.</p>
 <dl class="params"><dt>Parameters</dt><dd>

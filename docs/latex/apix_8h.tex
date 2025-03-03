@@ -1,21 +1,6 @@
 \doxysection{C\+:/\+Users/leoku/\+One\+Drive/\+Personal\+\_\+\+Coding\+\_\+\+Projects/\+Zest\+Code/include/pros/apix.h File Reference}
 \hypertarget{apix_8h}{}\label{apix_8h}\index{C:/Users/leoku/OneDrive/Personal\_Coding\_Projects/ZestCode/include/pros/apix.h@{C:/Users/leoku/OneDrive/Personal\_Coding\_Projects/ZestCode/include/pros/apix.h}}
 {\ttfamily \#include "{}api.\+h"{}}\newline
-{\ttfamily \#include "{}pros/device.\+h"{}}\newline
-{\ttfamily \#include "{}pros/serial.\+h"{}}\newline
-\doxysubsubsection*{Functions}
-\begin{Indent}\textbf{ Device Registration}\par
-\begin{DoxyCompactItemize}
-\item 
-int \mbox{\hyperlink{group__apix_gafdda25e2647e8606131e35ced80de099}{registry\+\_\+bind\+\_\+port}} (uint8\+\_\+t port, v5\+\_\+device\+\_\+e\+\_\+t device\+\_\+type)
-\item 
-int \mbox{\hyperlink{group__apix_ga0092551f3eff99f31535a657d2832a86}{registry\+\_\+unbind\+\_\+port}} (uint8\+\_\+t port)
-\item 
-v5\+\_\+device\+\_\+e\+\_\+t \mbox{\hyperlink{group__apix_gadd54c9e7c708eee228f2edf67dbe17cb}{registry\+\_\+get\+\_\+bound\+\_\+type}} (uint8\+\_\+t port)
-\item 
-v5\+\_\+device\+\_\+e\+\_\+t \mbox{\hyperlink{group__apix_ga490c81f1c80b6655410f96a0a07f4b0b}{registry\+\_\+get\+\_\+plugged\+\_\+type}} (uint8\+\_\+t port)
-\end{DoxyCompactItemize}
-\end{Indent}
 \doxysubsubsection*{Startup options}
 \begin{DoxyCompactItemize}
 \item 
@@ -51,6 +36,39 @@ int32\+\_\+t \mbox{\hyperlink{group__apix_ga8287028141d5265105a25d899280a8e1}{fd
 int32\+\_\+t \mbox{\hyperlink{group__apix_ga2fa32fc79e297f90fa08d22c381c2972}{motor\+\_\+set\+\_\+reversed}} (int8\+\_\+t port, const bool reverse)
 \item 
 int32\+\_\+t \mbox{\hyperlink{group__apix_gaa01b06cd1235f48a058a6dae6dc188c5}{motor\+\_\+is\+\_\+reversed}} (int8\+\_\+t port)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Device Registration}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__apix_gaaba853cd2f7eed658c07dafd7cc41a45}{v5\+\_\+device\+\_\+e}} \{ \newline
+\mbox{\hyperlink{group__apix_ggaaba853cd2f7eed658c07dafd7cc41a45a929153c5f75689b1d957d06074b5fae8}{E\+\_\+\+DEVICE\+\_\+\+NONE}} = 0
+, \mbox{\hyperlink{group__apix_ggaaba853cd2f7eed658c07dafd7cc41a45a467b42f234e0a690ffe8cb36136afd8a}{E\+\_\+\+DEVICE\+\_\+\+MOTOR}} = 2
+, \mbox{\hyperlink{group__apix_ggaaba853cd2f7eed658c07dafd7cc41a45ae9951d109e5a13e91fa928aca02b8882}{E\+\_\+\+DEVICE\+\_\+\+ROTATION}} = 4
+, \mbox{\hyperlink{group__apix_ggaaba853cd2f7eed658c07dafd7cc41a45a3eb6fb1ce8dc100664a443aab43a8a45}{E\+\_\+\+DEVICE\+\_\+\+IMU}} = 6
+, \newline
+\mbox{\hyperlink{group__apix_ggaaba853cd2f7eed658c07dafd7cc41a45acb1d4484e6d3c426554103850ffd0558}{E\+\_\+\+DEVICE\+\_\+\+DISTANCE}} = 7
+, \mbox{\hyperlink{group__apix_ggaaba853cd2f7eed658c07dafd7cc41a45a42aa9d24679cd762cb25dea691bac391}{E\+\_\+\+DEVICE\+\_\+\+RADIO}} = 8
+, \mbox{\hyperlink{group__apix_ggaaba853cd2f7eed658c07dafd7cc41a45a32cb9f019c5d7a71a891efd00382f223}{E\+\_\+\+DEVICE\+\_\+\+VISION}} = 11
+, \mbox{\hyperlink{group__apix_ggaaba853cd2f7eed658c07dafd7cc41a45aaf0a34b25623b86363823c284133b1e1}{E\+\_\+\+DEVICE\+\_\+\+ADI}} = 12
+, \newline
+\mbox{\hyperlink{group__apix_ggaaba853cd2f7eed658c07dafd7cc41a45af335796b1126951c9fa1aba19987b0b9}{E\+\_\+\+DEVICE\+\_\+\+OPTICAL}} = 16
+, \mbox{\hyperlink{group__apix_ggaaba853cd2f7eed658c07dafd7cc41a45a1188eeeddb1369a5b208366aeb612ee5}{E\+\_\+\+DEVICE\+\_\+\+GPS}} = 20
+, \mbox{\hyperlink{group__apix_ggaaba853cd2f7eed658c07dafd7cc41a45ae5fca55109385ea79695410ed5c57d99}{E\+\_\+\+DEVICE\+\_\+\+AIVISION}} = 29
+, \mbox{\hyperlink{group__apix_ggaaba853cd2f7eed658c07dafd7cc41a45a9512b3799968456e47dfa3e8c8957094}{E\+\_\+\+DEVICE\+\_\+\+SERIAL}} = 129
+, \newline
+{\bfseries \+\_\+\+\_\+attribute\+\_\+\+\_\+} =((deprecated("{}use E\+\_\+\+DEVICE\+\_\+\+SERIAL instead"{}))) = E\+\_\+\+DEVICE\+\_\+\+SERIAL
+, \mbox{\hyperlink{group__apix_ggaaba853cd2f7eed658c07dafd7cc41a45a4a089975a8d1abaaf4c4bf0c35512cd3}{E\+\_\+\+DEVICE\+\_\+\+UNDEFINED}} = 255
+ \}
+\begin{DoxyCompactList}\small\item\em List of possible v5 devices. \end{DoxyCompactList}\item 
+typedef enum \mbox{\hyperlink{group__apix_gaaba853cd2f7eed658c07dafd7cc41a45}{v5\+\_\+device\+\_\+e}} {\bfseries v5\+\_\+device\+\_\+e\+\_\+t}
+\item 
+int \mbox{\hyperlink{group__apix_gafdda25e2647e8606131e35ced80de099}{registry\+\_\+bind\+\_\+port}} (uint8\+\_\+t port, v5\+\_\+device\+\_\+e\+\_\+t device\+\_\+type)
+\item 
+int \mbox{\hyperlink{group__apix_ga0092551f3eff99f31535a657d2832a86}{registry\+\_\+unbind\+\_\+port}} (uint8\+\_\+t port)
+\item 
+v5\+\_\+device\+\_\+e\+\_\+t \mbox{\hyperlink{group__apix_gadd54c9e7c708eee228f2edf67dbe17cb}{registry\+\_\+get\+\_\+bound\+\_\+type}} (uint8\+\_\+t port)
+\item 
+v5\+\_\+device\+\_\+e\+\_\+t \mbox{\hyperlink{group__apix_ga490c81f1c80b6655410f96a0a07f4b0b}{registry\+\_\+get\+\_\+plugged\+\_\+type}} (uint8\+\_\+t port)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{RTOS Facilities}
 \begin{DoxyCompactItemize}
