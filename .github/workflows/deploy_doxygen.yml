@@ -19,7 +19,7 @@ jobs:
         run: sudo apt-get install -y doxygen
 
       - name: Generate Documentation
-        run: doxygen Doxyfile  # Ensure your Doxyfile is in the root of "main" branch
+        run: doxygen docs/Doxyfile  # Ensure your Doxyfile is in the root of "main" branch
 
       - name: Checkout gh-pages branch
         uses: actions/checkout@v4
