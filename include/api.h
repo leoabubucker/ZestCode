@@ -39,24 +39,11 @@
 #include <unistd.h>
 #endif /* __cplusplus */
 
-#include "pros/adi.h"
-#include "pros/ai_vision.h"
 #include "pros/colors.h"
-#include "pros/device.h"
-#include "pros/distance.h"
 #include "pros/error.h"
-#include "pros/ext_adi.h"
-#include "pros/gps.h"
-#include "pros/imu.h"
-#include "pros/link.h"
 #include "pros/llemu.h"
 #include "pros/misc.h"
-#include "pros/motors.h"
-#include "pros/optical.h"
-#include "pros/rotation.h"
 #include "pros/rtos.h"
-#include "pros/screen.h"
-#include "pros/vision.h"
 
 #ifdef __cplusplus
 #include "pros/colors.hpp"
