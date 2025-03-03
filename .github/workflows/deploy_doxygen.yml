@@ -23,6 +23,8 @@ jobs:
 
       - name: Commit And Push Main Branch Changes
         run: |
+          git config --global user.email "actions@github.com"
+          git config --global user.name "GitHub Actions"
           git add docs/*
           git commit -m "*GitHub Action* Update Documentation"
           git push origin main
