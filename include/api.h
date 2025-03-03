@@ -59,23 +59,11 @@
 #include "pros/vision.h"
 
 #ifdef __cplusplus
-#include "pros/adi.hpp"
-#include "pros/ai_vision.hpp"
 #include "pros/colors.hpp"
-#include "pros/device.hpp"
-#include "pros/distance.hpp"
-#include "pros/gps.hpp"
-#include "pros/imu.hpp"
-#include "pros/link.hpp"
 #include "pros/llemu.hpp"
 #include "pros/misc.hpp"
-#include "pros/motor_group.hpp"
-#include "pros/motors.hpp"
-#include "pros/optical.hpp"
-#include "pros/rotation.hpp"
 #include "pros/rtos.hpp"
 #include "pros/screen.hpp"
-#include "pros/vision.hpp"
 #endif
 
 #endif  // _PROS_API_H_
