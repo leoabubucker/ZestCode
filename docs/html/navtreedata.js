@@ -25,6 +25,7 @@
 var NAVTREE =
 [
   [ "ZestCode", "index.html", [
+    [ "ZestCode test commit", "index.html", null ],
     [ "Topics", "topics.html", "topics" ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
