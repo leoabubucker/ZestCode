@@ -43,10 +43,10 @@
 #define COMPETITION_CONNECTED (1 << 2)
 #define COMPETITION_SYSTEM (1 << 3)*/
 typedef enum {
-	COMPETITION_DISABLED = 1 << 0,
-	COMPETITION_CONNECTED = 1 << 2,
-	COMPETITION_AUTONOMOUS = 1 << 1,
-	COMPETITION_SYSTEM = 1 << 3,
+    COMPETITION_DISABLED = 1 << 0,
+    COMPETITION_CONNECTED = 1 << 2,
+    COMPETITION_AUTONOMOUS = 1 << 1,
+    COMPETITION_SYSTEM = 1 << 3,
 } competition_status;
 
 #ifdef __cplusplus
@@ -88,7 +88,8 @@ uint8_t competition_get_status(void);
  * }
  *
  * void initialize() {
- *   task_t my_task = task_create(my_task_fn, NULL, TASK_PRIO_DEFAULT, TASK_STACK_DEPTH_DEFAULT, "My Task");
+ *   task_t my_task = task_create(my_task_fn, NULL, TASK_PRIO_DEFAULT, TASK_STACK_DEPTH_DEFAULT, "My
+ * Task");
  * }
  * \endcode
  */
@@ -125,7 +126,8 @@ uint8_t competition_is_connected(void);
  * }
  *
  * void initialize() {
- *   task_t my_task = task_create(my_task_fn, NULL, TASK_PRIO_DEFAULT, TASK_STACK_DEPTH_DEFAULT, "My Task");
+ *   task_t my_task = task_create(my_task_fn, NULL, TASK_PRIO_DEFAULT, TASK_STACK_DEPTH_DEFAULT, "My
+ * Task");
  * }
  * \endcode
  */
@@ -293,8 +295,8 @@ int32_t usd_is_installed(void);
  *  pros::delay(100);
  *  pros::c::usd_list_files("/test", test, 128);
  *	pros::delay(200);
- *	printf("%s\n", test); //Prints the names of files in the folder named test seperated by newlines
- *  pros::delay(100);
+ *	printf("%s\n", test); //Prints the names of files in the folder named test seperated by
+ *newlines pros::delay(100);
  * }
  * \endcode
  */
@@ -308,16 +310,16 @@ extern const char* baked_date;
 extern const char* baked_time;
 
 typedef struct {
-	uint16_t year;  // Year - 1980
-	uint8_t day;
-	uint8_t month;  // 1 = January
+    uint16_t year; // Year - 1980
+    uint8_t day;
+    uint8_t month; // 1 = January
 } date_s_t;
 
 typedef struct {
-	uint8_t hour;
-	uint8_t min;
-	uint8_t sec;
-	uint8_t sec_hund;  // hundredths of a second
+    uint8_t hour;
+    uint8_t min;
+    uint8_t sec;
+    uint8_t sec_hund; // hundredths of a second
 } time_s_t;
 
 ///@}
@@ -326,8 +328,7 @@ typedef struct {
 
 #ifdef __cplusplus
 }
-}  // namespace pros
-}
+} // namespace pros
 #endif
 
-#endif  // _PROS_MISC_H_
+#endif // _PROS_MISC_H_
