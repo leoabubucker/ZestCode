@@ -1,0 +1,240 @@
+\doxysection{Free\+RTOSConfig.\+h}
+\hypertarget{_free_r_t_o_s_config_8h_source}{}\label{_free_r_t_o_s_config_8h_source}\index{C:/Users/leoku/OneDrive/Personal\_Coding\_Projects/ZestCode/include/rtos/FreeRTOSConfig.h@{C:/Users/leoku/OneDrive/Personal\_Coding\_Projects/ZestCode/include/rtos/FreeRTOSConfig.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ \ \ \ FreeRTOS\ V9.0.0\ -\/\ Copyright\ (C)\ 2016\ Real\ Time\ Engineers\ Ltd.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ \ \ \ All\ rights\ reserved}}
+\DoxyCodeLine{00004\ \textcolor{comment}{}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ \ \ \ VISIT\ http://www.FreeRTOS.org\ TO\ ENSURE\ YOU\ ARE\ USING\ THE\ LATEST\ VERSION.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ \ \ \ This\ file\ is\ part\ of\ the\ FreeRTOS\ distribution.}}
+\DoxyCodeLine{00008\ \textcolor{comment}{}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ \ \ \ FreeRTOS\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify\ it\ under}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ \ \ \ the\ terms\ of\ the\ GNU\ General\ Public\ License\ (version\ 2)\ as\ published\ by\ the}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ \ \ \ Free\ Software\ Foundation\ >>>>\ AND\ MODIFIED\ BY\ <<<<\ the\ FreeRTOS\ exception.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ \ \ \ ***************************************************************************}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ \ \ \ >>!\ \ \ NOTE:\ The\ modification\ to\ the\ GPL\ is\ included\ to\ allow\ you\ to\ \ \ \ \ !<<}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ \ \ \ >>!\ \ \ distribute\ a\ combined\ work\ that\ includes\ FreeRTOS\ without\ being\ \ \ !<<}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ \ \ \ >>!\ \ \ obliged\ to\ provide\ the\ source\ code\ for\ proprietary\ components\ \ \ \ \ !<<}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ \ \ \ >>!\ \ \ outside\ of\ the\ FreeRTOS\ kernel.\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ !<<}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ \ \ \ ***************************************************************************}}
+\DoxyCodeLine{00019\ \textcolor{comment}{}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ \ \ \ FreeRTOS\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,\ but\ WITHOUT\ ANY}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ \ \ \ WARRANTY;\ without\ even\ the\ implied\ warranty\ of\ MERCHANTABILITY\ or\ FITNESS}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ \ \ \ FOR\ A\ PARTICULAR\ PURPOSE.\ \ Full\ license\ text\ is\ available\ on\ the\ following}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ \ \ \ link:\ http://www.freertos.org/a00114.html}}
+\DoxyCodeLine{00024\ \textcolor{comment}{}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ \ \ \ ***************************************************************************}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ \ \ \ \ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ \ \ \ \ *\ \ \ \ FreeRTOS\ provides\ completely\ free\ yet\ professionally\ developed,\ \ \ \ *}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ \ \ \ \ *\ \ \ \ robust,\ strictly\ quality\ controlled,\ supported,\ and\ cross\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ \ \ \ \ *\ \ \ \ platform\ software\ that\ is\ more\ than\ just\ the\ market\ leader,\ it\ \ \ \ \ *}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ \ \ \ \ *\ \ \ \ is\ the\ industry's\ de\ facto\ standard.\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ \ \ \ \ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ \ \ \ \ *\ \ \ \ Help\ yourself\ get\ started\ quickly\ while\ simultaneously\ helping\ \ \ \ \ *}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ \ \ \ \ *\ \ \ \ to\ support\ the\ FreeRTOS\ project\ by\ purchasing\ a\ FreeRTOS\ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ \ \ \ \ *\ \ \ \ tutorial\ book,\ reference\ manual,\ or\ both:\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ \ \ \ \ *\ \ \ \ http://www.FreeRTOS.org/Documentation\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ \ \ \ \ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ \ \ \ ***************************************************************************}}
+\DoxyCodeLine{00038\ \textcolor{comment}{}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ \ \ \ http://www.FreeRTOS.org/FAQHelp.html\ -\/\ Having\ a\ problem?\ \ Start\ by\ reading}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ \ \ \ the\ FAQ\ page\ "{}My\ application\ does\ not\ run,\ what\ could\ be\ wrong?"{}.\ \ Have\ you}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ \ \ \ defined\ configASSERT()?}}
+\DoxyCodeLine{00042\ \textcolor{comment}{}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ \ \ \ http://www.FreeRTOS.org/support\ -\/\ In\ return\ for\ receiving\ this\ top\ quality}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ \ \ \ embedded\ software\ for\ free\ we\ request\ you\ assist\ our\ global\ community\ by}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ \ \ \ participating\ in\ the\ support\ forum.}}
+\DoxyCodeLine{00046\ \textcolor{comment}{}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ \ \ \ http://www.FreeRTOS.org/training\ -\/\ Investing\ in\ training\ allows\ your\ team\ to}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ \ \ \ be\ as\ productive\ as\ possible\ as\ early\ as\ possible.\ \ Now\ you\ can\ receive}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ \ \ \ FreeRTOS\ training\ directly\ from\ Richard\ Barry,\ CEO\ of\ Real\ Time\ Engineers}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ \ \ \ Ltd,\ and\ the\ world's\ leading\ authority\ on\ the\ world's\ leading\ RTOS.}}
+\DoxyCodeLine{00051\ \textcolor{comment}{}}
+\DoxyCodeLine{00052\ \textcolor{comment}{\ \ \ \ http://www.FreeRTOS.org/plus\ -\/\ A\ selection\ of\ FreeRTOS\ ecosystem\ products,}}
+\DoxyCodeLine{00053\ \textcolor{comment}{\ \ \ \ including\ FreeRTOS+Trace\ -\/\ an\ indispensable\ productivity\ tool,\ a\ DOS}}
+\DoxyCodeLine{00054\ \textcolor{comment}{\ \ \ \ compatible\ FAT\ file\ system,\ and\ our\ tiny\ thread\ aware\ UDP/IP\ stack.}}
+\DoxyCodeLine{00055\ \textcolor{comment}{}}
+\DoxyCodeLine{00056\ \textcolor{comment}{\ \ \ \ http://www.FreeRTOS.org/labs\ -\/\ Where\ new\ FreeRTOS\ products\ go\ to\ incubate.}}
+\DoxyCodeLine{00057\ \textcolor{comment}{\ \ \ \ Come\ and\ try\ FreeRTOS+TCP,\ our\ new\ open\ source\ TCP/IP\ stack\ for\ FreeRTOS.}}
+\DoxyCodeLine{00058\ \textcolor{comment}{}}
+\DoxyCodeLine{00059\ \textcolor{comment}{\ \ \ \ http://www.OpenRTOS.com\ -\/\ Real\ Time\ Engineers\ ltd.\ license\ FreeRTOS\ to\ High}}
+\DoxyCodeLine{00060\ \textcolor{comment}{\ \ \ \ Integrity\ Systems\ ltd.\ to\ sell\ under\ the\ OpenRTOS\ brand.\ \ Low\ cost\ OpenRTOS}}
+\DoxyCodeLine{00061\ \textcolor{comment}{\ \ \ \ licenses\ offer\ ticketed\ support,\ indemnification\ and\ commercial\ middleware.}}
+\DoxyCodeLine{00062\ \textcolor{comment}{}}
+\DoxyCodeLine{00063\ \textcolor{comment}{\ \ \ \ http://www.SafeRTOS.com\ -\/\ High\ Integrity\ Systems\ also\ provide\ a\ safety}}
+\DoxyCodeLine{00064\ \textcolor{comment}{\ \ \ \ engineered\ and\ independently\ SIL3\ certified\ version\ for\ use\ in\ safety\ and}}
+\DoxyCodeLine{00065\ \textcolor{comment}{\ \ \ \ mission\ critical\ applications\ that\ require\ provable\ dependability.}}
+\DoxyCodeLine{00066\ \textcolor{comment}{}}
+\DoxyCodeLine{00067\ \textcolor{comment}{\ \ \ \ 1\ tab\ ==\ 4\ spaces!}}
+\DoxyCodeLine{00068\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#ifndef\ FREERTOS\_CONFIG\_H}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#define\ FREERTOS\_CONFIG\_H}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{comment}{//\#include\ "{}xparameters.h"{}}}
+\DoxyCodeLine{00074\ \textcolor{comment}{//\ fix\ memset\ warnings}}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{string_8h}{string.h}}"{}}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00078\ \textcolor{comment}{\ *\ Application\ specific\ definitions.}}
+\DoxyCodeLine{00079\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00080\ \textcolor{comment}{\ *\ These\ definitions\ should\ be\ adjusted\ for\ your\ particular\ hardware\ and}}
+\DoxyCodeLine{00081\ \textcolor{comment}{\ *\ application\ requirements.}}
+\DoxyCodeLine{00082\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00083\ \textcolor{comment}{\ *\ THESE\ PARAMETERS\ ARE\ DESCRIBED\ WITHIN\ THE\ 'CONFIGURATION'\ SECTION\ OF\ THE}}
+\DoxyCodeLine{00084\ \textcolor{comment}{\ *\ FreeRTOS\ API\ DOCUMENTATION\ AVAILABLE\ ON\ THE\ FreeRTOS.org\ WEB\ SITE.}}
+\DoxyCodeLine{00085\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00086\ \textcolor{comment}{\ *\ See\ http://www.freertos.org/a00110.html.}}
+\DoxyCodeLine{00087\ \textcolor{comment}{\ *-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00090\ \textcolor{comment}{\ *\ The\ FreeRTOS\ Cortex-\/A\ port\ implements\ a\ full\ interrupt\ nesting\ model.}}
+\DoxyCodeLine{00091\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00092\ \textcolor{comment}{\ *\ Interrupts\ that\ are\ assigned\ a\ priority\ at\ or\ below}}
+\DoxyCodeLine{00093\ \textcolor{comment}{\ *\ configMAX\_API\_CALL\_INTERRUPT\_PRIORITY\ (which\ counter-\/intuitively\ in\ the\ ARM}}
+\DoxyCodeLine{00094\ \textcolor{comment}{\ *\ generic\ interrupt\ controller\ [GIC]\ means\ a\ priority\ that\ has\ a\ numerical}}
+\DoxyCodeLine{00095\ \textcolor{comment}{\ *\ value\ above\ configMAX\_API\_CALL\_INTERRUPT\_PRIORITY)\ can\ call\ FreeRTOS\ safe\ API}}
+\DoxyCodeLine{00096\ \textcolor{comment}{\ *\ functions\ and\ will\ nest.}}
+\DoxyCodeLine{00097\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00098\ \textcolor{comment}{\ *\ Interrupts\ that\ are\ assigned\ a\ priority\ above}}
+\DoxyCodeLine{00099\ \textcolor{comment}{\ *\ configMAX\_API\_CALL\_INTERRUPT\_PRIORITY\ (which\ in\ the\ GIC\ means\ a\ numerical}}
+\DoxyCodeLine{00100\ \textcolor{comment}{\ *\ value\ below\ configMAX\_API\_CALL\_INTERRUPT\_PRIORITY)\ cannot\ call\ any\ FreeRTOS}}
+\DoxyCodeLine{00101\ \textcolor{comment}{\ *\ API\ functions,\ will\ nest,\ and\ will\ not\ be\ masked\ by\ FreeRTOS\ critical}}
+\DoxyCodeLine{00102\ \textcolor{comment}{\ *\ sections\ (although\ it\ is\ necessary\ for\ interrupts\ to\ be\ globally\ disabled}}
+\DoxyCodeLine{00103\ \textcolor{comment}{\ *\ extremely\ briefly\ as\ the\ interrupt\ mask\ is\ updated\ in\ the\ GIC).}}
+\DoxyCodeLine{00104\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00105\ \textcolor{comment}{\ *\ FreeRTOS\ functions\ that\ can\ be\ called\ from\ an\ interrupt\ are\ those\ that\ end\ in}}
+\DoxyCodeLine{00106\ \textcolor{comment}{\ *\ "{}FromISR"{}.\ \ FreeRTOS\ maintains\ a\ separate\ interrupt\ safe\ API\ to\ enable}}
+\DoxyCodeLine{00107\ \textcolor{comment}{\ *\ interrupt\ entry\ to\ be\ shorter,\ faster,\ simpler\ and\ smaller.}}
+\DoxyCodeLine{00108\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00109\ \textcolor{comment}{\ *\ The\ Zynq\ implements\ 256\ unique\ interrupt\ priorities.\ \ For\ the\ purpose\ of}}
+\DoxyCodeLine{00110\ \textcolor{comment}{\ *\ setting\ configMAX\_API\_CALL\_INTERRUPT\_PRIORITY\ 255\ represents\ the\ lowest}}
+\DoxyCodeLine{00111\ \textcolor{comment}{\ *\ priority.}}
+\DoxyCodeLine{00112\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#define\ configMAX\_API\_CALL\_INTERRUPT\_PRIORITY\ \ \ 18}}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#define\ configCPU\_CLOCK\_HZ\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 100000000UL}}
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#define\ configUSE\_PORT\_OPTIMISED\_TASK\_SELECTION\ 1}}
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\#define\ configUSE\_TICKLESS\_IDLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\#define\ configTICK\_RATE\_HZ\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\ (\ uint32\_t\ )\ 1000\ )}}
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\#define\ configPERIPHERAL\_CLOCK\_HZ\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\ 33333000UL\ )}}
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\#define\ configUSE\_PREEMPTION\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\#define\ configUSE\_IDLE\_HOOK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\#define\ configUSE\_TICK\_HOOK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#define\ configMAX\_PRIORITIES\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\ 16\ )}}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\#define\ configMINIMAL\_STACK\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\ (\ unsigned\ short\ )\ 250\ )}}
+\DoxyCodeLine{00125\ \textcolor{comment}{//\ allocate\ 1\ MB\ for\ FreeRTOS\ heap}}
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\#define\ configTOTAL\_HEAP\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\ 0x100000\ )}}
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\#define\ configMAX\_TASK\_NAME\_LEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\ 32\ )}}
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#define\ configUSE\_TRACE\_FACILITY\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\#define\ INCLUDE\_uxTaskGetStackHighWaterMark\ \ \ \ \ 1}}
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\#define\ configUSE\_16\_BIT\_TICKS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{\#define\ configIDLE\_SHOULD\_YIELD\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\#define\ configUSE\_MUTEXES\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00133\ \textcolor{preprocessor}{\#define\ configQUEUE\_REGISTRY\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 8}}
+\DoxyCodeLine{00134\ \textcolor{preprocessor}{\#define\ configCHECK\_FOR\_STACK\_OVERFLOW\ \ \ \ \ \ \ \ \ \ 2}}
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\#define\ configUSE\_RECURSIVE\_MUTEXES\ \ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00136\ \textcolor{preprocessor}{\#define\ configUSE\_MALLOC\_FAILED\_HOOK\ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\#define\ configUSE\_APPLICATION\_TASK\_TAG\ \ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00138\ \textcolor{preprocessor}{\#define\ configUSE\_COUNTING\_SEMAPHORES\ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00139\ \textcolor{preprocessor}{\#define\ configUSE\_QUEUE\_SETS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00140\ \textcolor{preprocessor}{\#define\ configSUPPORT\_STATIC\_ALLOCATION\ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00141\ \textcolor{preprocessor}{\#define\ configUSE\_NEWLIB\_REENTRANT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00142\ \textcolor{preprocessor}{\#define\ configSTACK\_DEPTH\_TYPE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ size\_t}}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \textcolor{preprocessor}{\#define\ configNUM\_THREAD\_LOCAL\_STORAGE\_POINTERS\ 2}}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \textcolor{comment}{/*\ Include\ the\ query-\/heap\ CLI\ command\ to\ query\ the\ free\ heap\ space.\ */}}
+\DoxyCodeLine{00147\ \textcolor{preprocessor}{\#define\ configINCLUDE\_QUERY\_HEAP\_COMMAND\ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \textcolor{comment}{/*\ Software\ timer\ definitions.\ */}}
+\DoxyCodeLine{00150\ \textcolor{preprocessor}{\#define\ configUSE\_TIMERS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00151\ \textcolor{preprocessor}{\#define\ configTIMER\_TASK\_PRIORITY\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\ configMAX\_PRIORITIES\ -\/\ 1\ )}}
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\#define\ configTIMER\_QUEUE\_LENGTH\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 5}}
+\DoxyCodeLine{00153\ \textcolor{preprocessor}{\#define\ configTIMER\_TASK\_STACK\_DEPTH\ \ \ \ \ \ \ \ \ \ \ \ (\ configMINIMAL\_STACK\_SIZE\ *\ 2\ )}}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \textcolor{comment}{/*\ If\ configUSE\_TASK\_FPU\_SUPPORT\ is\ set\ to\ 1\ (or\ undefined)\ then\ each\ task\ will}}
+\DoxyCodeLine{00156\ \textcolor{comment}{be\ created\ without\ an\ FPU\ context,\ and\ a\ task\ must\ call\ vTaskUsesFPU()\ before}}
+\DoxyCodeLine{00157\ \textcolor{comment}{making\ use\ of\ any\ FPU\ registers.\ \ If\ configUSE\_TASK\_FPU\_SUPPORT\ is\ set\ to\ 2\ then}}
+\DoxyCodeLine{00158\ \textcolor{comment}{tasks\ are\ created\ with\ an\ FPU\ context\ by\ default,\ and\ calling\ vTaskUsesFPU()\ has}}
+\DoxyCodeLine{00159\ \textcolor{comment}{no\ effect.\ */}}
+\DoxyCodeLine{00160\ \textcolor{preprocessor}{\#define\ configUSE\_TASK\_FPU\_SUPPORT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 2}}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \textcolor{comment}{/*\ Set\ the\ following\ definitions\ to\ 1\ to\ include\ the\ API\ function,\ or\ zero}}
+\DoxyCodeLine{00163\ \textcolor{comment}{to\ exclude\ the\ API\ function.\ */}}
+\DoxyCodeLine{00164\ \textcolor{preprocessor}{\#define\ INCLUDE\_vTaskPrioritySet\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00165\ \textcolor{preprocessor}{\#define\ INCLUDE\_uxTaskPriorityGet\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00166\ \textcolor{preprocessor}{\#define\ INCLUDE\_vTaskDelete\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00167\ \textcolor{preprocessor}{\#define\ INCLUDE\_vTaskCleanUpResources\ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00168\ \textcolor{preprocessor}{\#define\ INCLUDE\_vTaskSuspend\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00169\ \textcolor{preprocessor}{\#define\ INCLUDE\_vTaskDelayUntil\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00170\ \textcolor{preprocessor}{\#define\ INCLUDE\_vTaskDelay\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00171\ \textcolor{preprocessor}{\#define\ INCLUDE\_xTimerPendFunctionCall\ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00172\ \textcolor{preprocessor}{\#define\ INCLUDE\_eTaskGetState\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00173\ \textcolor{preprocessor}{\#define\ INCLUDE\_xTaskAbortDelay\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00174\ \textcolor{preprocessor}{\#define\ INCLUDE\_xTaskGetTaskHandle\ \ \ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00175\ \textcolor{preprocessor}{\#define\ INCLUDE\_xTaskGetHandle\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00176\ \textcolor{preprocessor}{\#define\ INCLUDE\_xTaskGetSchedulerState\ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00177\ \textcolor{preprocessor}{\#define\ INCLUDE\_xQueueGetMutexHolder\ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ \textcolor{comment}{/*\ This\ demo\ makes\ use\ of\ one\ or\ more\ example\ stats\ formatting\ functions.\ \ These}}
+\DoxyCodeLine{00180\ \textcolor{comment}{format\ the\ raw\ data\ provided\ by\ the\ uxTaskGetSystemState()\ function\ in\ to\ human}}
+\DoxyCodeLine{00181\ \textcolor{comment}{readable\ ASCII\ form.\ \ See\ the\ notes\ in\ the\ implementation\ of\ vTaskList()\ within}}
+\DoxyCodeLine{00182\ \textcolor{comment}{FreeRTOS/Source/tasks.c\ for\ limitations.\ */}}
+\DoxyCodeLine{00183\ \textcolor{preprocessor}{\#define\ configUSE\_STATS\_FORMATTING\_FUNCTIONS\ \ \ \ 1}}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \textcolor{comment}{/*\ The\ private\ watchdog\ is\ used\ to\ generate\ run\ time\ stats.\ */}}
+\DoxyCodeLine{00186\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ vInitialiseTimerForRunTimeStats(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{00187\ \textcolor{keyword}{extern}\ uint32\_t\ vexSystemWatchdogGet(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{00188\ \textcolor{preprocessor}{\#define\ configGENERATE\_RUN\_TIME\_STATS\ 1}}
+\DoxyCodeLine{00189\ \textcolor{preprocessor}{\#define\ portCONFIGURE\_TIMER\_FOR\_RUN\_TIME\_STATS()\ vInitialiseTimerForRunTimeStats()}}
+\DoxyCodeLine{00190\ \textcolor{preprocessor}{\#define\ portGET\_RUN\_TIME\_COUNTER\_VALUE()\ \ \ \ \ \ \ \ \ vexSystemWatchdogGet()}}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \textcolor{comment}{/*\ The\ size\ of\ the\ global\ output\ buffer\ that\ is\ available\ for\ use\ when\ there}}
+\DoxyCodeLine{00193\ \textcolor{comment}{are\ multiple\ command\ interpreters\ running\ at\ once\ (for\ example,\ one\ on\ a\ UART}}
+\DoxyCodeLine{00194\ \textcolor{comment}{and\ one\ on\ TCP/IP).\ \ This\ is\ done\ to\ prevent\ an\ output\ buffer\ being\ defined\ by}}
+\DoxyCodeLine{00195\ \textcolor{comment}{each\ implementation\ -\/\ which\ would\ waste\ RAM.\ \ In\ this\ case,\ there\ is\ only\ one}}
+\DoxyCodeLine{00196\ \textcolor{comment}{command\ interpreter\ running.\ */}}
+\DoxyCodeLine{00197\ \textcolor{preprocessor}{\#define\ configCOMMAND\_INT\_MAX\_OUTPUT\_SIZE\ 2096}}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ \textcolor{comment}{/*\ Normal\ assert()\ semantics\ without\ relying\ on\ the\ provision\ of\ an\ assert.h}}
+\DoxyCodeLine{00200\ \textcolor{comment}{header\ file.\ */}}
+\DoxyCodeLine{00201\ \textcolor{keywordtype}{void}\ vAssertCalled(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ pcFile,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ ulLine\ );}
+\DoxyCodeLine{00202\ \textcolor{preprocessor}{\#define\ configASSERT(\ x\ )\ if(\ (\ x\ )\ ==\ 0\ )\ vAssertCalled(\ \_\_FILE\_\_,\ \_\_LINE\_\_\ );}}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00204\ \textcolor{comment}{/*\ If\ configTASK\_RETURN\_ADDRESS\ is\ not\ defined\ then\ a\ task\ that\ attempts\ to}}
+\DoxyCodeLine{00205\ \textcolor{comment}{return\ from\ its\ implementing\ function\ will\ end\ up\ in\ a\ "{}task\ exit\ error"{}}}
+\DoxyCodeLine{00206\ \textcolor{comment}{function\ -\/\ which\ contains\ a\ call\ to\ configASSERT().\ \ However\ this\ can\ give\ GCC}}
+\DoxyCodeLine{00207\ \textcolor{comment}{some\ problems\ when\ it\ tries\ to\ unwind\ the\ stack,\ as\ the\ exit\ error\ function\ has}}
+\DoxyCodeLine{00208\ \textcolor{comment}{nothing\ to\ return\ to.\ \ To\ avoid\ this\ define\ configTASK\_RETURN\_ADDRESS\ to\ 0.\ \ */}}
+\DoxyCodeLine{00209\ \textcolor{preprocessor}{\#define\ configTASK\_RETURN\_ADDRESS\ \ \ NULL}}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00212\ \textcolor{comment}{/******\ Hardware\ specific\ settings.\ *******************************************/}}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00214\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00215\ \textcolor{comment}{\ *\ The\ application\ must\ provide\ a\ function\ that\ configures\ a\ peripheral\ to}}
+\DoxyCodeLine{00216\ \textcolor{comment}{\ *\ create\ the\ FreeRTOS\ tick\ interrupt,\ then\ define\ configSETUP\_TICK\_INTERRUPT()}}
+\DoxyCodeLine{00217\ \textcolor{comment}{\ *\ in\ FreeRTOSConfig.h\ to\ call\ the\ function.\ \ This\ file\ contains\ a\ function}}
+\DoxyCodeLine{00218\ \textcolor{comment}{\ *\ that\ is\ suitable\ for\ use\ on\ the\ Zynq\ MPU.\ \ FreeRTOS\_Tick\_Handler()\ must}}
+\DoxyCodeLine{00219\ \textcolor{comment}{\ *\ be\ installed\ as\ the\ peripheral's\ interrupt\ handler.}}
+\DoxyCodeLine{00220\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00221\ \textcolor{keywordtype}{void}\ rtos\_tick\_interrupt\_config(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{00222\ \textcolor{preprocessor}{\#define\ configSETUP\_TICK\_INTERRUPT()\ rtos\_tick\_interrupt\_config()}}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00224\ \textcolor{keywordtype}{void}\ rtos\_tick\_interrupt\_clear(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{00225\ \textcolor{preprocessor}{\#define\ configCLEAR\_TICK\_INTERRUPT()\ rtos\_tick\_interrupt\_clear()}}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00227\ \textcolor{comment}{/*\ The\ following\ constant\ describe\ the\ hardware,\ and\ are\ correct\ for\ the}}
+\DoxyCodeLine{00228\ \textcolor{comment}{Zynq\ MPU.\ */}}
+\DoxyCodeLine{00229\ \textcolor{comment}{//\#define\ configINTERRUPT\_CONTROLLER\_BASE\_ADDRESS\ \ \ \ \ \ \ \ \ (\ XPAR\_PS7\_SCUGIC\_0\_DIST\_BASEADDR\ )}}
+\DoxyCodeLine{00230\ \textcolor{preprocessor}{\#define\ configINTERRUPT\_CONTROLLER\_BASE\_ADDRESS\ \ \ \ \ \ \ \ \ (\ 0xF8F01000\ )}}
+\DoxyCodeLine{00231\ \textcolor{preprocessor}{\#define\ configINTERRUPT\_CONTROLLER\_CPU\_INTERFACE\_OFFSET\ (\ -\/0xf00\ )}}
+\DoxyCodeLine{00232\ \textcolor{preprocessor}{\#define\ configUNIQUE\_INTERRUPT\_PRIORITIES\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 32}}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00234\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ FREERTOS\_CONFIG\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

@@ -1,0 +1,118 @@
+\doxysection{pros\+::v5\+::Gps Class Reference}
+\hypertarget{classpros_1_1v5_1_1_gps}{}\label{classpros_1_1v5_1_1_gps}\index{pros::v5::Gps@{pros::v5::Gps}}
+Inheritance diagram for pros\+::v5\+::Gps\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classpros_1_1v5_1_1_gps}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__cpp-gps_gab1c54c51a4c971b7fc089652b27feb7b}{Gps}} (const std\+::uint8\+\_\+t port)
+\item 
+{\bfseries Gps} (const \mbox{\hyperlink{classpros_1_1v5_1_1_device}{Device}} \&device)
+\item 
+\mbox{\hyperlink{group__cpp-gps_ga9ed802f0020078b1cb88e6d4fa62217d}{Gps}} (const std\+::uint8\+\_\+t port, double x\+Initial, double y\+Initial, double heading\+Initial)
+\item 
+\mbox{\hyperlink{group__cpp-gps_ga13ac42269e2baf1b19bd0d79b25616e9}{Gps}} (const std\+::uint8\+\_\+t port, double x\+Offset, double y\+Offset)
+\item 
+\mbox{\hyperlink{group__cpp-gps_ga6d65b8cad335b747491af7a8813ac51f}{Gps}} (const std\+::uint8\+\_\+t port, double x\+Initial, double y\+Initial, double heading\+Initial, double x\+Offset, double y\+Offset)
+\item 
+virtual std\+::int32\+\_\+t \mbox{\hyperlink{group__cpp-gps_gadead9ecdff20e98cfe07d813d0895204}{initialize\+\_\+full}} (double x\+Initial, double y\+Initial, double heading\+Initial, double x\+Offset, double y\+Offset) const
+\item 
+virtual std\+::int32\+\_\+t \mbox{\hyperlink{group__cpp-gps_ga1ec56d24d61c70573efc4aaeff0993de}{set\+\_\+offset}} (double x\+Offset, double y\+Offset) const
+\item 
+virtual pros\+::gps\+\_\+position\+\_\+s\+\_\+t \mbox{\hyperlink{group__cpp-gps_gad88956755ab31799e80b6ec1f72b72b6}{get\+\_\+offset}} () const
+\item 
+virtual std\+::int32\+\_\+t \mbox{\hyperlink{group__cpp-gps_gafc2fd9d3e61b27f96527af9ce4c063cb}{set\+\_\+position}} (double x\+Initial, double y\+Initial, double heading\+Initial) const
+\item 
+virtual std\+::int32\+\_\+t \mbox{\hyperlink{group__cpp-gps_ga48c3c74a67ee1f233c1eb2e9567be0b3}{set\+\_\+data\+\_\+rate}} (std\+::uint32\+\_\+t rate) const
+\item 
+virtual double \mbox{\hyperlink{group__cpp-gps_gad2e567df5c92dae94f168aa140cef798}{get\+\_\+error}} () const
+\item 
+virtual pros\+::gps\+\_\+status\+\_\+s\+\_\+t \mbox{\hyperlink{group__cpp-gps_ga3fcaf58be99232392f7ff6559e8042ae}{get\+\_\+position\+\_\+and\+\_\+orientation}} () const
+\item 
+virtual pros\+::gps\+\_\+position\+\_\+s\+\_\+t \mbox{\hyperlink{group__cpp-gps_ga55158a18e32d97790cc37136db4a8fb5}{get\+\_\+position}} () const
+\item 
+virtual double \mbox{\hyperlink{group__cpp-gps_gaed005fc4a5077cf45202efe2fe222ad5}{get\+\_\+position\+\_\+x}} () const
+\item 
+virtual double \mbox{\hyperlink{group__cpp-gps_ga3a65172f2433eb28222007ca9f3544be}{get\+\_\+position\+\_\+y}} () const
+\item 
+virtual pros\+::gps\+\_\+orientation\+\_\+s\+\_\+t \mbox{\hyperlink{group__cpp-gps_ga85d1dff0bd69828e36d97dedc125cefc}{get\+\_\+orientation}} () const
+\item 
+virtual double \mbox{\hyperlink{group__cpp-gps_ga72367c1983d2fca23ca67dfb65853523}{get\+\_\+pitch}} () const
+\item 
+virtual double \mbox{\hyperlink{group__cpp-gps_gad5b5a4856946c13ea52a347bca6e7f1d}{get\+\_\+roll}} () const
+\item 
+virtual double \mbox{\hyperlink{group__cpp-gps_ga39f1a0d37012dc8613dc2d649478d555}{get\+\_\+yaw}} () const
+\item 
+virtual double \mbox{\hyperlink{group__cpp-gps_ga765035641a89f618bf09e2335067ee92}{get\+\_\+heading}} () const
+\item 
+virtual double \mbox{\hyperlink{group__cpp-gps_ga549eb0516c24271ecdff779e0ef816b1}{get\+\_\+heading\+\_\+raw}} () const
+\item 
+virtual pros\+::gps\+\_\+gyro\+\_\+s\+\_\+t \mbox{\hyperlink{group__cpp-gps_gabce64408fcc26e4a1010d8d7acb9498b}{get\+\_\+gyro\+\_\+rate}} () const
+\item 
+virtual double \mbox{\hyperlink{group__cpp-gps_ga19cbb9163307e28a60e455c1decf2615}{get\+\_\+gyro\+\_\+rate\+\_\+x}} () const
+\item 
+virtual double \mbox{\hyperlink{group__cpp-gps_gad87350a369d058ebb7c9cccd279c8594}{get\+\_\+gyro\+\_\+rate\+\_\+y}} () const
+\item 
+virtual double \mbox{\hyperlink{group__cpp-gps_ga89cf11e655d4de15d63f8dac5b808965}{get\+\_\+gyro\+\_\+rate\+\_\+z}} () const
+\item 
+virtual pros\+::gps\+\_\+accel\+\_\+s\+\_\+t \mbox{\hyperlink{group__cpp-gps_ga619fd53d1bde337b5c43f4428fa7d5e4}{get\+\_\+accel}} () const
+\item 
+virtual double \mbox{\hyperlink{group__cpp-gps_gad6725add7bb8a65c60adb2c663412a84}{get\+\_\+accel\+\_\+x}} () const
+\item 
+virtual double \mbox{\hyperlink{group__cpp-gps_gaa40e042629cadf5396e7c050d1f10a43}{get\+\_\+accel\+\_\+y}} () const
+\item 
+virtual double \mbox{\hyperlink{group__cpp-gps_ga24068e0b791e77dcb508fbade06259a3}{get\+\_\+accel\+\_\+z}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classpros_1_1v5_1_1_device}{pros\+::v5\+::\+Device}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__cpp-device_gaecab1df1d50fe5fc5496a19e3223fd24}{Device}} (const std\+::uint8\+\_\+t port)
+\item 
+std\+::uint8\+\_\+t \mbox{\hyperlink{group__cpp-device_ga6c8bfb5986465bf963a94a82266fb2dc}{get\+\_\+port}} (void) const
+\item 
+virtual bool \mbox{\hyperlink{group__cpp-device_ga8123d170ef670fa26d1df943cb07cc17}{is\+\_\+installed}} ()
+\item 
+pros\+::\+Device\+Type \mbox{\hyperlink{group__cpp-device_ga20b4cfe0e6bf443fd5cfc6bbb216be3f}{get\+\_\+plugged\+\_\+type}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::vector$<$ \mbox{\hyperlink{classpros_1_1v5_1_1_gps}{Gps}} $>$ \mbox{\hyperlink{group__cpp-gps_gaaa2a61d55cf2c6f473af1392595c667b}{get\+\_\+all\+\_\+devices}} ()
+\item 
+static \mbox{\hyperlink{classpros_1_1v5_1_1_gps}{Gps}} \mbox{\hyperlink{group__cpp-gps_ga31b796cbd188d4fb27894f7ac45c0613}{get\+\_\+gps}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{classpros_1_1v5_1_1_device}{pros\+::v5\+::\+Device}}}
+\begin{DoxyCompactItemize}
+\item 
+static pros\+::\+Device\+Type \mbox{\hyperlink{group__cpp-device_ga1f860ca3c06a5faed38f5345a596dc9c}{get\+\_\+plugged\+\_\+type}} (std\+::uint8\+\_\+t port)
+\item 
+static std\+::vector$<$ \mbox{\hyperlink{classpros_1_1v5_1_1_device}{Device}} $>$ \mbox{\hyperlink{group__cpp-device_ga6a0dffbd69d045e7daf95152dd60ec40}{get\+\_\+all\+\_\+devices}} (pros\+::\+Device\+Type device\+\_\+type=\mbox{\hyperlink{group__cpp-device_gga0a7387ba6156c831ba1e61d75a04c3d9a5e543256c480ac577d30f76f9120eb74}{pros\+::\+Device\+Type\+::undefined}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{group__cpp-gps_gaea6d9cbb79dae8b74905d14fcd9cce74}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{classpros_1_1v5_1_1_gps}{pros\+::\+Gps}} \&\mbox{\hyperlink{group__cpp-device_gga0a7387ba6156c831ba1e61d75a04c3d9a11648e4e66e7ed6a86cb7f1d0cf604fe}{gps}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classpros_1_1v5_1_1_device}{pros\+::v5\+::\+Device}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__cpp-device_gac7714863c8869903d5ab8877f6289cd7}{Device}} (const std\+::uint8\+\_\+t port, const enum \mbox{\hyperlink{group__cpp-device_ga0a7387ba6156c831ba1e61d75a04c3d9}{Device\+Type}} device\+Type)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classpros_1_1v5_1_1_device}{pros\+::v5\+::\+Device}}}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::uint8\+\_\+t {\bfseries \+\_\+port}
+\item 
+enum \mbox{\hyperlink{group__cpp-device_ga0a7387ba6156c831ba1e61d75a04c3d9}{Device\+Type}} {\bfseries \+\_\+device\+Type} = \mbox{\hyperlink{group__cpp-device_gga0a7387ba6156c831ba1e61d75a04c3d9a334c4a4c42fdb79d7ebc3e73b517e6f8}{pros\+::\+Device\+Type\+::none}}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/leoku/\+One\+Drive/\+Personal\+\_\+\+Coding\+\_\+\+Projects/\+Zest\+Code/include/pros/\mbox{\hyperlink{gps_8hpp}{gps.\+hpp}}\item 
+C\+:/\+Users/leoku/\+One\+Drive/\+Personal\+\_\+\+Coding\+\_\+\+Projects/\+Zest\+Code/src/devices/\mbox{\hyperlink{vdml__gps_8cpp}{vdml\+\_\+gps.\+cpp}}\end{DoxyCompactItemize}

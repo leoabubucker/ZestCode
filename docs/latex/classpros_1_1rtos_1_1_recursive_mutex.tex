@@ -1,0 +1,204 @@
+\doxysection{pros\+::rtos\+::Recursive\+Mutex Class Reference}
+\hypertarget{classpros_1_1rtos_1_1_recursive_mutex}{}\label{classpros_1_1rtos_1_1_recursive_mutex}\index{pros::rtos::RecursiveMutex@{pros::rtos::RecursiveMutex}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classpros_1_1rtos_1_1_recursive_mutex_ab99c266e596a029a001557b8705fe540}\label{classpros_1_1rtos_1_1_recursive_mutex_ab99c266e596a029a001557b8705fe540} 
+{\bfseries Recursive\+Mutex} (const \mbox{\hyperlink{classpros_1_1rtos_1_1_recursive_mutex}{Recursive\+Mutex}} \&)=delete
+\item 
+\Hypertarget{classpros_1_1rtos_1_1_recursive_mutex_a4ff694cc79ac789451aa0d6879ce6cee}\label{classpros_1_1rtos_1_1_recursive_mutex_a4ff694cc79ac789451aa0d6879ce6cee} 
+{\bfseries Recursive\+Mutex} (\mbox{\hyperlink{classpros_1_1rtos_1_1_recursive_mutex}{Recursive\+Mutex}} \&\&)=delete
+\item 
+\Hypertarget{classpros_1_1rtos_1_1_recursive_mutex_ac0691d907612c73c9305e6e7130884a2}\label{classpros_1_1rtos_1_1_recursive_mutex_ac0691d907612c73c9305e6e7130884a2} 
+\mbox{\hyperlink{classpros_1_1rtos_1_1_recursive_mutex}{Recursive\+Mutex}} \& {\bfseries operator=} (const \mbox{\hyperlink{classpros_1_1rtos_1_1_recursive_mutex}{Recursive\+Mutex}} \&)=delete
+\item 
+\Hypertarget{classpros_1_1rtos_1_1_recursive_mutex_afe57617ed3f0b7ee39d2274910941dd5}\label{classpros_1_1rtos_1_1_recursive_mutex_afe57617ed3f0b7ee39d2274910941dd5} 
+\mbox{\hyperlink{classpros_1_1rtos_1_1_recursive_mutex}{Recursive\+Mutex}} \& {\bfseries operator=} (\mbox{\hyperlink{classpros_1_1rtos_1_1_recursive_mutex}{Recursive\+Mutex}} \&\&)=delete
+\item 
+bool \mbox{\hyperlink{classpros_1_1rtos_1_1_recursive_mutex_a8947cddb18d8c4fb4abf9d3ce188c33e}{take}} ()
+\item 
+bool \mbox{\hyperlink{classpros_1_1rtos_1_1_recursive_mutex_aae918fc6661e763c872c4e95ad1611db}{take}} (std\+::uint32\+\_\+t timeout)
+\item 
+bool \mbox{\hyperlink{classpros_1_1rtos_1_1_recursive_mutex_a1b284fc5bc53463566b1cf668009ac8d}{give}} ()
+\item 
+void \mbox{\hyperlink{classpros_1_1rtos_1_1_recursive_mutex_af4b4d9f7ef2cd3ebf07f15c025706f7a}{lock}} ()
+\item 
+void \mbox{\hyperlink{classpros_1_1rtos_1_1_recursive_mutex_a0e9f92f11b5974f1aa4d121ac4740a3d}{unlock}} ()
+\item 
+bool \mbox{\hyperlink{classpros_1_1rtos_1_1_recursive_mutex_a611c5507385d993ace50e45dd9aa0080}{try\+\_\+lock}} ()
+\item 
+{\footnotesize template$<$typename Rep, typename Period$>$ }\\bool \mbox{\hyperlink{classpros_1_1rtos_1_1_recursive_mutex_ad16efb7b3e34c0b3d1c481610af0e2d7}{try\+\_\+lock\+\_\+for}} (const std\+::chrono\+::duration$<$ Rep, Period $>$ \&rel\+\_\+time)
+\item 
+{\footnotesize template$<$typename Duration$>$ }\\bool \mbox{\hyperlink{classpros_1_1rtos_1_1_recursive_mutex_af4a0b714759dd44fb2d09730b9e32be3}{try\+\_\+lock\+\_\+until}} (const std\+::chrono\+::time\+\_\+point$<$ \mbox{\hyperlink{structpros_1_1rtos_1_1_clock}{Clock}}, Duration $>$ \&abs\+\_\+time)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classpros_1_1rtos_1_1_recursive_mutex_a1b284fc5bc53463566b1cf668009ac8d}\index{pros::rtos::RecursiveMutex@{pros::rtos::RecursiveMutex}!give@{give}}
+\index{give@{give}!pros::rtos::RecursiveMutex@{pros::rtos::RecursiveMutex}}
+\doxysubsubsection{\texorpdfstring{give()}{give()}}
+{\footnotesize\ttfamily \label{classpros_1_1rtos_1_1_recursive_mutex_a1b284fc5bc53463566b1cf668009ac8d} 
+bool pros\+::\+Recursive\+Mutex\+::give (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Unlocks a mutex.
+
+See \href{https://pros.cs.purdue.edu/v5/tutorials/topical/multitasking.html\#mutexes}{\texttt{ https\+://pros.\+cs.\+purdue.\+edu/v5/tutorials/topical/multitasking.\+html\#mutexes}} for details.
+
+\begin{DoxyReturn}{Returns}
+True if the mutex was successfully returned, false otherwise. If false is returned, then errno is set with a hint about why the mutex couldn\textquotesingle{}t be returned.
+\end{DoxyReturn}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+. \Hypertarget{classpros_1_1rtos_1_1_recursive_mutex_af4b4d9f7ef2cd3ebf07f15c025706f7a}\index{pros::rtos::RecursiveMutex@{pros::rtos::RecursiveMutex}!lock@{lock}}
+\index{lock@{lock}!pros::rtos::RecursiveMutex@{pros::rtos::RecursiveMutex}}
+\doxysubsubsection{\texorpdfstring{lock()}{lock()}}
+{\footnotesize\ttfamily \label{classpros_1_1rtos_1_1_recursive_mutex_af4b4d9f7ef2cd3ebf07f15c025706f7a} 
+void pros\+::\+Recursive\+Mutex\+::lock (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Takes and locks a mutex, waiting for up to TIMEOUT\+\_\+\+MAX milliseconds.
+
+Effectively equivalent to calling pros\+::\+Recursive\+Mutex\+::take with TIMEOUT\+\_\+\+MAX as the parameter.
+
+Conforms to named requirment Basic\+Lockable \begin{DoxySeeAlso}{See also}
+\href{https://en.cppreference.com/w/cpp/named_req/BasicLockable}{\texttt{ https\+://en.\+cppreference.\+com/w/cpp/named\+\_\+req/\+Basic\+Lockable}}
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+Consider using a std\+::unique\+\_\+lock, std\+::lock\+\_\+guard, or std\+::scoped\+\_\+lock instead of interacting with the \doxylink{classpros_1_1rtos_1_1_mutex}{Mutex} directly.
+\end{DoxyNote}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::system\+\_\+error} & \doxylink{classpros_1_1rtos_1_1_mutex}{Mutex} could not be locked within TIMEOUT\+\_\+\+MAX milliseconds. see errno for details.\\
+\hline
+\end{DoxyExceptions}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+. \Hypertarget{classpros_1_1rtos_1_1_recursive_mutex_a8947cddb18d8c4fb4abf9d3ce188c33e}\index{pros::rtos::RecursiveMutex@{pros::rtos::RecursiveMutex}!take@{take}}
+\index{take@{take}!pros::rtos::RecursiveMutex@{pros::rtos::RecursiveMutex}}
+\doxysubsubsection{\texorpdfstring{take()}{take()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classpros_1_1rtos_1_1_recursive_mutex_a8947cddb18d8c4fb4abf9d3ce188c33e} 
+bool pros\+::\+Recursive\+Mutex\+::take (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Takes and locks a mutex indefinetly.
+
+See \href{https://pros.cs.purdue.edu/v5/tutorials/topical/multitasking.html\#mutexes}{\texttt{ https\+://pros.\+cs.\+purdue.\+edu/v5/tutorials/topical/multitasking.\+html\#mutexes}} for details.
+
+\begin{DoxyReturn}{Returns}
+True if the mutex was successfully taken, false otherwise. If false is returned, then errno is set with a hint about why the the mutex couldn\textquotesingle{}t be taken
+\end{DoxyReturn}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+. \Hypertarget{classpros_1_1rtos_1_1_recursive_mutex_aae918fc6661e763c872c4e95ad1611db}\index{pros::rtos::RecursiveMutex@{pros::rtos::RecursiveMutex}!take@{take}}
+\index{take@{take}!pros::rtos::RecursiveMutex@{pros::rtos::RecursiveMutex}}
+\doxysubsubsection{\texorpdfstring{take()}{take()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classpros_1_1rtos_1_1_recursive_mutex_aae918fc6661e763c872c4e95ad1611db} 
+bool pros\+::\+Recursive\+Mutex\+::take (\begin{DoxyParamCaption}\item[{std\+::uint32\+\_\+t}]{timeout}{}\end{DoxyParamCaption})}
+
+Takes and locks a mutex, waiting for up to a certain number of milliseconds before timing out.
+
+See \href{https://pros.cs.purdue.edu/v5/tutorials/topical/multitasking.html\#mutexes}{\texttt{ https\+://pros.\+cs.\+purdue.\+edu/v5/tutorials/topical/multitasking.\+html\#mutexes}} for details.
+
+
+\begin{DoxyParams}{Parameters}
+{\em timeout} & Time to wait before the mutex becomes available. A timeout of 0 can be used to poll the mutex. TIMEOUT\+\_\+\+MAX can be used to block indefinitely.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the mutex was successfully taken, false otherwise. If false is returned, then errno is set with a hint about why the the mutex couldn\textquotesingle{}t be taken.
+\end{DoxyReturn}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+. \Hypertarget{classpros_1_1rtos_1_1_recursive_mutex_a611c5507385d993ace50e45dd9aa0080}\index{pros::rtos::RecursiveMutex@{pros::rtos::RecursiveMutex}!try\_lock@{try\_lock}}
+\index{try\_lock@{try\_lock}!pros::rtos::RecursiveMutex@{pros::rtos::RecursiveMutex}}
+\doxysubsubsection{\texorpdfstring{try\_lock()}{try\_lock()}}
+{\footnotesize\ttfamily \label{classpros_1_1rtos_1_1_recursive_mutex_a611c5507385d993ace50e45dd9aa0080} 
+bool pros\+::\+Recursive\+Mutex\+::try\+\_\+lock (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [nodiscard]}}
+
+Try to lock a mutex.
+
+Returns immediately if unsucessful.
+
+Conforms to named requirement Lockable \begin{DoxySeeAlso}{See also}
+\href{https://en.cppreference.com/w/cpp/named_req/Lockable}{\texttt{ https\+://en.\+cppreference.\+com/w/cpp/named\+\_\+req/\+Lockable}}
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+True when lock was acquired succesfully, or false otherwise.
+\end{DoxyReturn}
+\doxylink{classpros_1_1rtos_1_1_recursive_mutex}{pros\+::\+Recursive\+Mutex} mutex;
+
+void my\+\_\+task\+\_\+fn(void\texorpdfstring{$\ast$}{*} param) \{ while (true) \{ if(mutex.\+try\+\_\+lock()) \{ printf("{}\+Mutex aquired successfully!\textbackslash{}n"{}); // Do stuff that requires the protected resource here \} else \{ printf("{}\+Mutex not aquired!\textbackslash{}n"{}); \} \} \} \Hypertarget{classpros_1_1rtos_1_1_recursive_mutex_ad16efb7b3e34c0b3d1c481610af0e2d7}\index{pros::rtos::RecursiveMutex@{pros::rtos::RecursiveMutex}!try\_lock\_for@{try\_lock\_for}}
+\index{try\_lock\_for@{try\_lock\_for}!pros::rtos::RecursiveMutex@{pros::rtos::RecursiveMutex}}
+\doxysubsubsection{\texorpdfstring{try\_lock\_for()}{try\_lock\_for()}}
+{\footnotesize\ttfamily \label{classpros_1_1rtos_1_1_recursive_mutex_ad16efb7b3e34c0b3d1c481610af0e2d7} 
+template$<$typename Rep, typename Period$>$ \\
+bool pros\+::rtos\+::\+Recursive\+Mutex\+::try\+\_\+lock\+\_\+for (\begin{DoxyParamCaption}\item[{const std\+::chrono\+::duration$<$ Rep, Period $>$ \&}]{rel\+\_\+time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+Takes and locks a mutex, waiting for a specified duration.
+
+Equivalent to calling pros\+::\+Recursive\+Mutex\+::take with a duration specified in milliseconds.
+
+Conforms to named requirement Timed\+Lockable \begin{DoxySeeAlso}{See also}
+\href{https://en.cppreference.com/w/cpp/named_req/TimedLockable}{\texttt{ https\+://en.\+cppreference.\+com/w/cpp/named\+\_\+req/\+Timed\+Lockable}}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em rel\+\_\+time} & Time to wait before the mutex becomes available. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the lock was acquired succesfully, otherwise false.
+\end{DoxyReturn}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ \Hypertarget{classpros_1_1rtos_1_1_recursive_mutex_af4a0b714759dd44fb2d09730b9e32be3}\index{pros::rtos::RecursiveMutex@{pros::rtos::RecursiveMutex}!try\_lock\_until@{try\_lock\_until}}
+\index{try\_lock\_until@{try\_lock\_until}!pros::rtos::RecursiveMutex@{pros::rtos::RecursiveMutex}}
+\doxysubsubsection{\texorpdfstring{try\_lock\_until()}{try\_lock\_until()}}
+{\footnotesize\ttfamily \label{classpros_1_1rtos_1_1_recursive_mutex_af4a0b714759dd44fb2d09730b9e32be3} 
+template$<$typename Duration$>$ \\
+bool pros\+::rtos\+::\+Recursive\+Mutex\+::try\+\_\+lock\+\_\+until (\begin{DoxyParamCaption}\item[{const std\+::chrono\+::time\+\_\+point$<$ \mbox{\hyperlink{structpros_1_1rtos_1_1_clock}{Clock}}, Duration $>$ \&}]{abs\+\_\+time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Takes and locks a mutex, waiting until a specified time.
+
+Conforms to named requirement Timed\+Lockable \begin{DoxySeeAlso}{See also}
+\href{https://en.cppreference.com/w/cpp/named_req/TimedLockable}{\texttt{ https\+://en.\+cppreference.\+com/w/cpp/named\+\_\+req/\+Timed\+Lockable}}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em abs\+\_\+time} & Time point until which to wait for the mutex. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the lock was acquired succesfully, otherwise false.
+\end{DoxyReturn}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ \Hypertarget{classpros_1_1rtos_1_1_recursive_mutex_a0e9f92f11b5974f1aa4d121ac4740a3d}\index{pros::rtos::RecursiveMutex@{pros::rtos::RecursiveMutex}!unlock@{unlock}}
+\index{unlock@{unlock}!pros::rtos::RecursiveMutex@{pros::rtos::RecursiveMutex}}
+\doxysubsubsection{\texorpdfstring{unlock()}{unlock()}}
+{\footnotesize\ttfamily \label{classpros_1_1rtos_1_1_recursive_mutex_a0e9f92f11b5974f1aa4d121ac4740a3d} 
+void pros\+::\+Recursive\+Mutex\+::unlock (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Unlocks a mutex.
+
+Equivalent to calling pros\+::\+Recursive\+Mutex\+::give.
+
+Conforms to named requirement Basic\+Lockable \begin{DoxySeeAlso}{See also}
+\href{https://en.cppreference.com/w/cpp/named_req/BasicLockable}{\texttt{ https\+://en.\+cppreference.\+com/w/cpp/named\+\_\+req/\+Basic\+Lockable}}
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+Consider using a std\+::unique\+\_\+lock, std\+::lock\+\_\+guard, or std\+::scoped\+\_\+lock instead of interacting with the \doxylink{classpros_1_1rtos_1_1_mutex}{Mutex} direcly.
+\end{DoxyNote}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/leoku/\+One\+Drive/\+Personal\+\_\+\+Coding\+\_\+\+Projects/\+Zest\+Code/include/pros/\mbox{\hyperlink{rtos_8hpp}{rtos.\+hpp}}\item 
+C\+:/\+Users/leoku/\+One\+Drive/\+Personal\+\_\+\+Coding\+\_\+\+Projects/\+Zest\+Code/src/rtos/\mbox{\hyperlink{rtos_8cpp}{rtos.\+cpp}}\end{DoxyCompactItemize}

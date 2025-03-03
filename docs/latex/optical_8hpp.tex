@@ -1,0 +1,55 @@
+\doxysection{C\+:/\+Users/leoku/\+One\+Drive/\+Personal\+\_\+\+Coding\+\_\+\+Projects/\+Zest\+Code/include/pros/optical.hpp File Reference}
+\hypertarget{optical_8hpp}{}\label{optical_8hpp}\index{C:/Users/leoku/OneDrive/Personal\_Coding\_Projects/ZestCode/include/pros/optical.hpp@{C:/Users/leoku/OneDrive/Personal\_Coding\_Projects/ZestCode/include/pros/optical.hpp}}
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$cstdint$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include "{}pros/device.\+hpp"{}}\newline
+{\ttfamily \#include "{}pros/optical.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classpros_1_1v5_1_1_optical}{pros\+::v5\+::\+Optical}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacepros}{pros}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{classpros_1_1v5_1_1_optical}{pros\+::\+Optical}} \mbox{\hyperlink{optical_8hpp_aaa943f214dd0f11174dfb5b4962a26be}{pros\+::v5\+::literals\+::operator"{}"{}\+\_\+opt}} (const unsigned long long int o)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains prototypes for functions related to the VEX Optical sensor.
+
+This file should not be modified by users, since it gets replaced whenever a kernel upgrade occurs.
+
+\begin{DoxyCopyright}{Copyright}
+(c) 2017-\/2024, Purdue University ACM SIGBots.
+\end{DoxyCopyright}
+This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.\+0. If a copy of the MPL was not distributed with this file, You can obtain one at \href{http://mozilla.org/MPL/2.0/}{\texttt{ http\+://mozilla.\+org/\+MPL/2.\+0/}}. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{optical_8hpp_aaa943f214dd0f11174dfb5b4962a26be}\index{optical.hpp@{optical.hpp}!operator"{}"{}\_opt@{operator""""\_opt}}
+\index{operator"{}"{}\_opt@{operator""""\_opt}!optical.hpp@{optical.hpp}}
+\doxysubsubsection{\texorpdfstring{operator""""\_opt()}{operator""\_opt()}}
+{\footnotesize\ttfamily \label{optical_8hpp_aaa943f214dd0f11174dfb5b4962a26be} 
+const \mbox{\hyperlink{classpros_1_1v5_1_1_optical}{pros\+::\+Optical}} pros\+::v5\+::literals\+::operator"{}"{}\+\_\+opt (\begin{DoxyParamCaption}\item[{const unsigned long long int}]{o}{}\end{DoxyParamCaption})}
+
+Constructs a Optical sensor from a literal ending in \+\_\+opt
+
+\begin{DoxyReturn}{Returns}
+a \doxylink{classpros_1_1v5_1_1_optical}{pros\+::\+Optical} for the corresponding port
+\end{DoxyReturn}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{using\ namespace\ }pros::literals;}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{main_8h_a1903abdb5ef0f301d660754c8315fc17}{opcontrol}}()\ \{}
+\DoxyCodeLine{\ \mbox{\hyperlink{classpros_1_1v5_1_1_optical}{pros::Optical}}\ opt\ =\ 2\_opt;\ \textcolor{comment}{//Makes\ an\ Optical\ object\ on\ port\ 2}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 

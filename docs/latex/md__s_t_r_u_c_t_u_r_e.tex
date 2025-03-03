@@ -1,0 +1,41 @@
+\chapter{Project Structure}
+\hypertarget{md__s_t_r_u_c_t_u_r_e}{}\label{md__s_t_r_u_c_t_u_r_e}\index{Project Structure@{Project Structure}}
+\label{md__s_t_r_u_c_t_u_r_e_autotoc_md12}%
+\Hypertarget{md__s_t_r_u_c_t_u_r_e_autotoc_md12}%
+
+
+Looking at the file structure of a project like this can feel intimidating. This document describes the structure of this project, so you know where to find stuff.
+
+
+\begin{DoxyItemize}
+\item {\ttfamily .github} contains files used by Git\+Hub to perform some actions
+\begin{DoxyItemize}
+\item {\ttfamily .github/\+ISSUE\+\_\+\+TEMPLATE} contains the templates that are used for new \href{https://github.com/ZestCommunity/ZestCode/issues}{\texttt{ issues}}
+\end{DoxyItemize}
+\item {\ttfamily docs} contains documentation and documentation generation config files
+\item {\ttfamily firmware} contains static libraries that are used to compile Zest\+Code
+\item {\ttfamily include} contains the header files
+\begin{DoxyItemize}
+\item {\ttfamily include/common} headers used in various parts of the project
+\item {\ttfamily include/pros} headers that are distributed to user projects
+\item {\ttfamily include/rtos} headers for the scheduler (Free\+RTOS)
+\item {\ttfamily include/system} headers for low-\/level system functionality
+\begin{DoxyItemize}
+\item {\ttfamily include/system/dev} headers for serial I/O and file management
+\item {\ttfamily include/system/user\+\_\+functions} a horrifying mess that should be destroyed
+\end{DoxyItemize}
+\item {\ttfamily include/vdml} headers for the VEX Data Management Layer (VDML), a system to ensure thread-\/safety when interacting with VEX devices
+\end{DoxyItemize}
+\item {\ttfamily scripts} contains scripts used for building Zest\+Code and projects that use Zest\+Code
+\item {\ttfamily src} contains the source files
+\begin{DoxyItemize}
+\item {\ttfamily src/common} sources defining symbols used throughout the project
+\item {\ttfamily src/devices} implementations of VEX device abstractions. Files prefixed with {\ttfamily vdml\+\_\+} indicate that the file makes use of the VDML
+\item {\ttfamily src/rtos} sources, build scripts, and misc files of Free\+RTOS
+\item {\ttfamily src/system} sources for low-\/level system functionality
+\begin{DoxyItemize}
+\item {\ttfamily src/system/dev} sources for serial I/O and file management
+\end{DoxyItemize}
+\item {\ttfamily src/tests} contain tests to ensure certain features work 
+\end{DoxyItemize}
+\end{DoxyItemize}

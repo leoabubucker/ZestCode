@@ -1,0 +1,13 @@
+\doxysection{sem\+\_\+delete}
+\hypertarget{group__sem__delete}{}\label{group__sem__delete}\index{sem\_delete@{sem\_delete}}
+semphr. h 
+\begin{DoxyPre}void \doxylink{group__apix_ga0dfcd8007428b4249931d0d78157490b}{sem\_delete( sem\_t xSemaphore )};\end{DoxyPre}
+
+
+Delete a semaphore. This function must be used with care. For example, do not delete a mutex type semaphore if the mutex is held by a task.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Semaphore} & A handle to the semaphore to be deleted. \\
+\hline
+\end{DoxyParams}

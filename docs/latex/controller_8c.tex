@@ -1,0 +1,77 @@
+\doxysection{C\+:/\+Users/leoku/\+One\+Drive/\+Personal\+\_\+\+Coding\+\_\+\+Projects/\+Zest\+Code/src/devices/controller.c File Reference}
+\hypertarget{controller_8c}{}\label{controller_8c}\index{C:/Users/leoku/OneDrive/Personal\_Coding\_Projects/ZestCode/src/devices/controller.c@{C:/Users/leoku/OneDrive/Personal\_Coding\_Projects/ZestCode/src/devices/controller.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include "{}kapi.\+h"{}}\newline
+{\ttfamily \#include "{}v5\+\_\+api.\+h"{}}\newline
+{\ttfamily \#include "{}vdml/vdml.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structcontroller__data}{controller\+\_\+data}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{controller_8c_a4b3443f305e05b45348659a556c8cafa}\label{controller_8c_a4b3443f305e05b45348659a556c8cafa} 
+\#define {\bfseries CONTROLLER\+\_\+\+MAX\+\_\+\+COLS}~( 20U )
+\item 
+\Hypertarget{controller_8c_ad691c543f889297383140a4aec805c61}\label{controller_8c_ad691c543f889297383140a4aec805c61} 
+\#define {\bfseries CONTROLLER\+\_\+\+MAX\+\_\+\+CHARS}~( 31U )
+\item 
+\Hypertarget{controller_8c_a45add6b39f5b0c0137de978b90e26b5d}\label{controller_8c_a45add6b39f5b0c0137de978b90e26b5d} 
+\#define {\bfseries NUM\+\_\+\+BUTTONS}~13
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{controller_8c_a5eada6192fbb1104abb0094d3e983694}\label{controller_8c_a5eada6192fbb1104abb0094d3e983694} 
+typedef struct \mbox{\hyperlink{structcontroller__data}{controller\+\_\+data}} {\bfseries controller\+\_\+data\+\_\+s\+\_\+t}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int32\+\_\+t \mbox{\hyperlink{group__c-misc_gafd1e850bd6613e2fb01960dc0cebb2ef}{controller\+\_\+is\+\_\+connected}} (controller\+\_\+id\+\_\+e\+\_\+t id)
+\item 
+int32\+\_\+t \mbox{\hyperlink{group__c-misc_gaed67feb70cbdb115e9ec2c7cc28a5da8}{controller\+\_\+get\+\_\+analog}} (controller\+\_\+id\+\_\+e\+\_\+t id, controller\+\_\+analog\+\_\+e\+\_\+t channel)
+\item 
+int32\+\_\+t \mbox{\hyperlink{group__c-misc_ga54033388f5d4e3f8b291d5a6f2122f5e}{controller\+\_\+get\+\_\+battery\+\_\+capacity}} (controller\+\_\+id\+\_\+e\+\_\+t id)
+\item 
+int32\+\_\+t \mbox{\hyperlink{group__c-misc_gaeab690f86735cb6685f3c3184c54ba2d}{controller\+\_\+get\+\_\+battery\+\_\+level}} (controller\+\_\+id\+\_\+e\+\_\+t id)
+\item 
+int32\+\_\+t \mbox{\hyperlink{group__c-misc_gaf01b9e0d93d55a50b09c24f7ad5900fc}{controller\+\_\+get\+\_\+digital}} (controller\+\_\+id\+\_\+e\+\_\+t id, controller\+\_\+digital\+\_\+e\+\_\+t button)
+\item 
+int32\+\_\+t \mbox{\hyperlink{group__c-misc_ga89d292cfe75a2abac6673a965697ac8c}{controller\+\_\+get\+\_\+digital\+\_\+new\+\_\+press}} (controller\+\_\+id\+\_\+e\+\_\+t id, controller\+\_\+digital\+\_\+e\+\_\+t button)
+\item 
+int32\+\_\+t \mbox{\hyperlink{group__c-misc_ga311402c942d9497ccb67e63ee2fa31a4}{controller\+\_\+set\+\_\+text}} (controller\+\_\+id\+\_\+e\+\_\+t id, uint8\+\_\+t line, uint8\+\_\+t col, const char \texorpdfstring{$\ast$}{*}str)
+\item 
+int32\+\_\+t \mbox{\hyperlink{group__c-misc_gaf7c72fcad599c9c0517ef22e6e813ae8}{controller\+\_\+print}} (controller\+\_\+id\+\_\+e\+\_\+t id, uint8\+\_\+t line, uint8\+\_\+t col, const char \texorpdfstring{$\ast$}{*}fmt,...)
+\item 
+int32\+\_\+t \mbox{\hyperlink{group__c-misc_ga22499128069a56f2ff041c11a9a33da7}{controller\+\_\+clear\+\_\+line}} (controller\+\_\+id\+\_\+e\+\_\+t id, uint8\+\_\+t line)
+\item 
+int32\+\_\+t \mbox{\hyperlink{group__c-misc_ga730715344d091ed017894cf907e9c3ab}{controller\+\_\+clear}} (controller\+\_\+id\+\_\+e\+\_\+t id)
+\item 
+int32\+\_\+t \mbox{\hyperlink{group__c-misc_gaced0f39c3b2206489d1cc4bf97b91a82}{controller\+\_\+rumble}} (controller\+\_\+id\+\_\+e\+\_\+t id, const char \texorpdfstring{$\ast$}{*}rumble\+\_\+pattern)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{group__c-misc_ga71a09bfc4dbfb9c07c917c701dc3e994}{competition\+\_\+get\+\_\+status}} (void)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{group__c-misc_ga61c606d7f3c52e88d2e1a192fce950b0}{competition\+\_\+is\+\_\+disabled}} (void)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{group__c-misc_ga048efc863026021d9710441065ecb359}{competition\+\_\+is\+\_\+connected}} (void)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{group__c-misc_gabefe28014a85f9c430468c6ca944dd5a}{competition\+\_\+is\+\_\+autonomous}} (void)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{group__c-misc_gab32495bd9fafc0ee5238704ff95817eb}{competition\+\_\+is\+\_\+field}} (void)
+\item 
+\Hypertarget{controller_8c_a6dcf13f30e2ac243cdd53330f9c9d50e}\label{controller_8c_a6dcf13f30e2ac243cdd53330f9c9d50e} 
+uint8\+\_\+t {\bfseries competition\+\_\+is\+\_\+switch} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains functions for interacting with the V5 Controller.
+
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2017-\/2024, Purdue University ACM SIGBots. All rights reserved.
+\end{DoxyCopyright}
+This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.\+0. If a copy of the MPL was not distributed with this file, You can obtain one at \href{http://mozilla.org/MPL/2.0/}{\texttt{ http\+://mozilla.\+org/\+MPL/2.\+0/}}. 

@@ -1,0 +1,64 @@
+\doxysection{pros\+::rtos\+::Task Class Reference}
+\hypertarget{classpros_1_1rtos_1_1_task}{}\label{classpros_1_1rtos_1_1_task}\index{pros::rtos::Task@{pros::rtos::Task}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__cpp-rtos_ga2e94f57e088ff9b56b78b5d1d7cb2169}{Task}} (\mbox{\hyperlink{group__c-rtos_gaece0aa29b1f1538115228d2197239f98}{task\+\_\+fn\+\_\+t}} function, void \texorpdfstring{$\ast$}{*}parameters=nullptr, std\+::uint32\+\_\+t prio=\mbox{\hyperlink{group__c-rtos_ga3082a7e8f15691441dba683711bb823f}{TASK\+\_\+\+PRIORITY\+\_\+\+DEFAULT}}, std\+::uint16\+\_\+t stack\+\_\+depth=\mbox{\hyperlink{group__c-rtos_ga9ffb33b9e3714ca949d9f45dde3cbf8f}{TASK\+\_\+\+STACK\+\_\+\+DEPTH\+\_\+\+DEFAULT}}, const char \texorpdfstring{$\ast$}{*}name="{}"{})
+\item 
+\mbox{\hyperlink{group__cpp-rtos_ga64608b28832c40cf11ddb350a7331a08}{Task}} (\mbox{\hyperlink{group__c-rtos_gaece0aa29b1f1538115228d2197239f98}{task\+\_\+fn\+\_\+t}} function, void \texorpdfstring{$\ast$}{*}parameters, const char \texorpdfstring{$\ast$}{*}name)
+\item 
+{\footnotesize template$<$class F$>$ }\\\mbox{\hyperlink{group__cpp-rtos_gad997288e0395a23b9ed69d35165b924e}{Task}} (F \&\&function, std\+::uint32\+\_\+t prio=\mbox{\hyperlink{group__c-rtos_ga3082a7e8f15691441dba683711bb823f}{TASK\+\_\+\+PRIORITY\+\_\+\+DEFAULT}}, std\+::uint16\+\_\+t stack\+\_\+depth=\mbox{\hyperlink{group__c-rtos_ga9ffb33b9e3714ca949d9f45dde3cbf8f}{TASK\+\_\+\+STACK\+\_\+\+DEPTH\+\_\+\+DEFAULT}}, const char \texorpdfstring{$\ast$}{*}name="{}"{})
+\item 
+{\footnotesize template$<$class F$>$ }\\\mbox{\hyperlink{group__cpp-rtos_ga1403f11ede554c2028cfda305d3418a7}{Task}} (F \&\&function, const char \texorpdfstring{$\ast$}{*}name)
+\item 
+\mbox{\hyperlink{group__cpp-rtos_ga0b37b46942f1ba25513729b15a32e12f}{Task}} (\mbox{\hyperlink{group__c-rtos_ga1d7e0825b8d8876e8cd8ece3f9115293}{task\+\_\+t}} task)
+\item 
+\mbox{\hyperlink{classpros_1_1rtos_1_1_task}{Task}} \& \mbox{\hyperlink{group__cpp-rtos_ga95e70532f42a21702d925c95d7432590}{operator=}} (\mbox{\hyperlink{group__c-rtos_ga1d7e0825b8d8876e8cd8ece3f9115293}{task\+\_\+t}} in)
+\item 
+void \mbox{\hyperlink{group__cpp-rtos_ga45269807dfc87bb1d5e9580346793e9d}{remove}} ()
+\item 
+std\+::uint32\+\_\+t \mbox{\hyperlink{group__cpp-rtos_ga2a9dc12bb0799f8b18333ebcd7571e5b}{get\+\_\+priority}} ()
+\item 
+void \mbox{\hyperlink{group__cpp-rtos_ga205a9937d34311ba10f540bc58d0b0b9}{set\+\_\+priority}} (std\+::uint32\+\_\+t prio)
+\item 
+std\+::uint32\+\_\+t \mbox{\hyperlink{group__cpp-rtos_ga0e1c154b709095c4884d325d79a839e3}{get\+\_\+state}} ()
+\item 
+void \mbox{\hyperlink{group__cpp-rtos_ga07d452a967a2bd839f6e819ff26ff052}{suspend}} ()
+\item 
+void \mbox{\hyperlink{group__cpp-rtos_gabb8b8aa01d13ba3992953d0a7d668a47}{resume}} ()
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__cpp-rtos_gaa8521f655ff019d11caddb513afbb50e}{get\+\_\+name}} ()
+\item 
+\mbox{\hyperlink{group__cpp-rtos_gadbf1c289c637bb1e1590142268da6796}{operator task\+\_\+t}} ()
+\item 
+std\+::uint32\+\_\+t \mbox{\hyperlink{group__cpp-rtos_gaf7ce264851745a555bb141884a1a61ab}{notify}} ()
+\item 
+void \mbox{\hyperlink{group__cpp-rtos_gaf250c6e369dd2621a8b31d7ed085f819}{join}} ()
+\item 
+std\+::uint32\+\_\+t \mbox{\hyperlink{group__cpp-rtos_gadd5bc6272aaa903fdf8ae6656d8ffddb}{notify\+\_\+ext}} (std\+::uint32\+\_\+t value, \mbox{\hyperlink{group__c-rtos_ga42ea99b5e5d38da0b98154609cf6c570}{notify\+\_\+action\+\_\+e\+\_\+t}} action, std\+::uint32\+\_\+t \texorpdfstring{$\ast$}{*}prev\+\_\+value)
+\item 
+bool \mbox{\hyperlink{group__cpp-rtos_ga69c4d78a733f65cff31d7ab19d3f42f5}{notify\+\_\+clear}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class F$>$ }\\static \mbox{\hyperlink{group__c-rtos_ga1d7e0825b8d8876e8cd8ece3f9115293}{task\+\_\+t}} \mbox{\hyperlink{group__cpp-rtos_ga117c95e2c94898637928a4a269391d33}{create}} (F \&\&function, std\+::uint32\+\_\+t prio=\mbox{\hyperlink{group__c-rtos_ga3082a7e8f15691441dba683711bb823f}{TASK\+\_\+\+PRIORITY\+\_\+\+DEFAULT}}, std\+::uint16\+\_\+t stack\+\_\+depth=\mbox{\hyperlink{group__c-rtos_ga9ffb33b9e3714ca949d9f45dde3cbf8f}{TASK\+\_\+\+STACK\+\_\+\+DEPTH\+\_\+\+DEFAULT}}, const char \texorpdfstring{$\ast$}{*}name="{}"{})
+\item 
+{\footnotesize template$<$class F$>$ }\\static \mbox{\hyperlink{group__c-rtos_ga1d7e0825b8d8876e8cd8ece3f9115293}{task\+\_\+t}} \mbox{\hyperlink{group__cpp-rtos_ga97b75f1f58ec6eb02f062005c2dad440}{create}} (F \&\&function, const char \texorpdfstring{$\ast$}{*}name)
+\item 
+static \mbox{\hyperlink{classpros_1_1rtos_1_1_task}{Task}} \mbox{\hyperlink{group__cpp-rtos_ga10d4bd441ce062df4c3233deaa7acc91}{current}} ()
+\item 
+static std\+::uint32\+\_\+t \mbox{\hyperlink{group__cpp-rtos_gab0424664979128a156fbcd2533a75da2}{notify\+\_\+take}} (bool clear\+\_\+on\+\_\+exit, std\+::uint32\+\_\+t timeout)
+\item 
+static void \mbox{\hyperlink{group__cpp-rtos_ga8eb848ade1c1eeabb141726253bbe972}{delay}} (const std\+::uint32\+\_\+t milliseconds)
+\item 
+static void \mbox{\hyperlink{group__cpp-rtos_gae6cbf0b399b067b279b559217248896c}{delay\+\_\+until}} (std\+::uint32\+\_\+t \texorpdfstring{$\ast$}{*}const prev\+\_\+time, const std\+::uint32\+\_\+t delta)
+\item 
+static std\+::uint32\+\_\+t \mbox{\hyperlink{group__cpp-rtos_ga8d8eafc8dd2ac55e37add169a8498c4e}{get\+\_\+count}} ()
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/leoku/\+One\+Drive/\+Personal\+\_\+\+Coding\+\_\+\+Projects/\+Zest\+Code/include/pros/\mbox{\hyperlink{rtos_8hpp}{rtos.\+hpp}}\item 
+C\+:/\+Users/leoku/\+One\+Drive/\+Personal\+\_\+\+Coding\+\_\+\+Projects/\+Zest\+Code/src/rtos/\mbox{\hyperlink{rtos_8cpp}{rtos.\+cpp}}\end{DoxyCompactItemize}

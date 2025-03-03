@@ -1,0 +1,56 @@
+\doxysection{C\+:/\+Users/leoku/\+One\+Drive/\+Personal\+\_\+\+Coding\+\_\+\+Projects/\+Zest\+Code/include/common/string.h File Reference}
+\hypertarget{string_8h}{}\label{string_8h}\index{C:/Users/leoku/OneDrive/Personal\_Coding\_Projects/ZestCode/include/common/string.h@{C:/Users/leoku/OneDrive/Personal\_Coding\_Projects/ZestCode/include/common/string.h}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{string_8h_a92947e4295c1e2344dbb8d945fe83687}{kstrdup}} (const char \texorpdfstring{$\ast$}{*}s)
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{string_8h_ad3b190a5969ef209680e149c66b06457}{kstrndup}} (const char \texorpdfstring{$\ast$}{*}s, size\+\_\+t n)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Extra string functions header
+
+See \doxylink{string_8c}{common/string.\+c} for discussion
+
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2017-\/2024, Purdue University ACM SIGBots. All rights reserved.
+\end{DoxyCopyright}
+This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.\+0. If a copy of the MPL was not distributed with this file, You can obtain one at \href{http://mozilla.org/MPL/2.0/}{\texttt{ http\+://mozilla.\+org/\+MPL/2.\+0/}}. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{string_8h_a92947e4295c1e2344dbb8d945fe83687}\index{string.h@{string.h}!kstrdup@{kstrdup}}
+\index{kstrdup@{kstrdup}!string.h@{string.h}}
+\doxysubsubsection{\texorpdfstring{kstrdup()}{kstrdup()}}
+{\footnotesize\ttfamily \label{string_8h_a92947e4295c1e2344dbb8d945fe83687} 
+char \texorpdfstring{$\ast$}{*} kstrdup (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{s}{}\end{DoxyParamCaption})}
+
+strdup but uses the kernel heap
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & Pointer to the string to duplicate\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The duplicate string 
+\end{DoxyReturn}
+\Hypertarget{string_8h_ad3b190a5969ef209680e149c66b06457}\index{string.h@{string.h}!kstrndup@{kstrndup}}
+\index{kstrndup@{kstrndup}!string.h@{string.h}}
+\doxysubsubsection{\texorpdfstring{kstrndup()}{kstrndup()}}
+{\footnotesize\ttfamily \label{string_8h_ad3b190a5969ef209680e149c66b06457} 
+char \texorpdfstring{$\ast$}{*} kstrndup (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{s}{, }\item[{size\+\_\+t}]{n}{}\end{DoxyParamCaption})}
+
+strndup but uses the kernel heap
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & Pointer to the string to duplicate \\
+\hline
+{\em n} & The number of characters to duplicate\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The duplicate string 
+\end{DoxyReturn}

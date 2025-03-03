@@ -1,0 +1,117 @@
+\doxysection{C\+:/\+Users/leoku/\+One\+Drive/\+Personal\+\_\+\+Coding\+\_\+\+Projects/\+Zest\+Code/src/common/set.c File Reference}
+\hypertarget{set_8c}{}\label{set_8c}\index{C:/Users/leoku/OneDrive/Personal\_Coding\_Projects/ZestCode/src/common/set.c@{C:/Users/leoku/OneDrive/Personal\_Coding\_Projects/ZestCode/src/common/set.c}}
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include "{}common/set.\+h"{}}\newline
+{\ttfamily \#include "{}kapi.\+h"{}}\newline
+{\ttfamily \#include "{}system/optimizers.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{set_8c_aa75d62682c48ff6733c7595873e0ef2e}{set\+\_\+initialize}} (struct \mbox{\hyperlink{structset}{set}} \texorpdfstring{$\ast$}{*}const \mbox{\hyperlink{structset}{set}})
+\item 
+bool \mbox{\hyperlink{set_8c_ab9be891d12dddfc3b48a0262546feeaa}{set\+\_\+add}} (struct \mbox{\hyperlink{structset}{set}} \texorpdfstring{$\ast$}{*}const \mbox{\hyperlink{structset}{set}}, uint32\+\_\+t item)
+\item 
+bool \mbox{\hyperlink{set_8c_ac7cfcd8d8d3c6d9370274f5274a44af6}{set\+\_\+rm}} (struct \mbox{\hyperlink{structset}{set}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structset}{set}}, uint32\+\_\+t item)
+\item 
+bool \mbox{\hyperlink{set_8c_a19966b7a3135a503ad2e4bc992ca1d6c}{set\+\_\+contains}} (struct \mbox{\hyperlink{structset}{set}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structset}{set}}, uint32\+\_\+t item)
+\item 
+bool \mbox{\hyperlink{set_8c_a6d2a2b4c913382c474c313f08357b342}{list\+\_\+contains}} (uint32\+\_\+t const \texorpdfstring{$\ast$}{*}list, const size\+\_\+t size, const uint32\+\_\+t item)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains an implementation of a thread-\/safe basic set in the kernel heap. It\textquotesingle{}s used to check which streams are enabled in ser\+\_\+driver for the moment, but also has list\+\_\+contains which may be useful in other contexts.
+
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2017-\/2024, Purdue University ACM SIGBots. All rights reserved.
+\end{DoxyCopyright}
+This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.\+0. If a copy of the MPL was not distributed with this file, You can obtain one at \href{http://mozilla.org/MPL/2.0/}{\texttt{ http\+://mozilla.\+org/\+MPL/2.\+0/}}. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{set_8c_a6d2a2b4c913382c474c313f08357b342}\index{set.c@{set.c}!list\_contains@{list\_contains}}
+\index{list\_contains@{list\_contains}!set.c@{set.c}}
+\doxysubsubsection{\texorpdfstring{list\_contains()}{list\_contains()}}
+{\footnotesize\ttfamily \label{set_8c_a6d2a2b4c913382c474c313f08357b342} 
+bool list\+\_\+contains (\begin{DoxyParamCaption}\item[{uint32\+\_\+t const \texorpdfstring{$\ast$}{*}const}]{list}{, }\item[{const size\+\_\+t}]{size}{, }\item[{const uint32\+\_\+t}]{item}{}\end{DoxyParamCaption})}
+
+Checks if the list contains an item
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & A pointer to a list of words \\
+\hline
+{\em size} & The number of items in the list \\
+\hline
+{\em item} & The item to check\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the item is in the list 
+\end{DoxyReturn}
+\Hypertarget{set_8c_ab9be891d12dddfc3b48a0262546feeaa}\index{set.c@{set.c}!set\_add@{set\_add}}
+\index{set\_add@{set\_add}!set.c@{set.c}}
+\doxysubsubsection{\texorpdfstring{set\_add()}{set\_add()}}
+{\footnotesize\ttfamily \label{set_8c_ab9be891d12dddfc3b48a0262546feeaa} 
+bool set\+\_\+add (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structset}{set}} \texorpdfstring{$\ast$}{*}const}]{set}{, }\item[{uint32\+\_\+t}]{item}{}\end{DoxyParamCaption})}
+
+Adds item to the set if it didn\textquotesingle{}t already exist
+
+
+\begin{DoxyParams}{Parameters}
+{\em set} & A pointer to the set structure \\
+\hline
+{\em item} & Item to add to the set\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ttrue if the item was added to the set or was already present 
+\end{DoxyReturn}
+\Hypertarget{set_8c_a19966b7a3135a503ad2e4bc992ca1d6c}\index{set.c@{set.c}!set\_contains@{set\_contains}}
+\index{set\_contains@{set\_contains}!set.c@{set.c}}
+\doxysubsubsection{\texorpdfstring{set\_contains()}{set\_contains()}}
+{\footnotesize\ttfamily \label{set_8c_a19966b7a3135a503ad2e4bc992ca1d6c} 
+bool set\+\_\+contains (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structset}{set}} \texorpdfstring{$\ast$}{*}}]{set}{, }\item[{uint32\+\_\+t}]{item}{}\end{DoxyParamCaption})}
+
+Checks if the set contains an item
+
+
+\begin{DoxyParams}{Parameters}
+{\em set} & A pointer to the set structure \\
+\hline
+{\em item} & The item to check\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the item is in the set 
+\end{DoxyReturn}
+\Hypertarget{set_8c_aa75d62682c48ff6733c7595873e0ef2e}\index{set.c@{set.c}!set\_initialize@{set\_initialize}}
+\index{set\_initialize@{set\_initialize}!set.c@{set.c}}
+\doxysubsubsection{\texorpdfstring{set\_initialize()}{set\_initialize()}}
+{\footnotesize\ttfamily \label{set_8c_aa75d62682c48ff6733c7595873e0ef2e} 
+void set\+\_\+initialize (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structset}{set}} \texorpdfstring{$\ast$}{*}const}]{set}{}\end{DoxyParamCaption})}
+
+Initializes a a set.
+
+
+\begin{DoxyParams}{Parameters}
+{\em set} & A pointer to a set structure \\
+\hline
+\end{DoxyParams}
+\Hypertarget{set_8c_ac7cfcd8d8d3c6d9370274f5274a44af6}\index{set.c@{set.c}!set\_rm@{set\_rm}}
+\index{set\_rm@{set\_rm}!set.c@{set.c}}
+\doxysubsubsection{\texorpdfstring{set\_rm()}{set\_rm()}}
+{\footnotesize\ttfamily \label{set_8c_ac7cfcd8d8d3c6d9370274f5274a44af6} 
+bool set\+\_\+rm (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structset}{set}} \texorpdfstring{$\ast$}{*}const}]{set}{, }\item[{uint32\+\_\+t}]{item}{}\end{DoxyParamCaption})}
+
+Removes an item from the set
+
+
+\begin{DoxyParams}{Parameters}
+{\em set} & A pointer to the set structure \\
+\hline
+{\em item} & The item to remove\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the item was removed (or was already not present) 
+\end{DoxyReturn}

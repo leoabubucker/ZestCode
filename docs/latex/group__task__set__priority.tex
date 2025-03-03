@@ -1,0 +1,40 @@
+\doxysection{task\+\_\+set\+\_\+priority}
+\hypertarget{group__task__set__priority}{}\label{group__task__set__priority}\index{task\_set\_priority@{task\_set\_priority}}
+task. h 
+\begin{DoxyPre}void \doxylink{group__c-rtos_gaa906731a0dbda5c2382ca7e3cc32cc97}{task\_set\_priority( task\_t xTask, uint32\_t uxNewPriority )};\end{DoxyPre}
+
+
+INCLUDE\+\_\+v\+Task\+Priority\+Set must be defined as 1 for this function to be available. See the configuration section for more information.
+
+Set the priority of any task.
+
+A context switch will occur before the function returns if the priority being set is higher than the currently executing task.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Task} & Handle to the task for which the priority is being set. Passing a NULL handle results in the priority of the calling task being set.\\
+\hline
+{\em ux\+New\+Priority} & The priority to which the task will be set.\\
+\hline
+\end{DoxyParams}
+Example usage\+: 
+\begin{DoxyPre}
+void vAFunction( void )
+\{
+task\_t xHandle;
+
+    // Create a task, storing the handle.
+    task\_create( vTaskCode, "{}NAME"{}, STACK\_SIZE, NULL, tskIDLE\_PRIORITY, \&xHandle );
+
+    // ...
+
+    // Use the handle to raise the priority of the created task.
+    task\_set\_priority( xHandle, tskIDLE\_PRIORITY + 1 );
+
+    // ...
+
+    // Use a NULL handle to raise our priority to the same value.
+    task\_set\_priority( NULL, tskIDLE\_PRIORITY + 1 );
+\}
+  \end{DoxyPre}
+ 

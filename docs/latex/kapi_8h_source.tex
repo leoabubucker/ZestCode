@@ -1,0 +1,75 @@
+\doxysection{kapi.\+h}
+\hypertarget{kapi_8h_source}{}\label{kapi_8h_source}\index{C:/Users/leoku/OneDrive/Personal\_Coding\_Projects/ZestCode/include/kapi.h@{C:/Users/leoku/OneDrive/Personal\_Coding\_Projects/ZestCode/include/kapi.h}}
+\mbox{\hyperlink{kapi_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{api_8h}{api.h}}"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{apix_8h}{pros/apix.h}}"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}rtos/FreeRTOS.h"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}rtos/stream\_buffer.h"{}}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00027\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ task\_t\ pros::task\_t}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ task\_fn\_t\ pros::task\_fn\_t}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ mutex\_t\ pros::mutex\_t}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ sem\_t\ pros::c::sem\_t}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ queue\_t\ pros::c::queue\_t}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ KDBG\_FILENO\ 3}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ warn\_printf(fmt,\ ...)\ dprintf(STDERR\_FILENO,\ "{}\%s:\%d\ -\/-\/\ "{}\ fmt\ "{}\(\backslash\)n"{},\ \_\_FILE\_\_,\ \_\_LINE\_\_,\ \#\#\_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ warn\_wprint(str)\ wprintf("{}\%s"{},\ str)}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ kprintf(fmt,\ ...)\ dprintf(KDBG\_FILENO,\ "{}\%s:\%d\ -\/-\/\ "{}\ fmt\ "{}\(\backslash\)n"{},\ \_\_FILE\_\_,\ \_\_LINE\_\_,\ \#\#\_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ kprint(str)\ kprintf("{}\%s"{},\ str)}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#ifndef\ PROS\_RELEASING}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ kassert(cond)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\ \ \ \ do\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if\ (!(cond))\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ kprint("{}Assertion\ failed:\ "{}\ \#cond);\ \(\backslash\)}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\ \ \ \ \}\ while\ (0)}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ kassert(cond)}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{keyword}{typedef}\ uint32\_t\ task\_stack\_t;}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00066\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{kapi_8h_afd02377d2e9c5c04feadab70462322fd}{rtos\_suspend\_all}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00077\ int32\_t\ \mbox{\hyperlink{kapi_8h_a1db72fd4961113c9255cce71d169cbfa}{rtos\_resume\_all}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00106\ \mbox{\hyperlink{group__c-rtos_ga1d7e0825b8d8876e8cd8ece3f9115293}{task\_t}}\ \mbox{\hyperlink{kapi_8h_a0f24b77c29ca853ea5f03d79acc4b726}{task\_create\_static}}(\mbox{\hyperlink{group__c-rtos_gaece0aa29b1f1538115228d2197239f98}{task\_fn\_t}}\ task\_code,\ \textcolor{keywordtype}{void}*\ \textcolor{keyword}{const}\ param,\ uint32\_t\ priority,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ stack\_size,}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \textcolor{keyword}{const}\ name,\ task\_stack\_t*\ \textcolor{keyword}{const}\ stack\_buffer,\ static\_task\_s\_t*\ \textcolor{keyword}{const}\ task\_buffer);}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00121\ \mbox{\hyperlink{group__c-rtos_gab15ea84d90257d70b44e8e04519864d2}{mutex\_t}}\ \mbox{\hyperlink{kapi_8h_a81b28a183397697dc8dfb94f96f875f2}{mutex\_create\_static}}(static\_sem\_s\_t*\ mutex\_buffer);}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00139\ sem\_t\ \mbox{\hyperlink{kapi_8h_a00d5fa4e33897eebbb15fced79d92c15}{sem\_create\_static}}(uint32\_t\ max\_count,\ uint32\_t\ init\_count,\ static\_sem\_s\_t*\ semaphore\_buffer);}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00159\ queue\_t\ \mbox{\hyperlink{kapi_8h_a25237b68d7e177a3b32ece8b36bff9ef}{queue\_create\_static}}(uint32\_t\ length,\ uint32\_t\ item\_size,\ uint8\_t*\ storage\_buffer,}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ static\_queue\_s\_t*\ queue\_buffer);}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00173\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{kapi_8h_a0070639864e6a77a016b6262a1eb5e7c}{display\_fatal\_error}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ text);}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00183\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{kapi_8h_ae1fae740005d8465ab94006b6ba8629e}{kprint\_hex}}(uint8\_t*\ s,\ \textcolor{keywordtype}{size\_t}\ len);}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ int32\_t\ xTaskGetSchedulerState();}
+\DoxyCodeLine{00186\ \textcolor{preprocessor}{\#define\ taskSCHEDULER\_SUSPENDED\ ((int32\_t)0)}}
+\DoxyCodeLine{00187\ \textcolor{preprocessor}{\#define\ taskSCHEDULER\_NOT\_STARTED\ ((int32\_t)1)}}
+\DoxyCodeLine{00188\ \textcolor{preprocessor}{\#define\ taskSCHEDULER\_RUNNING\ ((int32\_t)2)}}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00190\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00191\ \textcolor{preprocessor}{\#undef\ task\_t}}
+\DoxyCodeLine{00192\ \textcolor{preprocessor}{\#undef\ task\_fn\_t}}
+\DoxyCodeLine{00193\ \textcolor{preprocessor}{\#undef\ mutex\_t}}
+\DoxyCodeLine{00194\ \}}
+\DoxyCodeLine{00195\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

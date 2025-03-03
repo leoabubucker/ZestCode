@@ -1,0 +1,81 @@
+\doxysection{mutex\+\_\+recursive\+\_\+create}
+\hypertarget{group__mutex__recursive__create}{}\label{group__mutex__recursive__create}\index{mutex\_recursive\_create@{mutex\_recursive\_create}}
+semphr. h 
+\begin{DoxyPre}sem\_t \doxylink{group__c-rtos_gab32c3cf41f7dbde49dfac10c279347f0}{mutex\_recursive\_create( void )}\end{DoxyPre}
+
+
+Creates a new recursive mutex type semaphore instance, and returns a handle by which the new recursive mutex can be referenced.
+
+Internally, within the Free\+RTOS implementation, recursive mutexs use a block of memory, in which the mutex structure is stored. If a recursive mutex is created using \doxylink{group__c-rtos_gab32c3cf41f7dbde49dfac10c279347f0}{mutex\+\_\+recursive\+\_\+create()} then the required memory is automatically dynamically allocated inside the \doxylink{group__c-rtos_gab32c3cf41f7dbde49dfac10c279347f0}{mutex\+\_\+recursive\+\_\+create()} function. (see \href{http://www.freertos.org/a00111.html}{\texttt{ http\+://www.\+freertos.\+org/a00111.\+html}}). If a recursive mutex is created using x\+Semaphore\+Create\+Recursive\+Mutex\+Static() then the application writer must provide the memory that will get used by the mutex. x\+Semaphore\+Create\+Recursive\+Mutex\+Static() therefore allows a recursive mutex to be created without using any dynamic memory allocation.
+
+Mutexes created using this macro can be accessed using the \doxylink{group__c-rtos_ga67f8421ccecb58c807762494efe10c3a}{mutex\+\_\+recursive\+\_\+take()} and \doxylink{group__c-rtos_gaaf82d93cd652b6173372970018fdc02d}{mutex\+\_\+recursive\+\_\+give()} macros. The \doxylink{group__apix_gaee36a9729a21b6ad0de78985a16c4f03}{sem\+\_\+wait()} and \doxylink{group__apix_gaa2048694c50246f193a40b7e00ed1756}{sem\+\_\+post()} macros must not be used.
+
+A mutex used recursively can be \textquotesingle{}taken\textquotesingle{} repeatedly by the owner. The mutex doesn\textquotesingle{}t become available again until the owner has called \doxylink{group__c-rtos_gaaf82d93cd652b6173372970018fdc02d}{mutex\+\_\+recursive\+\_\+give()} for each successful \textquotesingle{}take\textquotesingle{} request. For example, if a task successfully \textquotesingle{}takes\textquotesingle{} the same mutex 5 times then the mutex will not be available to any other task until it has also \textquotesingle{}given\textquotesingle{} the mutex back exactly five times.
+
+This type of semaphore uses a priority inheritance mechanism so a task \textquotesingle{}taking\textquotesingle{} a semaphore MUST ALWAYS \textquotesingle{}give\textquotesingle{} the semaphore back once the semaphore it is no longer required.
+
+Mutex type semaphores cannot be used from within interrupt service routines.
+
+See \doxylink{group__apix_ga83c9a6c93e3bfce8f36e3f32a6dc8c4b}{sem\+\_\+binary\+\_\+create()} for an alternative implementation that can be used for pure synchronisation (where one task or interrupt always \textquotesingle{}gives\textquotesingle{} the semaphore and another always \textquotesingle{}takes\textquotesingle{} the semaphore) and from within interrupt service routines.
+
+\begin{DoxyReturn}{Returns}
+x\+Semaphore Handle to the created mutex semaphore. Should be of type sem\+\_\+t.
+\end{DoxyReturn}
+Example usage\+: 
+\begin{DoxyPre}
+sem\_t xSemaphore;
+
+void vATask( void * pvParameters )
+\{
+   // Semaphore cannot be used before a call to \doxylink{group__c-rtos_ga475d096afa3abcc9a276ca9fa54bafdf}{mutex\_create()}.
+   // This is a macro so pass the variable in directly.
+   xSemaphore = \doxylink{group__c-rtos_gab32c3cf41f7dbde49dfac10c279347f0}{mutex\_recursive\_create()};
+
+   if( xSemaphore != NULL )
+   \{
+       // The semaphore was created successfully.
+       // The semaphore can now be used.
+   \}
+\}
+\end{DoxyPre}
+
+
+semphr. h 
+\begin{DoxyPre}sem\_t \doxylink{group__c-rtos_gab32c3cf41f7dbde49dfac10c279347f0}{mutex\_recursive\_create( void )}\end{DoxyPre}
+
+
+Creates a new recursive mutex type semaphore instance, and returns a handle by which the new recursive mutex can be referenced.
+
+Internally, within the Free\+RTOS implementation, recursive mutexs use a block of memory, in which the mutex structure is stored. If a recursive mutex is created using \doxylink{group__c-rtos_gab32c3cf41f7dbde49dfac10c279347f0}{mutex\+\_\+recursive\+\_\+create()} then the required memory is automatically dynamically allocated inside the \doxylink{group__c-rtos_gab32c3cf41f7dbde49dfac10c279347f0}{mutex\+\_\+recursive\+\_\+create()} function. (see \href{http://www.freertos.org/a00111.html}{\texttt{ http\+://www.\+freertos.\+org/a00111.\+html}}). If a recursive mutex is created using sem\+Create\+Recursive\+Mutex\+Static() then the application writer must provide the memory that will get used by the mutex. sem\+Create\+Recursive\+Mutex\+Static() therefore allows a recursive mutex to be created without using any dynamic memory allocation.
+
+Mutexes created using this macro can be accessed using the \doxylink{group__c-rtos_ga67f8421ccecb58c807762494efe10c3a}{mutex\+\_\+recursive\+\_\+take()} and \doxylink{group__c-rtos_gaaf82d93cd652b6173372970018fdc02d}{mutex\+\_\+recursive\+\_\+give()} macros. The \doxylink{group__apix_gaee36a9729a21b6ad0de78985a16c4f03}{sem\+\_\+wait()} and \doxylink{group__apix_gaa2048694c50246f193a40b7e00ed1756}{sem\+\_\+post()} macros must not be used.
+
+A mutex used recursively can be \textquotesingle{}taken\textquotesingle{} repeatedly by the owner. The mutex doesn\textquotesingle{}t become available again until the owner has called \doxylink{group__c-rtos_gaaf82d93cd652b6173372970018fdc02d}{mutex\+\_\+recursive\+\_\+give()} for each successful \textquotesingle{}take\textquotesingle{} request. For example, if a task successfully \textquotesingle{}takes\textquotesingle{} the same mutex 5 times then the mutex will not be available to any other task until it has also \textquotesingle{}given\textquotesingle{} the mutex back exactly five times.
+
+This type of semaphore uses a priority inheritance mechanism so a task \textquotesingle{}taking\textquotesingle{} a semaphore MUST ALWAYS \textquotesingle{}give\textquotesingle{} the semaphore back once the semaphore it is no longer required.
+
+Mutex type semaphores cannot be used from within interrupt service routines.
+
+See \doxylink{group__apix_ga83c9a6c93e3bfce8f36e3f32a6dc8c4b}{sem\+\_\+binary\+\_\+create()} for an alternative implementation that can be used for pure synchronisation (where one task or interrupt always \textquotesingle{}gives\textquotesingle{} the semaphore and another always \textquotesingle{}takes\textquotesingle{} the semaphore) and from within interrupt service routines.
+
+\begin{DoxyReturn}{Returns}
+sem Handle to the created mutex semaphore. Should be of type sem\+\_\+t.
+\end{DoxyReturn}
+Example usage\+: 
+\begin{DoxyPre}
+sem\_t sem;
+
+void vATask( void * pvParameters )
+\{
+   // Semaphore cannot be used before a call to \doxylink{group__c-rtos_ga475d096afa3abcc9a276ca9fa54bafdf}{mutex\_create()}.
+   // This is a macro so pass the variable in directly.
+   sem = \doxylink{group__c-rtos_gab32c3cf41f7dbde49dfac10c279347f0}{mutex\_recursive\_create()};
+
+   if( sem != NULL )
+   \{
+       // The semaphore was created successfully.
+       // The semaphore can now be used.
+   \}
+\}
+\end{DoxyPre}
+ 

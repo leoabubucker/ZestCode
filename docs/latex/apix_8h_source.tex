@@ -1,0 +1,142 @@
+\doxysection{apix.\+h}
+\hypertarget{apix_8h_source}{}\label{apix_8h_source}\index{C:/Users/leoku/OneDrive/Personal\_Coding\_Projects/ZestCode/include/pros/apix.h@{C:/Users/leoku/OneDrive/Personal\_Coding\_Projects/ZestCode/include/pros/apix.h}}
+\mbox{\hyperlink{apix_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#ifndef\ \_PROS\_API\_EXTENDED\_H\_}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ \_PROS\_API\_EXTENDED\_H\_}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{api_8h}{api.h}}"{}}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{device_8h}{pros/device.h}}"{}}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#pragma\ GCC\ diagnostic\ push}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#pragma\ GCC\ diagnostic\ ignored\ "{}-\/Wall"{}}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#pragma\ GCC\ diagnostic\ pop}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{serial_8h}{pros/serial.h}}"{}}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{serial_8hpp}{pros/serial.hpp}}"{}}}
+\DoxyCodeLine{00037\ \textcolor{keyword}{namespace\ }pros::c\ \{}
+\DoxyCodeLine{00038\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{void}*\ queue\_t;}
+\DoxyCodeLine{00054\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{void}*\ sem\_t;}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00074\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{group__apix_ga038d6c9efb0a2295b0f2a55242b509f9}{task\_abort\_delay}}(\mbox{\hyperlink{group__c-rtos_ga1d7e0825b8d8876e8cd8ece3f9115293}{task\_t}}\ task);}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00101\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__apix_gac20573527d51718ab1f1189e69a5cd32}{task\_notify\_when\_deleting}}(\mbox{\hyperlink{group__c-rtos_ga1d7e0825b8d8876e8cd8ece3f9115293}{task\_t}}\ target\_task,\ \mbox{\hyperlink{group__c-rtos_ga1d7e0825b8d8876e8cd8ece3f9115293}{task\_t}}\ task\_to\_notify,\ uint32\_t\ value,}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__c-rtos_ga42ea99b5e5d38da0b98154609cf6c570}{notify\_action\_e\_t}}\ notify\_action);}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00143\ \mbox{\hyperlink{group__c-rtos_ga1d7e0825b8d8876e8cd8ece3f9115293}{task\_t}}\ \mbox{\hyperlink{group__apix_ga34a373877e556e8f6829a49eddb08673}{mutex\_get\_owner}}(\mbox{\hyperlink{group__c-rtos_gab15ea84d90257d70b44e8e04519864d2}{mutex\_t}}\ mutex);}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00174\ sem\_t\ \mbox{\hyperlink{group__apix_ga382f9b5dc6ba96dcecffdbd7f41d29ac}{sem\_create}}(uint32\_t\ max\_count,\ uint32\_t\ init\_count);}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00211\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__apix_ga0dfcd8007428b4249931d0d78157490b}{sem\_delete}}(sem\_t\ sem);}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00236\ sem\_t\ \mbox{\hyperlink{group__apix_ga83c9a6c93e3bfce8f36e3f32a6dc8c4b}{sem\_binary\_create}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00237\ }
+\DoxyCodeLine{00283\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{group__apix_gaee36a9729a21b6ad0de78985a16c4f03}{sem\_wait}}(sem\_t\ sem,\ uint32\_t\ timeout);}
+\DoxyCodeLine{00284\ }
+\DoxyCodeLine{00313\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{group__apix_gaa2048694c50246f193a40b7e00ed1756}{sem\_post}}(sem\_t\ sem);}
+\DoxyCodeLine{00314\ }
+\DoxyCodeLine{00339\ uint32\_t\ \mbox{\hyperlink{group__apix_ga5848486405814316a909912fa87f88dc}{sem\_get\_count}}(sem\_t\ sem);}
+\DoxyCodeLine{00340\ }
+\DoxyCodeLine{00363\ queue\_t\ \mbox{\hyperlink{group__apix_ga552456842226c0ccf95e78907a3d6b2a}{queue\_create}}(uint32\_t\ length,\ uint32\_t\ item\_size);}
+\DoxyCodeLine{00364\ }
+\DoxyCodeLine{00390\ \textcolor{keywordtype}{bool}\ queue\_prepend(queue\_t\ queue,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ item,\ uint32\_t\ timeout);}
+\DoxyCodeLine{00391\ }
+\DoxyCodeLine{00418\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{group__apix_ga4519896ea7f4a5d2b3726fd172926a8f}{queue\_append}}(queue\_t\ queue,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ item,\ uint32\_t\ timeout);}
+\DoxyCodeLine{00419\ }
+\DoxyCodeLine{00447\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{group__apix_gabb333bbc086fdac6213b34a2e019dde3}{queue\_peek}}(queue\_t\ queue,\ \textcolor{keywordtype}{void}*\ \textcolor{keyword}{const}\ buffer,\ uint32\_t\ timeout);}
+\DoxyCodeLine{00448\ }
+\DoxyCodeLine{00478\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{group__apix_gaca6420b7d656b9559a7d366eb58b8e57}{queue\_recv}}(queue\_t\ queue,\ \textcolor{keywordtype}{void}*\ \textcolor{keyword}{const}\ buffer,\ uint32\_t\ timeout);}
+\DoxyCodeLine{00479\ }
+\DoxyCodeLine{00500\ uint32\_t\ \mbox{\hyperlink{group__apix_gadd6f8fb018cef82d19fb85425de0e0d2}{queue\_get\_waiting}}(\textcolor{keyword}{const}\ queue\_t\ queue);}
+\DoxyCodeLine{00501\ }
+\DoxyCodeLine{00522\ uint32\_t\ \mbox{\hyperlink{group__apix_gab6a0fede293e948f2a5b43a44238aab6}{queue\_get\_available}}(\textcolor{keyword}{const}\ queue\_t\ queue);}
+\DoxyCodeLine{00523\ }
+\DoxyCodeLine{00538\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__apix_ga087fa58218ad877e85bcc2fe20b87595}{queue\_delete}}(queue\_t\ queue);}
+\DoxyCodeLine{00539\ }
+\DoxyCodeLine{00557\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__apix_gae6146a3577b65ec02e78d0d9498db7e1}{queue\_reset}}(queue\_t\ queue);}
+\DoxyCodeLine{00558\ }
+\DoxyCodeLine{00560\ }
+\DoxyCodeLine{00563\ }
+\DoxyCodeLine{00590\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__apix_gafdda25e2647e8606131e35ced80de099}{registry\_bind\_port}}(uint8\_t\ port,\ v5\_device\_e\_t\ device\_type);}
+\DoxyCodeLine{00591\ }
+\DoxyCodeLine{00614\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__apix_ga0092551f3eff99f31535a657d2832a86}{registry\_unbind\_port}}(uint8\_t\ port);}
+\DoxyCodeLine{00615\ }
+\DoxyCodeLine{00637\ v5\_device\_e\_t\ \mbox{\hyperlink{group__apix_gadd54c9e7c708eee228f2edf67dbe17cb}{registry\_get\_bound\_type}}(uint8\_t\ port);}
+\DoxyCodeLine{00638\ }
+\DoxyCodeLine{00660\ v5\_device\_e\_t\ \mbox{\hyperlink{group__apix_ga490c81f1c80b6655410f96a0a07f4b0b}{registry\_get\_plugged\_type}}(uint8\_t\ port);}
+\DoxyCodeLine{00661\ }
+\DoxyCodeLine{00663\ }
+\DoxyCodeLine{00666\ }
+\DoxyCodeLine{00677\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__apix_ga39932ffa4071565ddb53aabe1a8d4bec}{enable\_banner}}(\textcolor{keywordtype}{bool}\ enabled);}
+\DoxyCodeLine{00678\ }
+\DoxyCodeLine{00683\ \textcolor{preprocessor}{\#define\ PRE\_PROS\_INIT\_PRIORITY\ 101}}
+\DoxyCodeLine{00684\ }
+\DoxyCodeLine{00693\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00694\ \textcolor{preprocessor}{\#define\ ENABLE\_BANNER(enabled)\ static\_assert(!\_\_builtin\_strcmp(\_\_FUNCTION\_\_,\ "{}top\ level"{}),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00695\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}Cannot\ use\ ENABLE\_BANNER\ inside\ a\ function!"{});\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00696\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_attribute\_\_((constructor(PRE\_PROS\_INIT\_PRIORITY)))\ static\ void\ \_enable\_banner\_impl()\ \(\backslash\)}}
+\DoxyCodeLine{00697\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ pros::c::enable\_banner(enabled);\ \}}}
+\DoxyCodeLine{00698\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00699\ \textcolor{preprocessor}{\#define\ ENABLE\_BANNER(enabled)\ static\_assert(!\_\_builtin\_strcmp(\_\_FUNCTION\_\_,\ "{}top\ level"{}),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00700\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}Cannot\ use\ ENABLE\_BANNER\ inside\ a\ function!"{});\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00701\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_attribute\_\_((constructor(PRE\_PROS\_INIT\_PRIORITY)))\ static\ void\ \_enable\_banner\_impl()\ \(\backslash\)}}
+\DoxyCodeLine{00702\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ enable\_banner(enabled);\ \}}}
+\DoxyCodeLine{00703\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00705\ }
+\DoxyCodeLine{00708\ }
+\DoxyCodeLine{00724\ int32\_t\ serctl(\textcolor{keyword}{const}\ uint32\_t\ action,\ \textcolor{keywordtype}{void}*\ \textcolor{keyword}{const}\ extra\_arg);}
+\DoxyCodeLine{00725\ }
+\DoxyCodeLine{00726\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00727\ \textcolor{comment}{\ *\ Control\ settings\ of\ the\ microSD\ card\ driver.}}
+\DoxyCodeLine{00728\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00729\ \textcolor{comment}{\ *\ \(\backslash\)param\ action}}
+\DoxyCodeLine{00730\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ An\ action\ to\ perform\ on\ the\ microSD\ card\ driver.\ See\ the\ USDCTL\_*\ macros}}
+\DoxyCodeLine{00731\ \textcolor{comment}{\ *\ \ \ \ \ \ for\ details\ on\ the\ different\ actions.}}
+\DoxyCodeLine{00732\ \textcolor{comment}{\ *\ \(\backslash\)param\ extra\_arg}}
+\DoxyCodeLine{00733\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ An\ argument\ to\ pass\ in\ based\ on\ the\ action}}
+\DoxyCodeLine{00734\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00735\ \textcolor{comment}{//\ Not\ yet\ implemented}}
+\DoxyCodeLine{00736\ \textcolor{comment}{//\ int32\_t\ usdctl(const\ uint32\_t\ action,\ void*\ const\ extra\_arg);}}
+\DoxyCodeLine{00737\ }
+\DoxyCodeLine{00759\ int32\_t\ \mbox{\hyperlink{group__apix_ga8287028141d5265105a25d899280a8e1}{fdctl}}(\textcolor{keywordtype}{int}\ file,\ \textcolor{keyword}{const}\ uint32\_t\ action,\ \textcolor{keywordtype}{void}*\ \textcolor{keyword}{const}\ extra\_arg);}
+\DoxyCodeLine{00760\ }
+\DoxyCodeLine{00787\ int32\_t\ \mbox{\hyperlink{group__apix_ga2fa32fc79e297f90fa08d22c381c2972}{motor\_set\_reversed}}(int8\_t\ port,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ reverse);}
+\DoxyCodeLine{00788\ }
+\DoxyCodeLine{00811\ int32\_t\ \mbox{\hyperlink{group__apix_gaa01b06cd1235f48a058a6dae6dc188c5}{motor\_is\_reversed}}(int8\_t\ port);}
+\DoxyCodeLine{00812\ }
+\DoxyCodeLine{00821\ \textcolor{preprocessor}{\#define\ SERCTL\_ACTIVATE\ 10}}
+\DoxyCodeLine{00822\ }
+\DoxyCodeLine{00831\ \textcolor{preprocessor}{\#define\ SERCTL\_DEACTIVATE\ 11}}
+\DoxyCodeLine{00832\ }
+\DoxyCodeLine{00840\ \textcolor{preprocessor}{\#define\ SERCTL\_BLKWRITE\ 12}}
+\DoxyCodeLine{00841\ }
+\DoxyCodeLine{00849\ \textcolor{preprocessor}{\#define\ SERCTL\_NOBLKWRITE\ 13}}
+\DoxyCodeLine{00850\ }
+\DoxyCodeLine{00859\ \textcolor{preprocessor}{\#define\ SERCTL\_ENABLE\_COBS\ 14}}
+\DoxyCodeLine{00860\ }
+\DoxyCodeLine{00869\ \textcolor{preprocessor}{\#define\ SERCTL\_DISABLE\_COBS\ 15}}
+\DoxyCodeLine{00870\ }
+\DoxyCodeLine{00876\ \textcolor{preprocessor}{\#define\ DEVCTL\_FIONREAD\ 16}}
+\DoxyCodeLine{00877\ }
+\DoxyCodeLine{00883\ \textcolor{preprocessor}{\#define\ DEVCTL\_FIONWRITE\ 18}}
+\DoxyCodeLine{00884\ }
+\DoxyCodeLine{00890\ \textcolor{preprocessor}{\#define\ DEVCTL\_SET\_BAUDRATE\ 17}}
+\DoxyCodeLine{00891\ }
+\DoxyCodeLine{00893\ }
+\DoxyCodeLine{00895\ }
+\DoxyCodeLine{00896\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00897\ \}}
+\DoxyCodeLine{00898\ \}}
+\DoxyCodeLine{00899\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00900\ }
+\DoxyCodeLine{00901\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ \_PROS\_API\_EXTENDED\_H\_}}
+
+\end{DoxyCode}

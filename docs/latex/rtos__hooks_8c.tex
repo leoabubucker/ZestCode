@@ -1,0 +1,71 @@
+\doxysection{C\+:/\+Users/leoku/\+One\+Drive/\+Personal\+\_\+\+Coding\+\_\+\+Projects/\+Zest\+Code/src/system/rtos\+\_\+hooks.c File Reference}
+\hypertarget{rtos__hooks_8c}{}\label{rtos__hooks_8c}\index{C:/Users/leoku/OneDrive/Personal\_Coding\_Projects/ZestCode/src/system/rtos\_hooks.c@{C:/Users/leoku/OneDrive/Personal\_Coding\_Projects/ZestCode/src/system/rtos\_hooks.c}}
+{\ttfamily \#include "{}pros/motors.\+h"{}}\newline
+{\ttfamily \#include "{}rtos/\+Free\+RTOS.\+h"{}}\newline
+{\ttfamily \#include "{}rtos/semphr.\+h"{}}\newline
+{\ttfamily \#include "{}rtos/task.\+h"{}}\newline
+{\ttfamily \#include "{}rtos/tcb.\+h"{}}\newline
+{\ttfamily \#include "{}v5\+\_\+api.\+h"{}}\newline
+{\ttfamily \#include "{}v5\+\_\+color.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{rtos__hooks_8c_a57115ff7f00515d5f5dbebb49b277ffb}\label{rtos__hooks_8c_a57115ff7f00515d5f5dbebb49b277ffb} 
+void {\bfseries vex\+Tasks\+Run} ()
+\item 
+\Hypertarget{rtos__hooks_8c_a586babe415b4ac4d60324aae4e8fbf50}\label{rtos__hooks_8c_a586babe415b4ac4d60324aae4e8fbf50} 
+void {\bfseries FIQInterrupt} ()
+\item 
+\Hypertarget{rtos__hooks_8c_a057c38a4c18a59196900509d5fdbd9c1}\label{rtos__hooks_8c_a057c38a4c18a59196900509d5fdbd9c1} 
+void {\bfseries Data\+Abort\+Interrupt} ()
+\item 
+\Hypertarget{rtos__hooks_8c_ab19d0e8b2a91d308b5fe698be4e92356}\label{rtos__hooks_8c_ab19d0e8b2a91d308b5fe698be4e92356} 
+void {\bfseries Prefetch\+Abort\+Interrupt} ()
+\item 
+\Hypertarget{rtos__hooks_8c_a698036b5e342c2164fb7fd7249d0e801}\label{rtos__hooks_8c_a698036b5e342c2164fb7fd7249d0e801} 
+void {\bfseries \+\_\+boot} ()
+\item 
+\Hypertarget{rtos__hooks_8c_a423953b5be6bf09faea65d5e5b6a7d9b}\label{rtos__hooks_8c_a423953b5be6bf09faea65d5e5b6a7d9b} 
+void {\bfseries v\+Port\+Install\+Free\+RTOSVector\+Table} (void)
+\item 
+\Hypertarget{rtos__hooks_8c_abab46ab7874f728580befa3cadb0a484}\label{rtos__hooks_8c_abab46ab7874f728580befa3cadb0a484} 
+void {\bfseries rtos\+\_\+initialize} ()
+\item 
+\Hypertarget{rtos__hooks_8c_a3853f6eea7b62957ada2e0feba299037}\label{rtos__hooks_8c_a3853f6eea7b62957ada2e0feba299037} 
+void {\bfseries Free\+RTOS\+\_\+\+Tick\+\_\+\+Handler} (void)
+\item 
+\Hypertarget{rtos__hooks_8c_a48ced5f325dbb39121bc0e7e1434994c}\label{rtos__hooks_8c_a48ced5f325dbb39121bc0e7e1434994c} 
+void {\bfseries rtos\+\_\+tick\+\_\+interrupt\+\_\+config} ()
+\item 
+\Hypertarget{rtos__hooks_8c_a41b9be6a4fc958544ee3e71bf48586f6}\label{rtos__hooks_8c_a41b9be6a4fc958544ee3e71bf48586f6} 
+void {\bfseries rtos\+\_\+tick\+\_\+interrupt\+\_\+clear} ()
+\item 
+\Hypertarget{rtos__hooks_8c_ae5964ed95c2d6c862c8aed5d8a027f82}\label{rtos__hooks_8c_ae5964ed95c2d6c862c8aed5d8a027f82} 
+void {\bfseries v\+Application\+FPUSafe\+IRQHandler} (uint32\+\_\+t ul\+ICCIAR)
+\item 
+\Hypertarget{rtos__hooks_8c_a6c7d43780bfc482b2fdf6de9b1a89e4b}\label{rtos__hooks_8c_a6c7d43780bfc482b2fdf6de9b1a89e4b} 
+void {\bfseries v\+Initialise\+Timer\+For\+Run\+Time\+Stats} (void)
+\item 
+\Hypertarget{rtos__hooks_8c_ab7e5c95cf72a3f819bc4462a7fb62ca3}\label{rtos__hooks_8c_ab7e5c95cf72a3f819bc4462a7fb62ca3} 
+void {\bfseries v\+Application\+Malloc\+Failed\+Hook} (void)
+\item 
+\Hypertarget{rtos__hooks_8c_a8efe4a1f123be2fdcb9e95413d51ff1c}\label{rtos__hooks_8c_a8efe4a1f123be2fdcb9e95413d51ff1c} 
+void {\bfseries v\+Application\+Stack\+Overflow\+Hook} (\mbox{\hyperlink{group__c-rtos_ga1d7e0825b8d8876e8cd8ece3f9115293}{task\+\_\+t}} px\+Task, char \texorpdfstring{$\ast$}{*}pc\+Task\+Name)
+\item 
+\Hypertarget{rtos__hooks_8c_a97fd430f36f8b065226e2bff9bad1de5}\label{rtos__hooks_8c_a97fd430f36f8b065226e2bff9bad1de5} 
+void {\bfseries v\+Application\+Idle\+Hook} (void)
+\item 
+\Hypertarget{rtos__hooks_8c_a68ef99acadce6ddf7c6976ef0fbbb293}\label{rtos__hooks_8c_a68ef99acadce6ddf7c6976ef0fbbb293} 
+void {\bfseries v\+Assert\+Called} (const char \texorpdfstring{$\ast$}{*}pc\+File, unsigned long ul\+Line)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Free\+RTOS hooks for initialization and interrupts
+
+Free\+RTOS requires some porting to each platform to handle certain tasks. This file contains the various methods required to be implemented for Free\+RTOS.
+
+\begin{DoxyCopyright}{Copyright}
+(c) 2017-\/2024, Purdue University ACM SIGBots. All rights reserved.
+\end{DoxyCopyright}
+This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.\+0. If a copy of the MPL was not distributed with this file, You can obtain one at \href{http://mozilla.org/MPL/2.0/}{\texttt{ http\+://mozilla.\+org/\+MPL/2.\+0/}}. 

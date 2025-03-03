@@ -1,0 +1,347 @@
+\doxysection{C\+:/\+Users/leoku/\+One\+Drive/\+Personal\+\_\+\+Coding\+\_\+\+Projects/\+Zest\+Code/include/vdml/vdml.h File Reference}
+\hypertarget{vdml_8h}{}\label{vdml_8h}\index{C:/Users/leoku/OneDrive/Personal\_Coding\_Projects/ZestCode/include/vdml/vdml.h@{C:/Users/leoku/OneDrive/Personal\_Coding\_Projects/ZestCode/include/vdml/vdml.h}}
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include "{}vdml/registry.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{vdml_8h_ab8b236bcd58ebb7cdd0a26cdeaf671c3}{VALIDATE\+\_\+\+PORT\+\_\+\+NO}}(PORT)
+\item 
+\#define \mbox{\hyperlink{vdml_8h_ade4501c671e4261826ee0dc83550aa62}{VALIDATE\+\_\+\+PORT\+\_\+\+NO\+\_\+\+INTERNAL}}(PORT)
+\item 
+\#define \mbox{\hyperlink{vdml_8h_ac22f24e079fd4df2f3a21cb4774a8a24}{claim\+\_\+port}}(port,  device\+\_\+type,  error\+\_\+code)
+\item 
+\#define \mbox{\hyperlink{vdml_8h_ad8424c6db18a5614c838641b0330090c}{claim\+\_\+port\+\_\+i}}(port,  device\+\_\+type)
+\item 
+\#define \mbox{\hyperlink{vdml_8h_ab6e2af31b80854b979dc34de059dfc94}{claim\+\_\+port\+\_\+f}}(port,  device\+\_\+type)
+\item 
+\#define \mbox{\hyperlink{vdml_8h_ae6bf38331fdc0366cc0f0ab04ced5926}{return\+\_\+port}}(port,  rtn)
+\item 
+\Hypertarget{vdml_8h_a34c134eb1c4bb79e8ef7999fa324fa42}\label{vdml_8h_a34c134eb1c4bb79e8ef7999fa324fa42} 
+\#define {\bfseries V5\+\_\+\+PORT\+\_\+\+BATTERY}~24
+\item 
+\Hypertarget{vdml_8h_abcf5c65ee1e98e3a163491db8c2b8039}\label{vdml_8h_abcf5c65ee1e98e3a163491db8c2b8039} 
+\#define {\bfseries V5\+\_\+\+PORT\+\_\+\+CONTROLLER\+\_\+1}~25
+\item 
+\Hypertarget{vdml_8h_acbcd9fed9dfd47a4f57dbda48bf48821}\label{vdml_8h_acbcd9fed9dfd47a4f57dbda48bf48821} 
+\#define {\bfseries V5\+\_\+\+PORT\+\_\+\+CONTROLLER\+\_\+2}~26
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int32\+\_\+t \mbox{\hyperlink{vdml_8h_a0086020993f44c165e8e2a6cd7e5eeaa}{claim\+\_\+port\+\_\+try}} (uint8\+\_\+t port, v5\+\_\+device\+\_\+e\+\_\+t type)
+\item 
+void \mbox{\hyperlink{vdml_8h_ab164b06ea2d6c77fac6d1afc8bfa78f4}{vdml\+\_\+set\+\_\+port\+\_\+error}} (uint8\+\_\+t port)
+\item 
+void \mbox{\hyperlink{vdml_8h_a041f91b4d998392918864e26df946f32}{vdml\+\_\+unset\+\_\+port\+\_\+error}} (uint8\+\_\+t port)
+\item 
+bool \mbox{\hyperlink{vdml_8h_a9b8bc94d616e0f915c2930698e64c4bc}{vdml\+\_\+get\+\_\+port\+\_\+error}} (uint8\+\_\+t port)
+\item 
+int \mbox{\hyperlink{vdml_8h_a67513439eb7264d1196f58dbaa03c847}{port\+\_\+mutex\+\_\+take}} (uint8\+\_\+t port)
+\item 
+int \mbox{\hyperlink{vdml_8h_abeb38b74fc71b8003c53e920822f7d1d}{port\+\_\+mutex\+\_\+give}} (uint8\+\_\+t port)
+\item 
+void \mbox{\hyperlink{vdml_8h_a00133d1eced9193949574829587a393d}{port\+\_\+mutex\+\_\+take\+\_\+all}} ()
+\item 
+void \mbox{\hyperlink{vdml_8h_ae70eb480db1d80602e5b5f037d572d47}{port\+\_\+mutex\+\_\+give\+\_\+all}} ()
+\item 
+int \mbox{\hyperlink{vdml_8h_af35fba308dec7fbae265a4b4586a4786}{internal\+\_\+port\+\_\+mutex\+\_\+take}} (uint8\+\_\+t port)
+\item 
+int \mbox{\hyperlink{vdml_8h_a3cd0d28bdfcb9c15a2bd393a25fcb6f2}{internal\+\_\+port\+\_\+mutex\+\_\+give}} (uint8\+\_\+t port)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int32\+\_\+t \mbox{\hyperlink{vdml_8h_a93dbe5adaa0d9331b7a02a713da023c1}{port\+\_\+errors}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains all types and functions used throughout multiple VDML (Vex Data Management Layer) files.
+
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2017-\/2024, Purdue University ACM SIGBots.
+\end{DoxyCopyright}
+This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.\+0. If a copy of the MPL was not distributed with this file, You can obtain one at \href{http://mozilla.org/MPL/2.0/}{\texttt{ http\+://mozilla.\+org/\+MPL/2.\+0/}}. 
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{vdml_8h_ac22f24e079fd4df2f3a21cb4774a8a24}\index{vdml.h@{vdml.h}!claim\_port@{claim\_port}}
+\index{claim\_port@{claim\_port}!vdml.h@{vdml.h}}
+\doxysubsubsection{\texorpdfstring{claim\_port}{claim\_port}}
+{\footnotesize\ttfamily \label{vdml_8h_ac22f24e079fd4df2f3a21cb4774a8a24} 
+\#define claim\+\_\+port(\begin{DoxyParamCaption}\item[{}]{port}{, }\item[{}]{device\+\_\+type}{, }\item[{}]{error\+\_\+code}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (registry\_validate\_binding(port,\ device\_type)\ !=\ 0)\ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ error\_code;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{structv5__smart__device__s__t}{v5\_smart\_device\_s\_t}}*\ device\ =\ registry\_get\_device(port);\ \(\backslash\)}
+\DoxyCodeLine{\ \ if\ (!\mbox{\hyperlink{vdml_8h_a67513439eb7264d1196f58dbaa03c847}{port\_mutex\_take}}(port))\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ errno\ =\ EACCES;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ error\_code;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \}}
+
+\end{DoxyCode}
+Macro that handles error checking, sanity checking, automatic registration, and mutex taking for all of the motor wrapper functions. If port is out of range, the calling function sets errno and returns. If a port isn\textquotesingle{}t yet registered, it registered as a motor automatically. If a mutex cannot be taken, errno is set to EACCES (access denied) and returns.
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The V5 port number from 0-\/20 \\
+\hline
+{\em device\+\_\+type} & The v5\+\_\+device\+\_\+e\+\_\+t that the port is configured as \\
+\hline
+{\em error\+\_\+code} & The error code that return if error checking failed \\
+\hline
+\end{DoxyParams}
+\Hypertarget{vdml_8h_ab6e2af31b80854b979dc34de059dfc94}\index{vdml.h@{vdml.h}!claim\_port\_f@{claim\_port\_f}}
+\index{claim\_port\_f@{claim\_port\_f}!vdml.h@{vdml.h}}
+\doxysubsubsection{\texorpdfstring{claim\_port\_f}{claim\_port\_f}}
+{\footnotesize\ttfamily \label{vdml_8h_ab6e2af31b80854b979dc34de059dfc94} 
+\#define claim\+\_\+port\+\_\+f(\begin{DoxyParamCaption}\item[{}]{port}{, }\item[{}]{device\+\_\+type}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{vdml_8h_ac22f24e079fd4df2f3a21cb4774a8a24}{claim\_port}}(port,\ device\_type,\ \mbox{\hyperlink{error_8h_a8e591efce4b2a8e733e0fa9432e493a6}{PROS\_ERR\_F}})}
+
+\end{DoxyCode}
+Function like claim\+\_\+port. This macro should only be used in functions that return double or float as PROS\+\_\+\+ERR\+\_\+F could be returned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The V5 port number from 0-\/20 \\
+\hline
+{\em device\+\_\+type} & The v5\+\_\+device\+\_\+e\+\_\+t that the port is configured as \\
+\hline
+\end{DoxyParams}
+\Hypertarget{vdml_8h_ad8424c6db18a5614c838641b0330090c}\index{vdml.h@{vdml.h}!claim\_port\_i@{claim\_port\_i}}
+\index{claim\_port\_i@{claim\_port\_i}!vdml.h@{vdml.h}}
+\doxysubsubsection{\texorpdfstring{claim\_port\_i}{claim\_port\_i}}
+{\footnotesize\ttfamily \label{vdml_8h_ad8424c6db18a5614c838641b0330090c} 
+\#define claim\+\_\+port\+\_\+i(\begin{DoxyParamCaption}\item[{}]{port}{, }\item[{}]{device\+\_\+type}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{vdml_8h_ac22f24e079fd4df2f3a21cb4774a8a24}{claim\_port}}(port,\ device\_type,\ PROS\_ERR)}
+
+\end{DoxyCode}
+Function like claim\+\_\+port. This macro should only be used in functions that return int32\+\_\+t or enums as PROS\+\_\+\+ERR could be returned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The V5 port number from 0-\/20 \\
+\hline
+{\em device\+\_\+type} & The v5\+\_\+device\+\_\+e\+\_\+t that the port is configured as \\
+\hline
+\end{DoxyParams}
+\Hypertarget{vdml_8h_ae6bf38331fdc0366cc0f0ab04ced5926}\index{vdml.h@{vdml.h}!return\_port@{return\_port}}
+\index{return\_port@{return\_port}!vdml.h@{vdml.h}}
+\doxysubsubsection{\texorpdfstring{return\_port}{return\_port}}
+{\footnotesize\ttfamily \label{vdml_8h_ae6bf38331fdc0366cc0f0ab04ced5926} 
+\#define return\+\_\+port(\begin{DoxyParamCaption}\item[{}]{port}{, }\item[{}]{rtn}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{vdml_8h_abeb38b74fc71b8003c53e920822f7d1d}{port\_mutex\_give}}(port);\ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ rtn;}
+
+\end{DoxyCode}
+Macro that release the mutex for the given port and sets errno to 0 if the function is an accessor wrapper whos return value is PROS\+\_\+\+ERR or PROS\+\_\+\+ERR\+\_\+F.
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The V5 port number from 0-\/20 \\
+\hline
+{\em rtn} & The desired return value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The rtn parameter 
+\end{DoxyReturn}
+\Hypertarget{vdml_8h_ab8b236bcd58ebb7cdd0a26cdeaf671c3}\index{vdml.h@{vdml.h}!VALIDATE\_PORT\_NO@{VALIDATE\_PORT\_NO}}
+\index{VALIDATE\_PORT\_NO@{VALIDATE\_PORT\_NO}!vdml.h@{vdml.h}}
+\doxysubsubsection{\texorpdfstring{VALIDATE\_PORT\_NO}{VALIDATE\_PORT\_NO}}
+{\footnotesize\ttfamily \label{vdml_8h_ab8b236bcd58ebb7cdd0a26cdeaf671c3} 
+\#define VALIDATE\+\_\+\+PORT\+\_\+\+NO(\begin{DoxyParamCaption}\item[{}]{PORT}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{((PORT)\ >=\ 0\ \&\&\ (PORT)\ <\ NUM\_V5\_PORTS)}
+
+\end{DoxyCode}
+Macro, returns true if the port is in range of user configurable ports, false otherwise. \Hypertarget{vdml_8h_ade4501c671e4261826ee0dc83550aa62}\index{vdml.h@{vdml.h}!VALIDATE\_PORT\_NO\_INTERNAL@{VALIDATE\_PORT\_NO\_INTERNAL}}
+\index{VALIDATE\_PORT\_NO\_INTERNAL@{VALIDATE\_PORT\_NO\_INTERNAL}!vdml.h@{vdml.h}}
+\doxysubsubsection{\texorpdfstring{VALIDATE\_PORT\_NO\_INTERNAL}{VALIDATE\_PORT\_NO\_INTERNAL}}
+{\footnotesize\ttfamily \label{vdml_8h_ade4501c671e4261826ee0dc83550aa62} 
+\#define VALIDATE\+\_\+\+PORT\+\_\+\+NO\+\_\+\+INTERNAL(\begin{DoxyParamCaption}\item[{}]{PORT}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{((PORT)\ >=\ 0\ \&\&\ (PORT)\ <\ V5\_MAX\_DEVICE\_PORTS)}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{vdml_8h_a0086020993f44c165e8e2a6cd7e5eeaa}\index{vdml.h@{vdml.h}!claim\_port\_try@{claim\_port\_try}}
+\index{claim\_port\_try@{claim\_port\_try}!vdml.h@{vdml.h}}
+\doxysubsubsection{\texorpdfstring{claim\_port\_try()}{claim\_port\_try()}}
+{\footnotesize\ttfamily \label{vdml_8h_a0086020993f44c165e8e2a6cd7e5eeaa} 
+int32\+\_\+t claim\+\_\+port\+\_\+try (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port}{, }\item[{v5\+\_\+device\+\_\+e\+\_\+t}]{type}{}\end{DoxyParamCaption})}
+
+A function that executes claim\+\_\+port and allows you to execute a block of code if an error occurs.
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). EACCES -\/ Another resource is currently trying to access the port.
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The V5 port number from 0-\/20 \\
+\hline
+{\em device\+\_\+type} & The v5\+\_\+device\+\_\+e\+\_\+t that the port is configured as\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the operation was successful or 0 if the operation failed, setting errno. 
+\end{DoxyReturn}
+\Hypertarget{vdml_8h_a3cd0d28bdfcb9c15a2bd393a25fcb6f2}\index{vdml.h@{vdml.h}!internal\_port\_mutex\_give@{internal\_port\_mutex\_give}}
+\index{internal\_port\_mutex\_give@{internal\_port\_mutex\_give}!vdml.h@{vdml.h}}
+\doxysubsubsection{\texorpdfstring{internal\_port\_mutex\_give()}{internal\_port\_mutex\_give()}}
+{\footnotesize\ttfamily \label{vdml_8h_a3cd0d28bdfcb9c15a2bd393a25fcb6f2} 
+int internal\+\_\+port\+\_\+mutex\+\_\+give (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port}{}\end{DoxyParamCaption})}
+
+Returns a port mutex with bounds checking for V5\+\_\+\+MAX\+\_\+\+PORTS (32) not user exposed device ports (20). Intended for internal usage for protecting thread-\/safety on devices such as the controller and battery
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (0-\/32).
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The V5 port number from 0-\/32\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the mutex was successfully returned, false otherwise. If false is returned, then errno is set with a hint about why the mutex couldn\textquotesingle{}t be returned. 
+\end{DoxyReturn}
+\Hypertarget{vdml_8h_af35fba308dec7fbae265a4b4586a4786}\index{vdml.h@{vdml.h}!internal\_port\_mutex\_take@{internal\_port\_mutex\_take}}
+\index{internal\_port\_mutex\_take@{internal\_port\_mutex\_take}!vdml.h@{vdml.h}}
+\doxysubsubsection{\texorpdfstring{internal\_port\_mutex\_take()}{internal\_port\_mutex\_take()}}
+{\footnotesize\ttfamily \label{vdml_8h_af35fba308dec7fbae265a4b4586a4786} 
+int internal\+\_\+port\+\_\+mutex\+\_\+take (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port}{}\end{DoxyParamCaption})}
+
+Obtains a port mutex with bounds checking for V5\+\_\+\+MAX\+\_\+\+PORTS (32) not user exposed device ports (20). Intended for internal usage for protecting thread-\/safety on devices such as the controller and battery
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (0-\/32).
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The V5 port number from 0-\/32\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the mutex was successfully taken, false otherwise. If false is returned, then errno is set with a hint about why the the mutex couldn\textquotesingle{}t be taken. 
+\end{DoxyReturn}
+\Hypertarget{vdml_8h_abeb38b74fc71b8003c53e920822f7d1d}\index{vdml.h@{vdml.h}!port\_mutex\_give@{port\_mutex\_give}}
+\index{port\_mutex\_give@{port\_mutex\_give}!vdml.h@{vdml.h}}
+\doxysubsubsection{\texorpdfstring{port\_mutex\_give()}{port\_mutex\_give()}}
+{\footnotesize\ttfamily \label{vdml_8h_abeb38b74fc71b8003c53e920822f7d1d} 
+int port\+\_\+mutex\+\_\+give (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port}{}\end{DoxyParamCaption})}
+
+Returns the mutex for the given port.
+
+Frees the mutex for this port, allowing other tasks to continue.
+
+WARNING\+: If a mutex was claimed by a task, this MUST be called immediately after the port is no longer needed by that task in order to prevent delays in other tasks.
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (0-\/20).
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The V5 port number to free from 0-\/20 \\
+\hline
+\end{DoxyParams}
+\Hypertarget{vdml_8h_ae70eb480db1d80602e5b5f037d572d47}\index{vdml.h@{vdml.h}!port\_mutex\_give\_all@{port\_mutex\_give\_all}}
+\index{port\_mutex\_give\_all@{port\_mutex\_give\_all}!vdml.h@{vdml.h}}
+\doxysubsubsection{\texorpdfstring{port\_mutex\_give\_all()}{port\_mutex\_give\_all()}}
+{\footnotesize\ttfamily \label{vdml_8h_ae70eb480db1d80602e5b5f037d572d47} 
+void port\+\_\+mutex\+\_\+give\+\_\+all (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Executes \doxylink{vdml_8h_abeb38b74fc71b8003c53e920822f7d1d}{port\+\_\+mutex\+\_\+give()} for all of the V5 Smart Ports. \Hypertarget{vdml_8h_a67513439eb7264d1196f58dbaa03c847}\index{vdml.h@{vdml.h}!port\_mutex\_take@{port\_mutex\_take}}
+\index{port\_mutex\_take@{port\_mutex\_take}!vdml.h@{vdml.h}}
+\doxysubsubsection{\texorpdfstring{port\_mutex\_take()}{port\_mutex\_take()}}
+{\footnotesize\ttfamily \label{vdml_8h_a67513439eb7264d1196f58dbaa03c847} 
+int port\+\_\+mutex\+\_\+take (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port}{}\end{DoxyParamCaption})}
+
+Claims the mutex for the given port.
+
+Reserves the mutex for this port. Any other tasks trying to access this port will block until the mutex is returned. If a higher-\/priortiy task attempts to claim this port, the task which has the port claimed will temporarily be raised to an equal priority until the mutex is given, reducing the impact of the delay. See Free\+RTOS documentation for more details.
+
+This MUST be called before any call to the v5 api to maintain thread saftey.
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (0-\/20).
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The V5 port number to claim from 0-\/20\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the mutex was successfully taken, 0 if not, -\/1 if port is invalid. 
+\end{DoxyReturn}
+\Hypertarget{vdml_8h_a00133d1eced9193949574829587a393d}\index{vdml.h@{vdml.h}!port\_mutex\_take\_all@{port\_mutex\_take\_all}}
+\index{port\_mutex\_take\_all@{port\_mutex\_take\_all}!vdml.h@{vdml.h}}
+\doxysubsubsection{\texorpdfstring{port\_mutex\_take\_all()}{port\_mutex\_take\_all()}}
+{\footnotesize\ttfamily \label{vdml_8h_a00133d1eced9193949574829587a393d} 
+void port\+\_\+mutex\+\_\+take\+\_\+all (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Executes \doxylink{vdml_8h_a67513439eb7264d1196f58dbaa03c847}{port\+\_\+mutex\+\_\+take()} for all of the V5 Smart Ports. \Hypertarget{vdml_8h_a9b8bc94d616e0f915c2930698e64c4bc}\index{vdml.h@{vdml.h}!vdml\_get\_port\_error@{vdml\_get\_port\_error}}
+\index{vdml\_get\_port\_error@{vdml\_get\_port\_error}!vdml.h@{vdml.h}}
+\doxysubsubsection{\texorpdfstring{vdml\_get\_port\_error()}{vdml\_get\_port\_error()}}
+{\footnotesize\ttfamily \label{vdml_8h_a9b8bc94d616e0f915c2930698e64c4bc} 
+bool vdml\+\_\+get\+\_\+port\+\_\+error (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port}{}\end{DoxyParamCaption})}
+
+Gets the error bit for the port, indicating whether or not there has been an error on this port.
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The V5 port number to check from 0-\/20\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the port\textquotesingle{}s bit is set, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{vdml_8h_ab164b06ea2d6c77fac6d1afc8bfa78f4}\index{vdml.h@{vdml.h}!vdml\_set\_port\_error@{vdml\_set\_port\_error}}
+\index{vdml\_set\_port\_error@{vdml\_set\_port\_error}!vdml.h@{vdml.h}}
+\doxysubsubsection{\texorpdfstring{vdml\_set\_port\_error()}{vdml\_set\_port\_error()}}
+{\footnotesize\ttfamily \label{vdml_8h_ab164b06ea2d6c77fac6d1afc8bfa78f4} 
+void vdml\+\_\+set\+\_\+port\+\_\+error (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port}{}\end{DoxyParamCaption})}
+
+Sets the port\textquotesingle{}s bit to 1, indicating there has already been an error on this port.
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The V5 port number to set from 0-\/20 \\
+\hline
+\end{DoxyParams}
+\Hypertarget{vdml_8h_a041f91b4d998392918864e26df946f32}\index{vdml.h@{vdml.h}!vdml\_unset\_port\_error@{vdml\_unset\_port\_error}}
+\index{vdml\_unset\_port\_error@{vdml\_unset\_port\_error}!vdml.h@{vdml.h}}
+\doxysubsubsection{\texorpdfstring{vdml\_unset\_port\_error()}{vdml\_unset\_port\_error()}}
+{\footnotesize\ttfamily \label{vdml_8h_a041f91b4d998392918864e26df946f32} 
+void vdml\+\_\+unset\+\_\+port\+\_\+error (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port}{}\end{DoxyParamCaption})}
+
+Sets the port\textquotesingle{}s bit to 0, effectively resetting it.
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The V5 port number to unset from 0-\/20 \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{vdml_8h_a93dbe5adaa0d9331b7a02a713da023c1}\index{vdml.h@{vdml.h}!port\_errors@{port\_errors}}
+\index{port\_errors@{port\_errors}!vdml.h@{vdml.h}}
+\doxysubsubsection{\texorpdfstring{port\_errors}{port\_errors}}
+{\footnotesize\ttfamily \label{vdml_8h_a93dbe5adaa0d9331b7a02a713da023c1} 
+int32\+\_\+t port\+\_\+errors\hspace{0.3cm}{\ttfamily [extern]}}
+
+Bitmap to indicate if a port has had an error printed or not. 

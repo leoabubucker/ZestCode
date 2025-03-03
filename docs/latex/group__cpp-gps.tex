@@ -1,0 +1,651 @@
+\doxysection{VEX GPS Sensor C API}
+\hypertarget{group__cpp-gps}{}\label{group__cpp-gps}\index{VEX GPS Sensor C API@{VEX GPS Sensor C API}}
+\doxysubsubsection*{Files}
+\begin{DoxyCompactItemize}
+\item 
+file \mbox{\hyperlink{gps_8hpp}{gps.\+hpp}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classpros_1_1v5_1_1_gps}{pros\+::v5\+::\+Gps}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__cpp-gps_gab1c54c51a4c971b7fc089652b27feb7b}{pros\+::v5\+::\+Gps\+::\+Gps}} (const std\+::uint8\+\_\+t port)
+\item 
+\Hypertarget{group__cpp-gps_ga683417f657b5284a1d579e04a4712204}\label{group__cpp-gps_ga683417f657b5284a1d579e04a4712204} 
+{\bfseries pros\+::v5\+::\+Gps\+::\+Gps} (const \mbox{\hyperlink{classpros_1_1v5_1_1_device}{Device}} \&device)
+\item 
+\mbox{\hyperlink{group__cpp-gps_ga9ed802f0020078b1cb88e6d4fa62217d}{pros\+::v5\+::\+Gps\+::\+Gps}} (const std\+::uint8\+\_\+t port, double x\+Initial, double y\+Initial, double heading\+Initial)
+\item 
+\mbox{\hyperlink{group__cpp-gps_ga13ac42269e2baf1b19bd0d79b25616e9}{pros\+::v5\+::\+Gps\+::\+Gps}} (const std\+::uint8\+\_\+t port, double x\+Offset, double y\+Offset)
+\item 
+\mbox{\hyperlink{group__cpp-gps_ga6d65b8cad335b747491af7a8813ac51f}{pros\+::v5\+::\+Gps\+::\+Gps}} (const std\+::uint8\+\_\+t port, double x\+Initial, double y\+Initial, double heading\+Initial, double x\+Offset, double y\+Offset)
+\item 
+virtual std\+::int32\+\_\+t \mbox{\hyperlink{group__cpp-gps_gadead9ecdff20e98cfe07d813d0895204}{pros\+::v5\+::\+Gps\+::initialize\+\_\+full}} (double x\+Initial, double y\+Initial, double heading\+Initial, double x\+Offset, double y\+Offset) const
+\item 
+virtual std\+::int32\+\_\+t \mbox{\hyperlink{group__cpp-gps_ga1ec56d24d61c70573efc4aaeff0993de}{pros\+::v5\+::\+Gps\+::set\+\_\+offset}} (double x\+Offset, double y\+Offset) const
+\item 
+static std\+::vector$<$ \mbox{\hyperlink{classpros_1_1v5_1_1_gps}{Gps}} $>$ \mbox{\hyperlink{group__cpp-gps_gaaa2a61d55cf2c6f473af1392595c667b}{pros\+::v5\+::\+Gps\+::get\+\_\+all\+\_\+devices}} ()
+\item 
+virtual pros\+::gps\+\_\+position\+\_\+s\+\_\+t \mbox{\hyperlink{group__cpp-gps_gad88956755ab31799e80b6ec1f72b72b6}{pros\+::v5\+::\+Gps\+::get\+\_\+offset}} () const
+\item 
+virtual std\+::int32\+\_\+t \mbox{\hyperlink{group__cpp-gps_gafc2fd9d3e61b27f96527af9ce4c063cb}{pros\+::v5\+::\+Gps\+::set\+\_\+position}} (double x\+Initial, double y\+Initial, double heading\+Initial) const
+\item 
+virtual std\+::int32\+\_\+t \mbox{\hyperlink{group__cpp-gps_ga48c3c74a67ee1f233c1eb2e9567be0b3}{pros\+::v5\+::\+Gps\+::set\+\_\+data\+\_\+rate}} (std\+::uint32\+\_\+t rate) const
+\item 
+virtual double \mbox{\hyperlink{group__cpp-gps_gad2e567df5c92dae94f168aa140cef798}{pros\+::v5\+::\+Gps\+::get\+\_\+error}} () const
+\item 
+virtual pros\+::gps\+\_\+status\+\_\+s\+\_\+t \mbox{\hyperlink{group__cpp-gps_ga3fcaf58be99232392f7ff6559e8042ae}{pros\+::v5\+::\+Gps\+::get\+\_\+position\+\_\+and\+\_\+orientation}} () const
+\item 
+virtual pros\+::gps\+\_\+position\+\_\+s\+\_\+t \mbox{\hyperlink{group__cpp-gps_ga55158a18e32d97790cc37136db4a8fb5}{pros\+::v5\+::\+Gps\+::get\+\_\+position}} () const
+\item 
+virtual double \mbox{\hyperlink{group__cpp-gps_gaed005fc4a5077cf45202efe2fe222ad5}{pros\+::v5\+::\+Gps\+::get\+\_\+position\+\_\+x}} () const
+\item 
+virtual double \mbox{\hyperlink{group__cpp-gps_ga3a65172f2433eb28222007ca9f3544be}{pros\+::v5\+::\+Gps\+::get\+\_\+position\+\_\+y}} () const
+\item 
+virtual pros\+::gps\+\_\+orientation\+\_\+s\+\_\+t \mbox{\hyperlink{group__cpp-gps_ga85d1dff0bd69828e36d97dedc125cefc}{pros\+::v5\+::\+Gps\+::get\+\_\+orientation}} () const
+\item 
+virtual double \mbox{\hyperlink{group__cpp-gps_ga72367c1983d2fca23ca67dfb65853523}{pros\+::v5\+::\+Gps\+::get\+\_\+pitch}} () const
+\item 
+virtual double \mbox{\hyperlink{group__cpp-gps_gad5b5a4856946c13ea52a347bca6e7f1d}{pros\+::v5\+::\+Gps\+::get\+\_\+roll}} () const
+\item 
+virtual double \mbox{\hyperlink{group__cpp-gps_ga39f1a0d37012dc8613dc2d649478d555}{pros\+::v5\+::\+Gps\+::get\+\_\+yaw}} () const
+\item 
+virtual double \mbox{\hyperlink{group__cpp-gps_ga765035641a89f618bf09e2335067ee92}{pros\+::v5\+::\+Gps\+::get\+\_\+heading}} () const
+\item 
+virtual double \mbox{\hyperlink{group__cpp-gps_ga549eb0516c24271ecdff779e0ef816b1}{pros\+::v5\+::\+Gps\+::get\+\_\+heading\+\_\+raw}} () const
+\item 
+virtual pros\+::gps\+\_\+gyro\+\_\+s\+\_\+t \mbox{\hyperlink{group__cpp-gps_gabce64408fcc26e4a1010d8d7acb9498b}{pros\+::v5\+::\+Gps\+::get\+\_\+gyro\+\_\+rate}} () const
+\item 
+virtual double \mbox{\hyperlink{group__cpp-gps_ga19cbb9163307e28a60e455c1decf2615}{pros\+::v5\+::\+Gps\+::get\+\_\+gyro\+\_\+rate\+\_\+x}} () const
+\item 
+virtual double \mbox{\hyperlink{group__cpp-gps_gad87350a369d058ebb7c9cccd279c8594}{pros\+::v5\+::\+Gps\+::get\+\_\+gyro\+\_\+rate\+\_\+y}} () const
+\item 
+virtual double \mbox{\hyperlink{group__cpp-gps_ga89cf11e655d4de15d63f8dac5b808965}{pros\+::v5\+::\+Gps\+::get\+\_\+gyro\+\_\+rate\+\_\+z}} () const
+\item 
+virtual pros\+::gps\+\_\+accel\+\_\+s\+\_\+t \mbox{\hyperlink{group__cpp-gps_ga619fd53d1bde337b5c43f4428fa7d5e4}{pros\+::v5\+::\+Gps\+::get\+\_\+accel}} () const
+\item 
+virtual double \mbox{\hyperlink{group__cpp-gps_gad6725add7bb8a65c60adb2c663412a84}{pros\+::v5\+::\+Gps\+::get\+\_\+accel\+\_\+x}} () const
+\item 
+virtual double \mbox{\hyperlink{group__cpp-gps_gaa40e042629cadf5396e7c050d1f10a43}{pros\+::v5\+::\+Gps\+::get\+\_\+accel\+\_\+y}} () const
+\item 
+virtual double \mbox{\hyperlink{group__cpp-gps_ga24068e0b791e77dcb508fbade06259a3}{pros\+::v5\+::\+Gps\+::get\+\_\+accel\+\_\+z}} () const
+\item 
+static \mbox{\hyperlink{classpros_1_1v5_1_1_gps}{Gps}} \mbox{\hyperlink{group__cpp-gps_ga31b796cbd188d4fb27894f7ac45c0613}{pros\+::v5\+::\+Gps\+::get\+\_\+gps}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{group__cpp-gps_gaea6d9cbb79dae8b74905d14fcd9cce74}{pros\+::v5\+::\+Gps\+::operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{classpros_1_1v5_1_1_gps}{pros\+::\+Gps}} \&\mbox{\hyperlink{group__cpp-device_gga0a7387ba6156c831ba1e61d75a04c3d9a11648e4e66e7ed6a86cb7f1d0cf604fe}{gps}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyNote}{Note}
+For a pros-\/specific usage guide on the \doxylink{namespacepros_a230cf24d616c52c9f3b17bb97602489a}{GPS}, please check out our article \doxylink{group__cpp-device_gga0a7387ba6156c831ba1e61d75a04c3d9a11648e4e66e7ed6a86cb7f1d0cf604fe}{here.}
+\end{DoxyNote}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{group__cpp-gps_ga619fd53d1bde337b5c43f4428fa7d5e4}\index{VEX GPS Sensor C API@{VEX GPS Sensor C API}!get\_accel@{get\_accel}}
+\index{get\_accel@{get\_accel}!VEX GPS Sensor C API@{VEX GPS Sensor C API}}
+\doxysubsubsection{\texorpdfstring{get\_accel()}{get\_accel()}}
+{\footnotesize\ttfamily \label{group__cpp-gps_ga619fd53d1bde337b5c43f4428fa7d5e4} 
+pros\+::gps\+\_\+accel\+\_\+s\+\_\+t pros\+::v5\+::\+Gps\+::get\+\_\+accel (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get the \doxylink{namespacepros_a230cf24d616c52c9f3b17bb97602489a}{GPS}\textquotesingle{}s raw accelerometer values
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as an \doxylink{namespacepros_a230cf24d616c52c9f3b17bb97602489a}{GPS} EAGAIN -\/ The sensor is still calibrating
+
+\begin{DoxyReturn}{Returns}
+The raw accelerometer values. If the operation failed, all the structure\textquotesingle{}s members are filled with PROS\+\_\+\+ERR\+\_\+F and errno is set. 
+\end{DoxyReturn}
+\Hypertarget{group__cpp-gps_gad6725add7bb8a65c60adb2c663412a84}\index{VEX GPS Sensor C API@{VEX GPS Sensor C API}!get\_accel\_x@{get\_accel\_x}}
+\index{get\_accel\_x@{get\_accel\_x}!VEX GPS Sensor C API@{VEX GPS Sensor C API}}
+\doxysubsubsection{\texorpdfstring{get\_accel\_x()}{get\_accel\_x()}}
+{\footnotesize\ttfamily \label{group__cpp-gps_gad6725add7bb8a65c60adb2c663412a84} 
+double pros\+::v5\+::\+Gps\+::get\+\_\+accel\+\_\+x (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get the \doxylink{namespacepros_a230cf24d616c52c9f3b17bb97602489a}{GPS}\textquotesingle{}s raw accelerometer value in x-\/axis
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as an \doxylink{namespacepros_a230cf24d616c52c9f3b17bb97602489a}{GPS} EAGAIN -\/ The sensor is still calibrating
+
+\begin{DoxyReturn}{Returns}
+The raw accelerometer value in x-\/axis. If the operation fails, returns PROS\+\_\+\+ERR\+\_\+F and errno is set.
+\end{DoxyReturn}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ \Hypertarget{group__cpp-gps_gaa40e042629cadf5396e7c050d1f10a43}\index{VEX GPS Sensor C API@{VEX GPS Sensor C API}!get\_accel\_y@{get\_accel\_y}}
+\index{get\_accel\_y@{get\_accel\_y}!VEX GPS Sensor C API@{VEX GPS Sensor C API}}
+\doxysubsubsection{\texorpdfstring{get\_accel\_y()}{get\_accel\_y()}}
+{\footnotesize\ttfamily \label{group__cpp-gps_gaa40e042629cadf5396e7c050d1f10a43} 
+double pros\+::v5\+::\+Gps\+::get\+\_\+accel\+\_\+y (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get the \doxylink{namespacepros_a230cf24d616c52c9f3b17bb97602489a}{GPS}\textquotesingle{}s raw accelerometer value in y-\/axis
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as an \doxylink{namespacepros_a230cf24d616c52c9f3b17bb97602489a}{GPS} EAGAIN -\/ The sensor is still calibrating
+
+\begin{DoxyReturn}{Returns}
+The raw accelerometer value in y-\/axis. If the operation fails, returns PROS\+\_\+\+ERR\+\_\+F and errno is set.
+\end{DoxyReturn}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ \Hypertarget{group__cpp-gps_ga24068e0b791e77dcb508fbade06259a3}\index{VEX GPS Sensor C API@{VEX GPS Sensor C API}!get\_accel\_z@{get\_accel\_z}}
+\index{get\_accel\_z@{get\_accel\_z}!VEX GPS Sensor C API@{VEX GPS Sensor C API}}
+\doxysubsubsection{\texorpdfstring{get\_accel\_z()}{get\_accel\_z()}}
+{\footnotesize\ttfamily \label{group__cpp-gps_ga24068e0b791e77dcb508fbade06259a3} 
+double pros\+::v5\+::\+Gps\+::get\+\_\+accel\+\_\+z (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get the \doxylink{namespacepros_a230cf24d616c52c9f3b17bb97602489a}{GPS}\textquotesingle{}s raw accelerometer value in z-\/axis
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as an \doxylink{namespacepros_a230cf24d616c52c9f3b17bb97602489a}{GPS} EAGAIN -\/ The sensor is still calibrating
+
+\begin{DoxyReturn}{Returns}
+The raw accelerometer value in z-\/axis. If the operation fails, returns PROS\+\_\+\+ERR\+\_\+F and errno is set.
+\end{DoxyReturn}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ \Hypertarget{group__cpp-gps_gaaa2a61d55cf2c6f473af1392595c667b}\index{VEX GPS Sensor C API@{VEX GPS Sensor C API}!get\_all\_devices@{get\_all\_devices}}
+\index{get\_all\_devices@{get\_all\_devices}!VEX GPS Sensor C API@{VEX GPS Sensor C API}}
+\doxysubsubsection{\texorpdfstring{get\_all\_devices()}{get\_all\_devices()}}
+{\footnotesize\ttfamily \label{group__cpp-gps_gaaa2a61d55cf2c6f473af1392595c667b} 
+std\+::vector$<$ \mbox{\hyperlink{classpros_1_1v5_1_1_gps}{Gps}} $>$ pros\+::v5\+::\+Gps\+::get\+\_\+all\+\_\+devices (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Gets all \doxylink{namespacepros_a230cf24d616c52c9f3b17bb97602489a}{GPS} sensors.
+
+\begin{DoxyReturn}{Returns}
+A vector of \doxylink{classpros_1_1v5_1_1_gps}{Gps} sensor objects.
+\end{DoxyReturn}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ \Hypertarget{group__cpp-gps_gad2e567df5c92dae94f168aa140cef798}\index{VEX GPS Sensor C API@{VEX GPS Sensor C API}!get\_error@{get\_error}}
+\index{get\_error@{get\_error}!VEX GPS Sensor C API@{VEX GPS Sensor C API}}
+\doxysubsubsection{\texorpdfstring{get\_error()}{get\_error()}}
+{\footnotesize\ttfamily \label{group__cpp-gps_gad2e567df5c92dae94f168aa140cef798} 
+double pros\+::v5\+::\+Gps\+::get\+\_\+error (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get the possible RMS (Root Mean Squared) error in meters for \doxylink{namespacepros_a230cf24d616c52c9f3b17bb97602489a}{GPS} position.
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as a \doxylink{namespacepros_a230cf24d616c52c9f3b17bb97602489a}{GPS} EAGAIN -\/ The sensor is still calibrating
+
+\begin{DoxyReturn}{Returns}
+Possible RMS (Root Mean Squared) error in meters for \doxylink{namespacepros_a230cf24d616c52c9f3b17bb97602489a}{GPS} position. If the operation failed, returns PROS\+\_\+\+ERR\+\_\+F and errno is set.
+\end{DoxyReturn}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ \Hypertarget{group__cpp-gps_ga31b796cbd188d4fb27894f7ac45c0613}\index{VEX GPS Sensor C API@{VEX GPS Sensor C API}!get\_gps@{get\_gps}}
+\index{get\_gps@{get\_gps}!VEX GPS Sensor C API@{VEX GPS Sensor C API}}
+\doxysubsubsection{\texorpdfstring{get\_gps()}{get\_gps()}}
+{\footnotesize\ttfamily \label{group__cpp-gps_ga31b796cbd188d4fb27894f7ac45c0613} 
+static \mbox{\hyperlink{classpros_1_1v5_1_1_gps}{Gps}} pros\+::v5\+::\+Gps\+::get\+\_\+gps (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Gets a gps sensor that is plugged in to the brain
+
+\begin{DoxyNote}{Note}
+The first time this function is called it returns the gps sensor at the lowest port If this function is called multiple times, it will cycle through all the ports. For example, if you have 1 gps sensor on the robot this function will always return a gps sensor object for that port. If you have 2 gps sensors, all the odd numered calls to this function will return objects for the lower port number, all the even number calls will return gps objects for the higher port number
+\end{DoxyNote}
+This functions uses the following values of errno when an error state is reached\+: ENODEV -\/ No gps sensor is plugged into the brain
+
+\begin{DoxyReturn}{Returns}
+A gps object corresponding to a port that a gps sensor is connected to the brain If no gps sensor is plugged in, it returns a gps sensor on port PROS\+\_\+\+ERR\+\_\+\+BYTE 
+\end{DoxyReturn}
+\Hypertarget{group__cpp-gps_gabce64408fcc26e4a1010d8d7acb9498b}\index{VEX GPS Sensor C API@{VEX GPS Sensor C API}!get\_gyro\_rate@{get\_gyro\_rate}}
+\index{get\_gyro\_rate@{get\_gyro\_rate}!VEX GPS Sensor C API@{VEX GPS Sensor C API}}
+\doxysubsubsection{\texorpdfstring{get\_gyro\_rate()}{get\_gyro\_rate()}}
+{\footnotesize\ttfamily \label{group__cpp-gps_gabce64408fcc26e4a1010d8d7acb9498b} 
+pros\+::gps\+\_\+gyro\+\_\+s\+\_\+t pros\+::v5\+::\+Gps\+::get\+\_\+gyro\+\_\+rate (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get the \doxylink{namespacepros_a230cf24d616c52c9f3b17bb97602489a}{GPS}\textquotesingle{}s raw gyroscope value in z-\/axis
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as a \doxylink{namespacepros_a230cf24d616c52c9f3b17bb97602489a}{GPS} EAGAIN -\/ The sensor is still calibrating
+
+\begin{DoxyReturn}{Returns}
+The raw gyroscope value in z-\/axis. If the operation fails, returns PROS\+\_\+\+ERR\+\_\+F and errno is set.
+\end{DoxyReturn}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ \Hypertarget{group__cpp-gps_ga19cbb9163307e28a60e455c1decf2615}\index{VEX GPS Sensor C API@{VEX GPS Sensor C API}!get\_gyro\_rate\_x@{get\_gyro\_rate\_x}}
+\index{get\_gyro\_rate\_x@{get\_gyro\_rate\_x}!VEX GPS Sensor C API@{VEX GPS Sensor C API}}
+\doxysubsubsection{\texorpdfstring{get\_gyro\_rate\_x()}{get\_gyro\_rate\_x()}}
+{\footnotesize\ttfamily \label{group__cpp-gps_ga19cbb9163307e28a60e455c1decf2615} 
+double pros\+::v5\+::\+Gps\+::get\+\_\+gyro\+\_\+rate\+\_\+x (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get the \doxylink{namespacepros_a230cf24d616c52c9f3b17bb97602489a}{GPS}\textquotesingle{}s raw gyroscope value in x-\/axis
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as a \doxylink{namespacepros_a230cf24d616c52c9f3b17bb97602489a}{GPS} EAGAIN -\/ The sensor is still calibrating
+
+\begin{DoxyReturn}{Returns}
+The raw gyroscope value in x-\/axis. If the operation fails, returns PROS\+\_\+\+ERR\+\_\+F and errno is set.
+\end{DoxyReturn}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ \Hypertarget{group__cpp-gps_gad87350a369d058ebb7c9cccd279c8594}\index{VEX GPS Sensor C API@{VEX GPS Sensor C API}!get\_gyro\_rate\_y@{get\_gyro\_rate\_y}}
+\index{get\_gyro\_rate\_y@{get\_gyro\_rate\_y}!VEX GPS Sensor C API@{VEX GPS Sensor C API}}
+\doxysubsubsection{\texorpdfstring{get\_gyro\_rate\_y()}{get\_gyro\_rate\_y()}}
+{\footnotesize\ttfamily \label{group__cpp-gps_gad87350a369d058ebb7c9cccd279c8594} 
+double pros\+::v5\+::\+Gps\+::get\+\_\+gyro\+\_\+rate\+\_\+y (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get the \doxylink{namespacepros_a230cf24d616c52c9f3b17bb97602489a}{GPS}\textquotesingle{}s raw gyroscope value in y-\/axis
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as a \doxylink{namespacepros_a230cf24d616c52c9f3b17bb97602489a}{GPS} EAGAIN -\/ The sensor is still calibrating
+
+\begin{DoxyReturn}{Returns}
+The raw gyroscope value in y-\/axis. If the operation fails, returns PROS\+\_\+\+ERR\+\_\+F and errno is set.
+\end{DoxyReturn}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ \Hypertarget{group__cpp-gps_ga89cf11e655d4de15d63f8dac5b808965}\index{VEX GPS Sensor C API@{VEX GPS Sensor C API}!get\_gyro\_rate\_z@{get\_gyro\_rate\_z}}
+\index{get\_gyro\_rate\_z@{get\_gyro\_rate\_z}!VEX GPS Sensor C API@{VEX GPS Sensor C API}}
+\doxysubsubsection{\texorpdfstring{get\_gyro\_rate\_z()}{get\_gyro\_rate\_z()}}
+{\footnotesize\ttfamily \label{group__cpp-gps_ga89cf11e655d4de15d63f8dac5b808965} 
+double pros\+::v5\+::\+Gps\+::get\+\_\+gyro\+\_\+rate\+\_\+z (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get the \doxylink{namespacepros_a230cf24d616c52c9f3b17bb97602489a}{GPS}\textquotesingle{}s raw gyroscope value in z-\/axis
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as a \doxylink{namespacepros_a230cf24d616c52c9f3b17bb97602489a}{GPS} EAGAIN -\/ The sensor is still calibrating
+
+\begin{DoxyReturn}{Returns}
+The raw gyroscope value in z-\/axis. If the operation fails, returns PROS\+\_\+\+ERR\+\_\+F and errno is set.
+\end{DoxyReturn}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ \Hypertarget{group__cpp-gps_ga765035641a89f618bf09e2335067ee92}\index{VEX GPS Sensor C API@{VEX GPS Sensor C API}!get\_heading@{get\_heading}}
+\index{get\_heading@{get\_heading}!VEX GPS Sensor C API@{VEX GPS Sensor C API}}
+\doxysubsubsection{\texorpdfstring{get\_heading()}{get\_heading()}}
+{\footnotesize\ttfamily \label{group__cpp-gps_ga765035641a89f618bf09e2335067ee92} 
+double pros\+::v5\+::\+Gps\+::get\+\_\+heading (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get the heading in \mbox{[}0,360) degree values.
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as a \doxylink{namespacepros_a230cf24d616c52c9f3b17bb97602489a}{GPS} EAGAIN -\/ The sensor is still calibrating
+
+\begin{DoxyReturn}{Returns}
+The heading in \mbox{[}0,360) degree values. If the operation failed, returns PROS\+\_\+\+ERR\+\_\+F and errno is set.
+\end{DoxyReturn}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ \Hypertarget{group__cpp-gps_ga549eb0516c24271ecdff779e0ef816b1}\index{VEX GPS Sensor C API@{VEX GPS Sensor C API}!get\_heading\_raw@{get\_heading\_raw}}
+\index{get\_heading\_raw@{get\_heading\_raw}!VEX GPS Sensor C API@{VEX GPS Sensor C API}}
+\doxysubsubsection{\texorpdfstring{get\_heading\_raw()}{get\_heading\_raw()}}
+{\footnotesize\ttfamily \label{group__cpp-gps_ga549eb0516c24271ecdff779e0ef816b1} 
+double pros\+::v5\+::\+Gps\+::get\+\_\+heading\+\_\+raw (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get the heading in the max double value and min double value scale.
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as a \doxylink{namespacepros_a230cf24d616c52c9f3b17bb97602489a}{GPS} EAGAIN -\/ The sensor is still calibrating
+
+\begin{DoxyReturn}{Returns}
+The heading in \mbox{[}DOUBLE\+\_\+\+MIN, DOUBLE\+\_\+\+MAX\mbox{]} values. If the operation fails, returns PROS\+\_\+\+ERR\+\_\+F and errno is set.
+\end{DoxyReturn}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ \Hypertarget{group__cpp-gps_gad88956755ab31799e80b6ec1f72b72b6}\index{VEX GPS Sensor C API@{VEX GPS Sensor C API}!get\_offset@{get\_offset}}
+\index{get\_offset@{get\_offset}!VEX GPS Sensor C API@{VEX GPS Sensor C API}}
+\doxysubsubsection{\texorpdfstring{get\_offset()}{get\_offset()}}
+{\footnotesize\ttfamily \label{group__cpp-gps_gad88956755ab31799e80b6ec1f72b72b6} 
+pros\+::gps\+\_\+position\+\_\+s\+\_\+t pros\+::v5\+::\+Gps\+::get\+\_\+offset (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get the \doxylink{namespacepros_a230cf24d616c52c9f3b17bb97602489a}{GPS}\textquotesingle{}s cartesian location relative to the center of turning/origin in meters.
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as a \doxylink{namespacepros_a230cf24d616c52c9f3b17bb97602489a}{GPS} EAGAIN -\/ The sensor is still calibrating
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The V5 \doxylink{namespacepros_a230cf24d616c52c9f3b17bb97602489a}{GPS} port number from 1-\/21 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A struct (\doxylink{structgps__position__s__t}{gps\+\_\+position\+\_\+s\+\_\+t}) containing the X and Y values if the operation failed, setting errno.
+\end{DoxyReturn}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ \Hypertarget{group__cpp-gps_ga85d1dff0bd69828e36d97dedc125cefc}\index{VEX GPS Sensor C API@{VEX GPS Sensor C API}!get\_orientation@{get\_orientation}}
+\index{get\_orientation@{get\_orientation}!VEX GPS Sensor C API@{VEX GPS Sensor C API}}
+\doxysubsubsection{\texorpdfstring{get\_orientation()}{get\_orientation()}}
+{\footnotesize\ttfamily \label{group__cpp-gps_ga85d1dff0bd69828e36d97dedc125cefc} 
+pros\+::gps\+\_\+orientation\+\_\+s\+\_\+t pros\+::v5\+::\+Gps\+::get\+\_\+orientation (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Gets the pitch, roll, and yaw of the \doxylink{namespacepros_a230cf24d616c52c9f3b17bb97602489a}{GPS} relative to the starting orientation.
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as a \doxylink{namespacepros_a230cf24d616c52c9f3b17bb97602489a}{GPS} EAGAIN -\/ The sensor is still calibrating
+
+\begin{DoxyReturn}{Returns}
+A struct (\doxylink{structgps__orientation__s__t}{gps\+\_\+orientation\+\_\+s\+\_\+t}) containing values mentioned above. If the operation failed, all the structure\textquotesingle{}s members are filled with PROS\+\_\+\+ERR\+\_\+F and errno is set.
+\end{DoxyReturn}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ \Hypertarget{group__cpp-gps_ga72367c1983d2fca23ca67dfb65853523}\index{VEX GPS Sensor C API@{VEX GPS Sensor C API}!get\_pitch@{get\_pitch}}
+\index{get\_pitch@{get\_pitch}!VEX GPS Sensor C API@{VEX GPS Sensor C API}}
+\doxysubsubsection{\texorpdfstring{get\_pitch()}{get\_pitch()}}
+{\footnotesize\ttfamily \label{group__cpp-gps_ga72367c1983d2fca23ca67dfb65853523} 
+double pros\+::v5\+::\+Gps\+::get\+\_\+pitch (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Gets the pitch of the robot in degrees relative to the starting oreintation.
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as a \doxylink{namespacepros_a230cf24d616c52c9f3b17bb97602489a}{GPS} EAGAIN -\/ The sensor is still calibrating
+
+\begin{DoxyReturn}{Returns}
+The pitch in \mbox{[}0,360) degree values. If the operation failed, returns PROS\+\_\+\+ERR\+\_\+F and errno is set.
+\end{DoxyReturn}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ \Hypertarget{group__cpp-gps_ga55158a18e32d97790cc37136db4a8fb5}\index{VEX GPS Sensor C API@{VEX GPS Sensor C API}!get\_position@{get\_position}}
+\index{get\_position@{get\_position}!VEX GPS Sensor C API@{VEX GPS Sensor C API}}
+\doxysubsubsection{\texorpdfstring{get\_position()}{get\_position()}}
+{\footnotesize\ttfamily \label{group__cpp-gps_ga55158a18e32d97790cc37136db4a8fb5} 
+pros\+::gps\+\_\+position\+\_\+s\+\_\+t pros\+::v5\+::\+Gps\+::get\+\_\+position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Gets the x and y position on the field of the \doxylink{namespacepros_a230cf24d616c52c9f3b17bb97602489a}{GPS} in meters.
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as a \doxylink{namespacepros_a230cf24d616c52c9f3b17bb97602489a}{GPS} EAGAIN -\/ The sensor is still calibrating
+
+\begin{DoxyReturn}{Returns}
+A struct (\doxylink{structgps__position__s__t}{gps\+\_\+position\+\_\+s\+\_\+t}) containing values mentioned above. If the operation failed, all the structure\textquotesingle{}s members are filled with PROS\+\_\+\+ERR\+\_\+F and errno is set.
+\end{DoxyReturn}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ \Hypertarget{group__cpp-gps_ga3fcaf58be99232392f7ff6559e8042ae}\index{VEX GPS Sensor C API@{VEX GPS Sensor C API}!get\_position\_and\_orientation@{get\_position\_and\_orientation}}
+\index{get\_position\_and\_orientation@{get\_position\_and\_orientation}!VEX GPS Sensor C API@{VEX GPS Sensor C API}}
+\doxysubsubsection{\texorpdfstring{get\_position\_and\_orientation()}{get\_position\_and\_orientation()}}
+{\footnotesize\ttfamily \label{group__cpp-gps_ga3fcaf58be99232392f7ff6559e8042ae} 
+pros\+::gps\+\_\+status\+\_\+s\+\_\+t pros\+::v5\+::\+Gps\+::get\+\_\+position\+\_\+and\+\_\+orientation (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Gets the position and roll, yaw, and pitch of the \doxylink{namespacepros_a230cf24d616c52c9f3b17bb97602489a}{GPS}.
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as a \doxylink{namespacepros_a230cf24d616c52c9f3b17bb97602489a}{GPS} EAGAIN -\/ The sensor is still calibrating
+
+\begin{DoxyReturn}{Returns}
+A struct (\doxylink{structgps__status__s__t}{gps\+\_\+status\+\_\+s\+\_\+t}) containing values mentioned above. If the operation failed, all the structure\textquotesingle{}s members are filled with PROS\+\_\+\+ERR\+\_\+F and errno is set.
+\end{DoxyReturn}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ \Hypertarget{group__cpp-gps_gaed005fc4a5077cf45202efe2fe222ad5}\index{VEX GPS Sensor C API@{VEX GPS Sensor C API}!get\_position\_x@{get\_position\_x}}
+\index{get\_position\_x@{get\_position\_x}!VEX GPS Sensor C API@{VEX GPS Sensor C API}}
+\doxysubsubsection{\texorpdfstring{get\_position\_x()}{get\_position\_x()}}
+{\footnotesize\ttfamily \label{group__cpp-gps_gaed005fc4a5077cf45202efe2fe222ad5} 
+double pros\+::v5\+::\+Gps\+::get\+\_\+position\+\_\+x (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Gets the X position in meters of the robot relative to the starting position.
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as a \doxylink{namespacepros_a230cf24d616c52c9f3b17bb97602489a}{GPS} EAGAIN -\/ The sensor is still calibrating
+
+\begin{DoxyReturn}{Returns}
+The X position in meters. If the operation failed, returns PROS\+\_\+\+ERR\+\_\+F and errno is set.
+\end{DoxyReturn}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ \Hypertarget{group__cpp-gps_ga3a65172f2433eb28222007ca9f3544be}\index{VEX GPS Sensor C API@{VEX GPS Sensor C API}!get\_position\_y@{get\_position\_y}}
+\index{get\_position\_y@{get\_position\_y}!VEX GPS Sensor C API@{VEX GPS Sensor C API}}
+\doxysubsubsection{\texorpdfstring{get\_position\_y()}{get\_position\_y()}}
+{\footnotesize\ttfamily \label{group__cpp-gps_ga3a65172f2433eb28222007ca9f3544be} 
+double pros\+::v5\+::\+Gps\+::get\+\_\+position\+\_\+y (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Gets the Y position in meters of the robot relative to the starting position.
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as a \doxylink{namespacepros_a230cf24d616c52c9f3b17bb97602489a}{GPS} EAGAIN -\/ The sensor is still calibrating
+
+\begin{DoxyReturn}{Returns}
+The Y position in meters. If the operation failed, returns PROS\+\_\+\+ERR\+\_\+F and errno is set.
+\end{DoxyReturn}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ \Hypertarget{group__cpp-gps_gad5b5a4856946c13ea52a347bca6e7f1d}\index{VEX GPS Sensor C API@{VEX GPS Sensor C API}!get\_roll@{get\_roll}}
+\index{get\_roll@{get\_roll}!VEX GPS Sensor C API@{VEX GPS Sensor C API}}
+\doxysubsubsection{\texorpdfstring{get\_roll()}{get\_roll()}}
+{\footnotesize\ttfamily \label{group__cpp-gps_gad5b5a4856946c13ea52a347bca6e7f1d} 
+double pros\+::v5\+::\+Gps\+::get\+\_\+roll (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Gets the roll of the robot in degrees relative to the starting oreintation.
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as a \doxylink{namespacepros_a230cf24d616c52c9f3b17bb97602489a}{GPS} EAGAIN -\/ The sensor is still calibrating
+
+\begin{DoxyReturn}{Returns}
+The roll in \mbox{[}0,360) degree values. If the operation failed, returns PROS\+\_\+\+ERR\+\_\+F and errno is set.
+\end{DoxyReturn}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ \Hypertarget{group__cpp-gps_ga39f1a0d37012dc8613dc2d649478d555}\index{VEX GPS Sensor C API@{VEX GPS Sensor C API}!get\_yaw@{get\_yaw}}
+\index{get\_yaw@{get\_yaw}!VEX GPS Sensor C API@{VEX GPS Sensor C API}}
+\doxysubsubsection{\texorpdfstring{get\_yaw()}{get\_yaw()}}
+{\footnotesize\ttfamily \label{group__cpp-gps_ga39f1a0d37012dc8613dc2d649478d555} 
+double pros\+::v5\+::\+Gps\+::get\+\_\+yaw (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Gets the yaw of the robot in degrees relative to the starting oreintation.
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as a \doxylink{namespacepros_a230cf24d616c52c9f3b17bb97602489a}{GPS} EAGAIN -\/ The sensor is still calibrating
+
+\begin{DoxyReturn}{Returns}
+The yaw in \mbox{[}0,360) degree values. If the operation failed, returns PROS\+\_\+\+ERR\+\_\+F and errno is set.
+\end{DoxyReturn}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ \Hypertarget{group__cpp-gps_gab1c54c51a4c971b7fc089652b27feb7b}\index{VEX GPS Sensor C API@{VEX GPS Sensor C API}!Gps@{Gps}}
+\index{Gps@{Gps}!VEX GPS Sensor C API@{VEX GPS Sensor C API}}
+\doxysubsubsection{\texorpdfstring{Gps()}{Gps()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \label{group__cpp-gps_gab1c54c51a4c971b7fc089652b27feb7b} 
+pros\+::v5\+::\+Gps\+::\+Gps (\begin{DoxyParamCaption}\item[{const std\+::uint8\+\_\+t}]{port}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Creates a \doxylink{namespacepros_a230cf24d616c52c9f3b17bb97602489a}{GPS} object for the given port.
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as a \doxylink{namespacepros_a230cf24d616c52c9f3b17bb97602489a}{GPS} EAGAIN -\/ The sensor is still calibrating
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The V5 port number from 1-\/21 {\bfseries{Example\+:}} 
+\begin{DoxyCode}{1}
+\end{DoxyCode}
+ \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__cpp-gps_ga9ed802f0020078b1cb88e6d4fa62217d}\index{VEX GPS Sensor C API@{VEX GPS Sensor C API}!Gps@{Gps}}
+\index{Gps@{Gps}!VEX GPS Sensor C API@{VEX GPS Sensor C API}}
+\doxysubsubsection{\texorpdfstring{Gps()}{Gps()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \label{group__cpp-gps_ga9ed802f0020078b1cb88e6d4fa62217d} 
+pros\+::v5\+::\+Gps\+::\+Gps (\begin{DoxyParamCaption}\item[{const std\+::uint8\+\_\+t}]{port}{, }\item[{double}]{x\+Initial}{, }\item[{double}]{y\+Initial}{, }\item[{double}]{heading\+Initial}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+Creates a \doxylink{namespacepros_a230cf24d616c52c9f3b17bb97602489a}{GPS} object for the given port.
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as a \doxylink{namespacepros_a230cf24d616c52c9f3b17bb97602489a}{GPS} EAGAIN -\/ The sensor is still calibrating
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The V5 port number from 1-\/21 \\
+\hline
+{\em x\+Initial} & Cartesian 4-\/Quadrant X initial position (meters) \\
+\hline
+{\em y\+Initial} & Cartesian 4-\/Quadrant Y initial position (meters) \\
+\hline
+{\em heading\+Initial} & Initial heading (degrees)\\
+\hline
+\end{DoxyParams}
+{\bfseries{Example\+:}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ \Hypertarget{group__cpp-gps_ga6d65b8cad335b747491af7a8813ac51f}\index{VEX GPS Sensor C API@{VEX GPS Sensor C API}!Gps@{Gps}}
+\index{Gps@{Gps}!VEX GPS Sensor C API@{VEX GPS Sensor C API}}
+\doxysubsubsection{\texorpdfstring{Gps()}{Gps()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \label{group__cpp-gps_ga6d65b8cad335b747491af7a8813ac51f} 
+pros\+::v5\+::\+Gps\+::\+Gps (\begin{DoxyParamCaption}\item[{const std\+::uint8\+\_\+t}]{port}{, }\item[{double}]{x\+Initial}{, }\item[{double}]{y\+Initial}{, }\item[{double}]{heading\+Initial}{, }\item[{double}]{x\+Offset}{, }\item[{double}]{y\+Offset}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+Creates a \doxylink{namespacepros_a230cf24d616c52c9f3b17bb97602489a}{GPS} object for the given port.
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as a \doxylink{namespacepros_a230cf24d616c52c9f3b17bb97602489a}{GPS} EAGAIN -\/ The sensor is still calibrating
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The V5 port number from 1-\/21 \\
+\hline
+{\em x\+Initial} & Initial 4-\/Quadrant X Position, with (0,0) being at the center of the field (meters) \\
+\hline
+{\em y\+Initial} & Initial 4-\/Quadrant Y Position, with (0,0) being at the center of the field (meters) \\
+\hline
+{\em heading\+Initial} & Initial Heading, with 0 being North, 90 being East, 180 being South, and 270 being West (degrees) \\
+\hline
+{\em x\+Offset} & Cartesian 4-\/Quadrant X offset from center of turning (meters) \\
+\hline
+{\em y\+Offset} & Cartesian 4-\/Quadrant Y offset from center of turning (meters)\\
+\hline
+\end{DoxyParams}
+{\bfseries{Example\+:}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ \Hypertarget{group__cpp-gps_ga13ac42269e2baf1b19bd0d79b25616e9}\index{VEX GPS Sensor C API@{VEX GPS Sensor C API}!Gps@{Gps}}
+\index{Gps@{Gps}!VEX GPS Sensor C API@{VEX GPS Sensor C API}}
+\doxysubsubsection{\texorpdfstring{Gps()}{Gps()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \label{group__cpp-gps_ga13ac42269e2baf1b19bd0d79b25616e9} 
+pros\+::v5\+::\+Gps\+::\+Gps (\begin{DoxyParamCaption}\item[{const std\+::uint8\+\_\+t}]{port}{, }\item[{double}]{x\+Offset}{, }\item[{double}]{y\+Offset}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+Creates a \doxylink{namespacepros_a230cf24d616c52c9f3b17bb97602489a}{GPS} object for the given port.
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as a \doxylink{namespacepros_a230cf24d616c52c9f3b17bb97602489a}{GPS} EAGAIN -\/ The sensor is still calibrating
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The V5 port number from 1-\/21 \\
+\hline
+{\em x\+Offset} & Cartesian 4-\/Quadrant X offset from center of turning (meters) \\
+\hline
+{\em y\+Offset} & Cartesian 4-\/Quadrant Y offset from center of turning (meters)\\
+\hline
+\end{DoxyParams}
+{\bfseries{Example\+:}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ \Hypertarget{group__cpp-gps_gadead9ecdff20e98cfe07d813d0895204}\index{VEX GPS Sensor C API@{VEX GPS Sensor C API}!initialize\_full@{initialize\_full}}
+\index{initialize\_full@{initialize\_full}!VEX GPS Sensor C API@{VEX GPS Sensor C API}}
+\doxysubsubsection{\texorpdfstring{initialize\_full()}{initialize\_full()}}
+{\footnotesize\ttfamily \label{group__cpp-gps_gadead9ecdff20e98cfe07d813d0895204} 
+std\+::int32\+\_\+t pros\+::v5\+::\+Gps\+::initialize\+\_\+full (\begin{DoxyParamCaption}\item[{double}]{x\+Initial}{, }\item[{double}]{y\+Initial}{, }\item[{double}]{heading\+Initial}{, }\item[{double}]{x\+Offset}{, }\item[{double}]{y\+Offset}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Set the \doxylink{namespacepros_a230cf24d616c52c9f3b17bb97602489a}{GPS}\textquotesingle{}s offset relative to the center of turning in meters, as well as its initial position.
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as a \doxylink{namespacepros_a230cf24d616c52c9f3b17bb97602489a}{GPS} EAGAIN -\/ The sensor is still calibrating
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Offset} & Cartesian 4-\/Quadrant X offset from center of turning (meters) \\
+\hline
+{\em y\+Offset} & Cartesian 4-\/Quadrant Y offset from center of turning (meters) \\
+\hline
+{\em x\+Initial} & Initial 4-\/Quadrant X Position, with (0,0) being at the center of the field (meters) \\
+\hline
+{\em y\+Initial} & Initial 4-\/Quadrant Y Position, with (0,0) being at the center of the field (meters) \\
+\hline
+{\em heading\+Initial} & Heading with 0 being north on the field, in degrees \mbox{[}0,360) going clockwise \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the operation was successful or PROS\+\_\+\+ERR if the operation failed, setting errno.
+\end{DoxyReturn}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ \Hypertarget{group__cpp-gps_ga48c3c74a67ee1f233c1eb2e9567be0b3}\index{VEX GPS Sensor C API@{VEX GPS Sensor C API}!set\_data\_rate@{set\_data\_rate}}
+\index{set\_data\_rate@{set\_data\_rate}!VEX GPS Sensor C API@{VEX GPS Sensor C API}}
+\doxysubsubsection{\texorpdfstring{set\_data\_rate()}{set\_data\_rate()}}
+{\footnotesize\ttfamily \label{group__cpp-gps_ga48c3c74a67ee1f233c1eb2e9567be0b3} 
+std\+::int32\+\_\+t pros\+::v5\+::\+Gps\+::set\+\_\+data\+\_\+rate (\begin{DoxyParamCaption}\item[{std\+::uint32\+\_\+t}]{rate}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Set the \doxylink{namespacepros_a230cf24d616c52c9f3b17bb97602489a}{GPS} sensor\textquotesingle{}s data rate in milliseconds, only applies to IMU on \doxylink{namespacepros_a230cf24d616c52c9f3b17bb97602489a}{GPS}.
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as a \doxylink{namespacepros_a230cf24d616c52c9f3b17bb97602489a}{GPS} EAGAIN -\/ The sensor is still calibrating
+
+
+\begin{DoxyParams}{Parameters}
+{\em rate} & Data rate in milliseconds (Minimum\+: 5 ms) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the operation was successful or PROS\+\_\+\+ERR if the operation failed, setting errno.
+\end{DoxyReturn}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ \Hypertarget{group__cpp-gps_ga1ec56d24d61c70573efc4aaeff0993de}\index{VEX GPS Sensor C API@{VEX GPS Sensor C API}!set\_offset@{set\_offset}}
+\index{set\_offset@{set\_offset}!VEX GPS Sensor C API@{VEX GPS Sensor C API}}
+\doxysubsubsection{\texorpdfstring{set\_offset()}{set\_offset()}}
+{\footnotesize\ttfamily \label{group__cpp-gps_ga1ec56d24d61c70573efc4aaeff0993de} 
+std\+::int32\+\_\+t pros\+::v5\+::\+Gps\+::set\+\_\+offset (\begin{DoxyParamCaption}\item[{double}]{x\+Offset}{, }\item[{double}]{y\+Offset}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Set the \doxylink{namespacepros_a230cf24d616c52c9f3b17bb97602489a}{GPS}\textquotesingle{}s offset relative to the center of turning in meters.
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as a \doxylink{namespacepros_a230cf24d616c52c9f3b17bb97602489a}{GPS} EAGAIN -\/ The sensor is still calibrating
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Offset} & Cartesian 4-\/Quadrant X offset from center of turning (meters) \\
+\hline
+{\em y\+Offset} & Cartesian 4-\/Quadrant Y offset from center of turning (meters) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the operation was successful or PROS\+\_\+\+ERR if the operation failed, setting errno.
+\end{DoxyReturn}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ \Hypertarget{group__cpp-gps_gafc2fd9d3e61b27f96527af9ce4c063cb}\index{VEX GPS Sensor C API@{VEX GPS Sensor C API}!set\_position@{set\_position}}
+\index{set\_position@{set\_position}!VEX GPS Sensor C API@{VEX GPS Sensor C API}}
+\doxysubsubsection{\texorpdfstring{set\_position()}{set\_position()}}
+{\footnotesize\ttfamily \label{group__cpp-gps_gafc2fd9d3e61b27f96527af9ce4c063cb} 
+std\+::int32\+\_\+t pros\+::v5\+::\+Gps\+::set\+\_\+position (\begin{DoxyParamCaption}\item[{double}]{x\+Initial}{, }\item[{double}]{y\+Initial}{, }\item[{double}]{heading\+Initial}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Sets the robot\textquotesingle{}s location relative to the center of the field in meters.
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as a \doxylink{namespacepros_a230cf24d616c52c9f3b17bb97602489a}{GPS} EAGAIN -\/ The sensor is still calibrating
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Initial} & Initial 4-\/Quadrant X Position, with (0,0) being at the center of the field (meters) \\
+\hline
+{\em y\+Initial} & Initial 4-\/Quadrant Y Position, with (0,0) being at the center of the field (meters) \\
+\hline
+{\em heading\+Initial} & Heading with 0 being north on the field, in degrees \mbox{[}0,360) going clockwise \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the operation was successful or PROS\+\_\+\+ERR if the operation failed, setting errno.
+\end{DoxyReturn}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ 
+
+\doxysubsection{Friends}
+\Hypertarget{group__cpp-gps_gaea6d9cbb79dae8b74905d14fcd9cce74}\index{VEX GPS Sensor C API@{VEX GPS Sensor C API}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!VEX GPS Sensor C API@{VEX GPS Sensor C API}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily \label{group__cpp-gps_gaea6d9cbb79dae8b74905d14fcd9cce74} 
+std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os}{, }\item[{const \mbox{\hyperlink{classpros_1_1v5_1_1_gps}{pros\+::\+Gps}} \&}]{gps}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+This is the overload for the \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} operator for printing to streams
+
+Prints in format\+: \doxylink{classpros_1_1v5_1_1_gps}{Gps} \mbox{[}port\+: gps.\+\_\+port, x\+: (x position), y\+: (y position), heading\+: (gps heading), rotation\+: (gps rotation)\mbox{]}
+
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ 

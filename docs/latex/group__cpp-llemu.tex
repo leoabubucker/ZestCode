@@ -1,0 +1,57 @@
+\doxysection{Cpp-\/llemu}
+\hypertarget{group__cpp-llemu}{}\label{group__cpp-llemu}\index{Cpp-\/llemu@{Cpp-\/llemu}}
+\doxysubsubsection*{Files}
+\begin{DoxyCompactItemize}
+\item 
+file \mbox{\hyperlink{llemu_8hpp}{llemu.\+hpp}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{group__cpp-llemu_gafa86afc6491531fb4b4d7f1e18803852}\label{group__cpp-llemu_gafa86afc6491531fb4b4d7f1e18803852} 
+\#define {\bfseries LCD\+\_\+\+BTN\+\_\+\+LEFT}~4
+\item 
+\Hypertarget{group__cpp-llemu_gabf8903693b4a95a6b653916d5f6fe486}\label{group__cpp-llemu_gabf8903693b4a95a6b653916d5f6fe486} 
+\#define {\bfseries LCD\+\_\+\+BTN\+\_\+\+CENTER}~2
+\item 
+\Hypertarget{group__cpp-llemu_ga7851ef3eb7573b194efb0a05d88f2c35}\label{group__cpp-llemu_ga7851ef3eb7573b194efb0a05d88f2c35} 
+\#define {\bfseries LCD\+\_\+\+BTN\+\_\+\+RIGHT}~1
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename... Params$>$ }\\bool \mbox{\hyperlink{group__cpp-llemu_gaead67d10b420308d58883135f0d28099}{pros\+::lcd\+::print}} (std\+::int16\+\_\+t line, const char \texorpdfstring{$\ast$}{*}fmt, Params... args)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{group__cpp-llemu_gaead67d10b420308d58883135f0d28099}\index{Cpp-\/llemu@{Cpp-\/llemu}!print@{print}}
+\index{print@{print}!Cpp-\/llemu@{Cpp-\/llemu}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily \label{group__cpp-llemu_gaead67d10b420308d58883135f0d28099} 
+template$<$typename... Params$>$ \\
+bool pros\+::lcd\+::print (\begin{DoxyParamCaption}\item[{std\+::int16\+\_\+t}]{line}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{fmt}{, }\item[{Params...}]{args}{}\end{DoxyParamCaption})}
+
+Displays a formatted string on the emulated three-\/button LCD screen.
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The LCD has not been initialized. Call lcd\+\_\+initialize() first. EINVAL -\/ The line number specified is not in the range \mbox{[}0-\/7\mbox{]}
+
+
+\begin{DoxyParams}{Parameters}
+{\em line} & The line on which to display the text \mbox{[}0-\/7\mbox{]} \\
+\hline
+{\em fmt} & Format string \\
+\hline
+{\em ...\+args} & Optional list of arguments for the format string\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the operation was successful, or false otherwise, setting errno values as specified above.
+\end{DoxyReturn}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ 

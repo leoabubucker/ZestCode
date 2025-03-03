@@ -1,0 +1,749 @@
+\doxysection{RTOS Facilities C++ API}
+\hypertarget{group__cpp-rtos}{}\label{group__cpp-rtos}\index{RTOS Facilities C++ API@{RTOS Facilities C++ API}}
+\doxysubsubsection*{Files}
+\begin{DoxyCompactItemize}
+\item 
+file \mbox{\hyperlink{rtos_8hpp}{rtos.\+hpp}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classpros_1_1rtos_1_1_task}{pros\+::rtos\+::\+Task}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{group__cpp-rtos_ga8c3d57629db339c572881d4c1282614d}\label{group__cpp-rtos_ga8c3d57629db339c572881d4c1282614d} 
+using {\bfseries pros\+::rtos\+::\+Clock\+::rep} = std\+::uint32\+\_\+t
+\item 
+\Hypertarget{group__cpp-rtos_ga79f42474f5bfbb868854290306634815}\label{group__cpp-rtos_ga79f42474f5bfbb868854290306634815} 
+using {\bfseries pros\+::rtos\+::\+Clock\+::period} = std\+::milli
+\item 
+\Hypertarget{group__cpp-rtos_ga7809f574558a544b1c4a45d75fb395bf}\label{group__cpp-rtos_ga7809f574558a544b1c4a45d75fb395bf} 
+using {\bfseries pros\+::rtos\+::\+Clock\+::duration} = std\+::chrono\+::duration$<$rep, period$>$
+\item 
+\Hypertarget{group__cpp-rtos_ga1525ab794d0f6033a04da821b173a729}\label{group__cpp-rtos_ga1525ab794d0f6033a04da821b173a729} 
+using {\bfseries pros\+::rtos\+::\+Clock\+::time\+\_\+point} = std\+::chrono\+::time\+\_\+point$<$\mbox{\hyperlink{structpros_1_1rtos_1_1_clock}{Clock}}$>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__cpp-rtos_ga2e94f57e088ff9b56b78b5d1d7cb2169}{pros\+::rtos\+::\+Task\+::\+Task}} (\mbox{\hyperlink{group__c-rtos_gaece0aa29b1f1538115228d2197239f98}{task\+\_\+fn\+\_\+t}} function, void \texorpdfstring{$\ast$}{*}parameters=nullptr, std\+::uint32\+\_\+t prio=\mbox{\hyperlink{group__c-rtos_ga3082a7e8f15691441dba683711bb823f}{TASK\+\_\+\+PRIORITY\+\_\+\+DEFAULT}}, std\+::uint16\+\_\+t stack\+\_\+depth=\mbox{\hyperlink{group__c-rtos_ga9ffb33b9e3714ca949d9f45dde3cbf8f}{TASK\+\_\+\+STACK\+\_\+\+DEPTH\+\_\+\+DEFAULT}}, const char \texorpdfstring{$\ast$}{*}name="{}"{})
+\item 
+\mbox{\hyperlink{group__cpp-rtos_ga64608b28832c40cf11ddb350a7331a08}{pros\+::rtos\+::\+Task\+::\+Task}} (\mbox{\hyperlink{group__c-rtos_gaece0aa29b1f1538115228d2197239f98}{task\+\_\+fn\+\_\+t}} function, void \texorpdfstring{$\ast$}{*}parameters, const char \texorpdfstring{$\ast$}{*}name)
+\item 
+{\footnotesize template$<$class F$>$ }\\static \mbox{\hyperlink{group__c-rtos_ga1d7e0825b8d8876e8cd8ece3f9115293}{task\+\_\+t}} \mbox{\hyperlink{group__cpp-rtos_ga117c95e2c94898637928a4a269391d33}{pros\+::rtos\+::\+Task\+::create}} (F \&\&function, std\+::uint32\+\_\+t prio=\mbox{\hyperlink{group__c-rtos_ga3082a7e8f15691441dba683711bb823f}{TASK\+\_\+\+PRIORITY\+\_\+\+DEFAULT}}, std\+::uint16\+\_\+t stack\+\_\+depth=\mbox{\hyperlink{group__c-rtos_ga9ffb33b9e3714ca949d9f45dde3cbf8f}{TASK\+\_\+\+STACK\+\_\+\+DEPTH\+\_\+\+DEFAULT}}, const char \texorpdfstring{$\ast$}{*}name="{}"{})
+\item 
+{\footnotesize template$<$class F$>$ }\\static \mbox{\hyperlink{group__c-rtos_ga1d7e0825b8d8876e8cd8ece3f9115293}{task\+\_\+t}} \mbox{\hyperlink{group__cpp-rtos_ga97b75f1f58ec6eb02f062005c2dad440}{pros\+::rtos\+::\+Task\+::create}} (F \&\&function, const char \texorpdfstring{$\ast$}{*}name)
+\item 
+{\footnotesize template$<$class F$>$ }\\\mbox{\hyperlink{group__cpp-rtos_gad997288e0395a23b9ed69d35165b924e}{pros\+::rtos\+::\+Task\+::\+Task}} (F \&\&function, std\+::uint32\+\_\+t prio=\mbox{\hyperlink{group__c-rtos_ga3082a7e8f15691441dba683711bb823f}{TASK\+\_\+\+PRIORITY\+\_\+\+DEFAULT}}, std\+::uint16\+\_\+t stack\+\_\+depth=\mbox{\hyperlink{group__c-rtos_ga9ffb33b9e3714ca949d9f45dde3cbf8f}{TASK\+\_\+\+STACK\+\_\+\+DEPTH\+\_\+\+DEFAULT}}, const char \texorpdfstring{$\ast$}{*}name="{}"{})
+\item 
+{\footnotesize template$<$class F$>$ }\\\mbox{\hyperlink{group__cpp-rtos_ga1403f11ede554c2028cfda305d3418a7}{pros\+::rtos\+::\+Task\+::\+Task}} (F \&\&function, const char \texorpdfstring{$\ast$}{*}name)
+\item 
+\mbox{\hyperlink{group__cpp-rtos_ga0b37b46942f1ba25513729b15a32e12f}{pros\+::rtos\+::\+Task\+::\+Task}} (\mbox{\hyperlink{group__c-rtos_ga1d7e0825b8d8876e8cd8ece3f9115293}{task\+\_\+t}} task)
+\item 
+static \mbox{\hyperlink{classpros_1_1rtos_1_1_task}{Task}} \mbox{\hyperlink{group__cpp-rtos_ga10d4bd441ce062df4c3233deaa7acc91}{pros\+::rtos\+::\+Task\+::current}} ()
+\item 
+\mbox{\hyperlink{classpros_1_1rtos_1_1_task}{Task}} \& \mbox{\hyperlink{group__cpp-rtos_ga95e70532f42a21702d925c95d7432590}{pros\+::rtos\+::\+Task\+::operator=}} (\mbox{\hyperlink{group__c-rtos_ga1d7e0825b8d8876e8cd8ece3f9115293}{task\+\_\+t}} in)
+\item 
+void \mbox{\hyperlink{group__cpp-rtos_ga45269807dfc87bb1d5e9580346793e9d}{pros\+::rtos\+::\+Task\+::remove}} ()
+\item 
+std\+::uint32\+\_\+t \mbox{\hyperlink{group__cpp-rtos_ga2a9dc12bb0799f8b18333ebcd7571e5b}{pros\+::rtos\+::\+Task\+::get\+\_\+priority}} ()
+\item 
+void \mbox{\hyperlink{group__cpp-rtos_ga205a9937d34311ba10f540bc58d0b0b9}{pros\+::rtos\+::\+Task\+::set\+\_\+priority}} (std\+::uint32\+\_\+t prio)
+\item 
+std\+::uint32\+\_\+t \mbox{\hyperlink{group__cpp-rtos_ga0e1c154b709095c4884d325d79a839e3}{pros\+::rtos\+::\+Task\+::get\+\_\+state}} ()
+\item 
+void \mbox{\hyperlink{group__cpp-rtos_ga07d452a967a2bd839f6e819ff26ff052}{pros\+::rtos\+::\+Task\+::suspend}} ()
+\item 
+void \mbox{\hyperlink{group__cpp-rtos_gabb8b8aa01d13ba3992953d0a7d668a47}{pros\+::rtos\+::\+Task\+::resume}} ()
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__cpp-rtos_gaa8521f655ff019d11caddb513afbb50e}{pros\+::rtos\+::\+Task\+::get\+\_\+name}} ()
+\item 
+\mbox{\hyperlink{group__cpp-rtos_gadbf1c289c637bb1e1590142268da6796}{pros\+::rtos\+::\+Task\+::operator task\+\_\+t}} ()
+\item 
+std\+::uint32\+\_\+t \mbox{\hyperlink{group__cpp-rtos_gaf7ce264851745a555bb141884a1a61ab}{pros\+::rtos\+::\+Task\+::notify}} ()
+\item 
+void \mbox{\hyperlink{group__cpp-rtos_gaf250c6e369dd2621a8b31d7ed085f819}{pros\+::rtos\+::\+Task\+::join}} ()
+\item 
+std\+::uint32\+\_\+t \mbox{\hyperlink{group__cpp-rtos_gadd5bc6272aaa903fdf8ae6656d8ffddb}{pros\+::rtos\+::\+Task\+::notify\+\_\+ext}} (std\+::uint32\+\_\+t value, \mbox{\hyperlink{group__c-rtos_ga42ea99b5e5d38da0b98154609cf6c570}{notify\+\_\+action\+\_\+e\+\_\+t}} action, std\+::uint32\+\_\+t \texorpdfstring{$\ast$}{*}prev\+\_\+value)
+\item 
+static std\+::uint32\+\_\+t \mbox{\hyperlink{group__cpp-rtos_gab0424664979128a156fbcd2533a75da2}{pros\+::rtos\+::\+Task\+::notify\+\_\+take}} (bool clear\+\_\+on\+\_\+exit, std\+::uint32\+\_\+t timeout)
+\item 
+bool \mbox{\hyperlink{group__cpp-rtos_ga69c4d78a733f65cff31d7ab19d3f42f5}{pros\+::rtos\+::\+Task\+::notify\+\_\+clear}} ()
+\item 
+static void \mbox{\hyperlink{group__cpp-rtos_ga8eb848ade1c1eeabb141726253bbe972}{pros\+::rtos\+::\+Task\+::delay}} (const std\+::uint32\+\_\+t milliseconds)
+\item 
+static void \mbox{\hyperlink{group__cpp-rtos_gae6cbf0b399b067b279b559217248896c}{pros\+::rtos\+::\+Task\+::delay\+\_\+until}} (std\+::uint32\+\_\+t \texorpdfstring{$\ast$}{*}const prev\+\_\+time, const std\+::uint32\+\_\+t delta)
+\item 
+static std\+::uint32\+\_\+t \mbox{\hyperlink{group__cpp-rtos_ga8d8eafc8dd2ac55e37add169a8498c4e}{pros\+::rtos\+::\+Task\+::get\+\_\+count}} ()
+\item 
+static time\+\_\+point \mbox{\hyperlink{group__cpp-rtos_ga422da55e9dc03e5e37b05f7f74d097b5}{pros\+::rtos\+::\+Clock\+::now}} ()
+\item 
+\Hypertarget{group__cpp-rtos_gacb7e0523c53b5fe17b1d9533860ec82b}\label{group__cpp-rtos_gacb7e0523c53b5fe17b1d9533860ec82b} 
+{\bfseries pros\+::rtos\+::\+Mutex\+::\+Mutex} (const \mbox{\hyperlink{classpros_1_1rtos_1_1_mutex}{Mutex}} \&)=delete
+\item 
+\Hypertarget{group__cpp-rtos_gadd9ee6304c0efb394563d8448aa160d3}\label{group__cpp-rtos_gadd9ee6304c0efb394563d8448aa160d3} 
+{\bfseries pros\+::rtos\+::\+Mutex\+::\+Mutex} (\mbox{\hyperlink{classpros_1_1rtos_1_1_mutex}{Mutex}} \&\&)=delete
+\item 
+\Hypertarget{group__cpp-rtos_ga2d326698678af39788367e4cd6f9f13e}\label{group__cpp-rtos_ga2d326698678af39788367e4cd6f9f13e} 
+\mbox{\hyperlink{classpros_1_1rtos_1_1_mutex}{Mutex}} \& {\bfseries pros\+::rtos\+::\+Mutex\+::operator=} (const \mbox{\hyperlink{classpros_1_1rtos_1_1_mutex}{Mutex}} \&)=delete
+\item 
+\Hypertarget{group__cpp-rtos_ga3be5ef5cb638d40fafb3332ee32c3997}\label{group__cpp-rtos_ga3be5ef5cb638d40fafb3332ee32c3997} 
+\mbox{\hyperlink{classpros_1_1rtos_1_1_mutex}{Mutex}} \& {\bfseries pros\+::rtos\+::\+Mutex\+::operator=} (\mbox{\hyperlink{classpros_1_1rtos_1_1_mutex}{Mutex}} \&\&)=delete
+\item 
+bool \mbox{\hyperlink{group__cpp-rtos_gaa6a77cb29b9da78b3ec3fba651abea2e}{pros\+::rtos\+::\+Mutex\+::take}} ()
+\item 
+bool \mbox{\hyperlink{group__cpp-rtos_ga70da733375f7b4b68475881578c78516}{pros\+::rtos\+::\+Mutex\+::take}} (std\+::uint32\+\_\+t timeout)
+\item 
+bool \mbox{\hyperlink{group__cpp-rtos_ga0b0000554adeaa949ade594afebf2cb4}{pros\+::rtos\+::\+Mutex\+::give}} ()
+\item 
+void \mbox{\hyperlink{group__cpp-rtos_ga5ea32524ab5601fdef345eea66ccf7db}{pros\+::rtos\+::\+Mutex\+::lock}} ()
+\item 
+void \mbox{\hyperlink{group__cpp-rtos_ga266d9795310757cdd4e59e377fce6cba}{pros\+::rtos\+::\+Mutex\+::unlock}} ()
+\item 
+bool \mbox{\hyperlink{group__cpp-rtos_ga1a70641ba7d85d4d7490194c8f6e1904}{pros\+::rtos\+::\+Mutex\+::try\+\_\+lock}} ()
+\item 
+{\footnotesize template$<$typename Rep, typename Period$>$ }\\bool \mbox{\hyperlink{group__cpp-rtos_gaf257a32cc3fcfb5b7a9879c6d2608fe2}{pros\+::rtos\+::\+Mutex\+::try\+\_\+lock\+\_\+for}} (const std\+::chrono\+::duration$<$ Rep, Period $>$ \&rel\+\_\+time)
+\item 
+{\footnotesize template$<$typename Duration$>$ }\\bool \mbox{\hyperlink{group__cpp-rtos_gaaac7810b03e23556c710f287bf1d8f76}{pros\+::rtos\+::\+Mutex\+::try\+\_\+lock\+\_\+until}} (const std\+::chrono\+::time\+\_\+point$<$ \mbox{\hyperlink{structpros_1_1rtos_1_1_clock}{Clock}}, Duration $>$ \&abs\+\_\+time)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{group__cpp-rtos_gab168900feed5d1fa3f648651cb96da52}\label{group__cpp-rtos_gab168900feed5d1fa3f648651cb96da52} 
+const bool {\bfseries pros\+::rtos\+::\+Clock\+::is\+\_\+steady} = true
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyNote}{Note}
+Additional example code for this module can be found in its Tutorial.
+\end{DoxyNote}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{group__cpp-rtos_ga97b75f1f58ec6eb02f062005c2dad440}\index{RTOS Facilities C++ API@{RTOS Facilities C++ API}!create@{create}}
+\index{create@{create}!RTOS Facilities C++ API@{RTOS Facilities C++ API}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{group__cpp-rtos_ga97b75f1f58ec6eb02f062005c2dad440} 
+template$<$class F$>$ \\
+static \mbox{\hyperlink{group__c-rtos_ga1d7e0825b8d8876e8cd8ece3f9115293}{task\+\_\+t}} pros\+::rtos\+::\+Task\+::create (\begin{DoxyParamCaption}\item[{F \&\&}]{function}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Creates a new task and add it to the list of tasks that are ready to run.
+
+This function uses the following values of errno when an error state is reached\+: ENOMEM -\/ The stack cannot be used as the TCB was not created.
+
+
+\begin{DoxyParams}{Parameters}
+{\em function} & Callable object to use as entry function \\
+\hline
+{\em name} & A descriptive name for the task. This is mainly used to facilitate debugging. The name may be up to 32 characters long.\\
+\hline
+\end{DoxyParams}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ \Hypertarget{group__cpp-rtos_ga117c95e2c94898637928a4a269391d33}\index{RTOS Facilities C++ API@{RTOS Facilities C++ API}!create@{create}}
+\index{create@{create}!RTOS Facilities C++ API@{RTOS Facilities C++ API}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{group__cpp-rtos_ga117c95e2c94898637928a4a269391d33} 
+template$<$class F$>$ \\
+static \mbox{\hyperlink{group__c-rtos_ga1d7e0825b8d8876e8cd8ece3f9115293}{task\+\_\+t}} pros\+::rtos\+::\+Task\+::create (\begin{DoxyParamCaption}\item[{F \&\&}]{function}{, }\item[{std\+::uint32\+\_\+t}]{prio}{ = {\ttfamily \mbox{\hyperlink{group__c-rtos_ga3082a7e8f15691441dba683711bb823f}{TASK\+\_\+\+PRIORITY\+\_\+\+DEFAULT}}}, }\item[{std\+::uint16\+\_\+t}]{stack\+\_\+depth}{ = {\ttfamily \mbox{\hyperlink{group__c-rtos_ga9ffb33b9e3714ca949d9f45dde3cbf8f}{TASK\+\_\+\+STACK\+\_\+\+DEPTH\+\_\+\+DEFAULT}}}, }\item[{const char \texorpdfstring{$\ast$}{*}}]{name}{ = {\ttfamily "{}"{}}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Creates a new task and add it to the list of tasks that are ready to run.
+
+This function uses the following values of errno when an error state is reached\+: ENOMEM -\/ The stack cannot be used as the TCB was not created.
+
+
+\begin{DoxyParams}{Parameters}
+{\em function} & Callable object to use as entry function \\
+\hline
+{\em prio} & The priority at which the task should run. TASK\+\_\+\+PRIO\+\_\+\+DEFAULT plus/minus 1 or 2 is typically used. \\
+\hline
+{\em stack\+\_\+depth} & The number of words (i.\+e. 4 \texorpdfstring{$\ast$}{*} stack\+\_\+depth) available on the task\textquotesingle{}s stack. TASK\+\_\+\+STACK\+\_\+\+DEPTH\+\_\+\+DEFAULT is typically sufficienct. \\
+\hline
+{\em name} & A descriptive name for the task. This is mainly used to facilitate debugging. The name may be up to 32 characters long.\\
+\hline
+\end{DoxyParams}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ \Hypertarget{group__cpp-rtos_ga10d4bd441ce062df4c3233deaa7acc91}\index{RTOS Facilities C++ API@{RTOS Facilities C++ API}!current@{current}}
+\index{current@{current}!RTOS Facilities C++ API@{RTOS Facilities C++ API}}
+\doxysubsubsection{\texorpdfstring{current()}{current()}}
+{\footnotesize\ttfamily \label{group__cpp-rtos_ga10d4bd441ce062df4c3233deaa7acc91} 
+\mbox{\hyperlink{classpros_1_1rtos_1_1_task}{Task}} pros\+::\+Task\+::current (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Get the currently running \doxylink{classpros_1_1rtos_1_1_task}{Task}
+
+\begin{DoxyReturn}{Returns}
+The currently running \doxylink{classpros_1_1rtos_1_1_task}{Task}.
+\end{DoxyReturn}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ \Hypertarget{group__cpp-rtos_ga8eb848ade1c1eeabb141726253bbe972}\index{RTOS Facilities C++ API@{RTOS Facilities C++ API}!delay@{delay}}
+\index{delay@{delay}!RTOS Facilities C++ API@{RTOS Facilities C++ API}}
+\doxysubsubsection{\texorpdfstring{delay()}{delay()}}
+{\footnotesize\ttfamily \label{group__cpp-rtos_ga8eb848ade1c1eeabb141726253bbe972} 
+void pros\+::\+Task\+::delay (\begin{DoxyParamCaption}\item[{const std\+::uint32\+\_\+t}]{milliseconds}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Delays the current task for a specified number of milliseconds.
+
+This is not the best method to have a task execute code at predefined intervals, as the delay time is measured from when the delay is requested. To delay cyclically, use \doxylink{group__c-rtos_ga61c8ccf83a0dc79fc0e9fde5e87a0329}{task\+\_\+delay\+\_\+until()}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em milliseconds} & The number of milliseconds to wait (1000 milliseconds per second)\\
+\hline
+\end{DoxyParams}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ \Hypertarget{group__cpp-rtos_gae6cbf0b399b067b279b559217248896c}\index{RTOS Facilities C++ API@{RTOS Facilities C++ API}!delay\_until@{delay\_until}}
+\index{delay\_until@{delay\_until}!RTOS Facilities C++ API@{RTOS Facilities C++ API}}
+\doxysubsubsection{\texorpdfstring{delay\_until()}{delay\_until()}}
+{\footnotesize\ttfamily \label{group__cpp-rtos_gae6cbf0b399b067b279b559217248896c} 
+void pros\+::\+Task\+::delay\+\_\+until (\begin{DoxyParamCaption}\item[{std\+::uint32\+\_\+t \texorpdfstring{$\ast$}{*}const}]{prev\+\_\+time}{, }\item[{const std\+::uint32\+\_\+t}]{delta}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Delays the current \doxylink{classpros_1_1rtos_1_1_task}{Task} until a specified time. This function can be used by periodic tasks to ensure a constant execution frequency.
+
+The task will be woken up at the time \texorpdfstring{$\ast$}{*}prev\+\_\+time + delta, and \texorpdfstring{$\ast$}{*}prev\+\_\+time will be updated to reflect the time at which the task will unblock.
+
+
+\begin{DoxyParams}{Parameters}
+{\em prev\+\_\+time} & A pointer to the location storing the setpoint time. This should typically be initialized to the return value from pros\+::millis(). \\
+\hline
+{\em delta} & The number of milliseconds to wait (1000 milliseconds per second)\\
+\hline
+\end{DoxyParams}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ \Hypertarget{group__cpp-rtos_ga8d8eafc8dd2ac55e37add169a8498c4e}\index{RTOS Facilities C++ API@{RTOS Facilities C++ API}!get\_count@{get\_count}}
+\index{get\_count@{get\_count}!RTOS Facilities C++ API@{RTOS Facilities C++ API}}
+\doxysubsubsection{\texorpdfstring{get\_count()}{get\_count()}}
+{\footnotesize\ttfamily \label{group__cpp-rtos_ga8d8eafc8dd2ac55e37add169a8498c4e} 
+std\+::uint32\+\_\+t pros\+::\+Task\+::get\+\_\+count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Gets the number of tasks the kernel is currently managing, including all ready, blocked, or suspended tasks. A task that has been deleted, but not yet reaped by the idle task will also be included in the count. Tasks recently created may take one context switch to be counted.
+
+\begin{DoxyReturn}{Returns}
+The number of tasks that are currently being managed by the kernel.
+\end{DoxyReturn}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ \Hypertarget{group__cpp-rtos_gaa8521f655ff019d11caddb513afbb50e}\index{RTOS Facilities C++ API@{RTOS Facilities C++ API}!get\_name@{get\_name}}
+\index{get\_name@{get\_name}!RTOS Facilities C++ API@{RTOS Facilities C++ API}}
+\doxysubsubsection{\texorpdfstring{get\_name()}{get\_name()}}
+{\footnotesize\ttfamily \label{group__cpp-rtos_gaa8521f655ff019d11caddb513afbb50e} 
+const char \texorpdfstring{$\ast$}{*} pros\+::\+Task\+::get\+\_\+name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Gets the name of the specified task.
+
+\begin{DoxyReturn}{Returns}
+A pointer to the name of the task
+\end{DoxyReturn}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ \Hypertarget{group__cpp-rtos_ga2a9dc12bb0799f8b18333ebcd7571e5b}\index{RTOS Facilities C++ API@{RTOS Facilities C++ API}!get\_priority@{get\_priority}}
+\index{get\_priority@{get\_priority}!RTOS Facilities C++ API@{RTOS Facilities C++ API}}
+\doxysubsubsection{\texorpdfstring{get\_priority()}{get\_priority()}}
+{\footnotesize\ttfamily \label{group__cpp-rtos_ga2a9dc12bb0799f8b18333ebcd7571e5b} 
+std\+::uint32\+\_\+t pros\+::\+Task\+::get\+\_\+priority (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Gets the priority of the specified task.
+
+\begin{DoxyReturn}{Returns}
+The priority of the task
+\end{DoxyReturn}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ \Hypertarget{group__cpp-rtos_ga0e1c154b709095c4884d325d79a839e3}\index{RTOS Facilities C++ API@{RTOS Facilities C++ API}!get\_state@{get\_state}}
+\index{get\_state@{get\_state}!RTOS Facilities C++ API@{RTOS Facilities C++ API}}
+\doxysubsubsection{\texorpdfstring{get\_state()}{get\_state()}}
+{\footnotesize\ttfamily \label{group__cpp-rtos_ga0e1c154b709095c4884d325d79a839e3} 
+std\+::uint32\+\_\+t pros\+::\+Task\+::get\+\_\+state (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Gets the state of the specified task.
+
+\begin{DoxyReturn}{Returns}
+The state of the task
+\end{DoxyReturn}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ \Hypertarget{group__cpp-rtos_ga0b0000554adeaa949ade594afebf2cb4}\index{RTOS Facilities C++ API@{RTOS Facilities C++ API}!give@{give}}
+\index{give@{give}!RTOS Facilities C++ API@{RTOS Facilities C++ API}}
+\doxysubsubsection{\texorpdfstring{give()}{give()}}
+{\footnotesize\ttfamily \label{group__cpp-rtos_ga0b0000554adeaa949ade594afebf2cb4} 
+bool pros\+::\+Mutex\+::give (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Unlocks a mutex.
+
+See \href{https://pros.cs.purdue.edu/v5/tutorials/topical/multitasking.html\#mutexes}{\texttt{ https\+://pros.\+cs.\+purdue.\+edu/v5/tutorials/topical/multitasking.\+html\#mutexes}} for details.
+
+\begin{DoxyReturn}{Returns}
+True if the mutex was successfully returned, false otherwise. If false is returned, then errno is set with a hint about why the mutex couldn\textquotesingle{}t be returned.
+\end{DoxyReturn}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+. \Hypertarget{group__cpp-rtos_gaf250c6e369dd2621a8b31d7ed085f819}\index{RTOS Facilities C++ API@{RTOS Facilities C++ API}!join@{join}}
+\index{join@{join}!RTOS Facilities C++ API@{RTOS Facilities C++ API}}
+\doxysubsubsection{\texorpdfstring{join()}{join()}}
+{\footnotesize\ttfamily \label{group__cpp-rtos_gaf250c6e369dd2621a8b31d7ed085f819} 
+void pros\+::\+Task\+::join (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Utilizes task notifications to wait until specified task is complete and deleted, then continues to execute the program. Analogous to std\+::thread\+::join in C++.
+
+See \href{https://pros.cs.purdue.edu/v5/tutorials/topical/notifications.html}{\texttt{ https\+://pros.\+cs.\+purdue.\+edu/v5/tutorials/topical/notifications.\+html}} for details.
+
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ \Hypertarget{group__cpp-rtos_ga5ea32524ab5601fdef345eea66ccf7db}\index{RTOS Facilities C++ API@{RTOS Facilities C++ API}!lock@{lock}}
+\index{lock@{lock}!RTOS Facilities C++ API@{RTOS Facilities C++ API}}
+\doxysubsubsection{\texorpdfstring{lock()}{lock()}}
+{\footnotesize\ttfamily \label{group__cpp-rtos_ga5ea32524ab5601fdef345eea66ccf7db} 
+void pros\+::\+Mutex\+::lock (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Takes and locks a mutex, waiting for up to TIMEOUT\+\_\+\+MAX milliseconds.
+
+Effectively equivalent to calling pros\+::\+Mutex\+::take with TIMEOUT\+\_\+\+MAX as the parameter.
+
+Conforms to named requirment Basic\+Lockable \begin{DoxySeeAlso}{See also}
+\href{https://en.cppreference.com/w/cpp/named_req/BasicLockable}{\texttt{ https\+://en.\+cppreference.\+com/w/cpp/named\+\_\+req/\+Basic\+Lockable}}
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+Consider using a std\+::unique\+\_\+lock, std\+::lock\+\_\+guard, or std\+::scoped\+\_\+lock instead of interacting with the \doxylink{classpros_1_1rtos_1_1_mutex}{Mutex} directly.
+\end{DoxyNote}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::system\+\_\+error} & \doxylink{classpros_1_1rtos_1_1_mutex}{Mutex} could not be locked within TIMEOUT\+\_\+\+MAX milliseconds. see errno for details.\\
+\hline
+\end{DoxyExceptions}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+. \Hypertarget{group__cpp-rtos_gaf7ce264851745a555bb141884a1a61ab}\index{RTOS Facilities C++ API@{RTOS Facilities C++ API}!notify@{notify}}
+\index{notify@{notify}!RTOS Facilities C++ API@{RTOS Facilities C++ API}}
+\doxysubsubsection{\texorpdfstring{notify()}{notify()}}
+{\footnotesize\ttfamily \label{group__cpp-rtos_gaf7ce264851745a555bb141884a1a61ab} 
+std\+::uint32\+\_\+t pros\+::\+Task\+::notify (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Sends a simple notification to task and increments the notification counter.
+
+See \href{https://pros.cs.purdue.edu/v5/tutorials/topical/notifications.html}{\texttt{ https\+://pros.\+cs.\+purdue.\+edu/v5/tutorials/topical/notifications.\+html}} for details.
+
+\begin{DoxyReturn}{Returns}
+Always returns true.
+\end{DoxyReturn}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ \Hypertarget{group__cpp-rtos_ga69c4d78a733f65cff31d7ab19d3f42f5}\index{RTOS Facilities C++ API@{RTOS Facilities C++ API}!notify\_clear@{notify\_clear}}
+\index{notify\_clear@{notify\_clear}!RTOS Facilities C++ API@{RTOS Facilities C++ API}}
+\doxysubsubsection{\texorpdfstring{notify\_clear()}{notify\_clear()}}
+{\footnotesize\ttfamily \label{group__cpp-rtos_ga69c4d78a733f65cff31d7ab19d3f42f5} 
+bool pros\+::\+Task\+::notify\+\_\+clear (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Clears the notification for a task.
+
+See \href{https://pros.cs.purdue.edu/v5/tutorials/topical/notifications.html}{\texttt{ https\+://pros.\+cs.\+purdue.\+edu/v5/tutorials/topical/notifications.\+html}} for details.
+
+\begin{DoxyReturn}{Returns}
+False if there was not a notification waiting, true if there was {\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ 
+\end{DoxyReturn}
+\Hypertarget{group__cpp-rtos_gadd5bc6272aaa903fdf8ae6656d8ffddb}\index{RTOS Facilities C++ API@{RTOS Facilities C++ API}!notify\_ext@{notify\_ext}}
+\index{notify\_ext@{notify\_ext}!RTOS Facilities C++ API@{RTOS Facilities C++ API}}
+\doxysubsubsection{\texorpdfstring{notify\_ext()}{notify\_ext()}}
+{\footnotesize\ttfamily \label{group__cpp-rtos_gadd5bc6272aaa903fdf8ae6656d8ffddb} 
+std\+::uint32\+\_\+t pros\+::\+Task\+::notify\+\_\+ext (\begin{DoxyParamCaption}\item[{std\+::uint32\+\_\+t}]{value}{, }\item[{\mbox{\hyperlink{group__c-rtos_ga42ea99b5e5d38da0b98154609cf6c570}{notify\+\_\+action\+\_\+e\+\_\+t}}}]{action}{, }\item[{std\+::uint32\+\_\+t \texorpdfstring{$\ast$}{*}}]{prev\+\_\+value}{}\end{DoxyParamCaption})}
+
+Sends a notification to a task, optionally performing some action. Will also retrieve the value of the notification in the target task before modifying the notification value.
+
+See \href{https://pros.cs.purdue.edu/v5/tutorials/topical/notifications.html}{\texttt{ https\+://pros.\+cs.\+purdue.\+edu/v5/tutorials/topical/notifications.\+html}} for details.
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The value used in performing the action \\
+\hline
+{\em action} & An action to optionally perform on the receiving task\textquotesingle{}s notification value \\
+\hline
+{\em prev\+\_\+value} & A pointer to store the previous value of the target task\textquotesingle{}s notification, may be NULL\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Dependent on the notification action. For NOTIFY\+\_\+\+ACTION\+\_\+\+NO\+\_\+\+WRITE\+: return 0 if the value could be written without needing to overwrite, 1 otherwise. For all other NOTIFY\+\_\+\+ACTION values\+: always return 0
+\end{DoxyReturn}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ \Hypertarget{group__cpp-rtos_gab0424664979128a156fbcd2533a75da2}\index{RTOS Facilities C++ API@{RTOS Facilities C++ API}!notify\_take@{notify\_take}}
+\index{notify\_take@{notify\_take}!RTOS Facilities C++ API@{RTOS Facilities C++ API}}
+\doxysubsubsection{\texorpdfstring{notify\_take()}{notify\_take()}}
+{\footnotesize\ttfamily \label{group__cpp-rtos_gab0424664979128a156fbcd2533a75da2} 
+std\+::uint32\+\_\+t pros\+::\+Task\+::notify\+\_\+take (\begin{DoxyParamCaption}\item[{bool}]{clear\+\_\+on\+\_\+exit}{, }\item[{std\+::uint32\+\_\+t}]{timeout}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Waits for a notification to be nonzero.
+
+See \href{https://pros.cs.purdue.edu/v5/tutorials/topical/notifications.html}{\texttt{ https\+://pros.\+cs.\+purdue.\+edu/v5/tutorials/topical/notifications.\+html}} for details.
+
+
+\begin{DoxyParams}{Parameters}
+{\em clear\+\_\+on\+\_\+exit} & If true (1), then the notification value is cleared. If false (0), then the notification value is decremented. \\
+\hline
+{\em timeout} & Specifies the amount of time to be spent waiting for a notification to occur.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value of the task\textquotesingle{}s notification value before it is decremented or cleared
+\end{DoxyReturn}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ \Hypertarget{group__cpp-rtos_ga422da55e9dc03e5e37b05f7f74d097b5}\index{RTOS Facilities C++ API@{RTOS Facilities C++ API}!now@{now}}
+\index{now@{now}!RTOS Facilities C++ API@{RTOS Facilities C++ API}}
+\doxysubsubsection{\texorpdfstring{now()}{now()}}
+{\footnotesize\ttfamily \label{group__cpp-rtos_ga422da55e9dc03e5e37b05f7f74d097b5} 
+Clock\+::time\+\_\+point pros\+::\+Clock\+::now (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Gets the current time.
+
+Effectively a wrapper around pros\+::millis()
+
+\begin{DoxyReturn}{Returns}
+The current time
+\end{DoxyReturn}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ \Hypertarget{group__cpp-rtos_gadbf1c289c637bb1e1590142268da6796}\index{RTOS Facilities C++ API@{RTOS Facilities C++ API}!operator task\_t@{operator task\_t}}
+\index{operator task\_t@{operator task\_t}!RTOS Facilities C++ API@{RTOS Facilities C++ API}}
+\doxysubsubsection{\texorpdfstring{operator task\_t()}{operator task\_t()}}
+{\footnotesize\ttfamily \label{group__cpp-rtos_gadbf1c289c637bb1e1590142268da6796} 
+pros\+::rtos\+::\+Task\+::operator \mbox{\hyperlink{group__c-rtos_ga1d7e0825b8d8876e8cd8ece3f9115293}{task\+\_\+t}} (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+Convert this object to a C \doxylink{group__c-rtos_ga1d7e0825b8d8876e8cd8ece3f9115293}{task\+\_\+t} handle
+
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ \Hypertarget{group__cpp-rtos_ga95e70532f42a21702d925c95d7432590}\index{RTOS Facilities C++ API@{RTOS Facilities C++ API}!operator=@{operator=}}
+\index{operator=@{operator=}!RTOS Facilities C++ API@{RTOS Facilities C++ API}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \label{group__cpp-rtos_ga95e70532f42a21702d925c95d7432590} 
+\mbox{\hyperlink{classpros_1_1rtos_1_1_task}{Task}} \& pros\+::\+Task\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__c-rtos_ga1d7e0825b8d8876e8cd8ece3f9115293}{task\+\_\+t}}}]{in}{}\end{DoxyParamCaption})}
+
+Creates a task object from the passed task handle.
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & A task handle from \doxylink{group__c-rtos_ga2e3ed8f26b8c1edcff493bc583f0a76a}{task\+\_\+create()} for which to create a \doxylink{classpros_1_1rtos_1_1_task}{pros\+::\+Task} object.\\
+\hline
+\end{DoxyParams}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ \Hypertarget{group__cpp-rtos_ga45269807dfc87bb1d5e9580346793e9d}\index{RTOS Facilities C++ API@{RTOS Facilities C++ API}!remove@{remove}}
+\index{remove@{remove}!RTOS Facilities C++ API@{RTOS Facilities C++ API}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily \label{group__cpp-rtos_ga45269807dfc87bb1d5e9580346793e9d} 
+void pros\+::\+Task\+::remove (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Removes the \doxylink{classpros_1_1rtos_1_1_task}{Task} from the RTOS real time kernel\textquotesingle{}s management. This task will be removed from all ready, blocked, suspended and event lists.
+
+Memory dynamically allocated by the task is not automatically freed, and should be freed before the task is deleted.
+
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ \Hypertarget{group__cpp-rtos_gabb8b8aa01d13ba3992953d0a7d668a47}\index{RTOS Facilities C++ API@{RTOS Facilities C++ API}!resume@{resume}}
+\index{resume@{resume}!RTOS Facilities C++ API@{RTOS Facilities C++ API}}
+\doxysubsubsection{\texorpdfstring{resume()}{resume()}}
+{\footnotesize\ttfamily \label{group__cpp-rtos_gabb8b8aa01d13ba3992953d0a7d668a47} 
+void pros\+::\+Task\+::resume (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Resumes the specified task, making it eligible to be scheduled.
+
+
+\begin{DoxyParams}{Parameters}
+{\em task} & The task to resume\\
+\hline
+\end{DoxyParams}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ \Hypertarget{group__cpp-rtos_ga205a9937d34311ba10f540bc58d0b0b9}\index{RTOS Facilities C++ API@{RTOS Facilities C++ API}!set\_priority@{set\_priority}}
+\index{set\_priority@{set\_priority}!RTOS Facilities C++ API@{RTOS Facilities C++ API}}
+\doxysubsubsection{\texorpdfstring{set\_priority()}{set\_priority()}}
+{\footnotesize\ttfamily \label{group__cpp-rtos_ga205a9937d34311ba10f540bc58d0b0b9} 
+void pros\+::\+Task\+::set\+\_\+priority (\begin{DoxyParamCaption}\item[{std\+::uint32\+\_\+t}]{prio}{}\end{DoxyParamCaption})}
+
+Sets the priority of the specified task.
+
+If the specified task\textquotesingle{}s state is available to be scheduled (e.\+g. not blocked) and new priority is higher than the currently running task, a context switch may occur.
+
+
+\begin{DoxyParams}{Parameters}
+{\em prio} & The new priority of the task\\
+\hline
+\end{DoxyParams}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ \Hypertarget{group__cpp-rtos_ga07d452a967a2bd839f6e819ff26ff052}\index{RTOS Facilities C++ API@{RTOS Facilities C++ API}!suspend@{suspend}}
+\index{suspend@{suspend}!RTOS Facilities C++ API@{RTOS Facilities C++ API}}
+\doxysubsubsection{\texorpdfstring{suspend()}{suspend()}}
+{\footnotesize\ttfamily \label{group__cpp-rtos_ga07d452a967a2bd839f6e819ff26ff052} 
+void pros\+::\+Task\+::suspend (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Suspends the specified task, making it ineligible to be scheduled.
+
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ \Hypertarget{group__cpp-rtos_gaa6a77cb29b9da78b3ec3fba651abea2e}\index{RTOS Facilities C++ API@{RTOS Facilities C++ API}!take@{take}}
+\index{take@{take}!RTOS Facilities C++ API@{RTOS Facilities C++ API}}
+\doxysubsubsection{\texorpdfstring{take()}{take()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{group__cpp-rtos_gaa6a77cb29b9da78b3ec3fba651abea2e} 
+bool pros\+::\+Mutex\+::take (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Takes and locks a mutex indefinetly.
+
+See \href{https://pros.cs.purdue.edu/v5/tutorials/topical/multitasking.html\#mutexes}{\texttt{ https\+://pros.\+cs.\+purdue.\+edu/v5/tutorials/topical/multitasking.\+html\#mutexes}} for details.
+
+\begin{DoxyReturn}{Returns}
+True if the mutex was successfully taken, false otherwise. If false is returned, then errno is set with a hint about why the the mutex couldn\textquotesingle{}t be taken
+\end{DoxyReturn}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+. \Hypertarget{group__cpp-rtos_ga70da733375f7b4b68475881578c78516}\index{RTOS Facilities C++ API@{RTOS Facilities C++ API}!take@{take}}
+\index{take@{take}!RTOS Facilities C++ API@{RTOS Facilities C++ API}}
+\doxysubsubsection{\texorpdfstring{take()}{take()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{group__cpp-rtos_ga70da733375f7b4b68475881578c78516} 
+bool pros\+::\+Mutex\+::take (\begin{DoxyParamCaption}\item[{std\+::uint32\+\_\+t}]{timeout}{}\end{DoxyParamCaption})}
+
+Takes and locks a mutex, waiting for up to a certain number of milliseconds before timing out.
+
+See \href{https://pros.cs.purdue.edu/v5/tutorials/topical/multitasking.html\#mutexes}{\texttt{ https\+://pros.\+cs.\+purdue.\+edu/v5/tutorials/topical/multitasking.\+html\#mutexes}} for details.
+
+
+\begin{DoxyParams}{Parameters}
+{\em timeout} & Time to wait before the mutex becomes available. A timeout of 0 can be used to poll the mutex. TIMEOUT\+\_\+\+MAX can be used to block indefinitely.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the mutex was successfully taken, false otherwise. If false is returned, then errno is set with a hint about why the the mutex couldn\textquotesingle{}t be taken.
+\end{DoxyReturn}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+. \Hypertarget{group__cpp-rtos_ga1403f11ede554c2028cfda305d3418a7}\index{RTOS Facilities C++ API@{RTOS Facilities C++ API}!Task@{Task}}
+\index{Task@{Task}!RTOS Facilities C++ API@{RTOS Facilities C++ API}}
+\doxysubsubsection{\texorpdfstring{Task()}{Task()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily \label{group__cpp-rtos_ga1403f11ede554c2028cfda305d3418a7} 
+template$<$class F$>$ \\
+pros\+::rtos\+::\+Task\+::\+Task (\begin{DoxyParamCaption}\item[{F \&\&}]{function}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Creates a new task and add it to the list of tasks that are ready to run.
+
+This function uses the following values of errno when an error state is reached\+: ENOMEM -\/ The stack cannot be used as the TCB was not created.
+
+
+\begin{DoxyParams}{Parameters}
+{\em function} & Callable object to use as entry function \\
+\hline
+{\em name} & A descriptive name for the task. This is mainly used to facilitate debugging. The name may be up to 32 characters long.\\
+\hline
+\end{DoxyParams}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ \Hypertarget{group__cpp-rtos_gad997288e0395a23b9ed69d35165b924e}\index{RTOS Facilities C++ API@{RTOS Facilities C++ API}!Task@{Task}}
+\index{Task@{Task}!RTOS Facilities C++ API@{RTOS Facilities C++ API}}
+\doxysubsubsection{\texorpdfstring{Task()}{Task()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily \label{group__cpp-rtos_gad997288e0395a23b9ed69d35165b924e} 
+template$<$class F$>$ \\
+pros\+::rtos\+::\+Task\+::\+Task (\begin{DoxyParamCaption}\item[{F \&\&}]{function}{, }\item[{std\+::uint32\+\_\+t}]{prio}{ = {\ttfamily \mbox{\hyperlink{group__c-rtos_ga3082a7e8f15691441dba683711bb823f}{TASK\+\_\+\+PRIORITY\+\_\+\+DEFAULT}}}, }\item[{std\+::uint16\+\_\+t}]{stack\+\_\+depth}{ = {\ttfamily \mbox{\hyperlink{group__c-rtos_ga9ffb33b9e3714ca949d9f45dde3cbf8f}{TASK\+\_\+\+STACK\+\_\+\+DEPTH\+\_\+\+DEFAULT}}}, }\item[{const char \texorpdfstring{$\ast$}{*}}]{name}{ = {\ttfamily "{}"{}}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+Creates a new task and add it to the list of tasks that are ready to run.
+
+This function uses the following values of errno when an error state is reached\+: ENOMEM -\/ The stack cannot be used as the TCB was not created.
+
+
+\begin{DoxyParams}{Parameters}
+{\em function} & Callable object to use as entry function \\
+\hline
+{\em prio} & The priority at which the task should run. TASK\+\_\+\+PRIO\+\_\+\+DEFAULT plus/minus 1 or 2 is typically used. \\
+\hline
+{\em stack\+\_\+depth} & The number of words (i.\+e. 4 \texorpdfstring{$\ast$}{*} stack\+\_\+depth) available on the task\textquotesingle{}s stack. TASK\+\_\+\+STACK\+\_\+\+DEPTH\+\_\+\+DEFAULT is typically sufficient. \\
+\hline
+{\em name} & A descriptive name for the task. This is mainly used to facilitate debugging. The name may be up to 32 characters long.\\
+\hline
+\end{DoxyParams}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ \Hypertarget{group__cpp-rtos_ga64608b28832c40cf11ddb350a7331a08}\index{RTOS Facilities C++ API@{RTOS Facilities C++ API}!Task@{Task}}
+\index{Task@{Task}!RTOS Facilities C++ API@{RTOS Facilities C++ API}}
+\doxysubsubsection{\texorpdfstring{Task()}{Task()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily \label{group__cpp-rtos_ga64608b28832c40cf11ddb350a7331a08} 
+pros\+::\+Task\+::\+Task (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__c-rtos_gaece0aa29b1f1538115228d2197239f98}{task\+\_\+fn\+\_\+t}}}]{function}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{parameters}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{name}{}\end{DoxyParamCaption})}
+
+Creates a new task and add it to the list of tasks that are ready to run.
+
+This function uses the following values of errno when an error state is reached\+: ENOMEM -\/ The stack cannot be used as the TCB was not created.
+
+
+\begin{DoxyParams}{Parameters}
+{\em function} & Pointer to the task entry function \\
+\hline
+{\em parameters} & Pointer to memory that will be used as a parameter for the task being created. This memory should not typically come from stack, but rather from dynamically (i.\+e., malloc\textquotesingle{}d) or statically allocated memory. \\
+\hline
+{\em name} & A descriptive name for the task. This is mainly used to facilitate debugging. The name may be up to 32 characters long.\\
+\hline
+\end{DoxyParams}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ \Hypertarget{group__cpp-rtos_ga2e94f57e088ff9b56b78b5d1d7cb2169}\index{RTOS Facilities C++ API@{RTOS Facilities C++ API}!Task@{Task}}
+\index{Task@{Task}!RTOS Facilities C++ API@{RTOS Facilities C++ API}}
+\doxysubsubsection{\texorpdfstring{Task()}{Task()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily \label{group__cpp-rtos_ga2e94f57e088ff9b56b78b5d1d7cb2169} 
+pros\+::\+Task\+::\+Task (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__c-rtos_gaece0aa29b1f1538115228d2197239f98}{task\+\_\+fn\+\_\+t}}}]{function}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{parameters}{ = {\ttfamily nullptr}, }\item[{std\+::uint32\+\_\+t}]{prio}{ = {\ttfamily \mbox{\hyperlink{group__c-rtos_ga3082a7e8f15691441dba683711bb823f}{TASK\+\_\+\+PRIORITY\+\_\+\+DEFAULT}}}, }\item[{std\+::uint16\+\_\+t}]{stack\+\_\+depth}{ = {\ttfamily \mbox{\hyperlink{group__c-rtos_ga9ffb33b9e3714ca949d9f45dde3cbf8f}{TASK\+\_\+\+STACK\+\_\+\+DEPTH\+\_\+\+DEFAULT}}}, }\item[{const char \texorpdfstring{$\ast$}{*}}]{name}{ = {\ttfamily "{}"{}}}\end{DoxyParamCaption})}
+
+Creates a new task and add it to the list of tasks that are ready to run.
+
+This function uses the following values of errno when an error state is reached\+: ENOMEM -\/ The stack cannot be used as the TCB was not created.
+
+
+\begin{DoxyParams}{Parameters}
+{\em function} & Pointer to the task entry function \\
+\hline
+{\em parameters} & Pointer to memory that will be used as a parameter for the task being created. This memory should not typically come from stack, but rather from dynamically (i.\+e., malloc\textquotesingle{}d) or statically allocated memory. \\
+\hline
+{\em prio} & The priority at which the task should run. TASK\+\_\+\+PRIO\+\_\+\+DEFAULT plus/minus 1 or 2 is typically used. \\
+\hline
+{\em stack\+\_\+depth} & The number of words (i.\+e. 4 \texorpdfstring{$\ast$}{*} stack\+\_\+depth) available on the task\textquotesingle{}s stack. TASK\+\_\+\+STACK\+\_\+\+DEPTH\+\_\+\+DEFAULT is typically sufficienct. \\
+\hline
+{\em name} & A descriptive name for the task. This is mainly used to facilitate debugging. The name may be up to 32 characters long.\\
+\hline
+\end{DoxyParams}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ \Hypertarget{group__cpp-rtos_ga0b37b46942f1ba25513729b15a32e12f}\index{RTOS Facilities C++ API@{RTOS Facilities C++ API}!Task@{Task}}
+\index{Task@{Task}!RTOS Facilities C++ API@{RTOS Facilities C++ API}}
+\doxysubsubsection{\texorpdfstring{Task()}{Task()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily \label{group__cpp-rtos_ga0b37b46942f1ba25513729b15a32e12f} 
+pros\+::\+Task\+::\+Task (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__c-rtos_ga1d7e0825b8d8876e8cd8ece3f9115293}{task\+\_\+t}}}]{task}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Create a C++ task object from a task handle
+
+
+\begin{DoxyParams}{Parameters}
+{\em task} & A task handle from \doxylink{group__c-rtos_ga2e3ed8f26b8c1edcff493bc583f0a76a}{task\+\_\+create()} for which to create a \doxylink{classpros_1_1rtos_1_1_task}{pros\+::\+Task} object.\\
+\hline
+\end{DoxyParams}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ \Hypertarget{group__cpp-rtos_ga1a70641ba7d85d4d7490194c8f6e1904}\index{RTOS Facilities C++ API@{RTOS Facilities C++ API}!try\_lock@{try\_lock}}
+\index{try\_lock@{try\_lock}!RTOS Facilities C++ API@{RTOS Facilities C++ API}}
+\doxysubsubsection{\texorpdfstring{try\_lock()}{try\_lock()}}
+{\footnotesize\ttfamily \label{group__cpp-rtos_ga1a70641ba7d85d4d7490194c8f6e1904} 
+bool pros\+::\+Mutex\+::try\+\_\+lock (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [nodiscard]}}
+
+Try to lock a mutex.
+
+Returns immediately if unsucessful.
+
+Conforms to named requirement Lockable \begin{DoxySeeAlso}{See also}
+\href{https://en.cppreference.com/w/cpp/named_req/Lockable}{\texttt{ https\+://en.\+cppreference.\+com/w/cpp/named\+\_\+req/\+Lockable}}
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+True when lock was acquired succesfully, or false otherwise.
+\end{DoxyReturn}
+\doxylink{classpros_1_1rtos_1_1_mutex}{pros\+::\+Mutex} mutex;
+
+void my\+\_\+task\+\_\+fn(void\texorpdfstring{$\ast$}{*} param) \{ while (true) \{ if(mutex.\+try\+\_\+lock()) \{ printf("{}\+Mutex aquired successfully!\textbackslash{}n"{}); // Do stuff that requires the protected resource here \} else \{ printf("{}\+Mutex not aquired!\textbackslash{}n"{}); \} \} \} \Hypertarget{group__cpp-rtos_gaf257a32cc3fcfb5b7a9879c6d2608fe2}\index{RTOS Facilities C++ API@{RTOS Facilities C++ API}!try\_lock\_for@{try\_lock\_for}}
+\index{try\_lock\_for@{try\_lock\_for}!RTOS Facilities C++ API@{RTOS Facilities C++ API}}
+\doxysubsubsection{\texorpdfstring{try\_lock\_for()}{try\_lock\_for()}}
+{\footnotesize\ttfamily \label{group__cpp-rtos_gaf257a32cc3fcfb5b7a9879c6d2608fe2} 
+template$<$typename Rep, typename Period$>$ \\
+bool pros\+::rtos\+::\+Mutex\+::try\+\_\+lock\+\_\+for (\begin{DoxyParamCaption}\item[{const std\+::chrono\+::duration$<$ Rep, Period $>$ \&}]{rel\+\_\+time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+Takes and locks a mutex, waiting for a specified duration.
+
+Equivalent to calling pros\+::\+Mutex\+::take with a duration specified in milliseconds.
+
+Conforms to named requirement Timed\+Lockable \begin{DoxySeeAlso}{See also}
+\href{https://en.cppreference.com/w/cpp/named_req/TimedLockable}{\texttt{ https\+://en.\+cppreference.\+com/w/cpp/named\+\_\+req/\+Timed\+Lockable}}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em rel\+\_\+time} & Time to wait before the mutex becomes available. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the lock was acquired succesfully, otherwise false.
+\end{DoxyReturn}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ \Hypertarget{group__cpp-rtos_gaaac7810b03e23556c710f287bf1d8f76}\index{RTOS Facilities C++ API@{RTOS Facilities C++ API}!try\_lock\_until@{try\_lock\_until}}
+\index{try\_lock\_until@{try\_lock\_until}!RTOS Facilities C++ API@{RTOS Facilities C++ API}}
+\doxysubsubsection{\texorpdfstring{try\_lock\_until()}{try\_lock\_until()}}
+{\footnotesize\ttfamily \label{group__cpp-rtos_gaaac7810b03e23556c710f287bf1d8f76} 
+template$<$typename Duration$>$ \\
+bool pros\+::rtos\+::\+Mutex\+::try\+\_\+lock\+\_\+until (\begin{DoxyParamCaption}\item[{const std\+::chrono\+::time\+\_\+point$<$ \mbox{\hyperlink{structpros_1_1rtos_1_1_clock}{Clock}}, Duration $>$ \&}]{abs\+\_\+time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Takes and locks a mutex, waiting until a specified time.
+
+Conforms to named requirement Timed\+Lockable \begin{DoxySeeAlso}{See also}
+\href{https://en.cppreference.com/w/cpp/named_req/TimedLockable}{\texttt{ https\+://en.\+cppreference.\+com/w/cpp/named\+\_\+req/\+Timed\+Lockable}}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em abs\+\_\+time} & Time point until which to wait for the mutex. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the lock was acquired succesfully, otherwise false.
+\end{DoxyReturn}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ \Hypertarget{group__cpp-rtos_ga266d9795310757cdd4e59e377fce6cba}\index{RTOS Facilities C++ API@{RTOS Facilities C++ API}!unlock@{unlock}}
+\index{unlock@{unlock}!RTOS Facilities C++ API@{RTOS Facilities C++ API}}
+\doxysubsubsection{\texorpdfstring{unlock()}{unlock()}}
+{\footnotesize\ttfamily \label{group__cpp-rtos_ga266d9795310757cdd4e59e377fce6cba} 
+void pros\+::\+Mutex\+::unlock (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Unlocks a mutex.
+
+Equivalent to calling pros\+::\+Mutex\+::give.
+
+Conforms to named requirement Basic\+Lockable \begin{DoxySeeAlso}{See also}
+\href{https://en.cppreference.com/w/cpp/named_req/BasicLockable}{\texttt{ https\+://en.\+cppreference.\+com/w/cpp/named\+\_\+req/\+Basic\+Lockable}}
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+Consider using a std\+::unique\+\_\+lock, std\+::lock\+\_\+guard, or std\+::scoped\+\_\+lock instead of interacting with the \doxylink{classpros_1_1rtos_1_1_mutex}{Mutex} direcly.
+\end{DoxyNote}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+. 

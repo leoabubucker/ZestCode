@@ -1,0 +1,51 @@
+\doxysection{pros\+::adi\+::Gyro Class Reference}
+\hypertarget{classpros_1_1adi_1_1_gyro}{}\label{classpros_1_1adi_1_1_gyro}\index{pros::adi::Gyro@{pros::adi::Gyro}}
+Inheritance diagram for pros\+::adi\+::Gyro\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classpros_1_1adi_1_1_gyro}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__cpp-adi_ga82b55a82dcf69f53895077a4b9ad8d95}{Gyro}} (std\+::uint8\+\_\+t adi\+\_\+port, double multiplier=1)
+\item 
+\mbox{\hyperlink{group__cpp-adi_gada34457f00c95a818fdb72ddf32a4be4}{Gyro}} (\mbox{\hyperlink{adi_8hpp_ab37033b41b12e194bac431882402e29e}{ext\+\_\+adi\+\_\+port\+\_\+pair\+\_\+t}} port\+\_\+pair, double multiplier=1)
+\item 
+double \mbox{\hyperlink{group__cpp-adi_ga3457ed92731c67fca279caa2dfebe183}{get\+\_\+value}} () const
+\item 
+std\+::int32\+\_\+t \mbox{\hyperlink{group__cpp-adi_ga51ab088fd61e049e8c570092415a277e}{reset}} () const
+\item 
+virtual \mbox{\hyperlink{adi_8hpp_aaf8032e34261234d519e439ef01ffd89}{ext\+\_\+adi\+\_\+port\+\_\+tuple\+\_\+t}} \mbox{\hyperlink{classpros_1_1adi_1_1_gyro_a91db72e885fdf5187287738294664f3a}{get\+\_\+port}} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classpros_1_1adi_1_1_gyro_a91db72e885fdf5187287738294664f3a}\index{pros::adi::Gyro@{pros::adi::Gyro}!get\_port@{get\_port}}
+\index{get\_port@{get\_port}!pros::adi::Gyro@{pros::adi::Gyro}}
+\doxysubsubsection{\texorpdfstring{get\_port()}{get\_port()}}
+{\footnotesize\ttfamily \label{classpros_1_1adi_1_1_gyro_a91db72e885fdf5187287738294664f3a} 
+\mbox{\hyperlink{adi_8hpp_aaf8032e34261234d519e439ef01ffd89}{ext\+\_\+adi\+\_\+port\+\_\+tuple\+\_\+t}} pros\+::adi\+::\+Port\+::get\+\_\+port (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Gets the port of the sensor.
+
+\begin{DoxyReturn}{Returns}
+returns a tuple of integer ports.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The parts of the tuple are \{smart port, adi port, second adi port (when applicable)\}.
+\end{DoxyNote}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ 
+
+Reimplemented from \mbox{\hyperlink{group__cpp-adi_ga91db72e885fdf5187287738294664f3a}{pros\+::adi\+::\+Port}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/leoku/\+One\+Drive/\+Personal\+\_\+\+Coding\+\_\+\+Projects/\+Zest\+Code/include/pros/\mbox{\hyperlink{adi_8hpp}{adi.\+hpp}}\item 
+C\+:/\+Users/leoku/\+One\+Drive/\+Personal\+\_\+\+Coding\+\_\+\+Projects/\+Zest\+Code/src/devices/\mbox{\hyperlink{vdml__adi_8cpp}{vdml\+\_\+adi.\+cpp}}\end{DoxyCompactItemize}

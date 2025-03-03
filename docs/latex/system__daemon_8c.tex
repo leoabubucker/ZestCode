@@ -1,0 +1,120 @@
+\doxysection{C\+:/\+Users/leoku/\+One\+Drive/\+Personal\+\_\+\+Coding\+\_\+\+Projects/\+Zest\+Code/src/system/system\+\_\+daemon.c File Reference}
+\hypertarget{system__daemon_8c}{}\label{system__daemon_8c}\index{C:/Users/leoku/OneDrive/Personal\_Coding\_Projects/ZestCode/src/system/system\_daemon.c@{C:/Users/leoku/OneDrive/Personal\_Coding\_Projects/ZestCode/src/system/system\_daemon.c}}
+{\ttfamily \#include "{}kapi.\+h"{}}\newline
+{\ttfamily \#include "{}system/optimizers.\+h"{}}\newline
+{\ttfamily \#include "{}system/user\+\_\+functions.\+h"{}}\newline
+{\ttfamily \#include "{}v5\+\_\+api.\+h"{}}\newline
+{\ttfamily \#include "{}system/user\+\_\+functions/c\+\_\+list.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{system__daemon_8c_a03e0ba20d5ba7c302cc74a126d4c805b}{FUNC}}(NAME)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{system__daemon_8c_a452a74515d078c6412418038a9a49003}\label{system__daemon_8c_a452a74515d078c6412418038a9a49003} 
+enum {\bfseries state\+\_\+task} \{ {\bfseries E\+\_\+\+OPCONTROL\+\_\+\+TASK} = 0
+, {\bfseries E\+\_\+\+AUTON\+\_\+\+TASK}
+, {\bfseries E\+\_\+\+DISABLED\+\_\+\+TASK}
+, {\bfseries E\+\_\+\+COMP\+\_\+\+INIT\+\_\+\+TASK}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{system__daemon_8c_aee1773d8eb981f08d1c33618106134ce}{vdml\+\_\+background\+\_\+processing}} ()
+\item 
+void \mbox{\hyperlink{system__daemon_8c_a00133d1eced9193949574829587a393d}{port\+\_\+mutex\+\_\+take\+\_\+all}} ()
+\item 
+void \mbox{\hyperlink{system__daemon_8c_ae70eb480db1d80602e5b5f037d572d47}{port\+\_\+mutex\+\_\+give\+\_\+all}} ()
+\item 
+void \mbox{\hyperlink{system__daemon_8c_a073d23377a4316cd9b392bfc8fd169e0}{ser\+\_\+output\+\_\+flush}} (void)
+\item 
+\Hypertarget{system__daemon_8c_a57115ff7f00515d5f5dbebb49b277ffb}\label{system__daemon_8c_a57115ff7f00515d5f5dbebb49b277ffb} 
+void {\bfseries vex\+Tasks\+Run} ()
+\item 
+\Hypertarget{system__daemon_8c_a7e4279d2022778e4d782a800264c1c04}\label{system__daemon_8c_a7e4279d2022778e4d782a800264c1c04} 
+void {\bfseries system\+\_\+daemon\+\_\+initialize} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+char \mbox{\hyperlink{system__daemon_8c_adece0b0f5047a201b42b0374e29e4222}{task\+\_\+names}} \mbox{[}4\mbox{]}\mbox{[}32\mbox{]}
+\item 
+\Hypertarget{system__daemon_8c_a4cb99d2be3c3c988dc85fa997a780a90}\label{system__daemon_8c_a4cb99d2be3c3c988dc85fa997a780a90} 
+\mbox{\hyperlink{group__c-rtos_gaece0aa29b1f1538115228d2197239f98}{task\+\_\+fn\+\_\+t}} {\bfseries task\+\_\+fns} \mbox{[}4\mbox{]} = \{\+\_\+opcontrol\+\_\+task, \+\_\+autonomous\+\_\+task, \+\_\+disabled\+\_\+task, \+\_\+competition\+\_\+initialize\+\_\+task\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Competition control daemon responsible for invoking the user tasks.
+
+\begin{DoxyCopyright}{Copyright}
+(c) 2017-\/2024, Purdue University ACM SIGBots. All rights reserved.
+\end{DoxyCopyright}
+This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.\+0. If a copy of the MPL was not distributed with this file, You can obtain one at \href{http://mozilla.org/MPL/2.0/}{\texttt{ http\+://mozilla.\+org/\+MPL/2.\+0/}}. 
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{system__daemon_8c_a03e0ba20d5ba7c302cc74a126d4c805b}\index{system\_daemon.c@{system\_daemon.c}!FUNC@{FUNC}}
+\index{FUNC@{FUNC}!system\_daemon.c@{system\_daemon.c}}
+\doxysubsubsection{\texorpdfstring{FUNC}{FUNC}}
+{\footnotesize\ttfamily \label{system__daemon_8c_a03e0ba20d5ba7c302cc74a126d4c805b} 
+\#define FUNC(\begin{DoxyParamCaption}\item[{}]{NAME}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \_\#\#NAME\#\#\_task(\textcolor{keywordtype}{void}*\ ign)\ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ user\_\#\#NAME();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ task\_notify(system\_daemon\_task);\ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{system__daemon_8c_ae70eb480db1d80602e5b5f037d572d47}\index{system\_daemon.c@{system\_daemon.c}!port\_mutex\_give\_all@{port\_mutex\_give\_all}}
+\index{port\_mutex\_give\_all@{port\_mutex\_give\_all}!system\_daemon.c@{system\_daemon.c}}
+\doxysubsubsection{\texorpdfstring{port\_mutex\_give\_all()}{port\_mutex\_give\_all()}}
+{\footnotesize\ttfamily \label{system__daemon_8c_ae70eb480db1d80602e5b5f037d572d47} 
+void port\+\_\+mutex\+\_\+give\+\_\+all (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Executes \doxylink{vdml_8h_abeb38b74fc71b8003c53e920822f7d1d}{port\+\_\+mutex\+\_\+give()} for all of the V5 Smart Ports. \Hypertarget{system__daemon_8c_a00133d1eced9193949574829587a393d}\index{system\_daemon.c@{system\_daemon.c}!port\_mutex\_take\_all@{port\_mutex\_take\_all}}
+\index{port\_mutex\_take\_all@{port\_mutex\_take\_all}!system\_daemon.c@{system\_daemon.c}}
+\doxysubsubsection{\texorpdfstring{port\_mutex\_take\_all()}{port\_mutex\_take\_all()}}
+{\footnotesize\ttfamily \label{system__daemon_8c_a00133d1eced9193949574829587a393d} 
+void port\+\_\+mutex\+\_\+take\+\_\+all (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Executes \doxylink{vdml_8h_a67513439eb7264d1196f58dbaa03c847}{port\+\_\+mutex\+\_\+take()} for all of the V5 Smart Ports. \Hypertarget{system__daemon_8c_a073d23377a4316cd9b392bfc8fd169e0}\index{system\_daemon.c@{system\_daemon.c}!ser\_output\_flush@{ser\_output\_flush}}
+\index{ser\_output\_flush@{ser\_output\_flush}!system\_daemon.c@{system\_daemon.c}}
+\doxysubsubsection{\texorpdfstring{ser\_output\_flush()}{ser\_output\_flush()}}
+{\footnotesize\ttfamily \label{system__daemon_8c_a073d23377a4316cd9b392bfc8fd169e0} 
+void ser\+\_\+output\+\_\+flush (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Output queue vex\+Serial\+Write\+Buffer doesn\textquotesingle{}t seem to be very thread safe, so the system daemon flushes an intermediary buffer once before vex\+Tasks\+Run calls to write add to the queue. Flushing is optimized because we have underlying access to the write buffer, as opposed to calling queue\+\_\+recv a bunch of times \Hypertarget{system__daemon_8c_aee1773d8eb981f08d1c33618106134ce}\index{system\_daemon.c@{system\_daemon.c}!vdml\_background\_processing@{vdml\_background\_processing}}
+\index{vdml\_background\_processing@{vdml\_background\_processing}!system\_daemon.c@{system\_daemon.c}}
+\doxysubsubsection{\texorpdfstring{vdml\_background\_processing()}{vdml\_background\_processing()}}
+{\footnotesize\ttfamily \label{system__daemon_8c_aee1773d8eb981f08d1c33618106134ce} 
+void vdml\+\_\+background\+\_\+processing (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Background processing function for the VDML system.
+
+This function should be called by the system daemon approximately every 2 milliseconds.
+
+Updates the registry type array, detecting what devices are actually plugged in according to the system, then compares that with the registry records.
+
+On warnings, no operation is performed. 
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{system__daemon_8c_adece0b0f5047a201b42b0374e29e4222}\index{system\_daemon.c@{system\_daemon.c}!task\_names@{task\_names}}
+\index{task\_names@{task\_names}!system\_daemon.c@{system\_daemon.c}}
+\doxysubsubsection{\texorpdfstring{task\_names}{task\_names}}
+{\footnotesize\ttfamily \label{system__daemon_8c_adece0b0f5047a201b42b0374e29e4222} 
+char task\+\_\+names\mbox{[}4\mbox{]}\mbox{[}32\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{\textcolor{stringliteral}{"{}User\ Operator\ Control\ (PROS)"{}},\ \textcolor{stringliteral}{"{}User\ Autonomous\ (PROS)"{}},\ \textcolor{stringliteral}{"{}User\ Disabled\ (PROS)"{}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}User\ Comp.\ Init.\ (PROS)"{}}\}}
+
+\end{DoxyCode}

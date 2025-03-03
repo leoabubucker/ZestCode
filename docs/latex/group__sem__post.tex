@@ -1,0 +1,113 @@
+\doxysection{sem\+\_\+post}
+\hypertarget{group__sem__post}{}\label{group__sem__post}\index{sem\_post@{sem\_post}}
+semphr. h 
+\begin{DoxyPre}\doxylink{group__apix_gaa2048694c50246f193a40b7e00ed1756}{sem\_post( sem\_t xSemaphore )}\end{DoxyPre}
+
+
+{\itshape Macro} to release a semaphore. The semaphore must have previously been created with a call to \doxylink{group__apix_ga83c9a6c93e3bfce8f36e3f32a6dc8c4b}{sem\+\_\+binary\+\_\+create()}, \doxylink{group__c-rtos_ga475d096afa3abcc9a276ca9fa54bafdf}{mutex\+\_\+create()} or \doxylink{group__apix_ga382f9b5dc6ba96dcecffdbd7f41d29ac}{sem\+\_\+create()}. and obtained using s\+Semaphore\+Take().
+
+This macro must not be used from an ISR. See x\+Semaphore\+Give\+From\+ISR () for an alternative which can be used from an ISR.
+
+This macro must also not be used on semaphores created using \doxylink{group__c-rtos_gab32c3cf41f7dbde49dfac10c279347f0}{mutex\+\_\+recursive\+\_\+create()}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Semaphore} & A handle to the semaphore being released. This is the handle returned when the semaphore was created.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pd\+TRUE if the semaphore was released. pd\+FALSE if an error occurred. Semaphores are implemented using queues. An error can occur if there is no space on the queue to post a message -\/ indicating that the semaphore was not first obtained correctly.
+\end{DoxyReturn}
+Example usage\+: 
+\begin{DoxyPre}
+sem\_t xSemaphore = NULL;
+
+void vATask( void * pvParameters )
+\{
+   // Create the semaphore to guard a shared resource.
+   xSemaphore = vSemaphoreCreateBinary();
+
+   if( xSemaphore != NULL )
+   \{
+       if( sem\_post( xSemaphore ) != pdTRUE )
+       \{
+           // We would expect this call to fail because we cannot give
+           // a semaphore without first "{}taking"{} it!
+       \}
+
+       // Obtain the semaphore -\/ don't block if the semaphore is not
+       // immediately available.
+       if( sem\_wait( xSemaphore, ( uint32\_t ) 0 ) )
+       \{
+           // We now have the semaphore and can access the shared resource.
+
+           // ...
+
+           // We have finished accessing the shared resource so can free the
+           // semaphore.
+           if( sem\_post( xSemaphore ) != pdTRUE )
+           \{
+               // We would not expect this call to fail because we must have
+               // obtained the semaphore to get here.
+           \}
+       \}
+   \}
+\}
+\end{DoxyPre}
+
+
+semphr. h 
+\begin{DoxyPre}\doxylink{group__apix_gaa2048694c50246f193a40b7e00ed1756}{sem\_post( sem\_t sem )}\end{DoxyPre}
+
+
+{\itshape Macro} to release a semaphore. The semaphore must have previously been created with a call to \doxylink{group__apix_ga83c9a6c93e3bfce8f36e3f32a6dc8c4b}{sem\+\_\+binary\+\_\+create()}, \doxylink{group__c-rtos_ga475d096afa3abcc9a276ca9fa54bafdf}{mutex\+\_\+create()} or \doxylink{group__apix_ga382f9b5dc6ba96dcecffdbd7f41d29ac}{sem\+\_\+create()}. and obtained using s\+Semaphore\+Take().
+
+This macro must not be used from an ISR. See sem\+Give\+From\+ISR () for an alternative which can be used from an ISR.
+
+This macro must also not be used on semaphores created using \doxylink{group__c-rtos_gab32c3cf41f7dbde49dfac10c279347f0}{mutex\+\_\+recursive\+\_\+create()}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sem} & A handle to the semaphore being released. This is the handle returned when the semaphore was created.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pd\+TRUE if the semaphore was released. pd\+FALSE if an error occurred. Semaphores are implemented using queues. An error can occur if there is no space on the queue to post a message -\/ indicating that the semaphore was not first obtained correctly.
+\end{DoxyReturn}
+Example usage\+: 
+\begin{DoxyPre}
+sem\_t sem = NULL;
+
+void vATask( void * pvParameters )
+\{
+   // Create the semaphore to guard a shared resource.
+   sem = vSemaphoreCreateBinary();
+
+   if( sem != NULL )
+   \{
+       if( sem\_post( sem ) != pdTRUE )
+       \{
+           // We would expect this call to fail because we cannot give
+           // a semaphore without first "{}taking"{} it!
+       \}
+
+       // Obtain the semaphore -\/ don't block if the semaphore is not
+       // immediately available.
+       if( sem\_wait( sem, ( uint32\_t ) 0 ) )
+       \{
+           // We now have the semaphore and can access the shared resource.
+
+           // ...
+
+           // We have finished accessing the shared resource so can free the
+           // semaphore.
+           if( sem\_post( sem ) != pdTRUE )
+           \{
+               // We would not expect this call to fail because we must have
+               // obtained the semaphore to get here.
+           \}
+       \}
+   \}
+\}
+\end{DoxyPre}
+ 

@@ -1,0 +1,446 @@
+\doxysection{AI Vision Sensor C API}
+\hypertarget{group__c-aivision}{}\label{group__c-aivision}\index{AI Vision Sensor C API@{AI Vision Sensor C API}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structaivision__color__s__t}{aivision\+\_\+color\+\_\+s\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structaivision__code__s__t}{aivision\+\_\+code\+\_\+s\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structaivision__object__color__s__t}{aivision\+\_\+object\+\_\+color\+\_\+s\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structaivision__object__tag__s__t}{aivision\+\_\+object\+\_\+tag\+\_\+s\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structaivision__object__s__t}{aivision\+\_\+object\+\_\+s\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{group__c-aivision_ga7acdf696827beeceb8bda9bf516ed50a}\label{group__c-aivision_ga7acdf696827beeceb8bda9bf516ed50a} 
+typedef enum aivision\+\_\+detected\+\_\+type {\bfseries aivision\+\_\+detected\+\_\+type\+\_\+e\+\_\+t}
+\item 
+\Hypertarget{group__c-aivision_gad6dfea1b9d7352489e50a45e41fb6667}\label{group__c-aivision_gad6dfea1b9d7352489e50a45e41fb6667} 
+typedef enum aivision\+\_\+mode\+\_\+type {\bfseries aivision\+\_\+mode\+\_\+type\+\_\+e\+\_\+t}
+\item 
+\Hypertarget{group__c-aivision_gab7b5153dae9772cc9c34d357b5be1659}\label{group__c-aivision_gab7b5153dae9772cc9c34d357b5be1659} 
+typedef enum aivision\+\_\+tag\+\_\+family\+\_\+e {\bfseries aivision\+\_\+tag\+\_\+family\+\_\+e\+\_\+t}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{group__c-aivision_ga4d24882e694b0cdd9114cdbf16dffdbf}\label{group__c-aivision_ga4d24882e694b0cdd9114cdbf16dffdbf} 
+enum {\bfseries aivision\+\_\+detected\+\_\+type} \{ {\bfseries E\+\_\+\+AIVISION\+\_\+\+DETECTED\+\_\+\+COLOR} = (1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0)
+, {\bfseries E\+\_\+\+AIVISION\+\_\+\+DETECTED\+\_\+\+CODE} = (1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1)
+, {\bfseries E\+\_\+\+AIVISION\+\_\+\+DETECTED\+\_\+\+OBJECT} = (1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2)
+, {\bfseries E\+\_\+\+AIVISION\+\_\+\+DETECTED\+\_\+\+TAG} = (1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 3)
+ \}
+\item 
+\Hypertarget{group__c-aivision_ga37ad8e27e9e06bbacfa315691a09f0f6}\label{group__c-aivision_ga37ad8e27e9e06bbacfa315691a09f0f6} 
+enum {\bfseries aivision\+\_\+mode\+\_\+type} \{ {\bfseries E\+\_\+\+AIVISION\+\_\+\+MODE\+\_\+\+TAGS} = (1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0)
+, {\bfseries E\+\_\+\+AIVISION\+\_\+\+MODE\+\_\+\+COLORS} = (1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1)
+, {\bfseries E\+\_\+\+AIVISION\+\_\+\+MODE\+\_\+\+OBJECTS} = (1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2)
+, {\bfseries E\+\_\+\+AIVISION\+\_\+\+MODE\+\_\+\+ALL} = (1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0) \texorpdfstring{$\vert$}{|} (1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1) \texorpdfstring{$\vert$}{|} (1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2)
+ \}
+\item 
+\Hypertarget{group__c-aivision_ga56ddc675631ea6c586979fcf6d443759}\label{group__c-aivision_ga56ddc675631ea6c586979fcf6d443759} 
+enum {\bfseries aivision\+\_\+tag\+\_\+family\+\_\+e} \{ {\bfseries TAG\+\_\+\+CIRCLE\+\_\+21\+H7} = 0
+, {\bfseries TAG\+\_\+16\+H5} = 1
+, {\bfseries TAG\+\_\+25\+H9} = 2
+, {\bfseries TAG\+\_\+61\+H11} = 3
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{group__c-aivision_ga843452695e5bcb245ab6152c2f75cc4b}\label{group__c-aivision_ga843452695e5bcb245ab6152c2f75cc4b} 
+struct {\bfseries \+\_\+\+\_\+attribute\+\_\+\+\_\+} ((packed)) aivision\+\_\+color\+\_\+s
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{group__c-aivision_ga9b7006d8cf4f324853f386e51feb4373}\label{group__c-aivision_ga9b7006d8cf4f324853f386e51feb4373} 
+{\bfseries aivision\+\_\+color\+\_\+s\+\_\+t}
+\item 
+\Hypertarget{group__c-aivision_ga48c0b982cbf4aa9f6b3133946126b80b}\label{group__c-aivision_ga48c0b982cbf4aa9f6b3133946126b80b} 
+{\bfseries aivision\+\_\+code\+\_\+s\+\_\+t}
+\item 
+\Hypertarget{group__c-aivision_ga5b04cf36177eb0701f8c044b186beb2e}\label{group__c-aivision_ga5b04cf36177eb0701f8c044b186beb2e} 
+{\bfseries aivision\+\_\+object\+\_\+color\+\_\+s\+\_\+t}
+\item 
+\Hypertarget{group__c-aivision_gabafaf82f02df158554fef8c3684bce2e}\label{group__c-aivision_gabafaf82f02df158554fef8c3684bce2e} 
+{\bfseries aivision\+\_\+object\+\_\+tag\+\_\+s\+\_\+t}
+\item 
+\Hypertarget{group__c-aivision_ga5b7aff6f25a014a0e9bd76961e033250}\label{group__c-aivision_ga5b7aff6f25a014a0e9bd76961e033250} 
+{\bfseries aivision\+\_\+object\+\_\+element\+\_\+s\+\_\+t}
+\item 
+\Hypertarget{group__c-aivision_ga12c53baad5cf05b6a47ce7ddfc2dffcd}\label{group__c-aivision_ga12c53baad5cf05b6a47ce7ddfc2dffcd} 
+{\bfseries aivision\+\_\+object\+\_\+s\+\_\+t}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int32\+\_\+t \mbox{\hyperlink{group__c-aivision_ga4f38f7d114188e9197a28c29367c1192}{aivision\+\_\+reset}} (uint8\+\_\+t port)
+\item 
+int32\+\_\+t \mbox{\hyperlink{group__c-aivision_ga1c878597495e4ddda4faa4146e4a9bad}{aivision\+\_\+get\+\_\+enabled\+\_\+detection\+\_\+types}} (uint8\+\_\+t port)
+\item 
+int32\+\_\+t \mbox{\hyperlink{group__c-aivision_gab5d28ce146a37b425c2de50cdb3aa7c6}{aivision\+\_\+set\+\_\+enabled\+\_\+detection\+\_\+types}} (uint8\+\_\+t port, uint8\+\_\+t bits, uint8\+\_\+t bitmask)
+\item 
+int32\+\_\+t \mbox{\hyperlink{group__c-aivision_gac34cc71ac57f291f1ef0765482c44c55}{aivision\+\_\+enable\+\_\+detection\+\_\+types}} (uint8\+\_\+t port, uint8\+\_\+t types\+\_\+mask)
+\item 
+int32\+\_\+t \mbox{\hyperlink{group__c-aivision_ga7515a56c42dfdcddfebf9300aa5c7281}{aivision\+\_\+disable\+\_\+detection\+\_\+types}} (uint8\+\_\+t port, uint8\+\_\+t types\+\_\+mask)
+\item 
+int32\+\_\+t \mbox{\hyperlink{group__c-aivision_gafc79631b7a7cb395a668a7c9e93814b8}{aivision\+\_\+set\+\_\+tag\+\_\+family}} (uint8\+\_\+t port, aivision\+\_\+tag\+\_\+family\+\_\+e\+\_\+t family)
+\item 
+int32\+\_\+t \mbox{\hyperlink{group__c-aivision_ga0105adddaf85a1444731bdf8ddacb1c4}{aivision\+\_\+set\+\_\+color}} (uint8\+\_\+t port, \mbox{\hyperlink{structaivision__color__s__t}{aivision\+\_\+color\+\_\+s\+\_\+t}} \texorpdfstring{$\ast$}{*}color)
+\item 
+\mbox{\hyperlink{structaivision__color__s__t}{aivision\+\_\+color\+\_\+s\+\_\+t}} \mbox{\hyperlink{group__c-aivision_ga33ba7e7b520a4b240c49b3ac0b307832}{aivision\+\_\+get\+\_\+color}} (uint8\+\_\+t port, uint32\+\_\+t id)
+\item 
+int32\+\_\+t \mbox{\hyperlink{group__c-aivision_gaa5e24dc25caadc55fcc6048595d09888}{aivision\+\_\+get\+\_\+class\+\_\+name}} (uint8\+\_\+t port, int32\+\_\+t id, uint8\+\_\+t \texorpdfstring{$\ast$}{*}class\+\_\+name)
+\item 
+int32\+\_\+t \mbox{\hyperlink{group__c-aivision_ga8c45ce9a970b997d4259275a751753fc}{aivision\+\_\+set\+\_\+usb\+\_\+bounding\+\_\+box\+\_\+overlay}} (uint8\+\_\+t port, bool enabled)
+\item 
+\mbox{\hyperlink{structaivision__code__s__t}{aivision\+\_\+code\+\_\+s\+\_\+t}} \mbox{\hyperlink{group__c-aivision_ga55fc9af7180984d03afeb1d957419444}{aivision\+\_\+get\+\_\+code}} (uint8\+\_\+t port, uint32\+\_\+t id)
+\item 
+int32\+\_\+t \mbox{\hyperlink{group__c-aivision_ga4355150df2eb688bc67b2d9b681d228e}{aivision\+\_\+set\+\_\+code}} (uint8\+\_\+t port, \mbox{\hyperlink{structaivision__code__s__t}{aivision\+\_\+code\+\_\+s\+\_\+t}} \texorpdfstring{$\ast$}{*}wcode)
+\item 
+int32\+\_\+t \mbox{\hyperlink{group__c-aivision_ga006cde2e55480f63e2a0a9f5acf3d7d6}{aivision\+\_\+get\+\_\+object\+\_\+count}} (uint8\+\_\+t port)
+\item 
+\mbox{\hyperlink{structaivision__object__s__t}{aivision\+\_\+object\+\_\+s\+\_\+t}} \mbox{\hyperlink{group__c-aivision_ga538294de44a26c5deb9262cf72d87ef5}{aivision\+\_\+get\+\_\+object}} (uint8\+\_\+t port, uint32\+\_\+t object\+\_\+index)
+\item 
+double \mbox{\hyperlink{group__c-aivision_gac025df500331d6257d1744f176c6c7f6}{aivision\+\_\+get\+\_\+temperature}} (uint8\+\_\+t port)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+Parameters given by VEX \begin{DoxyCompactItemize}
+\item 
+\Hypertarget{group__c-aivision_ga7cae0bf88ffcf0fb6a1a0c2eff1d5e04}\label{group__c-aivision_ga7cae0bf88ffcf0fb6a1a0c2eff1d5e04} 
+\#define {\bfseries AIVISION\+\_\+\+MAX\+\_\+\+OBJECT\+\_\+\+COUNT}~24
+\item 
+\Hypertarget{group__c-aivision_ga1a15367bd0862276df0c6285e0716ccc}\label{group__c-aivision_ga1a15367bd0862276df0c6285e0716ccc} 
+\#define {\bfseries AIVISION\+\_\+\+MAX\+\_\+\+CLASSNAME\+\_\+\+COUNT}~20
+\item 
+\Hypertarget{group__c-aivision_ga4eb508b3c5f8046cabab0a7ef348a1f0}\label{group__c-aivision_ga4eb508b3c5f8046cabab0a7ef348a1f0} 
+\#define {\bfseries AIVISION\+\_\+\+MODE\+\_\+\+TAG\+\_\+\+SET\+\_\+\+BIT}~(1 $<$$<$ 29)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyNote}{Note}
+Additional example code for this module can be found in its Tutorial.
+\end{DoxyNote}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{group__c-aivision_ga7515a56c42dfdcddfebf9300aa5c7281}\index{AI Vision Sensor C API@{AI Vision Sensor C API}!aivision\_disable\_detection\_types@{aivision\_disable\_detection\_types}}
+\index{aivision\_disable\_detection\_types@{aivision\_disable\_detection\_types}!AI Vision Sensor C API@{AI Vision Sensor C API}}
+\doxysubsubsection{\texorpdfstring{aivision\_disable\_detection\_types()}{aivision\_disable\_detection\_types()}}
+{\footnotesize\ttfamily \label{group__c-aivision_ga7515a56c42dfdcddfebf9300aa5c7281} 
+int32\+\_\+t aivision\+\_\+disable\+\_\+detection\+\_\+types (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port}{, }\item[{uint8\+\_\+t}]{types\+\_\+mask}{}\end{DoxyParamCaption})}
+
+Disable detecting these types of objects, a bitmask as per aivision\+\_\+mode\+\_\+type\+\_\+e\+\_\+t. Disabling any given type of object will not affect the detection of other objects.
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as a vision sensor
+
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The V5 port number from 1-\/21 \\
+\hline
+{\em types\+\_\+mask} & The types to enable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+PROS\+\_\+\+SUCCESS if the operation was successful or PROS\+\_\+\+ERR if the operation failed, setting errno. 
+\end{DoxyReturn}
+\Hypertarget{group__c-aivision_gac34cc71ac57f291f1ef0765482c44c55}\index{AI Vision Sensor C API@{AI Vision Sensor C API}!aivision\_enable\_detection\_types@{aivision\_enable\_detection\_types}}
+\index{aivision\_enable\_detection\_types@{aivision\_enable\_detection\_types}!AI Vision Sensor C API@{AI Vision Sensor C API}}
+\doxysubsubsection{\texorpdfstring{aivision\_enable\_detection\_types()}{aivision\_enable\_detection\_types()}}
+{\footnotesize\ttfamily \label{group__c-aivision_gac34cc71ac57f291f1ef0765482c44c55} 
+int32\+\_\+t aivision\+\_\+enable\+\_\+detection\+\_\+types (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port}{, }\item[{uint8\+\_\+t}]{types\+\_\+mask}{}\end{DoxyParamCaption})}
+
+Enable detecting these types of objects, a bitmask as per aivision\+\_\+mode\+\_\+type\+\_\+e\+\_\+t. Enabling any given type of object will not disable the detection of other objects. This must be done explicitly.
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as a vision sensor
+
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The V5 port number from 1-\/21 \\
+\hline
+{\em types\+\_\+mask} & The types to enable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+PROS\+\_\+\+SUCCESS if the operation was successful or PROS\+\_\+\+ERR if the operation failed, setting errno. 
+\end{DoxyReturn}
+\Hypertarget{group__c-aivision_gaa5e24dc25caadc55fcc6048595d09888}\index{AI Vision Sensor C API@{AI Vision Sensor C API}!aivision\_get\_class\_name@{aivision\_get\_class\_name}}
+\index{aivision\_get\_class\_name@{aivision\_get\_class\_name}!AI Vision Sensor C API@{AI Vision Sensor C API}}
+\doxysubsubsection{\texorpdfstring{aivision\_get\_class\_name()}{aivision\_get\_class\_name()}}
+{\footnotesize\ttfamily \label{group__c-aivision_gaa5e24dc25caadc55fcc6048595d09888} 
+int32\+\_\+t aivision\+\_\+get\+\_\+class\+\_\+name (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port}{, }\item[{int32\+\_\+t}]{id}{, }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{class\+\_\+name}{}\end{DoxyParamCaption})}
+
+Get a class name that the AI vision sensor has stored. The AI Vision sensor may not correctly report classnames for the first several hundred milliseconds of being plugged in. By passing in -\/1 for the id, the function will return the number of class names the AI vision sensor reports. For other values of id, the function return value is undefined
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as a vision sensor
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The V5 port number from 1-\/21 \\
+\hline
+{\em id} & the id of the class name from 0-\/(AIVISION\+\_\+\+MAX\+\_\+\+CLASSNAME\+\_\+\+COUNT -\/ 1) \\
+\hline
+{\em class\+\_\+name} & a string of length \texorpdfstring{$>$}{>}=20 to store the classname. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+PROS\+\_\+\+SUCCESS if the operation was successful or PROS\+\_\+\+ERR if the operation failed, setting errno 
+\end{DoxyReturn}
+\Hypertarget{group__c-aivision_ga55fc9af7180984d03afeb1d957419444}\index{AI Vision Sensor C API@{AI Vision Sensor C API}!aivision\_get\_code@{aivision\_get\_code}}
+\index{aivision\_get\_code@{aivision\_get\_code}!AI Vision Sensor C API@{AI Vision Sensor C API}}
+\doxysubsubsection{\texorpdfstring{aivision\_get\_code()}{aivision\_get\_code()}}
+{\footnotesize\ttfamily \label{group__c-aivision_ga55fc9af7180984d03afeb1d957419444} 
+\mbox{\hyperlink{structaivision__code__s__t}{aivision\+\_\+code\+\_\+s\+\_\+t}} aivision\+\_\+get\+\_\+code (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port}{, }\item[{uint32\+\_\+t}]{id}{}\end{DoxyParamCaption})}
+
+Get a code that the AI vision sensor has stored.
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as a vision sensor
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The V5 port number from 1-\/21 \\
+\hline
+{\em id} & The id from 1-\/5 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the code, or a struct with an invalid ID if the operation failed, setting errno 
+\end{DoxyReturn}
+\Hypertarget{group__c-aivision_ga33ba7e7b520a4b240c49b3ac0b307832}\index{AI Vision Sensor C API@{AI Vision Sensor C API}!aivision\_get\_color@{aivision\_get\_color}}
+\index{aivision\_get\_color@{aivision\_get\_color}!AI Vision Sensor C API@{AI Vision Sensor C API}}
+\doxysubsubsection{\texorpdfstring{aivision\_get\_color()}{aivision\_get\_color()}}
+{\footnotesize\ttfamily \label{group__c-aivision_ga33ba7e7b520a4b240c49b3ac0b307832} 
+\mbox{\hyperlink{structaivision__color__s__t}{aivision\+\_\+color\+\_\+s\+\_\+t}} aivision\+\_\+get\+\_\+color (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port}{, }\item[{uint32\+\_\+t}]{id}{}\end{DoxyParamCaption})}
+
+Get a color configuration that the AI vision sensor has stored. If you attempt to get a color configuration that has not been previously used, the behavior is not defined.
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as a vision sensor
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The V5 port number from 1-\/21 \\
+\hline
+{\em id} & the id of color from 1-\/7 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+PROS\+\_\+\+SUCCESS if the operation was successful or PROS\+\_\+\+ERR if the operation failed, setting errno 
+\end{DoxyReturn}
+\Hypertarget{group__c-aivision_ga1c878597495e4ddda4faa4146e4a9bad}\index{AI Vision Sensor C API@{AI Vision Sensor C API}!aivision\_get\_enabled\_detection\_types@{aivision\_get\_enabled\_detection\_types}}
+\index{aivision\_get\_enabled\_detection\_types@{aivision\_get\_enabled\_detection\_types}!AI Vision Sensor C API@{AI Vision Sensor C API}}
+\doxysubsubsection{\texorpdfstring{aivision\_get\_enabled\_detection\_types()}{aivision\_get\_enabled\_detection\_types()}}
+{\footnotesize\ttfamily \label{group__c-aivision_ga1c878597495e4ddda4faa4146e4a9bad} 
+int32\+\_\+t aivision\+\_\+get\+\_\+enabled\+\_\+detection\+\_\+types (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port}{}\end{DoxyParamCaption})}
+
+Returns a bitfield of the types of objects the AI vision sensor is currently searching for, as per aivision\+\_\+mode\+\_\+type\+\_\+e\+\_\+t.
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as a vision sensor
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The V5 port number from 1-\/21 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the bitfield if the operation was successful or PROS\+\_\+\+ERR if the operation failed, setting errno.
+\end{DoxyReturn}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ \Hypertarget{group__c-aivision_ga538294de44a26c5deb9262cf72d87ef5}\index{AI Vision Sensor C API@{AI Vision Sensor C API}!aivision\_get\_object@{aivision\_get\_object}}
+\index{aivision\_get\_object@{aivision\_get\_object}!AI Vision Sensor C API@{AI Vision Sensor C API}}
+\doxysubsubsection{\texorpdfstring{aivision\_get\_object()}{aivision\_get\_object()}}
+{\footnotesize\ttfamily \label{group__c-aivision_ga538294de44a26c5deb9262cf72d87ef5} 
+\mbox{\hyperlink{structaivision__object__s__t}{aivision\+\_\+object\+\_\+s\+\_\+t}} aivision\+\_\+get\+\_\+object (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port}{, }\item[{uint32\+\_\+t}]{object\+\_\+index}{}\end{DoxyParamCaption})}
+
+Get the detected object at a given object index; there are aivision\+\_\+get\+\_\+object\+\_\+count objects and the index starts from 0.
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as a vision sensor
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The V5 port number from 1-\/21 \\
+\hline
+{\em object\+\_\+index} & the object index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the detected object if the operation was successful or an invalid object type if the operation failed, setting errno 
+\end{DoxyReturn}
+\Hypertarget{group__c-aivision_ga006cde2e55480f63e2a0a9f5acf3d7d6}\index{AI Vision Sensor C API@{AI Vision Sensor C API}!aivision\_get\_object\_count@{aivision\_get\_object\_count}}
+\index{aivision\_get\_object\_count@{aivision\_get\_object\_count}!AI Vision Sensor C API@{AI Vision Sensor C API}}
+\doxysubsubsection{\texorpdfstring{aivision\_get\_object\_count()}{aivision\_get\_object\_count()}}
+{\footnotesize\ttfamily \label{group__c-aivision_ga006cde2e55480f63e2a0a9f5acf3d7d6} 
+int32\+\_\+t aivision\+\_\+get\+\_\+object\+\_\+count (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port}{}\end{DoxyParamCaption})}
+
+Get the current number of objects detected by the AI vision sensor.
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as a vision sensor
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The V5 port number from 1-\/21 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of objects if the operation was successful or PROS\+\_\+\+ERR if the operation failed, setting errno 
+\end{DoxyReturn}
+\Hypertarget{group__c-aivision_gac025df500331d6257d1744f176c6c7f6}\index{AI Vision Sensor C API@{AI Vision Sensor C API}!aivision\_get\_temperature@{aivision\_get\_temperature}}
+\index{aivision\_get\_temperature@{aivision\_get\_temperature}!AI Vision Sensor C API@{AI Vision Sensor C API}}
+\doxysubsubsection{\texorpdfstring{aivision\_get\_temperature()}{aivision\_get\_temperature()}}
+{\footnotesize\ttfamily \label{group__c-aivision_gac025df500331d6257d1744f176c6c7f6} 
+double aivision\+\_\+get\+\_\+temperature (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port}{}\end{DoxyParamCaption})}
+
+Get the current reported temperature of the AI Vision sensor in degrees Celsius.
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as a vision sensor
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The V5 port number from 1-\/21 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the temperature if the operation was successful or PROS\+\_\+\+ERR\+\_\+F if the operation failed, setting errno 
+\end{DoxyReturn}
+\Hypertarget{group__c-aivision_ga4f38f7d114188e9197a28c29367c1192}\index{AI Vision Sensor C API@{AI Vision Sensor C API}!aivision\_reset@{aivision\_reset}}
+\index{aivision\_reset@{aivision\_reset}!AI Vision Sensor C API@{AI Vision Sensor C API}}
+\doxysubsubsection{\texorpdfstring{aivision\_reset()}{aivision\_reset()}}
+{\footnotesize\ttfamily \label{group__c-aivision_ga4f38f7d114188e9197a28c29367c1192} 
+int32\+\_\+t aivision\+\_\+reset (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port}{}\end{DoxyParamCaption})}
+
+Resets the AI Vision sensor to the initial state.
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as a vision sensor
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The V5 port number from 1-\/21\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+PROS\+\_\+\+SUCCESS if the operation was successful or PROS\+\_\+\+ERR if the operation failed, setting errno.
+\end{DoxyReturn}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ \Hypertarget{group__c-aivision_ga4355150df2eb688bc67b2d9b681d228e}\index{AI Vision Sensor C API@{AI Vision Sensor C API}!aivision\_set\_code@{aivision\_set\_code}}
+\index{aivision\_set\_code@{aivision\_set\_code}!AI Vision Sensor C API@{AI Vision Sensor C API}}
+\doxysubsubsection{\texorpdfstring{aivision\_set\_code()}{aivision\_set\_code()}}
+{\footnotesize\ttfamily \label{group__c-aivision_ga4355150df2eb688bc67b2d9b681d228e} 
+int32\+\_\+t aivision\+\_\+set\+\_\+code (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port}{, }\item[{\mbox{\hyperlink{structaivision__code__s__t}{aivision\+\_\+code\+\_\+s\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{wcode}{}\end{DoxyParamCaption})}
+
+Set a code that the AI vision sensor will detect for. The id of the code is stored in the \doxylink{structaivision__code__s__t}{aivision\+\_\+code\+\_\+s\+\_\+t} struct. If there is already a code stored in the AI vision sensor with the id, this function will overwrite.
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as a vision sensor
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The V5 port number from 1-\/21 \\
+\hline
+{\em code} & The code to set \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+PROS\+\_\+\+SUCCESS if the operation was successful or PROS\+\_\+\+ERR if the operation failed, setting errno 
+\end{DoxyReturn}
+\Hypertarget{group__c-aivision_ga0105adddaf85a1444731bdf8ddacb1c4}\index{AI Vision Sensor C API@{AI Vision Sensor C API}!aivision\_set\_color@{aivision\_set\_color}}
+\index{aivision\_set\_color@{aivision\_set\_color}!AI Vision Sensor C API@{AI Vision Sensor C API}}
+\doxysubsubsection{\texorpdfstring{aivision\_set\_color()}{aivision\_set\_color()}}
+{\footnotesize\ttfamily \label{group__c-aivision_ga0105adddaf85a1444731bdf8ddacb1c4} 
+int32\+\_\+t aivision\+\_\+set\+\_\+color (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port}{, }\item[{\mbox{\hyperlink{structaivision__color__s__t}{aivision\+\_\+color\+\_\+s\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{color}{}\end{DoxyParamCaption})}
+
+Set a color configuration that the AI vision sensor will detect. The color detection type must be separately enabled. If a color with the same ID already is stored in the sensor, it will be overwritten.
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as a vision sensor
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The V5 port number from 1-\/21 \\
+\hline
+{\em color} & the color to configure the AI Vision sensor to detect \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+PROS\+\_\+\+SUCCESS if the operation was successful or PROS\+\_\+\+ERR if the operation failed, setting errno 
+\end{DoxyReturn}
+\Hypertarget{group__c-aivision_gab5d28ce146a37b425c2de50cdb3aa7c6}\index{AI Vision Sensor C API@{AI Vision Sensor C API}!aivision\_set\_enabled\_detection\_types@{aivision\_set\_enabled\_detection\_types}}
+\index{aivision\_set\_enabled\_detection\_types@{aivision\_set\_enabled\_detection\_types}!AI Vision Sensor C API@{AI Vision Sensor C API}}
+\doxysubsubsection{\texorpdfstring{aivision\_set\_enabled\_detection\_types()}{aivision\_set\_enabled\_detection\_types()}}
+{\footnotesize\ttfamily \label{group__c-aivision_gab5d28ce146a37b425c2de50cdb3aa7c6} 
+int32\+\_\+t aivision\+\_\+set\+\_\+enabled\+\_\+detection\+\_\+types (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port}{, }\item[{uint8\+\_\+t}]{bits}{, }\item[{uint8\+\_\+t}]{bitmask}{}\end{DoxyParamCaption})}
+
+Modifies the types of objects the AI vision sensor is currently searching for, as per aivision\+\_\+mode\+\_\+type\+\_\+e\+\_\+t.
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as a vision sensor
+
+{\bfseries{Example}} aivision\+\_\+set\+\_\+enabled\+\_\+detection\+\_\+types(1, 0b010, 0b101) would disable the detection of tags and objects, and leave the setting of colors alone.
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The V5 port number from 1-\/21 \\
+\hline
+{\em bits} & the bits to set \\
+\hline
+{\em bitmask} & the bitmask to apply \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+PROS\+\_\+\+SUCCESS if the operation was successful or PROS\+\_\+\+ERR if the operation failed, setting errno. 
+\end{DoxyReturn}
+\Hypertarget{group__c-aivision_gafc79631b7a7cb395a668a7c9e93814b8}\index{AI Vision Sensor C API@{AI Vision Sensor C API}!aivision\_set\_tag\_family@{aivision\_set\_tag\_family}}
+\index{aivision\_set\_tag\_family@{aivision\_set\_tag\_family}!AI Vision Sensor C API@{AI Vision Sensor C API}}
+\doxysubsubsection{\texorpdfstring{aivision\_set\_tag\_family()}{aivision\_set\_tag\_family()}}
+{\footnotesize\ttfamily \label{group__c-aivision_gafc79631b7a7cb395a668a7c9e93814b8} 
+int32\+\_\+t aivision\+\_\+set\+\_\+tag\+\_\+family (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port}{, }\item[{aivision\+\_\+tag\+\_\+family\+\_\+e\+\_\+t}]{family}{}\end{DoxyParamCaption})}
+
+Sets the april tag family to detect. Only one family can be detected at a time. The tag detection type must be enabled as well.
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as a vision sensor
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The V5 port number from 1-\/21 \\
+\hline
+{\em family} & the tag family to configure the AI Vision sensor to detect \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+PROS\+\_\+\+SUCCESS if the operation was successful or PROS\+\_\+\+ERR if the operation failed, setting errno. 
+\end{DoxyReturn}
+\Hypertarget{group__c-aivision_ga8c45ce9a970b997d4259275a751753fc}\index{AI Vision Sensor C API@{AI Vision Sensor C API}!aivision\_set\_usb\_bounding\_box\_overlay@{aivision\_set\_usb\_bounding\_box\_overlay}}
+\index{aivision\_set\_usb\_bounding\_box\_overlay@{aivision\_set\_usb\_bounding\_box\_overlay}!AI Vision Sensor C API@{AI Vision Sensor C API}}
+\doxysubsubsection{\texorpdfstring{aivision\_set\_usb\_bounding\_box\_overlay()}{aivision\_set\_usb\_bounding\_box\_overlay()}}
+{\footnotesize\ttfamily \label{group__c-aivision_ga8c45ce9a970b997d4259275a751753fc} 
+int32\+\_\+t aivision\+\_\+set\+\_\+usb\+\_\+bounding\+\_\+box\+\_\+overlay (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port}{, }\item[{bool}]{enabled}{}\end{DoxyParamCaption})}
+
+Enable or disable the bounding box overlay the AI Vision sensor outputs on the USB port.
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as a vision sensor
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The V5 port number from 1-\/21 \\
+\hline
+{\em enabled} & if the overlay is enabled or disabled \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+PROS\+\_\+\+SUCCESS if the operation was successful or PROS\+\_\+\+ERR if the operation failed, setting errno 
+\end{DoxyReturn}

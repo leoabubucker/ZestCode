@@ -1,0 +1,143 @@
+\doxysection{C\+:/\+Users/leoku/\+One\+Drive/\+Personal\+\_\+\+Coding\+\_\+\+Projects/\+Zest\+Code/src/system/dev/ser\+\_\+driver.c File Reference}
+\hypertarget{ser__driver_8c}{}\label{ser__driver_8c}\index{C:/Users/leoku/OneDrive/Personal\_Coding\_Projects/ZestCode/src/system/dev/ser\_driver.c@{C:/Users/leoku/OneDrive/Personal\_Coding\_Projects/ZestCode/src/system/dev/ser\_driver.c}}
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include "{}common/cobs.\+h"{}}\newline
+{\ttfamily \#include "{}common/set.\+h"{}}\newline
+{\ttfamily \#include "{}kapi.\+h"{}}\newline
+{\ttfamily \#include "{}system/dev/ser.\+h"{}}\newline
+{\ttfamily \#include "{}system/dev/vfs.\+h"{}}\newline
+{\ttfamily \#include "{}system/optimizers.\+h"{}}\newline
+{\ttfamily \#include "{}v5\+\_\+api.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structser__file__arg}{ser\+\_\+file\+\_\+arg}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{ser__driver_8c_ae1d8f3825776974be35e3216173d9d42}\label{ser__driver_8c_ae1d8f3825776974be35e3216173d9d42} 
+\#define {\bfseries VEX\+\_\+\+SERIAL\+\_\+\+BUFFER\+\_\+\+SIZE}~2047
+\item 
+\Hypertarget{ser__driver_8c_a5137f163baeacb82499f58667c331f13}\label{ser__driver_8c_a5137f163baeacb82499f58667c331f13} 
+\#define {\bfseries STDIN\+\_\+\+STREAM\+\_\+\+ID}~0x706e6973
+\item 
+\Hypertarget{ser__driver_8c_a4a644d7f3ea9d220ee636b18a85615bf}\label{ser__driver_8c_a4a644d7f3ea9d220ee636b18a85615bf} 
+\#define {\bfseries STDOUT\+\_\+\+STREAM\+\_\+\+ID}~0x74756f73
+\item 
+\Hypertarget{ser__driver_8c_a8d0cc54b793acb6d9a17bb6adec8493d}\label{ser__driver_8c_a8d0cc54b793acb6d9a17bb6adec8493d} 
+\#define {\bfseries STDERR\+\_\+\+STREAM\+\_\+\+ID}~0x72726573
+\item 
+\Hypertarget{ser__driver_8c_a51ff7584da4b20ff7e8d126dfafd6db4}\label{ser__driver_8c_a51ff7584da4b20ff7e8d126dfafd6db4} 
+\#define {\bfseries KDBG\+\_\+\+STREAM\+\_\+\+ID}~0x6762646b
+\item 
+\Hypertarget{ser__driver_8c_abf47e4bbf61cbf8695fbb816d9ae0829}\label{ser__driver_8c_abf47e4bbf61cbf8695fbb816d9ae0829} 
+\#define {\bfseries guaranteed\+\_\+delivery\+\_\+streams\+\_\+size}~(sizeof(guaranteed\+\_\+delivery\+\_\+streams) / sizeof(\texorpdfstring{$\ast$}{*}guaranteed\+\_\+delivery\+\_\+streams))
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{ser__driver_8c_acc99ec08aa51dd314fc3064cf47c64f9}\label{ser__driver_8c_acc99ec08aa51dd314fc3064cf47c64f9} 
+typedef struct \mbox{\hyperlink{structser__file__arg}{ser\+\_\+file\+\_\+arg}} {\bfseries ser\+\_\+file\+\_\+s\+\_\+t}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{ser__driver_8c_adf8e7d1be1f76bc91637c15e727ff001}\label{ser__driver_8c_adf8e7d1be1f76bc91637c15e727ff001} 
+enum \{ {\bfseries E\+\_\+\+COBS\+\_\+\+ENABLED} = 1
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{ser__driver_8c_a3c764e04ffad03dc1491dd0c0c4b89ba}\label{ser__driver_8c_a3c764e04ffad03dc1491dd0c0c4b89ba} 
+int32\+\_\+t {\bfseries inp\+\_\+buffer\+\_\+read} (uint32\+\_\+t timeout)
+\item 
+void \mbox{\hyperlink{ser__driver_8c_a073d23377a4316cd9b392bfc8fd169e0}{ser\+\_\+output\+\_\+flush}} (void)
+\item 
+\Hypertarget{ser__driver_8c_a5abd31a28191b0795d258045db5c7b90}\label{ser__driver_8c_a5abd31a28191b0795d258045db5c7b90} 
+bool {\bfseries ser\+\_\+output\+\_\+write} (const uint8\+\_\+t \texorpdfstring{$\ast$}{*}buffer, size\+\_\+t size, bool noblock)
+\item 
+int \mbox{\hyperlink{ser__driver_8c_abf537582c10a95cf9e53175e6dca5baa}{ser\+\_\+read\+\_\+r}} (struct \+\_\+reent \texorpdfstring{$\ast$}{*}r, void \texorpdfstring{$\ast$}{*}const arg, uint8\+\_\+t \texorpdfstring{$\ast$}{*}buffer, const size\+\_\+t len)
+\item 
+\Hypertarget{ser__driver_8c_ad64a0e590ed025f0e8602477584dddc5}\label{ser__driver_8c_ad64a0e590ed025f0e8602477584dddc5} 
+int {\bfseries ser\+\_\+write\+\_\+r} (struct \+\_\+reent \texorpdfstring{$\ast$}{*}r, void \texorpdfstring{$\ast$}{*}const arg, const uint8\+\_\+t \texorpdfstring{$\ast$}{*}buf, const size\+\_\+t len)
+\item 
+\Hypertarget{ser__driver_8c_a552edb975386675e267909234f309c47}\label{ser__driver_8c_a552edb975386675e267909234f309c47} 
+int {\bfseries ser\+\_\+close\+\_\+r} (struct \+\_\+reent \texorpdfstring{$\ast$}{*}r, void \texorpdfstring{$\ast$}{*}const arg)
+\item 
+\Hypertarget{ser__driver_8c_a204cd37636bd50b95502ab7575aa5fce}\label{ser__driver_8c_a204cd37636bd50b95502ab7575aa5fce} 
+int {\bfseries ser\+\_\+fstat\+\_\+r} (struct \+\_\+reent \texorpdfstring{$\ast$}{*}r, void \texorpdfstring{$\ast$}{*}const arg, struct stat \texorpdfstring{$\ast$}{*}st)
+\item 
+\Hypertarget{ser__driver_8c_af1012170e3510b153dd4ad5d0be49e90}\label{ser__driver_8c_af1012170e3510b153dd4ad5d0be49e90} 
+int {\bfseries ser\+\_\+isatty\+\_\+r} (struct \+\_\+reent \texorpdfstring{$\ast$}{*}r, void \texorpdfstring{$\ast$}{*}const arg)
+\item 
+\Hypertarget{ser__driver_8c_a2861d7933af6100dbf1b8c626b8d569e}\label{ser__driver_8c_a2861d7933af6100dbf1b8c626b8d569e} 
+off\+\_\+t {\bfseries ser\+\_\+lseek\+\_\+r} (struct \+\_\+reent \texorpdfstring{$\ast$}{*}r, void \texorpdfstring{$\ast$}{*}const arg, off\+\_\+t ptr, int dir)
+\item 
+\Hypertarget{ser__driver_8c_aa4341d3c10d0c8f129aa902c43ca5c8a}\label{ser__driver_8c_aa4341d3c10d0c8f129aa902c43ca5c8a} 
+int {\bfseries ser\+\_\+ctl} (void \texorpdfstring{$\ast$}{*}const arg, const uint32\+\_\+t cmd, void \texorpdfstring{$\ast$}{*}const extra\+\_\+arg)
+\item 
+\Hypertarget{ser__driver_8c_a0542056b01f25d4efd17728f9a29d1c5}\label{ser__driver_8c_a0542056b01f25d4efd17728f9a29d1c5} 
+int {\bfseries ser\+\_\+open\+\_\+r} (struct \+\_\+reent \texorpdfstring{$\ast$}{*}r, const char \texorpdfstring{$\ast$}{*}path, int flags, int mode)
+\item 
+\Hypertarget{ser__driver_8c_a962daefd6f45a8def6ff00802a23fbff}\label{ser__driver_8c_a962daefd6f45a8def6ff00802a23fbff} 
+int32\+\_\+t {\bfseries serctl} (const uint32\+\_\+t action, void \texorpdfstring{$\ast$}{*}const extra\+\_\+arg)
+\item 
+\Hypertarget{ser__driver_8c_a35a345893896f714ae3ca1fcfbfe518a}\label{ser__driver_8c_a35a345893896f714ae3ca1fcfbfe518a} 
+void {\bfseries ser\+\_\+driver\+\_\+initialize} (void)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const struct \mbox{\hyperlink{structfs__driver}{fs\+\_\+driver}} \mbox{\hyperlink{ser__driver_8c_a5c5dcb763ee1b4b6cf9432ef39cc0010}{\+\_\+ser\+\_\+driver}}
+\item 
+\Hypertarget{ser__driver_8c_ade9aed2b04debedb3f22fea8407190e0}\label{ser__driver_8c_ade9aed2b04debedb3f22fea8407190e0} 
+const struct \mbox{\hyperlink{structfs__driver}{fs\+\_\+driver}} \texorpdfstring{$\ast$}{*}const {\bfseries ser\+\_\+driver} = \&\mbox{\hyperlink{ser__driver_8c_a5c5dcb763ee1b4b6cf9432ef39cc0010}{\+\_\+ser\+\_\+driver}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Serial Driver
+
+Contains the driver for communicating over the serial line. The serial driver is responsible for shipping out all data.
+
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2017-\/2024, Purdue University ACM SIGBots. All rights reserved.
+\end{DoxyCopyright}
+This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.\+0. If a copy of the MPL was not distributed with this file, You can obtain one at \href{http://mozilla.org/MPL/2.0/}{\texttt{ http\+://mozilla.\+org/\+MPL/2.\+0/}}. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{ser__driver_8c_a073d23377a4316cd9b392bfc8fd169e0}\index{ser\_driver.c@{ser\_driver.c}!ser\_output\_flush@{ser\_output\_flush}}
+\index{ser\_output\_flush@{ser\_output\_flush}!ser\_driver.c@{ser\_driver.c}}
+\doxysubsubsection{\texorpdfstring{ser\_output\_flush()}{ser\_output\_flush()}}
+{\footnotesize\ttfamily \label{ser__driver_8c_a073d23377a4316cd9b392bfc8fd169e0} 
+void ser\+\_\+output\+\_\+flush (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Output queue vex\+Serial\+Write\+Buffer doesn\textquotesingle{}t seem to be very thread safe, so the system daemon flushes an intermediary buffer once before vex\+Tasks\+Run calls to write add to the queue. Flushing is optimized because we have underlying access to the write buffer, as opposed to calling queue\+\_\+recv a bunch of times \Hypertarget{ser__driver_8c_abf537582c10a95cf9e53175e6dca5baa}\index{ser\_driver.c@{ser\_driver.c}!ser\_read\_r@{ser\_read\_r}}
+\index{ser\_read\_r@{ser\_read\_r}!ser\_driver.c@{ser\_driver.c}}
+\doxysubsubsection{\texorpdfstring{ser\_read\_r()}{ser\_read\_r()}}
+{\footnotesize\ttfamily \label{ser__driver_8c_abf537582c10a95cf9e53175e6dca5baa} 
+int ser\+\_\+read\+\_\+r (\begin{DoxyParamCaption}\item[{struct \+\_\+reent \texorpdfstring{$\ast$}{*}}]{r}{, }\item[{void \texorpdfstring{$\ast$}{*}const}]{arg}{, }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{buffer}{, }\item[{const size\+\_\+t}]{len}{}\end{DoxyParamCaption})}
+
+newlib driver functions 
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{ser__driver_8c_a5c5dcb763ee1b4b6cf9432ef39cc0010}\index{ser\_driver.c@{ser\_driver.c}!\_ser\_driver@{\_ser\_driver}}
+\index{\_ser\_driver@{\_ser\_driver}!ser\_driver.c@{ser\_driver.c}}
+\doxysubsubsection{\texorpdfstring{\_ser\_driver}{\_ser\_driver}}
+{\footnotesize\ttfamily \label{ser__driver_8c_a5c5dcb763ee1b4b6cf9432ef39cc0010} 
+const struct \mbox{\hyperlink{structfs__driver}{fs\+\_\+driver}} \+\_\+ser\+\_\+driver}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{.close\_r\ =\ ser\_close\_r,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .fstat\_r\ =\ ser\_fstat\_r,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .isatty\_r\ =\ ser\_isatty\_r,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .lseek\_r\ =\ ser\_lseek\_r,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .read\_r\ =\ \mbox{\hyperlink{ser__driver_8c_abf537582c10a95cf9e53175e6dca5baa}{ser\_read\_r}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .write\_r\ =\ ser\_write\_r,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .ctl\ =\ ser\_ctl\}}
+
+\end{DoxyCode}
+Driver description 

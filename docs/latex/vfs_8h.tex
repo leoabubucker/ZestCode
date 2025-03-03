@@ -1,0 +1,33 @@
+\doxysection{C\+:/\+Users/leoku/\+One\+Drive/\+Personal\+\_\+\+Coding\+\_\+\+Projects/\+Zest\+Code/include/system/dev/vfs.h File Reference}
+\hypertarget{vfs_8h}{}\label{vfs_8h}\index{C:/Users/leoku/OneDrive/Personal\_Coding\_Projects/ZestCode/include/system/dev/vfs.h@{C:/Users/leoku/OneDrive/Personal\_Coding\_Projects/ZestCode/include/system/dev/vfs.h}}
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$sys/stat.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structfs__driver}{fs\+\_\+driver}}
+\item 
+struct \mbox{\hyperlink{structfile__entry}{file\+\_\+entry}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{vfs_8h_aa4bd4045e6ecf897c09e0a9a0f289e2c}\label{vfs_8h_aa4bd4045e6ecf897c09e0a9a0f289e2c} 
+int {\bfseries vfs\+\_\+add\+\_\+entry\+\_\+r} (struct \+\_\+reent \texorpdfstring{$\ast$}{*}r, struct \mbox{\hyperlink{structfs__driver}{fs\+\_\+driver}} const \texorpdfstring{$\ast$}{*}const driver, void \texorpdfstring{$\ast$}{*}arg)
+\item 
+\Hypertarget{vfs_8h_a7b95dec382e104eeb85e6b74c41bbce4}\label{vfs_8h_a7b95dec382e104eeb85e6b74c41bbce4} 
+int {\bfseries vfs\+\_\+update\+\_\+entry} (int file, struct \mbox{\hyperlink{structfs__driver}{fs\+\_\+driver}} const \texorpdfstring{$\ast$}{*}const driver, void \texorpdfstring{$\ast$}{*}arg)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Virtual File System header
+
+See \doxylink{vfs_8c}{system/dev/vfs.\+c} for discussion
+
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2017-\/2024, Purdue University ACM SIGBots. All rights reserved.
+\end{DoxyCopyright}
+This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.\+0. If a copy of the MPL was not distributed with this file, You can obtain one at \href{http://mozilla.org/MPL/2.0/}{\texttt{ http\+://mozilla.\+org/\+MPL/2.\+0/}}. 

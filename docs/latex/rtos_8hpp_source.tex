@@ -1,0 +1,268 @@
+\doxysection{rtos.\+hpp}
+\hypertarget{rtos_8hpp_source}{}\label{rtos_8hpp_source}\index{C:/Users/leoku/OneDrive/Personal\_Coding\_Projects/ZestCode/include/pros/rtos.hpp@{C:/Users/leoku/OneDrive/Personal\_Coding\_Projects/ZestCode/include/pros/rtos.hpp}}
+\mbox{\hyperlink{rtos_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#ifndef\ \_PROS\_RTOS\_HPP\_}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ \_PROS\_RTOS\_HPP\_}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{rtos_8h}{pros/rtos.h}}"{}}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#undef\ delay}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <atomic>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ <cstdlib>}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <optional>}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <type\_traits>}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacepros}{pros}}\ \{}
+\DoxyCodeLine{00037\ \textcolor{keyword}{inline}\ \textcolor{keyword}{namespace\ }rtos\ \{}
+\DoxyCodeLine{00041\ \textcolor{keyword}{class\ }\mbox{\hyperlink{group__cpp-rtos_ga2e94f57e088ff9b56b78b5d1d7cb2169}{Task}}\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{group__cpp-rtos_ga2e94f57e088ff9b56b78b5d1d7cb2169}{Task}}(\mbox{\hyperlink{group__c-rtos_gaece0aa29b1f1538115228d2197239f98}{task\_fn\_t}}\ function,\ \textcolor{keywordtype}{void}*\ parameters\ =\ \textcolor{keyword}{nullptr},\ std::uint32\_t\ prio\ =\ \mbox{\hyperlink{group__c-rtos_ga3082a7e8f15691441dba683711bb823f}{TASK\_PRIORITY\_DEFAULT}},}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ std::uint16\_t\ stack\_depth\ =\ \mbox{\hyperlink{group__c-rtos_ga9ffb33b9e3714ca949d9f45dde3cbf8f}{TASK\_STACK\_DEPTH\_DEFAULT}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ name\ =\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00116\ \ \ \ \ \mbox{\hyperlink{group__cpp-rtos_ga2e94f57e088ff9b56b78b5d1d7cb2169}{Task}}(\mbox{\hyperlink{group__c-rtos_gaece0aa29b1f1538115228d2197239f98}{task\_fn\_t}}\ function,\ \textcolor{keywordtype}{void}*\ parameters,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ name);}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ F>}
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{group__c-rtos_ga1d7e0825b8d8876e8cd8ece3f9115293}{task\_t}}\ \mbox{\hyperlink{group__cpp-rtos_ga117c95e2c94898637928a4a269391d33}{create}}(F\&\&\ function,\ std::uint32\_t\ prio\ =\ \mbox{\hyperlink{group__c-rtos_ga3082a7e8f15691441dba683711bb823f}{TASK\_PRIORITY\_DEFAULT}},}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::uint16\_t\ stack\_depth\ =\ \mbox{\hyperlink{group__c-rtos_ga9ffb33b9e3714ca949d9f45dde3cbf8f}{TASK\_STACK\_DEPTH\_DEFAULT}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ name\ =\ \textcolor{stringliteral}{"{}"{}})\ \{}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_assert}(std::is\_invocable\_r\_v<void,\ F>);}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ pros::c::task\_create(}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ [](\textcolor{keywordtype}{void}*\ parameters)\ \{}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::unique\_ptr<std::function<void()>>\ ptr\{\textcolor{keyword}{static\_cast<}std::function<\textcolor{keywordtype}{void}()\textcolor{keyword}{>}*>(parameters)\};}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (*ptr)();}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ std::function<void()>(std::forward<F>(function)),\ prio,\ stack\_depth,\ name);}
+\DoxyCodeLine{00159\ \ \ \ \ \}}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ F>}
+\DoxyCodeLine{00187\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{group__c-rtos_ga1d7e0825b8d8876e8cd8ece3f9115293}{task\_t}}\ \mbox{\hyperlink{group__cpp-rtos_ga97b75f1f58ec6eb02f062005c2dad440}{create}}(F\&\&\ function,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ name)\ \{}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{group__cpp-rtos_ga117c95e2c94898637928a4a269391d33}{Task::create}}(std::forward<F>(function),\ \mbox{\hyperlink{group__c-rtos_ga3082a7e8f15691441dba683711bb823f}{TASK\_PRIORITY\_DEFAULT}},\ \mbox{\hyperlink{group__c-rtos_ga9ffb33b9e3714ca949d9f45dde3cbf8f}{TASK\_STACK\_DEPTH\_DEFAULT}},\ name);}
+\DoxyCodeLine{00189\ \ \ \ \ \}}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00223\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ F>}
+\DoxyCodeLine{00224\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{group__cpp-rtos_gad997288e0395a23b9ed69d35165b924e}{Task}}(F\&\&\ function,\ std::uint32\_t\ prio\ =\ \mbox{\hyperlink{group__c-rtos_ga3082a7e8f15691441dba683711bb823f}{TASK\_PRIORITY\_DEFAULT}},}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::uint16\_t\ stack\_depth\ =\ \mbox{\hyperlink{group__c-rtos_ga9ffb33b9e3714ca949d9f45dde3cbf8f}{TASK\_STACK\_DEPTH\_DEFAULT}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ name\ =\ \textcolor{stringliteral}{"{}"{}})}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{group__cpp-rtos_ga2e94f57e088ff9b56b78b5d1d7cb2169}{Task}}(}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [](void*\ parameters)\ \{}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::unique\_ptr<std::function<void()>>\ ptr\{\textcolor{keyword}{static\_cast<}std::function<\textcolor{keywordtype}{void}()\textcolor{keyword}{>}*>(parameters)\};}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (*ptr)();}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ std::function<void()>(std::forward<F>(function)),\ prio,\ stack\_depth,\ name)\ \{}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_assert}(std::is\_invocable\_r\_v<void,\ F>);}
+\DoxyCodeLine{00233\ \ \ \ \ \}}
+\DoxyCodeLine{00234\ }
+\DoxyCodeLine{00265\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ F>}
+\DoxyCodeLine{00266\ \ \ \ \ \mbox{\hyperlink{group__cpp-rtos_ga1403f11ede554c2028cfda305d3418a7}{Task}}(F\&\&\ function,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ name)}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{group__cpp-rtos_ga2e94f57e088ff9b56b78b5d1d7cb2169}{Task}}(std::forward<F>(function),\ \mbox{\hyperlink{group__c-rtos_ga3082a7e8f15691441dba683711bb823f}{TASK\_PRIORITY\_DEFAULT}},\ \mbox{\hyperlink{group__c-rtos_ga9ffb33b9e3714ca949d9f45dde3cbf8f}{TASK\_STACK\_DEPTH\_DEFAULT}},\ name)\ \{\}}
+\DoxyCodeLine{00268\ }
+\DoxyCodeLine{00290\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{group__cpp-rtos_ga2e94f57e088ff9b56b78b5d1d7cb2169}{Task}}(\mbox{\hyperlink{group__c-rtos_ga1d7e0825b8d8876e8cd8ece3f9115293}{task\_t}}\ task);}
+\DoxyCodeLine{00291\ }
+\DoxyCodeLine{00308\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classpros_1_1rtos_1_1_task}{Task}}\ \mbox{\hyperlink{group__cpp-rtos_ga10d4bd441ce062df4c3233deaa7acc91}{current}}();}
+\DoxyCodeLine{00309\ }
+\DoxyCodeLine{00330\ \ \ \ \ \mbox{\hyperlink{classpros_1_1rtos_1_1_task}{Task}}\&\ \mbox{\hyperlink{group__cpp-rtos_ga95e70532f42a21702d925c95d7432590}{operator=}}(\mbox{\hyperlink{group__c-rtos_ga1d7e0825b8d8876e8cd8ece3f9115293}{task\_t}}\ in);}
+\DoxyCodeLine{00331\ }
+\DoxyCodeLine{00353\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__cpp-rtos_ga45269807dfc87bb1d5e9580346793e9d}{remove}}();}
+\DoxyCodeLine{00354\ }
+\DoxyCodeLine{00374\ \ \ \ \ std::uint32\_t\ \mbox{\hyperlink{group__cpp-rtos_ga2a9dc12bb0799f8b18333ebcd7571e5b}{get\_priority}}();}
+\DoxyCodeLine{00375\ }
+\DoxyCodeLine{00400\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__cpp-rtos_ga205a9937d34311ba10f540bc58d0b0b9}{set\_priority}}(std::uint32\_t\ prio);}
+\DoxyCodeLine{00401\ }
+\DoxyCodeLine{00421\ \ \ \ \ std::uint32\_t\ \mbox{\hyperlink{group__cpp-rtos_ga0e1c154b709095c4884d325d79a839e3}{get\_state}}();}
+\DoxyCodeLine{00422\ }
+\DoxyCodeLine{00454\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__cpp-rtos_ga07d452a967a2bd839f6e819ff26ff052}{suspend}}();}
+\DoxyCodeLine{00455\ }
+\DoxyCodeLine{00489\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__cpp-rtos_gabb8b8aa01d13ba3992953d0a7d668a47}{resume}}();}
+\DoxyCodeLine{00490\ }
+\DoxyCodeLine{00509\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{group__cpp-rtos_gaa8521f655ff019d11caddb513afbb50e}{get\_name}}();}
+\DoxyCodeLine{00510\ }
+\DoxyCodeLine{00528\ \ \ \ \ \textcolor{keyword}{explicit}\ \textcolor{keyword}{operator}\ \mbox{\hyperlink{group__c-rtos_ga1d7e0825b8d8876e8cd8ece3f9115293}{task\_t}}()\ \{}
+\DoxyCodeLine{00529\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ task;}
+\DoxyCodeLine{00530\ \ \ \ \ \}}
+\DoxyCodeLine{00531\ }
+\DoxyCodeLine{00561\ \ \ \ \ std::uint32\_t\ \mbox{\hyperlink{group__cpp-rtos_gaf7ce264851745a555bb141884a1a61ab}{notify}}();}
+\DoxyCodeLine{00562\ }
+\DoxyCodeLine{00588\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__cpp-rtos_gaf250c6e369dd2621a8b31d7ed085f819}{join}}();}
+\DoxyCodeLine{00589\ }
+\DoxyCodeLine{00644\ \ \ \ \ std::uint32\_t\ \mbox{\hyperlink{group__cpp-rtos_gadd5bc6272aaa903fdf8ae6656d8ffddb}{notify\_ext}}(std::uint32\_t\ value,\ \mbox{\hyperlink{group__c-rtos_ga42ea99b5e5d38da0b98154609cf6c570}{notify\_action\_e\_t}}\ action,\ std::uint32\_t*\ prev\_value);}
+\DoxyCodeLine{00645\ }
+\DoxyCodeLine{00681\ \ \ \ \ \textcolor{keyword}{static}\ std::uint32\_t\ \mbox{\hyperlink{group__cpp-rtos_gab0424664979128a156fbcd2533a75da2}{notify\_take}}(\textcolor{keywordtype}{bool}\ clear\_on\_exit,\ std::uint32\_t\ timeout);}
+\DoxyCodeLine{00682\ }
+\DoxyCodeLine{00714\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{group__cpp-rtos_ga69c4d78a733f65cff31d7ab19d3f42f5}{notify\_clear}}();}
+\DoxyCodeLine{00715\ }
+\DoxyCodeLine{00735\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__cpp-rtos_ga8eb848ade1c1eeabb141726253bbe972}{delay}}(\textcolor{keyword}{const}\ std::uint32\_t\ milliseconds);}
+\DoxyCodeLine{00736\ }
+\DoxyCodeLine{00760\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__cpp-rtos_gae6cbf0b399b067b279b559217248896c}{delay\_until}}(std::uint32\_t*\ \textcolor{keyword}{const}\ prev\_time,\ \textcolor{keyword}{const}\ std::uint32\_t\ delta);}
+\DoxyCodeLine{00761\ }
+\DoxyCodeLine{00783\ \ \ \ \ \textcolor{keyword}{static}\ std::uint32\_t\ \mbox{\hyperlink{group__cpp-rtos_ga8d8eafc8dd2ac55e37add169a8498c4e}{get\_count}}();}
+\DoxyCodeLine{00784\ }
+\DoxyCodeLine{00785\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00786\ \ \ \ \ \mbox{\hyperlink{group__c-rtos_ga1d7e0825b8d8876e8cd8ece3f9115293}{task\_t}}\ task\{\};}
+\DoxyCodeLine{00787\ \};}
+\DoxyCodeLine{00788\ }
+\DoxyCodeLine{00789\ \textcolor{comment}{//\ STL\ Clock\ compliant\ clock}}
+\DoxyCodeLine{00790\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structpros_1_1rtos_1_1_clock}{Clock}}\ \{}
+\DoxyCodeLine{00791\ \ \ \ \ \textcolor{keyword}{using\ }rep\ =\ std::uint32\_t;}
+\DoxyCodeLine{00792\ \ \ \ \ \textcolor{keyword}{using\ }period\ =\ std::milli;}
+\DoxyCodeLine{00793\ \ \ \ \ \textcolor{keyword}{using\ }duration\ =\ std::chrono::duration<rep,\ period>;}
+\DoxyCodeLine{00794\ \ \ \ \ \textcolor{keyword}{using\ }time\_point\ =\ std::chrono::time\_point<Clock>;}
+\DoxyCodeLine{00795\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ is\_steady\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00796\ }
+\DoxyCodeLine{00821\ \ \ \ \ \textcolor{keyword}{static}\ time\_point\ \mbox{\hyperlink{group__cpp-rtos_ga422da55e9dc03e5e37b05f7f74d097b5}{now}}();}
+\DoxyCodeLine{00822\ \};}
+\DoxyCodeLine{00823\ }
+\DoxyCodeLine{00824\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classpros_1_1rtos_1_1_mutex}{Mutex}}\ \{}
+\DoxyCodeLine{00825\ \ \ \ \ std::atomic<mutex\_t>\ mutex\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00826\ \ \ \ \ \mbox{\hyperlink{group__c-rtos_gab15ea84d90257d70b44e8e04519864d2}{mutex\_t}}\ lazy\_init();}
+\DoxyCodeLine{00827\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00828\ \ \ \ \ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{classpros_1_1rtos_1_1_mutex}{Mutex}}()\ \{}
+\DoxyCodeLine{00829\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!std::is\_constant\_evaluated())\ \{}
+\DoxyCodeLine{00830\ \ \ \ \ \ \ \ \ \ \ \ \ lazy\_init();}
+\DoxyCodeLine{00831\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00832\ \ \ \ \ \}}
+\DoxyCodeLine{00833\ }
+\DoxyCodeLine{00834\ \ \ \ \ \textcolor{comment}{//\ disable\ copy\ and\ move\ construction\ and\ assignment\ per\ Mutex\ requirements}}
+\DoxyCodeLine{00835\ \ \ \ \ \textcolor{comment}{//\ (see\ https://en.cppreference.com/w/cpp/named\_req/Mutex)}}
+\DoxyCodeLine{00836\ \ \ \ \ \mbox{\hyperlink{classpros_1_1rtos_1_1_mutex}{Mutex}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classpros_1_1rtos_1_1_mutex}{Mutex}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00837\ \ \ \ \ \mbox{\hyperlink{classpros_1_1rtos_1_1_mutex}{Mutex}}(\mbox{\hyperlink{classpros_1_1rtos_1_1_mutex}{Mutex}}\&\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00838\ }
+\DoxyCodeLine{00839\ \ \ \ \ \mbox{\hyperlink{classpros_1_1rtos_1_1_mutex}{Mutex}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classpros_1_1rtos_1_1_mutex}{Mutex}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00840\ \ \ \ \ \mbox{\hyperlink{classpros_1_1rtos_1_1_mutex}{Mutex}}\&\ operator=(\mbox{\hyperlink{classpros_1_1rtos_1_1_mutex}{Mutex}}\&\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00841\ }
+\DoxyCodeLine{00922\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{group__cpp-rtos_gaa6a77cb29b9da78b3ec3fba651abea2e}{take}}();}
+\DoxyCodeLine{00923\ }
+\DoxyCodeLine{01010\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{group__cpp-rtos_gaa6a77cb29b9da78b3ec3fba651abea2e}{take}}(std::uint32\_t\ timeout);}
+\DoxyCodeLine{01011\ }
+\DoxyCodeLine{01092\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{group__cpp-rtos_ga0b0000554adeaa949ade594afebf2cb4}{give}}();}
+\DoxyCodeLine{01093\ }
+\DoxyCodeLine{01178\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__cpp-rtos_ga5ea32524ab5601fdef345eea66ccf7db}{lock}}();}
+\DoxyCodeLine{01179\ }
+\DoxyCodeLine{01260\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__cpp-rtos_ga266d9795310757cdd4e59e377fce6cba}{unlock}}();}
+\DoxyCodeLine{01261\ }
+\DoxyCodeLine{01286\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{group__cpp-rtos_ga1a70641ba7d85d4d7490194c8f6e1904}{try\_lock}}();}
+\DoxyCodeLine{01287\ }
+\DoxyCodeLine{01315\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Rep,\ \textcolor{keyword}{typename}\ Period>}
+\DoxyCodeLine{01316\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{group__cpp-rtos_gaf257a32cc3fcfb5b7a9879c6d2608fe2}{try\_lock\_for}}(\textcolor{keyword}{const}\ std::chrono::duration<Rep,\ Period>\&\ rel\_time)\ \{}
+\DoxyCodeLine{01317\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{group__cpp-rtos_gaa6a77cb29b9da78b3ec3fba651abea2e}{take}}(std::chrono::duration\_cast<Clock::duration>(rel\_time).count());}
+\DoxyCodeLine{01318\ \ \ \ \ \}}
+\DoxyCodeLine{01319\ }
+\DoxyCodeLine{01350\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Duration>}
+\DoxyCodeLine{01351\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{group__cpp-rtos_gaaac7810b03e23556c710f287bf1d8f76}{try\_lock\_until}}(\textcolor{keyword}{const}\ std::chrono::time\_point<Clock,\ Duration>\&\ abs\_time)\ \{}
+\DoxyCodeLine{01352\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{group__cpp-rtos_gaa6a77cb29b9da78b3ec3fba651abea2e}{take}}(std::max(\textcolor{keyword}{static\_cast<}uint32\_t\textcolor{keyword}{>}(0),\ (abs\_time\ -\/\ \mbox{\hyperlink{group__cpp-rtos_ga422da55e9dc03e5e37b05f7f74d097b5}{Clock::now}}()).count()));}
+\DoxyCodeLine{01353\ \ \ \ \ \}}
+\DoxyCodeLine{01354\ \ \ \ \ \mbox{\hyperlink{classpros_1_1rtos_1_1_mutex}{\string~Mutex}}();}
+\DoxyCodeLine{01356\ \};}
+\DoxyCodeLine{01357\ }
+\DoxyCodeLine{01358\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classpros_1_1rtos_1_1_recursive_mutex}{RecursiveMutex}}\ \{}
+\DoxyCodeLine{01359\ \ \ \ \ std::atomic<mutex\_t>\ mutex\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{01360\ \ \ \ \ \mbox{\hyperlink{group__c-rtos_gab15ea84d90257d70b44e8e04519864d2}{mutex\_t}}\ lazy\_init();}
+\DoxyCodeLine{01361\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{01362\ \ \ \ \ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{classpros_1_1rtos_1_1_recursive_mutex}{RecursiveMutex}}()\ \{}
+\DoxyCodeLine{01363\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!std::is\_constant\_evaluated())\ \{}
+\DoxyCodeLine{01364\ \ \ \ \ \ \ \ \ \ \ \ \ lazy\_init();}
+\DoxyCodeLine{01365\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01366\ \ \ \ \ \}}
+\DoxyCodeLine{01367\ }
+\DoxyCodeLine{01368\ \ \ \ \ \textcolor{comment}{//\ disable\ copy\ and\ move\ construction\ and\ assignment\ per\ Mutex\ requirements}}
+\DoxyCodeLine{01369\ \ \ \ \ \textcolor{comment}{//\ (see\ https://en.cppreference.com/w/cpp/named\_req/Mutex)}}
+\DoxyCodeLine{01370\ \ \ \ \ \mbox{\hyperlink{classpros_1_1rtos_1_1_recursive_mutex}{RecursiveMutex}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classpros_1_1rtos_1_1_recursive_mutex}{RecursiveMutex}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{01371\ \ \ \ \ \mbox{\hyperlink{classpros_1_1rtos_1_1_recursive_mutex}{RecursiveMutex}}(\mbox{\hyperlink{classpros_1_1rtos_1_1_recursive_mutex}{RecursiveMutex}}\&\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{01372\ }
+\DoxyCodeLine{01373\ \ \ \ \ \mbox{\hyperlink{classpros_1_1rtos_1_1_recursive_mutex}{RecursiveMutex}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classpros_1_1rtos_1_1_recursive_mutex}{RecursiveMutex}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{01374\ \ \ \ \ \mbox{\hyperlink{classpros_1_1rtos_1_1_recursive_mutex}{RecursiveMutex}}\&\ operator=(\mbox{\hyperlink{classpros_1_1rtos_1_1_recursive_mutex}{RecursiveMutex}}\&\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{01375\ }
+\DoxyCodeLine{01456\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classpros_1_1rtos_1_1_recursive_mutex_a8947cddb18d8c4fb4abf9d3ce188c33e}{take}}();}
+\DoxyCodeLine{01457\ }
+\DoxyCodeLine{01544\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classpros_1_1rtos_1_1_recursive_mutex_a8947cddb18d8c4fb4abf9d3ce188c33e}{take}}(std::uint32\_t\ timeout);}
+\DoxyCodeLine{01545\ }
+\DoxyCodeLine{01626\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classpros_1_1rtos_1_1_recursive_mutex_a1b284fc5bc53463566b1cf668009ac8d}{give}}();}
+\DoxyCodeLine{01627\ }
+\DoxyCodeLine{01712\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classpros_1_1rtos_1_1_recursive_mutex_af4b4d9f7ef2cd3ebf07f15c025706f7a}{lock}}();}
+\DoxyCodeLine{01713\ }
+\DoxyCodeLine{01794\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classpros_1_1rtos_1_1_recursive_mutex_a0e9f92f11b5974f1aa4d121ac4740a3d}{unlock}}();}
+\DoxyCodeLine{01795\ }
+\DoxyCodeLine{01820\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classpros_1_1rtos_1_1_recursive_mutex_a611c5507385d993ace50e45dd9aa0080}{try\_lock}}();}
+\DoxyCodeLine{01821\ }
+\DoxyCodeLine{01849\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Rep,\ \textcolor{keyword}{typename}\ Period>}
+\DoxyCodeLine{01850\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classpros_1_1rtos_1_1_recursive_mutex_ad16efb7b3e34c0b3d1c481610af0e2d7}{try\_lock\_for}}(\textcolor{keyword}{const}\ std::chrono::duration<Rep,\ Period>\&\ rel\_time)\ \{}
+\DoxyCodeLine{01851\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classpros_1_1rtos_1_1_recursive_mutex_a8947cddb18d8c4fb4abf9d3ce188c33e}{take}}(std::chrono::duration\_cast<Clock::duration>(rel\_time).count());}
+\DoxyCodeLine{01852\ \ \ \ \ \}}
+\DoxyCodeLine{01853\ }
+\DoxyCodeLine{01884\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Duration>}
+\DoxyCodeLine{01885\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classpros_1_1rtos_1_1_recursive_mutex_af4a0b714759dd44fb2d09730b9e32be3}{try\_lock\_until}}(\textcolor{keyword}{const}\ std::chrono::time\_point<Clock,\ Duration>\&\ abs\_time)\ \{}
+\DoxyCodeLine{01886\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classpros_1_1rtos_1_1_recursive_mutex_a8947cddb18d8c4fb4abf9d3ce188c33e}{take}}(std::max(\textcolor{keyword}{static\_cast<}uint32\_t\textcolor{keyword}{>}(0),\ (abs\_time\ -\/\ \mbox{\hyperlink{group__cpp-rtos_ga422da55e9dc03e5e37b05f7f74d097b5}{Clock::now}}()).count()));}
+\DoxyCodeLine{01887\ \ \ \ \ \}}
+\DoxyCodeLine{01888\ }
+\DoxyCodeLine{01889\ \ \ \ \ \mbox{\hyperlink{classpros_1_1rtos_1_1_recursive_mutex}{\string~RecursiveMutex}}();}
+\DoxyCodeLine{01891\ \};}
+\DoxyCodeLine{01892\ }
+\DoxyCodeLine{01893\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Var>}
+\DoxyCodeLine{01894\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classpros_1_1rtos_1_1_mutex_var}{MutexVar}};}
+\DoxyCodeLine{01895\ }
+\DoxyCodeLine{01896\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Var>}
+\DoxyCodeLine{01897\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classpros_1_1rtos_1_1_mutex_var_lock}{MutexVarLock}}\ \{}
+\DoxyCodeLine{01898\ \ \ \ \ \mbox{\hyperlink{classpros_1_1rtos_1_1_mutex}{Mutex}}\&\ mutex;}
+\DoxyCodeLine{01899\ \ \ \ \ Var\&\ var;}
+\DoxyCodeLine{01900\ }
+\DoxyCodeLine{01901\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classpros_1_1rtos_1_1_mutex_var}{MutexVar}}<Var>;}
+\DoxyCodeLine{01902\ }
+\DoxyCodeLine{01903\ \ \ \ \ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{classpros_1_1rtos_1_1_mutex_var_lock}{MutexVarLock}}(\mbox{\hyperlink{classpros_1_1rtos_1_1_mutex}{Mutex}}\&\ mutex,\ Var\&\ var)\ :\ mutex(mutex),\ var(var)\ \{\}}
+\DoxyCodeLine{01904\ }
+\DoxyCodeLine{01905\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{01909\ \ \ \ \ \textcolor{keyword}{constexpr}\ Var\&\ \mbox{\hyperlink{classpros_1_1rtos_1_1_mutex_var_lock_aafa620fbbd61460701d6ba0eea814572}{operator*}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{01910\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ var;}
+\DoxyCodeLine{01911\ \ \ \ \ \}}
+\DoxyCodeLine{01912\ }
+\DoxyCodeLine{01916\ \ \ \ \ \textcolor{keyword}{constexpr}\ Var*\ \mbox{\hyperlink{classpros_1_1rtos_1_1_mutex_var_lock_a307684e92f605f24aa89ec67ecf5015f}{operator-\/>}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{01917\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \&var;}
+\DoxyCodeLine{01918\ \ \ \ \ \}}
+\DoxyCodeLine{01919\ }
+\DoxyCodeLine{01920\ \ \ \ \ \mbox{\hyperlink{classpros_1_1rtos_1_1_mutex_var_lock}{\string~MutexVarLock}}()\ \{}
+\DoxyCodeLine{01921\ \ \ \ \ \ \ \ \ mutex.\mbox{\hyperlink{group__cpp-rtos_ga266d9795310757cdd4e59e377fce6cba}{unlock}}();}
+\DoxyCodeLine{01922\ \ \ \ \ \}}
+\DoxyCodeLine{01923\ \};}
+\DoxyCodeLine{01924\ }
+\DoxyCodeLine{01925\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Var>}
+\DoxyCodeLine{01926\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classpros_1_1rtos_1_1_mutex_var}{MutexVar}}\ \{}
+\DoxyCodeLine{01927\ \ \ \ \ \mbox{\hyperlink{classpros_1_1rtos_1_1_mutex}{Mutex}}\ mutex;}
+\DoxyCodeLine{01928\ \ \ \ \ Var\ var;}
+\DoxyCodeLine{01929\ }
+\DoxyCodeLine{01930\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{01988\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}...\ Args>}
+\DoxyCodeLine{01989\ \ \ \ \ \mbox{\hyperlink{classpros_1_1rtos_1_1_mutex_var_a09d5926833a938941c8424ddb2739d89}{MutexVar}}(Args\&\&...\ args)\ :\ mutex(),\ var(std::forward<Args>(args)...)\ \{\}}
+\DoxyCodeLine{01990\ }
+\DoxyCodeLine{02021\ \ \ \ \ std::optional<MutexVarLock<Var>>\ \mbox{\hyperlink{classpros_1_1rtos_1_1_mutex_var_a0ed0965122a3fc89949645449abc8263}{try\_lock}}(std::uint32\_t\ timeout)\ \{}
+\DoxyCodeLine{02022\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (mutex.take(timeout))\ \{}
+\DoxyCodeLine{02023\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{\{mutex,\ var\}\};}
+\DoxyCodeLine{02024\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{02025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{\};}
+\DoxyCodeLine{02026\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{02027\ \ \ \ \ \}}
+\DoxyCodeLine{02028\ }
+\DoxyCodeLine{02060\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Rep,\ \textcolor{keyword}{typename}\ Period>}
+\DoxyCodeLine{02061\ \ \ \ \ std::optional<MutexVarLock<Var>>\ \mbox{\hyperlink{classpros_1_1rtos_1_1_mutex_var_a5727e0b9dcf81160c50133a03434cdec}{try\_lock}}(\textcolor{keyword}{const}\ std::chrono::duration<Rep,\ Period>\&\ rel\_time)\ \{}
+\DoxyCodeLine{02062\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classpros_1_1rtos_1_1_mutex_var_a0ed0965122a3fc89949645449abc8263}{try\_lock}}(std::chrono::duration\_cast<Clock::duration>(rel\_time).count());}
+\DoxyCodeLine{02063\ \ \ \ \ \}}
+\DoxyCodeLine{02064\ }
+\DoxyCodeLine{02086\ \ \ \ \ \mbox{\hyperlink{classpros_1_1rtos_1_1_mutex_var_lock}{MutexVarLock<Var>}}\ \mbox{\hyperlink{classpros_1_1rtos_1_1_mutex_var_a0979da3232be23e66566a76706a1f4d4}{lock}}()\ \{}
+\DoxyCodeLine{02087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (!mutex.take(\mbox{\hyperlink{group__c-rtos_ga9146d5b264ff64b573607d62fc479c3f}{TIMEOUT\_MAX}}))}
+\DoxyCodeLine{02088\ \ \ \ \ \ \ \ \ \ \ \ \ ;}
+\DoxyCodeLine{02089\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{mutex,\ var\};}
+\DoxyCodeLine{02090\ \ \ \ \ \}}
+\DoxyCodeLine{02091\ \};}
+\DoxyCodeLine{02092\ }
+\DoxyCodeLine{02098\ \textcolor{keyword}{using\ }pros::c::millis;}
+\DoxyCodeLine{02099\ }
+\DoxyCodeLine{02105\ \textcolor{keyword}{using\ }pros::c::micros;}
+\DoxyCodeLine{02106\ }
+\DoxyCodeLine{02117\ \textcolor{keyword}{using\ }pros::c::delay;}
+\DoxyCodeLine{02118\ \}\ \ \textcolor{comment}{//\ namespace\ rtos}}
+\DoxyCodeLine{02119\ \}\ \ \textcolor{comment}{//\ namespace\ pros}}
+\DoxyCodeLine{02120\ }
+\DoxyCodeLine{02121\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ \_PROS\_RTOS\_HPP\_}}
+
+\end{DoxyCode}

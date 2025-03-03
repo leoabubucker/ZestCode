@@ -1,0 +1,61 @@
+\doxysection{C\+:/\+Users/leoku/\+One\+Drive/\+Personal\+\_\+\+Coding\+\_\+\+Projects/\+Zest\+Code/src/system/dev/ser\+\_\+daemon.c File Reference}
+\hypertarget{ser__daemon_8c}{}\label{ser__daemon_8c}\index{C:/Users/leoku/OneDrive/Personal\_Coding\_Projects/ZestCode/src/system/dev/ser\_daemon.c@{C:/Users/leoku/OneDrive/Personal\_Coding\_Projects/ZestCode/src/system/dev/ser\_daemon.c}}
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include "{}kapi.\+h"{}}\newline
+{\ttfamily \#include "{}pros/version.\+h"{}}\newline
+{\ttfamily \#include "{}system/dev/banners.\+h"{}}\newline
+{\ttfamily \#include "{}system/hot.\+h"{}}\newline
+{\ttfamily \#include "{}system/optimizers.\+h"{}}\newline
+{\ttfamily \#include "{}v5\+\_\+api.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{ser__daemon_8c_af1abcb51a4aa27a5a5a7958c03448134}\label{ser__daemon_8c_af1abcb51a4aa27a5a5a7958c03448134} 
+\#define {\bfseries MAX\+\_\+\+COMMAND\+\_\+\+LENGTH}~32
+\item 
+\#define \mbox{\hyperlink{ser__daemon_8c_a2cac57e61034ed77deac6a0a1a7a0ef1}{INP\+\_\+\+BUFFER\+\_\+\+SIZE}}~0x1000
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{ser__daemon_8c_af9aace1b44b73111e15aa39f06f43456}\label{ser__daemon_8c_af9aace1b44b73111e15aa39f06f43456} 
+{\bfseries \+\_\+\+\_\+attribute\+\_\+\+\_\+} ((weak))
+\item 
+\Hypertarget{ser__daemon_8c_a675953fca9a0535c7bcc0f0c33280342}\label{ser__daemon_8c_a675953fca9a0535c7bcc0f0c33280342} 
+void {\bfseries print\+\_\+small\+\_\+banner} (void)
+\item 
+\Hypertarget{ser__daemon_8c_ad0b950a2beebdea2c85d1e64019d05b8}\label{ser__daemon_8c_ad0b950a2beebdea2c85d1e64019d05b8} 
+void {\bfseries print\+\_\+large\+\_\+banner} (void)
+\item 
+\Hypertarget{ser__daemon_8c_af95680cffa9ec7b97a4ee0df7c09255e}\label{ser__daemon_8c_af95680cffa9ec7b97a4ee0df7c09255e} 
+bool {\bfseries inp\+\_\+buffer\+\_\+post} (uint8\+\_\+t b)
+\item 
+\Hypertarget{ser__daemon_8c_a3c764e04ffad03dc1491dd0c0c4b89ba}\label{ser__daemon_8c_a3c764e04ffad03dc1491dd0c0c4b89ba} 
+int32\+\_\+t {\bfseries inp\+\_\+buffer\+\_\+read} (uint32\+\_\+t timeout)
+\item 
+\Hypertarget{ser__daemon_8c_a15aa6bc5fa04327b42ea6b5c5094e626}\label{ser__daemon_8c_a15aa6bc5fa04327b42ea6b5c5094e626} 
+int32\+\_\+t {\bfseries inp\+\_\+buffer\+\_\+available} ()
+\item 
+\Hypertarget{ser__daemon_8c_a22e33e7f4ef9de97553480e2463faceb}\label{ser__daemon_8c_a22e33e7f4ef9de97553480e2463faceb} 
+void {\bfseries ser\+\_\+initialize} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Serial Input Daemon
+
+The serial input daemon is responsible for polling the serial line for characters and responding to any kernel commands (like printing the banner or enabling COBS)
+
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2017-\/2024, Purdue University ACM SIGBots. All rights reserved.
+\end{DoxyCopyright}
+This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.\+0. If a copy of the MPL was not distributed with this file, You can obtain one at \href{http://mozilla.org/MPL/2.0/}{\texttt{ http\+://mozilla.\+org/\+MPL/2.\+0/}}. 
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{ser__daemon_8c_a2cac57e61034ed77deac6a0a1a7a0ef1}\index{ser\_daemon.c@{ser\_daemon.c}!INP\_BUFFER\_SIZE@{INP\_BUFFER\_SIZE}}
+\index{INP\_BUFFER\_SIZE@{INP\_BUFFER\_SIZE}!ser\_daemon.c@{ser\_daemon.c}}
+\doxysubsubsection{\texorpdfstring{INP\_BUFFER\_SIZE}{INP\_BUFFER\_SIZE}}
+{\footnotesize\ttfamily \label{ser__daemon_8c_a2cac57e61034ed77deac6a0a1a7a0ef1} 
+\#define INP\+\_\+\+BUFFER\+\_\+\+SIZE~0x1000}
+
+Input buffer this is what read() reads from. Implemented as a ring buffer TODO\+: just use a Free\+RTOS queue instead of 2 semaphores 

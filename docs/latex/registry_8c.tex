@@ -1,0 +1,45 @@
+\doxysection{C\+:/\+Users/leoku/\+One\+Drive/\+Personal\+\_\+\+Coding\+\_\+\+Projects/\+Zest\+Code/src/devices/registry.c File Reference}
+\hypertarget{registry_8c}{}\label{registry_8c}\index{C:/Users/leoku/OneDrive/Personal\_Coding\_Projects/ZestCode/src/devices/registry.c@{C:/Users/leoku/OneDrive/Personal\_Coding\_Projects/ZestCode/src/devices/registry.c}}
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include "{}api.\+h"{}}\newline
+{\ttfamily \#include "{}kapi.\+h"{}}\newline
+{\ttfamily \#include "{}pros/misc.\+h"{}}\newline
+{\ttfamily \#include "{}v5\+\_\+api.\+h"{}}\newline
+{\ttfamily \#include "{}vdml/registry.\+h"{}}\newline
+{\ttfamily \#include "{}vdml/vdml.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{registry_8c_ac0a4dd723c8257decf13d08539e9e84c}\label{registry_8c_ac0a4dd723c8257decf13d08539e9e84c} 
+void {\bfseries registry\+\_\+init} ()
+\item 
+\Hypertarget{registry_8c_ac7e8455c77464829b48e9d481325585c}\label{registry_8c_ac7e8455c77464829b48e9d481325585c} 
+void {\bfseries registry\+\_\+update\+\_\+types} ()
+\item 
+int \mbox{\hyperlink{group__apix_gafdda25e2647e8606131e35ced80de099}{registry\+\_\+bind\+\_\+port}} (uint8\+\_\+t port, v5\+\_\+device\+\_\+e\+\_\+t device\+\_\+type)
+\item 
+int \mbox{\hyperlink{group__apix_ga0092551f3eff99f31535a657d2832a86}{registry\+\_\+unbind\+\_\+port}} (uint8\+\_\+t port)
+\item 
+\Hypertarget{registry_8c_a9ac2084929e3300d7762a8d1ce09824d}\label{registry_8c_a9ac2084929e3300d7762a8d1ce09824d} 
+\mbox{\hyperlink{structv5__smart__device__s__t}{v5\+\_\+smart\+\_\+device\+\_\+s\+\_\+t}} \texorpdfstring{$\ast$}{*} {\bfseries registry\+\_\+get\+\_\+device} (uint8\+\_\+t port)
+\item 
+\Hypertarget{registry_8c_ae0e44d2bc6cc0836001e02005d7f44ce}\label{registry_8c_ae0e44d2bc6cc0836001e02005d7f44ce} 
+\mbox{\hyperlink{structv5__smart__device__s__t}{v5\+\_\+smart\+\_\+device\+\_\+s\+\_\+t}} \texorpdfstring{$\ast$}{*} {\bfseries registry\+\_\+get\+\_\+device\+\_\+internal} (uint8\+\_\+t port)
+\item 
+v5\+\_\+device\+\_\+e\+\_\+t \mbox{\hyperlink{group__apix_gadd54c9e7c708eee228f2edf67dbe17cb}{registry\+\_\+get\+\_\+bound\+\_\+type}} (uint8\+\_\+t port)
+\item 
+v5\+\_\+device\+\_\+e\+\_\+t \mbox{\hyperlink{group__apix_ga490c81f1c80b6655410f96a0a07f4b0b}{registry\+\_\+get\+\_\+plugged\+\_\+type}} (uint8\+\_\+t port)
+\item 
+\Hypertarget{registry_8c_aeac3ed6b2538edfb2276ece7e60d3adb}\label{registry_8c_aeac3ed6b2538edfb2276ece7e60d3adb} 
+int32\+\_\+t {\bfseries registry\+\_\+validate\+\_\+binding} (uint8\+\_\+t port, v5\+\_\+device\+\_\+e\+\_\+t expected\+\_\+t)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file is the VDML (Vex Data Management Layer) Registry. It keeps track of what devices are in use on the V5. Therefore, in order to use V5 devices with PROS, they must be registered and deregistered using the registry.
+
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2017-\/2024, Purdue University ACM SIGBots.
+\end{DoxyCopyright}
+This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.\+0. If a copy of the MPL was not distributed with this file, You can obtain one at \href{http://mozilla.org/MPL/2.0/}{\texttt{ http\+://mozilla.\+org/\+MPL/2.\+0/}}. 

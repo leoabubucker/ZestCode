@@ -1,0 +1,66 @@
+\chapter{Contributor\textquotesingle{}s Guide}
+\hypertarget{md__c_o_n_t_r_i_b_u_t_i_n_g}{}\label{md__c_o_n_t_r_i_b_u_t_i_n_g}\index{Contributor\textquotesingle{}s Guide@{Contributor\textquotesingle{}s Guide}}
+\label{md__c_o_n_t_r_i_b_u_t_i_n_g_autotoc_md0}%
+\Hypertarget{md__c_o_n_t_r_i_b_u_t_i_n_g_autotoc_md0}%
+
+
+\begin{DoxyRemark}{Remarks}
+Consider joining our \href{https://discord.gg/vNMXCvVwdY}{\texttt{ Discord Server}}, it\textquotesingle{}s the best place to discuss use/development of Zest\+Code.
+\end{DoxyRemark}
+First off, thanks for taking the time to contribute! Zest\+Code relies on people like {\bfseries{YOU}} to stay bug-\/free and updated.\hypertarget{md__c_o_n_t_r_i_b_u_t_i_n_g_autotoc_md1}{}\doxysection{\texorpdfstring{Ways to contribute}{Ways to contribute}}\label{md__c_o_n_t_r_i_b_u_t_i_n_g_autotoc_md1}
+\hypertarget{md__c_o_n_t_r_i_b_u_t_i_n_g_autotoc_md2}{}\doxysubsection{\texorpdfstring{Bug Reports \& Feature Requests}{Bug Reports \& Feature Requests}}\label{md__c_o_n_t_r_i_b_u_t_i_n_g_autotoc_md2}
+\href{https://github.com/ZestCommunity/ZestCode/issues/new/choose}{\texttt{ Click Here}} to submit a bug report, feature request, or privately report a security concern.\hypertarget{md__c_o_n_t_r_i_b_u_t_i_n_g_autotoc_md3}{}\doxysubsection{\texorpdfstring{Discussion}{Discussion}}\label{md__c_o_n_t_r_i_b_u_t_i_n_g_autotoc_md3}
+Discussion and decision making regarding the development of Zest\+Code happens mostly on the \href{https://discord.gg/vNMXCvVwdY}{\texttt{ Zest\+Code Discord server}}. Just asking questions, proposing new ideas, and sharing your thoughts make a positive impact.\hypertarget{md__c_o_n_t_r_i_b_u_t_i_n_g_autotoc_md4}{}\doxysubsection{\texorpdfstring{Pull Requests}{Pull Requests}}\label{md__c_o_n_t_r_i_b_u_t_i_n_g_autotoc_md4}
+Pull Requests (short form\+: "{}\+PRs"{}) are used to make changes to Zest\+Code. The rest of this guide is dedicated to submitting a PR.\hypertarget{md__c_o_n_t_r_i_b_u_t_i_n_g_autotoc_md5}{}\doxysection{\texorpdfstring{Your First PR\+: a step-\/by-\/step guide}{Your First PR\+: a step-\/by-\/step guide}}\label{md__c_o_n_t_r_i_b_u_t_i_n_g_autotoc_md5}
+\hypertarget{md__c_o_n_t_r_i_b_u_t_i_n_g_autotoc_md6}{}\doxysubsection{\texorpdfstring{Step 0\+: Choose what to work on}{Step 0\+: Choose what to work on}}\label{md__c_o_n_t_r_i_b_u_t_i_n_g_autotoc_md6}
+First, head on over to the \href{https://github.com/ZestCommunity/ZestCode/issues}{\texttt{ Zest\+Code Issues Tab}}. Each title is prefixed with an emoji, which indicates the type of issue (see \href{https://gitmoji.dev/}{\texttt{ Gitmoji}}).
+
+Each issue has a tag\+:
+\begin{DoxyItemize}
+\item {\bfseries{triage}} -\/ waiting on a maintainer to assign a tag
+\item {\bfseries{sub-\/issue}} -\/ this issue is part of a larger one
+\item {\bfseries{blocked}} -\/ this issue can\textquotesingle{}t be worked on until other issue(s) are resolved
+\item {\bfseries{in-\/progress}} -\/ this issue is actively being worked on
+\item {\bfseries{ready}} -\/ this issue is ready to be worked on
+\end{DoxyItemize}
+
+You\textquotesingle{}ll want to either submit a new issue which you might be able to work on, or you can select an existing issue marked "{}ready"{}. \href{https://github.com/ZestCommunity/ZestCode/labels/ready}{\texttt{ Click Here}} for a list of all issues marked as "{}ready"{}. Choose one you want to work on, we recommend something that doesn\textquotesingle{}t sound too big or complicated for your first contribution.\hypertarget{md__c_o_n_t_r_i_b_u_t_i_n_g_autotoc_md7}{}\doxysubsection{\texorpdfstring{Step 1\+: Fork}{Step 1\+: Fork}}\label{md__c_o_n_t_r_i_b_u_t_i_n_g_autotoc_md7}
+\begin{DoxyImportant}{Important}
+You\textquotesingle{}ll need a Git\+Hub account for this step.
+\end{DoxyImportant}
+\href{https://github.com/ZestCommunity/ZestCode/fork}{\texttt{ Click here}}, then click the green button on the bottom right to create your fork, as shown in the image below.
+
+
+
+After waiting a couple of seconds, you\textquotesingle{}ll be redirected to your fork of Zest\+Code on Git\+Hub.\hypertarget{md__c_o_n_t_r_i_b_u_t_i_n_g_autotoc_md8}{}\doxysubsection{\texorpdfstring{Step 2\+: Clone}{Step 2\+: Clone}}\label{md__c_o_n_t_r_i_b_u_t_i_n_g_autotoc_md8}
+\begin{DoxyImportant}{Important}
+You\textquotesingle{}ll need git, and \href{https://code.visualstudio.com/}{\texttt{ Visual Studio Code}} for this step.
+\end{DoxyImportant}
+In Visual Studio Code, open the command palette with ({\ttfamily ctrl+shift+p} or {\ttfamily command+shift+p}). Type {\ttfamily Git\+: Clone}, and hit enter. Select {\ttfamily Clone from Git\+Hub}, and then click {\ttfamily \texorpdfstring{$<$}{<}your\+\_\+username\+\_\+here\texorpdfstring{$>$}{>}/\+Zest\+Code}.
+
+\hypertarget{md__c_o_n_t_r_i_b_u_t_i_n_g_autotoc_md9}{}\doxysubsection{\texorpdfstring{Step 3\+: Compile}{Step 3\+: Compile}}\label{md__c_o_n_t_r_i_b_u_t_i_n_g_autotoc_md9}
+\begin{DoxyImportant}{Important}
+You\textquotesingle{}ll need the \href{https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd}{\texttt{ clangd}} and \href{https://marketplace.visualstudio.com/items?itemName=sigbots.pros}{\texttt{ PROS}} VSCode extensions for this step
+\end{DoxyImportant}
+Once you have your Zest\+Code fork open in VSCode, you\textquotesingle{}ll need to compile it so clangd (your linting tool) works properly. Open the PROS Integrated Terminal, and it should already be busy compiling. If not, run the following command\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make\ clean;\ pros\ build-\/compile-\/commands}
+
+\end{DoxyCode}
+
+
+It might take a while for the first build, but subsequent builds will be many times faster. After the build is done, open the command palette and run {\ttfamily clangd\+: Restart language server}. The linter should now be working properly.\hypertarget{md__c_o_n_t_r_i_b_u_t_i_n_g_autotoc_md10}{}\doxysubsection{\texorpdfstring{Step 4\+: Making your changes}{Step 4\+: Making your changes}}\label{md__c_o_n_t_r_i_b_u_t_i_n_g_autotoc_md10}
+The project file structure is explained in \doxysectlink{md__s_t_r_u_c_t_u_r_e}{STRUCTURE.md}{0}. Read through it so you know where you should make your changes. Details on the code style can be found in \doxysectlink{md__s_t_y_l_e_g_u_i_d_e}{STYLEGUIDE.md}{0}.
+
+You should commit changes regularly. This isn\textquotesingle{}t a requirement, but it will make your life easier, especially for more complex PRs. You should also be testing your code regularly, and write tests for it in the {\ttfamily src/tests} folder if needed.\hypertarget{md__c_o_n_t_r_i_b_u_t_i_n_g_autotoc_md11}{}\doxysubsection{\texorpdfstring{Step 5\+: Open a PR}{Step 5\+: Open a PR}}\label{md__c_o_n_t_r_i_b_u_t_i_n_g_autotoc_md11}
+Once you think your PR is ready to be reviewed, go to your fork on Git\+Hub, and click the "{}contribute"{} button, as shown below.
+
+
+
+Then, fill out the PR description template, and remember to prefix the title with a \href{https://gitmoji.dev/}{\texttt{ Gitmoji}}. Your PR might receive a review within a minutes, or hours. The longest you\textquotesingle{}ll spend waiting is a week but this is rare.
+
+Reviewers might request changes to the PR before it\textquotesingle{}s merged. In fact, your PR might need several review cycles as we hold our code to a high standard. Once your PR is approved though, it will be merged shortly.
+
+And that\textquotesingle{}s it! thanks again for taking the time to contribute. 

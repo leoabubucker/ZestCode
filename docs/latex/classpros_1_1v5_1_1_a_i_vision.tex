@@ -1,0 +1,85 @@
+\doxysection{pros\+::v5\+::AIVision Class Reference}
+\hypertarget{classpros_1_1v5_1_1_a_i_vision}{}\label{classpros_1_1v5_1_1_a_i_vision}\index{pros::v5::AIVision@{pros::v5::AIVision}}
+Inheritance diagram for pros\+::v5\+::AIVision\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classpros_1_1v5_1_1_a_i_vision}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__cpp-aivision_gaa4fd97834fe05668ca76616d2cc9a626}{AIVision}} (const std\+::uint8\+\_\+t port)
+\item 
+{\bfseries AIVision} (const \mbox{\hyperlink{classpros_1_1v5_1_1_device}{Device}} \&device)
+\item 
+int32\+\_\+t {\bfseries reset} ()
+\item 
+int32\+\_\+t {\bfseries get\+\_\+enabled\+\_\+detection\+\_\+types} ()
+\item 
+int32\+\_\+t {\bfseries enable\+\_\+detection\+\_\+types} (Aivision\+Mode\+Type types\+\_\+mask)
+\item 
+int32\+\_\+t {\bfseries disable\+\_\+detection\+\_\+types} (Aivision\+Mode\+Type types\+\_\+mask)
+\item 
+int32\+\_\+t {\bfseries set\+\_\+tag\+\_\+family} (Aivision\+Tag\+Family family)
+\item 
+int32\+\_\+t {\bfseries set\+\_\+color} (\mbox{\hyperlink{structaivision__color__s__t}{aivision\+\_\+color\+\_\+s\+\_\+t}} \&color)
+\item 
+uint32\+\_\+t {\bfseries set\+\_\+code} (\mbox{\hyperlink{structaivision__code__s__t}{aivision\+\_\+code\+\_\+s\+\_\+t}} \&code)
+\item 
+\mbox{\hyperlink{structaivision__color__s__t}{aivision\+\_\+color\+\_\+s\+\_\+t}} {\bfseries get\+\_\+color} (uint32\+\_\+t id)
+\item 
+uint32\+\_\+t {\bfseries get\+\_\+class\+\_\+name} (int32\+\_\+t id, uint8\+\_\+t \texorpdfstring{$\ast$}{*}class\+\_\+name)
+\item 
+\mbox{\hyperlink{structaivision__code__s__t}{aivision\+\_\+code\+\_\+s\+\_\+t}} {\bfseries get\+\_\+code} (uint32\+\_\+t id)
+\item 
+int32\+\_\+t {\bfseries get\+\_\+object\+\_\+count} ()
+\item 
+\mbox{\hyperlink{structaivision__object__s__t}{aivision\+\_\+object\+\_\+s\+\_\+t}} {\bfseries get\+\_\+object} (uint32\+\_\+t object\+\_\+index)
+\item 
+std\+::vector$<$ \mbox{\hyperlink{structaivision__object__s__t}{aivision\+\_\+object\+\_\+s\+\_\+t}} $>$ {\bfseries get\+\_\+all\+\_\+objects} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classpros_1_1v5_1_1_device}{pros\+::v5\+::\+Device}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__cpp-device_gaecab1df1d50fe5fc5496a19e3223fd24}{Device}} (const std\+::uint8\+\_\+t port)
+\item 
+std\+::uint8\+\_\+t \mbox{\hyperlink{group__cpp-device_ga6c8bfb5986465bf963a94a82266fb2dc}{get\+\_\+port}} (void) const
+\item 
+virtual bool \mbox{\hyperlink{group__cpp-device_ga8123d170ef670fa26d1df943cb07cc17}{is\+\_\+installed}} ()
+\item 
+pros\+::\+Device\+Type \mbox{\hyperlink{group__cpp-device_ga20b4cfe0e6bf443fd5cfc6bbb216be3f}{get\+\_\+plugged\+\_\+type}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::vector$<$ \mbox{\hyperlink{classpros_1_1v5_1_1_a_i_vision}{AIVision}} $>$ \mbox{\hyperlink{group__cpp-aivision_gaecf34e292735aebdecff7221947579bc}{get\+\_\+all\+\_\+devices}} ()
+\item 
+static bool {\bfseries is\+\_\+type} (Aivision\+Detect\+Type type, const \mbox{\hyperlink{structaivision__object__s__t}{aivision\+\_\+object\+\_\+s\+\_\+t}} \&object)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{classpros_1_1v5_1_1_device}{pros\+::v5\+::\+Device}}}
+\begin{DoxyCompactItemize}
+\item 
+static pros\+::\+Device\+Type \mbox{\hyperlink{group__cpp-device_ga1f860ca3c06a5faed38f5345a596dc9c}{get\+\_\+plugged\+\_\+type}} (std\+::uint8\+\_\+t port)
+\item 
+static std\+::vector$<$ \mbox{\hyperlink{classpros_1_1v5_1_1_device}{Device}} $>$ \mbox{\hyperlink{group__cpp-device_ga6a0dffbd69d045e7daf95152dd60ec40}{get\+\_\+all\+\_\+devices}} (pros\+::\+Device\+Type device\+\_\+type=\mbox{\hyperlink{group__cpp-device_gga0a7387ba6156c831ba1e61d75a04c3d9a5e543256c480ac577d30f76f9120eb74}{pros\+::\+Device\+Type\+::undefined}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classpros_1_1v5_1_1_device}{pros\+::v5\+::\+Device}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__cpp-device_gac7714863c8869903d5ab8877f6289cd7}{Device}} (const std\+::uint8\+\_\+t port, const enum \mbox{\hyperlink{group__cpp-device_ga0a7387ba6156c831ba1e61d75a04c3d9}{Device\+Type}} device\+Type)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classpros_1_1v5_1_1_device}{pros\+::v5\+::\+Device}}}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::uint8\+\_\+t {\bfseries \+\_\+port}
+\item 
+enum \mbox{\hyperlink{group__cpp-device_ga0a7387ba6156c831ba1e61d75a04c3d9}{Device\+Type}} {\bfseries \+\_\+device\+Type} = \mbox{\hyperlink{group__cpp-device_gga0a7387ba6156c831ba1e61d75a04c3d9a334c4a4c42fdb79d7ebc3e73b517e6f8}{pros\+::\+Device\+Type\+::none}}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/leoku/\+One\+Drive/\+Personal\+\_\+\+Coding\+\_\+\+Projects/\+Zest\+Code/include/pros/ai\+\_\+vision.\+hpp\item 
+C\+:/\+Users/leoku/\+One\+Drive/\+Personal\+\_\+\+Coding\+\_\+\+Projects/\+Zest\+Code/src/devices/vdml\+\_\+ai\+\_\+vision.\+cpp\end{DoxyCompactItemize}

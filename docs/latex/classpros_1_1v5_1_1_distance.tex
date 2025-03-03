@@ -1,0 +1,72 @@
+\doxysection{pros\+::v5\+::Distance Class Reference}
+\hypertarget{classpros_1_1v5_1_1_distance}{}\label{classpros_1_1v5_1_1_distance}\index{pros::v5::Distance@{pros::v5::Distance}}
+Inheritance diagram for pros\+::v5\+::Distance\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classpros_1_1v5_1_1_distance}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__cpp-distance_gaafec2cc52af714bcc8245519ee87503f}{Distance}} (const std\+::uint8\+\_\+t port)
+\item 
+{\bfseries Distance} (const \mbox{\hyperlink{classpros_1_1v5_1_1_device}{Device}} \&device)
+\item 
+virtual std\+::int32\+\_\+t \mbox{\hyperlink{group__cpp-distance_gad6ec97ce8ff33a2ef569968736290c28}{get}} ()
+\item 
+virtual std\+::int32\+\_\+t \mbox{\hyperlink{group__cpp-distance_gab3dfe997343d0b9712214bc2db848d69}{get\+\_\+distance}} ()
+\item 
+virtual std\+::int32\+\_\+t \mbox{\hyperlink{group__cpp-distance_ga61334e23602e7da573623840d463d6da}{get\+\_\+confidence}} ()
+\item 
+virtual std\+::int32\+\_\+t \mbox{\hyperlink{group__cpp-distance_ga09fe3c0bf1d0801fb5f0ea042ac5c515}{get\+\_\+object\+\_\+size}} ()
+\item 
+virtual double \mbox{\hyperlink{group__cpp-distance_gad6af16b86358e05868c8069d6d5ff43f}{get\+\_\+object\+\_\+velocity}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classpros_1_1v5_1_1_device}{pros\+::v5\+::\+Device}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__cpp-device_gaecab1df1d50fe5fc5496a19e3223fd24}{Device}} (const std\+::uint8\+\_\+t port)
+\item 
+std\+::uint8\+\_\+t \mbox{\hyperlink{group__cpp-device_ga6c8bfb5986465bf963a94a82266fb2dc}{get\+\_\+port}} (void) const
+\item 
+virtual bool \mbox{\hyperlink{group__cpp-device_ga8123d170ef670fa26d1df943cb07cc17}{is\+\_\+installed}} ()
+\item 
+pros\+::\+Device\+Type \mbox{\hyperlink{group__cpp-device_ga20b4cfe0e6bf443fd5cfc6bbb216be3f}{get\+\_\+plugged\+\_\+type}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::vector$<$ \mbox{\hyperlink{classpros_1_1v5_1_1_distance}{Distance}} $>$ \mbox{\hyperlink{group__cpp-distance_gac108cf8ff9da9102b1c4ec30b66778fa}{get\+\_\+all\+\_\+devices}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{classpros_1_1v5_1_1_device}{pros\+::v5\+::\+Device}}}
+\begin{DoxyCompactItemize}
+\item 
+static pros\+::\+Device\+Type \mbox{\hyperlink{group__cpp-device_ga1f860ca3c06a5faed38f5345a596dc9c}{get\+\_\+plugged\+\_\+type}} (std\+::uint8\+\_\+t port)
+\item 
+static std\+::vector$<$ \mbox{\hyperlink{classpros_1_1v5_1_1_device}{Device}} $>$ \mbox{\hyperlink{group__cpp-device_ga6a0dffbd69d045e7daf95152dd60ec40}{get\+\_\+all\+\_\+devices}} (pros\+::\+Device\+Type device\+\_\+type=\mbox{\hyperlink{group__cpp-device_gga0a7387ba6156c831ba1e61d75a04c3d9a5e543256c480ac577d30f76f9120eb74}{pros\+::\+Device\+Type\+::undefined}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{group__cpp-distance_gaa41d82e47e05b7a17225d93512a88483}{operator$<$$<$}} (std\+::ostream \&os, \mbox{\hyperlink{classpros_1_1v5_1_1_distance}{pros\+::\+Distance}} \&\mbox{\hyperlink{group__cpp-device_gga0a7387ba6156c831ba1e61d75a04c3d9aa74ec9c5b6882f79e32a8fbd8da90c1b}{distance}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classpros_1_1v5_1_1_device}{pros\+::v5\+::\+Device}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__cpp-device_gac7714863c8869903d5ab8877f6289cd7}{Device}} (const std\+::uint8\+\_\+t port, const enum \mbox{\hyperlink{group__cpp-device_ga0a7387ba6156c831ba1e61d75a04c3d9}{Device\+Type}} device\+Type)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classpros_1_1v5_1_1_device}{pros\+::v5\+::\+Device}}}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::uint8\+\_\+t {\bfseries \+\_\+port}
+\item 
+enum \mbox{\hyperlink{group__cpp-device_ga0a7387ba6156c831ba1e61d75a04c3d9}{Device\+Type}} {\bfseries \+\_\+device\+Type} = \mbox{\hyperlink{group__cpp-device_gga0a7387ba6156c831ba1e61d75a04c3d9a334c4a4c42fdb79d7ebc3e73b517e6f8}{pros\+::\+Device\+Type\+::none}}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/leoku/\+One\+Drive/\+Personal\+\_\+\+Coding\+\_\+\+Projects/\+Zest\+Code/include/pros/\mbox{\hyperlink{distance_8hpp}{distance.\+hpp}}\item 
+C\+:/\+Users/leoku/\+One\+Drive/\+Personal\+\_\+\+Coding\+\_\+\+Projects/\+Zest\+Code/src/devices/\mbox{\hyperlink{vdml__distance_8cpp}{vdml\+\_\+distance.\+cpp}}\end{DoxyCompactItemize}

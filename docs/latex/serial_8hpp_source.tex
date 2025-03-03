@@ -1,0 +1,52 @@
+\doxysection{serial.\+hpp}
+\hypertarget{serial_8hpp_source}{}\label{serial_8hpp_source}\index{C:/Users/leoku/OneDrive/Personal\_Coding\_Projects/ZestCode/include/pros/serial.hpp@{C:/Users/leoku/OneDrive/Personal\_Coding\_Projects/ZestCode/include/pros/serial.hpp}}
+\mbox{\hyperlink{serial_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#ifndef\ \_PROS\_SERIAL\_HPP\_}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ \_PROS\_SERIAL\_HPP\_}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{device_8hpp}{pros/device.hpp}}"{}}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{serial_8h}{pros/serial.h}}"{}}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacepros}{pros}}\ \{}
+\DoxyCodeLine{00032\ \textcolor{keyword}{class\ }\mbox{\hyperlink{group__cpp-serial_ga20b7c3c88af816af3078939b048dcf4b}{Serial}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classpros_1_1v5_1_1_device}{Device}}\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{group__cpp-serial_ga20b7c3c88af816af3078939b048dcf4b}{Serial}}(std::uint8\_t\ port,\ std::int32\_t\ baudrate);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{group__cpp-serial_ga20b7c3c88af816af3078939b048dcf4b}{Serial}}(std::uint8\_t\ port);}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{comment}{\ \ \ \ /******************************************************************************/}}
+\DoxyCodeLine{00080\ \textcolor{comment}{\ \ \ \ /******************************************************************************/}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keyword}{virtual}\ std::int32\_t\ \mbox{\hyperlink{group__cpp-serial_ga6d707125d3f1dfe3fc1c2308c5c909cd}{set\_baudrate}}(std::int32\_t\ baudrate)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keyword}{virtual}\ std::int32\_t\ \mbox{\hyperlink{group__cpp-serial_gae12b341666f81002a5a80e643f454246}{flush}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keyword}{virtual}\ std::int32\_t\ \mbox{\hyperlink{group__cpp-serial_ga43b3a5622f6364157805249d73e6de65}{get\_read\_avail}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00184\ \ \ \ \ \textcolor{keyword}{virtual}\ std::int32\_t\ \mbox{\hyperlink{group__cpp-serial_ga8b929d6a2e6a45006422021252cdd6a7}{get\_write\_free}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00207\ \ \ \ \ \textcolor{keyword}{virtual}\ std::int32\_t\ \mbox{\hyperlink{group__cpp-serial_ga1f9968db6a415854d18a8bf3cdb14d66}{peek\_byte}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00230\ \ \ \ \ \textcolor{keyword}{virtual}\ std::int32\_t\ \mbox{\hyperlink{group__cpp-serial_ga6547284ca64e325f22b69413de3f8226}{read\_byte}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00261\ \ \ \ \ \textcolor{keyword}{virtual}\ std::int32\_t\ \mbox{\hyperlink{group__cpp-serial_ga933316880ec427ee67e50f1cd0771270}{read}}(std::uint8\_t*\ buffer,\ std::int32\_t\ length)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00262\ }
+\DoxyCodeLine{00289\ \ \ \ \ \textcolor{keyword}{virtual}\ std::int32\_t\ \mbox{\hyperlink{group__cpp-serial_ga7ec1219827eac2885990507779fee5b7}{write\_byte}}(std::uint8\_t\ buffer)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00290\ }
+\DoxyCodeLine{00321\ \ \ \ \ \textcolor{keyword}{virtual}\ std::int32\_t\ \mbox{\hyperlink{group__cpp-serial_gaacdcfd0815bd916b4a93cba7bcc1877a}{write}}(std::uint8\_t*\ buffer,\ std::int32\_t\ length)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00322\ }
+\DoxyCodeLine{00323\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00325\ \};}
+\DoxyCodeLine{00326\ }
+\DoxyCodeLine{00327\ \textcolor{keyword}{namespace\ }literals\ \{}
+\DoxyCodeLine{00341\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classpros_1_1_serial}{pros::Serial}}\ \textcolor{keyword}{operator}\textcolor{stringliteral}{"{}"{}}\ \_ser(\textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ m);}
+\DoxyCodeLine{00342\ \}\ \ \textcolor{comment}{//\ namespace\ literals}}
+\DoxyCodeLine{00343\ \}\ \ \textcolor{comment}{//\ namespace\ pros}}
+\DoxyCodeLine{00344\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ \_PROS\_SERIAL\_HPP\_}}
+
+\end{DoxyCode}

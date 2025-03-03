@@ -1,0 +1,64 @@
+\doxysection{C\+:/\+Users/leoku/\+One\+Drive/\+Personal\+\_\+\+Coding\+\_\+\+Projects/\+Zest\+Code/src/tests/generic\+\_\+serial.cpp File Reference}
+\hypertarget{generic__serial_8cpp}{}\label{generic__serial_8cpp}\index{C:/Users/leoku/OneDrive/Personal\_Coding\_Projects/ZestCode/src/tests/generic\_serial.cpp@{C:/Users/leoku/OneDrive/Personal\_Coding\_Projects/ZestCode/src/tests/generic\_serial.cpp}}
+{\ttfamily \#include "{}main.\+h"{}}\newline
+{\ttfamily \#include $<$stdarg.\+h$>$}\newline
+{\ttfamily \#include "{}pros/apix.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{generic__serial_8cpp_a178d0925d6f6d08c10e6669f5b3d78c4}\label{generic__serial_8cpp_a178d0925d6f6d08c10e6669f5b3d78c4} 
+void {\bfseries verbose\+\_\+printf} (const char \texorpdfstring{$\ast$}{*}format,...)
+\item 
+\Hypertarget{generic__serial_8cpp_a787f4e38dd97c3adef9d667178e613e0}\label{generic__serial_8cpp_a787f4e38dd97c3adef9d667178e613e0} 
+bool {\bfseries test\+\_\+send\+\_\+recv\+\_\+byte} (const uint32\+\_\+t interval, const uint32\+\_\+t bytes)
+\item 
+\Hypertarget{generic__serial_8cpp_a1e3db365a56c08e2bc686259e313a4a6}\label{generic__serial_8cpp_a1e3db365a56c08e2bc686259e313a4a6} 
+bool {\bfseries test\+\_\+send\+\_\+recv\+\_\+block} ()
+\item 
+\Hypertarget{generic__serial_8cpp_a3aadced6b50518bc3f84b364cbc2f45b}\label{generic__serial_8cpp_a3aadced6b50518bc3f84b364cbc2f45b} 
+void {\bfseries set\+\_\+baudrate} (const int32\+\_\+t baudrate)
+\item 
+\Hypertarget{generic__serial_8cpp_adac116554b543b7c4228c018a85882f5}\label{generic__serial_8cpp_adac116554b543b7c4228c018a85882f5} 
+void {\bfseries flush} ()
+\item 
+\Hypertarget{generic__serial_8cpp_a4adc96efb881f459297f9961fb232f04}\label{generic__serial_8cpp_a4adc96efb881f459297f9961fb232f04} 
+void {\bfseries init\+\_\+ports} (uint8\+\_\+t write\+\_\+port, uint8\+\_\+t recv\+\_\+port)
+\item 
+\Hypertarget{generic__serial_8cpp_adb1d9484e837a7e27f97d4320ea1996f}\label{generic__serial_8cpp_adb1d9484e837a7e27f97d4320ea1996f} 
+bool {\bfseries run\+\_\+tests} ()
+\item 
+\Hypertarget{generic__serial_8cpp_ac57194c628bb97b849be48d79c99c4ac}\label{generic__serial_8cpp_ac57194c628bb97b849be48d79c99c4ac} 
+void {\bfseries opcontrol} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{generic__serial_8cpp_a5f6bffb0e36dc7f8a5543528e5ceb5c6}\label{generic__serial_8cpp_a5f6bffb0e36dc7f8a5543528e5ceb5c6} 
+\mbox{\hyperlink{classpros_1_1_serial}{pros\+::\+Serial}} \texorpdfstring{$\ast$}{*} {\bfseries serial\+\_\+w} = nullptr
+\item 
+\Hypertarget{generic__serial_8cpp_a9759da523591f8fdf9df65256c11d8cf}\label{generic__serial_8cpp_a9759da523591f8fdf9df65256c11d8cf} 
+\mbox{\hyperlink{classpros_1_1_serial}{pros\+::\+Serial}} \texorpdfstring{$\ast$}{*} {\bfseries serial\+\_\+r} = nullptr
+\item 
+\Hypertarget{generic__serial_8cpp_a010ea88e4bf9f68dc4c98a808f270947}\label{generic__serial_8cpp_a010ea88e4bf9f68dc4c98a808f270947} 
+constexpr bool {\bfseries VERBOSE\+\_\+\+OUTPUT} = false
+\item 
+\Hypertarget{generic__serial_8cpp_aaa8a700e2c6a80a3cb826348326f242f}\label{generic__serial_8cpp_aaa8a700e2c6a80a3cb826348326f242f} 
+constexpr uint32\+\_\+t {\bfseries BUF\+\_\+\+SIZE} = 65536
+\item 
+\Hypertarget{generic__serial_8cpp_a5bc0fc587adb6b60977c0cfff837e7a4}\label{generic__serial_8cpp_a5bc0fc587adb6b60977c0cfff837e7a4} 
+uint8\+\_\+t {\bfseries out\+\_\+buf} \mbox{[}BUF\+\_\+\+SIZE\mbox{]}
+\item 
+\Hypertarget{generic__serial_8cpp_a8a1cd262fd93f899ae8b03e1c183817d}\label{generic__serial_8cpp_a8a1cd262fd93f899ae8b03e1c183817d} 
+uint8\+\_\+t {\bfseries in\+\_\+buf} \mbox{[}BUF\+\_\+\+SIZE\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Test code for the generic serial driver
+
+NOTE\+: There should be a cable plugged into ports 1 and 2, connecting them together
+
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2017-\/2024, Purdue University ACM SIGBots. All rights reserved.
+\end{DoxyCopyright}
+This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.\+0. If a copy of the MPL was not distributed with this file, You can obtain one at \href{http://mozilla.org/MPL/2.0/}{\texttt{ http\+://mozilla.\+org/\+MPL/2.\+0/}}. 

@@ -1,0 +1,35 @@
+\doxysection{pros\+::rtos\+::Mutex Class Reference}
+\hypertarget{classpros_1_1rtos_1_1_mutex}{}\label{classpros_1_1rtos_1_1_mutex}\index{pros::rtos::Mutex@{pros::rtos::Mutex}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Mutex} (const \mbox{\hyperlink{classpros_1_1rtos_1_1_mutex}{Mutex}} \&)=delete
+\item 
+{\bfseries Mutex} (\mbox{\hyperlink{classpros_1_1rtos_1_1_mutex}{Mutex}} \&\&)=delete
+\item 
+\mbox{\hyperlink{classpros_1_1rtos_1_1_mutex}{Mutex}} \& {\bfseries operator=} (const \mbox{\hyperlink{classpros_1_1rtos_1_1_mutex}{Mutex}} \&)=delete
+\item 
+\mbox{\hyperlink{classpros_1_1rtos_1_1_mutex}{Mutex}} \& {\bfseries operator=} (\mbox{\hyperlink{classpros_1_1rtos_1_1_mutex}{Mutex}} \&\&)=delete
+\item 
+bool \mbox{\hyperlink{group__cpp-rtos_gaa6a77cb29b9da78b3ec3fba651abea2e}{take}} ()
+\item 
+bool \mbox{\hyperlink{group__cpp-rtos_ga70da733375f7b4b68475881578c78516}{take}} (std\+::uint32\+\_\+t timeout)
+\item 
+bool \mbox{\hyperlink{group__cpp-rtos_ga0b0000554adeaa949ade594afebf2cb4}{give}} ()
+\item 
+void \mbox{\hyperlink{group__cpp-rtos_ga5ea32524ab5601fdef345eea66ccf7db}{lock}} ()
+\item 
+void \mbox{\hyperlink{group__cpp-rtos_ga266d9795310757cdd4e59e377fce6cba}{unlock}} ()
+\item 
+bool \mbox{\hyperlink{group__cpp-rtos_ga1a70641ba7d85d4d7490194c8f6e1904}{try\+\_\+lock}} ()
+\item 
+{\footnotesize template$<$typename Rep, typename Period$>$ }\\bool \mbox{\hyperlink{group__cpp-rtos_gaf257a32cc3fcfb5b7a9879c6d2608fe2}{try\+\_\+lock\+\_\+for}} (const std\+::chrono\+::duration$<$ Rep, Period $>$ \&rel\+\_\+time)
+\item 
+{\footnotesize template$<$typename Duration$>$ }\\bool \mbox{\hyperlink{group__cpp-rtos_gaaac7810b03e23556c710f287bf1d8f76}{try\+\_\+lock\+\_\+until}} (const std\+::chrono\+::time\+\_\+point$<$ \mbox{\hyperlink{structpros_1_1rtos_1_1_clock}{Clock}}, Duration $>$ \&abs\+\_\+time)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/leoku/\+One\+Drive/\+Personal\+\_\+\+Coding\+\_\+\+Projects/\+Zest\+Code/include/pros/\mbox{\hyperlink{rtos_8hpp}{rtos.\+hpp}}\item 
+C\+:/\+Users/leoku/\+One\+Drive/\+Personal\+\_\+\+Coding\+\_\+\+Projects/\+Zest\+Code/src/rtos/\mbox{\hyperlink{rtos_8cpp}{rtos.\+cpp}}\end{DoxyCompactItemize}

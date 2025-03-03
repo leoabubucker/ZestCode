@@ -1,0 +1,140 @@
+\chapter{Zest\+Code Styleguide}
+\hypertarget{md__s_t_y_l_e_g_u_i_d_e}{}\label{md__s_t_y_l_e_g_u_i_d_e}\index{ZestCode Styleguide@{ZestCode Styleguide}}
+\label{md__s_t_y_l_e_g_u_i_d_e_autotoc_md13}%
+\Hypertarget{md__s_t_y_l_e_g_u_i_d_e_autotoc_md13}%
+
+
+\begin{DoxyRemark}{Remarks}
+Zest\+Code is in the process of migrating to this new style; some older code may not yet be using this new style.
+\end{DoxyRemark}
+Maintaining a consistent coding style is important. It helps make the code more readable. Zest\+Code\textquotesingle{}s style guide is largely inspired by \href{https://doc.rust-lang.org/stable/style-guide/}{\texttt{ rustfmt}}.\hypertarget{md__s_t_y_l_e_g_u_i_d_e_autotoc_md14}{}\doxysection{\texorpdfstring{General Rules}{General Rules}}\label{md__s_t_y_l_e_g_u_i_d_e_autotoc_md14}
+\begin{DoxyRemark}{Remarks}
+The \href{https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd}{\texttt{ clangd VSCode extension}} can be used to automatically format your code using the Zest\+Code styleguide
+\end{DoxyRemark}
+Some basic rules are as follows\+:
+
+
+\begin{DoxyItemize}
+\item use \href{https://en.cppreference.com/w/cpp/types/integer}{\texttt{ fixed width integer types}} instead of {\ttfamily int} or {\ttfamily unsigned int}
+\begin{DoxyItemize}
+\item don\textquotesingle{}t use {\ttfamily int\+\_\+fast\+\_\+t} or {\ttfamily int\+\_\+smallest\+\_\+t} unless you document why its necessary
+\end{DoxyItemize}
+\item indent using 4 spaces, not tabs
+\item no more than 100 columns per line
+\item write tests for your code
+\item always use {\ttfamily enum class} over {\ttfamily enum}
+\item a {\ttfamily struct} should have only public member variables and no methods
+\item don\textquotesingle{}t use {\ttfamily typedef}, use {\ttfamily using} instead
+\item use \href{https://en.cppreference.com/w/cpp/language/attributes}{\texttt{ C++11 attributes}} instead of the older GCC attribute syntax\+: {\ttfamily \+\_\+\+\_\+attribute\+\_\+\+\_\+((...))}
+\item only use macros as a last resort
+\end{DoxyItemize}
+
+For more details, see \href{../.clang-format}{\texttt{ .clang-\/format}}.\hypertarget{md__s_t_y_l_e_g_u_i_d_e_autotoc_md15}{}\doxysection{\texorpdfstring{File extensions}{File extensions}}\label{md__s_t_y_l_e_g_u_i_d_e_autotoc_md15}
+\begin{DoxyImportant}{Important}
+Zest\+Code is being rewritten in C++. No C files or headers may be added, but existing ones can be modified.
+\end{DoxyImportant}
+
+\begin{DoxyItemize}
+\item C source files will have the extension {\ttfamily .c}
+\item C++ source files will have the extension {\ttfamily .cpp}
+\item C header files will have the extension {\ttfamily .h}
+\item C++ header files will have the extension {\ttfamily .hpp}
+\item Assembly source files will have the extension {\ttfamily .s}
+\item Linkerscripts will have the extension {\ttfamily .ld}
+\item Markdown documents will have the extension {\ttfamily .md}
+\item Python files will have the extension {\ttfamily .py}
+\end{DoxyItemize}\hypertarget{md__s_t_y_l_e_g_u_i_d_e_autotoc_md16}{}\doxysection{\texorpdfstring{Naming Conventions}{Naming Conventions}}\label{md__s_t_y_l_e_g_u_i_d_e_autotoc_md16}
+
+\begin{DoxyItemize}
+\item {\bfseries{files, folders}} -\/ snake\+\_\+case
+\item {\bfseries{classes, structs, enums, unions, concepts, etc}} -\/ Pascal\+Case
+\begin{DoxyItemize}
+\item {\bfseries{enum members}} -\/ Pascal\+Case
+\item {\bfseries{edge case}} -\/ names like {\ttfamily HTTPRequest} should be {\ttfamily Http\+Requst}
+\end{DoxyItemize}
+\item {\bfseries{functions}} -\/ snake\+\_\+case
+\item {\bfseries{variables}} -\/ snake\+\_\+case
+\item {\bfseries{member variables}} -\/ m\+\_\+snake\+\_\+case (The {\ttfamily m\+\_\+} is intentional)
+\item {\bfseries{macros}} -\/ SCREAMING\+\_\+\+SNAKE\+\_\+\+CASE
+\item {\bfseries{constexpr constants}} -\/ SCREAMING\+\_\+\+SNAKE\+\_\+\+CASE
+\end{DoxyItemize}\hypertarget{md__s_t_y_l_e_g_u_i_d_e_autotoc_md17}{}\doxysection{\texorpdfstring{Documentation}{Documentation}}\label{md__s_t_y_l_e_g_u_i_d_e_autotoc_md17}
+Use Doxygen-\/style comments as shown in the sections below.\hypertarget{md__s_t_y_l_e_g_u_i_d_e_autotoc_md18}{}\doxysubsection{\texorpdfstring{Enum-\/\+Level Comments}{Enum-\/\+Level Comments}}\label{md__s_t_y_l_e_g_u_i_d_e_autotoc_md18}
+These should be placed immediately before the declaration of the enum.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{/*}}
+\DoxyCodeLine{\textcolor{comment}{\ *\ @brief\ Short\ description\ of\ the\ enum}}
+\DoxyCodeLine{\textcolor{comment}{\ *}}
+\DoxyCodeLine{\textcolor{comment}{\ *\ Extended\ description\ of\ the\ enum\ goes\ here.\ This\ should\ explain\ general\ usage}}
+\DoxyCodeLine{\textcolor{comment}{\ *\ patterns\ for\ the\ enum.}}
+\DoxyCodeLine{\textcolor{comment}{\ */}}
+\DoxyCodeLine{\textcolor{keyword}{enum\ class}\ MyEnum\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ member\_0,\ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ member\_1,\ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ member\_2,\ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ member\_3,\ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ member\_4,\ }
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\begin{DoxyRemark}{Remarks}
+In the above example, the comments describing each member of the {\ttfamily enum} run together and form complete sentences for effect. Please do not do this in your code!
+\end{DoxyRemark}
+\hypertarget{md__s_t_y_l_e_g_u_i_d_e_autotoc_md19}{}\doxysubsection{\texorpdfstring{Function-\/\+Level Comments}{Function-\/\+Level Comments}}\label{md__s_t_y_l_e_g_u_i_d_e_autotoc_md19}
+These should be placed immediately before the function prototype they are describing in a header file.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{}
+
+\end{DoxyCode}
+\hypertarget{md__s_t_y_l_e_g_u_i_d_e_autotoc_md20}{}\doxysubsection{\texorpdfstring{Implementation Comments}{Implementation Comments}}\label{md__s_t_y_l_e_g_u_i_d_e_autotoc_md20}
+Sometimes it is necessary to explain statement or series of statements. In this case, comment it! Prefer adding comments before the offending code, rather than next to it. Add as much documentation as you think is necessary, rather too much than too little.
+
+For example\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Program\ entrypoint.\ This\ is\ the\ first\ function\ that\ is\ run.}}
+\DoxyCodeLine{\textcolor{comment}{//\ It\ sets\ up\ memory,\ initializes\ libc,\ and\ then\ calls\ main}}
+\DoxyCodeLine{\textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ [[gnu::section(\textcolor{stringliteral}{"{}.boot"{}})]]}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \_start()\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Symbols\ provided\ by\ the\ linker\ script}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{extern}\ uint32\_t\ \_\_bss\_start;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{extern}\ uint32\_t\ \_\_bss\_end;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{extern}\ uint32\_t\ \_\_sbss\_start;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{extern}\ uint32\_t\ \_\_sbss\_end;}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Don't\ try\ refactoring\ this\ code\ with\ stuff\ like\ std::fill\ or\ std::span.}}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ It's\ been\ tried\ before,\ and\ it\ causes\ UB.}}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ It's\ suspected\ that\ this\ is\ due\ to\ libc\ not\ being\ initialized\ yet.}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}\ (uint32\_t*\ bss\ =\ \&\_\_bss\_start;\ bss\ <\ \&\_\_bss\_end;\ bss++)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ *bss\ =\ 0;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}\ (uint32\_t*\ sbss\ =\ \&\_\_sbss\_start;\ sbss\ <\ \&\_\_sbss\_end;\ sbss++)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ *sbss\ =\ 0;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Initialize\ libc}}
+\DoxyCodeLine{\ \ \ \ \_\_libc\_init\_array();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ call\ the\ main\ function,\ which\ sets\ up\ the\ scheduler}}
+\DoxyCodeLine{\ \ \ \ main();}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\begin{DoxyRemark}{Remarks}
+commenting out lines is fine during testing, but should be removed when you mark your PR as ready for review!
+\end{DoxyRemark}
+\hypertarget{md__s_t_y_l_e_g_u_i_d_e_autotoc_md21}{}\doxysubsubsection{\texorpdfstring{Notes to Other Developers (Or Yourself)}{Notes to Other Developers (Or Yourself)}}\label{md__s_t_y_l_e_g_u_i_d_e_autotoc_md21}
+When writing code, it can sometimes be useful to leave notes to other developers or to yourself in the future. Examples of these include\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily // TODO\+: something that should be done}
+\item {\ttfamily // HACK\+: used to describe a particularly nasty way of solving a problem-\/-\/ could be improved, but it works for now}
+\end{DoxyItemize}
+
+While it is not strictly necessary to use these keywords in comments, they can be helpful -\/ modern editors either highlight some of these keywords by default or have extensions that do. This can make certain comments stand out even more when developers are "{}grepping"{} the codebase (visually or otherwise). 

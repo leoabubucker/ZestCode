@@ -1,0 +1,68 @@
+\doxysection{ai\+\_\+vision.\+hpp}
+\hypertarget{ai__vision_8hpp_source}{}\label{ai__vision_8hpp_source}\index{C:/Users/leoku/OneDrive/Personal\_Coding\_Projects/ZestCode/include/pros/ai\_vision.hpp@{C:/Users/leoku/OneDrive/Personal\_Coding\_Projects/ZestCode/include/pros/ai\_vision.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#ifndef\ \_PROS\_AIVISION\_HPP\_}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ \_PROS\_AIVISION\_HPP\_}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}pros/ai\_vision.h"{}}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{device_8hpp}{pros/device.hpp}}"{}}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacepros}{pros}}\ \{}
+\DoxyCodeLine{00030\ \textcolor{keyword}{inline}\ \textcolor{keyword}{namespace\ }v5\ \{}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{enum\ class}\ AivisionDetectType\ :\ uint8\_t\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ color\ =\ (1\ <<\ 0),}
+\DoxyCodeLine{00034\ \ \ \ \ code\ =\ (1\ <<\ 1),}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{object}\ =\ (1\ <<\ 2),}
+\DoxyCodeLine{00036\ \ \ \ \ tag\ =\ (1\ <<\ 3)}
+\DoxyCodeLine{00037\ \};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{enum\ class}\ AivisionModeType\ :\ uint8\_t\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ tags\ =\ (1\ <<\ 0),}
+\DoxyCodeLine{00041\ \ \ \ \ colors\ =\ (1\ <<\ 1),}
+\DoxyCodeLine{00042\ \ \ \ \ objects\ =\ (1\ <<\ 2),}
+\DoxyCodeLine{00043\ \ \ \ \ all\ =\ (1\ <<\ 0)\ |\ (1\ <<\ 1)\ |\ (1\ <<\ 2),}
+\DoxyCodeLine{00044\ \};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{enum\ class}\ AivisionTagFamily\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ tag\_21H7\ =\ 0,}
+\DoxyCodeLine{00048\ \ \ \ \ tag\_16H5\ =\ 1,}
+\DoxyCodeLine{00049\ \ \ \ \ tag\_25H9\ =\ 2,}
+\DoxyCodeLine{00050\ \ \ \ \ tag\_61H11\ =\ 3}
+\DoxyCodeLine{00051\ \};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00056\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classpros_1_1v5_1_1_a_i_vision}{AIVision}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{group__cpp-device_gaecab1df1d50fe5fc5496a19e3223fd24}{Device}}\ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00080\ \ \ \ \ \mbox{\hyperlink{group__cpp-aivision_gaa4fd97834fe05668ca76616d2cc9a626}{AIVision}}(\textcolor{keyword}{const}\ std::uint8\_t\ port);}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{group__cpp-aivision_gaa4fd97834fe05668ca76616d2cc9a626}{AIVision}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{group__cpp-device_gaecab1df1d50fe5fc5496a19e3223fd24}{Device}}\&\ device)\ :\ \mbox{\hyperlink{group__cpp-aivision_gaa4fd97834fe05668ca76616d2cc9a626}{AIVision}}(device.\mbox{\hyperlink{group__cpp-device_ga6c8bfb5986465bf963a94a82266fb2dc}{get\_port}}())\{\};}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keyword}{static}\ std::vector<AIVision>\ \mbox{\hyperlink{group__cpp-aivision_gaecf34e292735aebdecff7221947579bc}{get\_all\_devices}}();}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ is\_type(AivisionDetectType\ type,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structaivision__object__s__t}{aivision\_object\_s\_t}}\&\ \textcolor{keywordtype}{object});}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ int32\_t\ reset();}
+\DoxyCodeLine{00101\ \ \ \ \ int32\_t\ get\_enabled\_detection\_types();}
+\DoxyCodeLine{00102\ \ \ \ \ int32\_t\ enable\_detection\_types(AivisionModeType\ types\_mask);}
+\DoxyCodeLine{00103\ \ \ \ \ int32\_t\ disable\_detection\_types(AivisionModeType\ types\_mask);}
+\DoxyCodeLine{00104\ \ \ \ \ int32\_t\ set\_tag\_family(AivisionTagFamily\ family);}
+\DoxyCodeLine{00105\ \ \ \ \ int32\_t\ set\_color(\mbox{\hyperlink{structaivision__color__s__t}{aivision\_color\_s\_t}}\ \&color);}
+\DoxyCodeLine{00106\ \ \ \ \ uint32\_t\ set\_code(\mbox{\hyperlink{structaivision__code__s__t}{aivision\_code\_s\_t}}\ \&code);}
+\DoxyCodeLine{00107\ \ \ \ \ \mbox{\hyperlink{structaivision__color__s__t}{aivision\_color\_s\_t}}\ get\_color(uint32\_t\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00108\ \ \ \ \ uint32\_t\ get\_class\_name(int32\_t\ \textcolor{keywordtype}{id},\ uint8\_t\ *\ class\_name);}
+\DoxyCodeLine{00109\ \ \ \ \ \mbox{\hyperlink{structaivision__code__s__t}{aivision\_code\_s\_t}}\ get\_code(uint32\_t\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00110\ \ \ \ \ int32\_t\ get\_object\_count();}
+\DoxyCodeLine{00111\ \ \ \ \ \mbox{\hyperlink{structaivision__object__s__t}{aivision\_object\_s\_t}}\ get\_object(uint32\_t\ object\_index);}
+\DoxyCodeLine{00112\ \ \ \ \ std::vector<aivision\_object\_s\_t>\ get\_all\_objects();}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \};}
+\DoxyCodeLine{00115\ \}\ \ \textcolor{comment}{//\ namespace\ v5}}
+\DoxyCodeLine{00116\ \}\ \ \textcolor{comment}{//\ namespace\ pros}}
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ \_PROS\_VISION\_HPP\_}}
+
+\end{DoxyCode}

@@ -1,0 +1,101 @@
+\doxysection{pros\+::v5\+::Vision Class Reference}
+\hypertarget{classpros_1_1v5_1_1_vision}{}\label{classpros_1_1v5_1_1_vision}\index{pros::v5::Vision@{pros::v5::Vision}}
+Inheritance diagram for pros\+::v5\+::Vision\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classpros_1_1v5_1_1_vision}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__cpp-vision_gad10a269848460be7d54e88545d80bcaa}{Vision}} (std\+::uint8\+\_\+t port, vision\+\_\+zero\+\_\+e\+\_\+t zero\+\_\+point=\mbox{\hyperlink{group__c-vision_ggaef7c8269b3fb0dfbf4e597b2d8dd7af5a0ff244c5f3e9771f962986e25b00ff3d}{E\+\_\+\+VISION\+\_\+\+ZERO\+\_\+\+TOPLEFT}})
+\item 
+{\bfseries Vision} (const \mbox{\hyperlink{classpros_1_1v5_1_1_device}{Device}} \&device)
+\item 
+std\+::int32\+\_\+t \mbox{\hyperlink{group__cpp-vision_ga52274d20177dc15d0dcfb9117b866e5a}{clear\+\_\+led}} (void) const
+\item 
+\mbox{\hyperlink{group__c-vision_ga71f2011a47e95558bb534b05c16c7f2b}{vision\+\_\+color\+\_\+code\+\_\+t}} \mbox{\hyperlink{group__cpp-vision_gaa452fc648958ed7b18cd8de81d30d67f}{create\+\_\+color\+\_\+code}} (const std\+::uint32\+\_\+t sig\+\_\+id1, const std\+::uint32\+\_\+t sig\+\_\+id2, const std\+::uint32\+\_\+t sig\+\_\+id3=0, const std\+::uint32\+\_\+t sig\+\_\+id4=0, const std\+::uint32\+\_\+t sig\+\_\+id5=0) const
+\item 
+\mbox{\hyperlink{structvision__object__s__t}{vision\+\_\+object\+\_\+s\+\_\+t}} \mbox{\hyperlink{group__cpp-vision_ga3f981f3b1c0dfc380657e9b1960b9527}{get\+\_\+by\+\_\+size}} (const std\+::uint32\+\_\+t size\+\_\+id) const
+\item 
+\mbox{\hyperlink{structvision__object__s__t}{vision\+\_\+object\+\_\+s\+\_\+t}} \mbox{\hyperlink{group__cpp-vision_ga5eed578472623b93eac6e9cd0dc1e70d}{get\+\_\+by\+\_\+sig}} (const std\+::uint32\+\_\+t size\+\_\+id, const std\+::uint32\+\_\+t sig\+\_\+id) const
+\item 
+\mbox{\hyperlink{structvision__object__s__t}{vision\+\_\+object\+\_\+s\+\_\+t}} \mbox{\hyperlink{group__cpp-vision_gacd12fea0f57fcb1d2fe060b96af159e3}{get\+\_\+by\+\_\+code}} (const std\+::uint32\+\_\+t size\+\_\+id, const \mbox{\hyperlink{group__c-vision_ga71f2011a47e95558bb534b05c16c7f2b}{vision\+\_\+color\+\_\+code\+\_\+t}} color\+\_\+code) const
+\item 
+std\+::int32\+\_\+t \mbox{\hyperlink{group__cpp-vision_ga282fab7b1e89529e051a25ac6eb132da}{get\+\_\+exposure}} (void) const
+\item 
+std\+::int32\+\_\+t \mbox{\hyperlink{group__cpp-vision_gad5edd8acf47b5c1f29b98fe2b70dcbaa}{get\+\_\+object\+\_\+count}} (void) const
+\item 
+\mbox{\hyperlink{structvision__signature__s__t}{vision\+\_\+signature\+\_\+s\+\_\+t}} \mbox{\hyperlink{group__cpp-vision_ga22f1bf52460f94cb3932efba64aa3c5a}{get\+\_\+signature}} (const std\+::uint8\+\_\+t signature\+\_\+id) const
+\item 
+std\+::int32\+\_\+t \mbox{\hyperlink{group__cpp-vision_ga92af8f3809b2427e8666e371065b5a82}{get\+\_\+white\+\_\+balance}} (void) const
+\item 
+std\+::int32\+\_\+t \mbox{\hyperlink{group__cpp-vision_gaa5a3cac967516391256ca6417d3ed908}{read\+\_\+by\+\_\+size}} (const std\+::uint32\+\_\+t size\+\_\+id, const std\+::uint32\+\_\+t object\+\_\+count, \mbox{\hyperlink{structvision__object__s__t}{vision\+\_\+object\+\_\+s\+\_\+t}} \texorpdfstring{$\ast$}{*}const object\+\_\+arr) const
+\item 
+std\+::int32\+\_\+t \mbox{\hyperlink{group__cpp-vision_ga8e1d2a3715a5389698b6609868f4c7dd}{read\+\_\+by\+\_\+sig}} (const std\+::uint32\+\_\+t size\+\_\+id, const std\+::uint32\+\_\+t sig\+\_\+id, const std\+::uint32\+\_\+t object\+\_\+count, \mbox{\hyperlink{structvision__object__s__t}{vision\+\_\+object\+\_\+s\+\_\+t}} \texorpdfstring{$\ast$}{*}const object\+\_\+arr) const
+\item 
+int32\+\_\+t \mbox{\hyperlink{group__cpp-vision_gacea292b4d1fd800b07f2b3bf2cd124e6}{read\+\_\+by\+\_\+code}} (const std\+::uint32\+\_\+t size\+\_\+id, const \mbox{\hyperlink{group__c-vision_ga71f2011a47e95558bb534b05c16c7f2b}{vision\+\_\+color\+\_\+code\+\_\+t}} color\+\_\+code, const std\+::uint32\+\_\+t object\+\_\+count, \mbox{\hyperlink{structvision__object__s__t}{vision\+\_\+object\+\_\+s\+\_\+t}} \texorpdfstring{$\ast$}{*}const object\+\_\+arr) const
+\item 
+std\+::int32\+\_\+t \mbox{\hyperlink{group__cpp-vision_ga83b53ae3c3f260f96735da8611240142}{set\+\_\+auto\+\_\+white\+\_\+balance}} (const std\+::uint8\+\_\+t enable) const
+\item 
+std\+::int32\+\_\+t \mbox{\hyperlink{group__cpp-vision_ga320da155660e19f7c82855cb4fa6ee00}{set\+\_\+exposure}} (const std\+::uint8\+\_\+t exposure) const
+\item 
+std\+::int32\+\_\+t \mbox{\hyperlink{group__cpp-vision_ga4f84317f990caced52d344a72c52fe52}{set\+\_\+led}} (const std\+::int32\+\_\+t rgb) const
+\item 
+std\+::int32\+\_\+t \mbox{\hyperlink{group__cpp-vision_ga40fffce0e77de3e19dbd40e4e6995383}{set\+\_\+signature}} (const std\+::uint8\+\_\+t signature\+\_\+id, \mbox{\hyperlink{structvision__signature__s__t}{vision\+\_\+signature\+\_\+s\+\_\+t}} \texorpdfstring{$\ast$}{*}const signature\+\_\+ptr) const
+\item 
+std\+::int32\+\_\+t \mbox{\hyperlink{group__cpp-vision_ga26cacb0a96591dce38c00846d94389bd}{set\+\_\+white\+\_\+balance}} (const std\+::int32\+\_\+t rgb) const
+\item 
+std\+::int32\+\_\+t \mbox{\hyperlink{group__cpp-vision_ga28495a9894cc0264952abde2ebf0c2af}{set\+\_\+zero\+\_\+point}} (vision\+\_\+zero\+\_\+e\+\_\+t zero\+\_\+point) const
+\item 
+std\+::int32\+\_\+t \mbox{\hyperlink{group__cpp-vision_ga67e7eaa8366b13a02a5500db190c7b2a}{set\+\_\+wifi\+\_\+mode}} (const std\+::uint8\+\_\+t enable) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classpros_1_1v5_1_1_device}{pros\+::v5\+::\+Device}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__cpp-device_gaecab1df1d50fe5fc5496a19e3223fd24}{Device}} (const std\+::uint8\+\_\+t port)
+\item 
+std\+::uint8\+\_\+t \mbox{\hyperlink{group__cpp-device_ga6c8bfb5986465bf963a94a82266fb2dc}{get\+\_\+port}} (void) const
+\item 
+virtual bool \mbox{\hyperlink{group__cpp-device_ga8123d170ef670fa26d1df943cb07cc17}{is\+\_\+installed}} ()
+\item 
+pros\+::\+Device\+Type \mbox{\hyperlink{group__cpp-device_ga20b4cfe0e6bf443fd5cfc6bbb216be3f}{get\+\_\+plugged\+\_\+type}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{structvision__signature__s__t}{vision\+\_\+signature\+\_\+s\+\_\+t}} \mbox{\hyperlink{group__cpp-vision_ga719d336f2beea33f35b8b9377b7b505d}{signature\+\_\+from\+\_\+utility}} (const std\+::int32\+\_\+t id, const std\+::int32\+\_\+t u\+\_\+min, const std\+::int32\+\_\+t u\+\_\+max, const std\+::int32\+\_\+t u\+\_\+mean, const std\+::int32\+\_\+t v\+\_\+min, const std\+::int32\+\_\+t v\+\_\+max, const std\+::int32\+\_\+t v\+\_\+mean, const float range, const std\+::int32\+\_\+t type)
+\item 
+static std\+::vector$<$ \mbox{\hyperlink{classpros_1_1v5_1_1_vision}{Vision}} $>$ \mbox{\hyperlink{group__cpp-vision_gad19560a1ce228141e32e5b6a58c30e64}{get\+\_\+all\+\_\+devices}} ()
+\item 
+static std\+::int32\+\_\+t \mbox{\hyperlink{group__cpp-vision_ga81da5d94a29cd1d3ad54b0f357c588f3}{print\+\_\+signature}} (const \mbox{\hyperlink{structvision__signature__s__t}{vision\+\_\+signature\+\_\+s\+\_\+t}} sig)
+\item 
+static \mbox{\hyperlink{classpros_1_1v5_1_1_vision}{Vision}} \mbox{\hyperlink{group__cpp-vision_ga86ecdbb38592186aabb29e7088f0cc9a}{get\+\_\+vision}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{classpros_1_1v5_1_1_device}{pros\+::v5\+::\+Device}}}
+\begin{DoxyCompactItemize}
+\item 
+static pros\+::\+Device\+Type \mbox{\hyperlink{group__cpp-device_ga1f860ca3c06a5faed38f5345a596dc9c}{get\+\_\+plugged\+\_\+type}} (std\+::uint8\+\_\+t port)
+\item 
+static std\+::vector$<$ \mbox{\hyperlink{classpros_1_1v5_1_1_device}{Device}} $>$ \mbox{\hyperlink{group__cpp-device_ga6a0dffbd69d045e7daf95152dd60ec40}{get\+\_\+all\+\_\+devices}} (pros\+::\+Device\+Type device\+\_\+type=\mbox{\hyperlink{group__cpp-device_gga0a7387ba6156c831ba1e61d75a04c3d9a5e543256c480ac577d30f76f9120eb74}{pros\+::\+Device\+Type\+::undefined}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classpros_1_1v5_1_1_device}{pros\+::v5\+::\+Device}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__cpp-device_gac7714863c8869903d5ab8877f6289cd7}{Device}} (const std\+::uint8\+\_\+t port, const enum \mbox{\hyperlink{group__cpp-device_ga0a7387ba6156c831ba1e61d75a04c3d9}{Device\+Type}} device\+Type)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classpros_1_1v5_1_1_device}{pros\+::v5\+::\+Device}}}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::uint8\+\_\+t {\bfseries \+\_\+port}
+\item 
+enum \mbox{\hyperlink{group__cpp-device_ga0a7387ba6156c831ba1e61d75a04c3d9}{Device\+Type}} {\bfseries \+\_\+device\+Type} = \mbox{\hyperlink{group__cpp-device_gga0a7387ba6156c831ba1e61d75a04c3d9a334c4a4c42fdb79d7ebc3e73b517e6f8}{pros\+::\+Device\+Type\+::none}}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/leoku/\+One\+Drive/\+Personal\+\_\+\+Coding\+\_\+\+Projects/\+Zest\+Code/include/pros/\mbox{\hyperlink{vision_8hpp}{vision.\+hpp}}\item 
+C\+:/\+Users/leoku/\+One\+Drive/\+Personal\+\_\+\+Coding\+\_\+\+Projects/\+Zest\+Code/src/devices/\mbox{\hyperlink{vdml__vision_8cpp}{vdml\+\_\+vision.\+cpp}}\end{DoxyCompactItemize}

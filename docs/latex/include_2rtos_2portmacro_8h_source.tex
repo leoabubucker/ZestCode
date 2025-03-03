@@ -1,0 +1,254 @@
+\doxysection{portmacro.\+h}
+\hypertarget{include_2rtos_2portmacro_8h_source}{}\label{include_2rtos_2portmacro_8h_source}\index{C:/Users/leoku/OneDrive/Personal\_Coding\_Projects/ZestCode/include/rtos/portmacro.h@{C:/Users/leoku/OneDrive/Personal\_Coding\_Projects/ZestCode/include/rtos/portmacro.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ \ \ \ FreeRTOS\ V9.0.0\ -\/\ Copyright\ (C)\ 2016\ Real\ Time\ Engineers\ Ltd.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ \ \ \ All\ rights\ reserved}}
+\DoxyCodeLine{00004\ \textcolor{comment}{}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ \ \ \ VISIT\ http://www.FreeRTOS.org\ TO\ ENSURE\ YOU\ ARE\ USING\ THE\ LATEST\ VERSION.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ \ \ \ This\ file\ is\ part\ of\ the\ FreeRTOS\ distribution.}}
+\DoxyCodeLine{00008\ \textcolor{comment}{}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ \ \ \ FreeRTOS\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify\ it\ under}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ \ \ \ the\ terms\ of\ the\ GNU\ General\ Public\ License\ (version\ 2)\ as\ published\ by\ the}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ \ \ \ Free\ Software\ Foundation\ >>>>\ AND\ MODIFIED\ BY\ <<<<\ the\ FreeRTOS\ exception.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ \ \ \ ***************************************************************************}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ \ \ \ >>!\ \ \ NOTE:\ The\ modification\ to\ the\ GPL\ is\ included\ to\ allow\ you\ to\ \ \ \ \ !<<}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ \ \ \ >>!\ \ \ distribute\ a\ combined\ work\ that\ includes\ FreeRTOS\ without\ being\ \ \ !<<}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ \ \ \ >>!\ \ \ obliged\ to\ provide\ the\ source\ code\ for\ proprietary\ components\ \ \ \ \ !<<}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ \ \ \ >>!\ \ \ outside\ of\ the\ FreeRTOS\ kernel.\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ !<<}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ \ \ \ ***************************************************************************}}
+\DoxyCodeLine{00019\ \textcolor{comment}{}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ \ \ \ FreeRTOS\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,\ but\ WITHOUT\ ANY}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ \ \ \ WARRANTY;\ without\ even\ the\ implied\ warranty\ of\ MERCHANTABILITY\ or\ FITNESS}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ \ \ \ FOR\ A\ PARTICULAR\ PURPOSE.\ \ Full\ license\ text\ is\ available\ on\ the\ following}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ \ \ \ link:\ http://www.freertos.org/a00114.html}}
+\DoxyCodeLine{00024\ \textcolor{comment}{}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ \ \ \ ***************************************************************************}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ \ \ \ \ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ \ \ \ \ *\ \ \ \ FreeRTOS\ provides\ completely\ free\ yet\ professionally\ developed,\ \ \ \ *}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ \ \ \ \ *\ \ \ \ robust,\ strictly\ quality\ controlled,\ supported,\ and\ cross\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ \ \ \ \ *\ \ \ \ platform\ software\ that\ is\ more\ than\ just\ the\ market\ leader,\ it\ \ \ \ \ *}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ \ \ \ \ *\ \ \ \ is\ the\ industry's\ de\ facto\ standard.\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ \ \ \ \ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ \ \ \ \ *\ \ \ \ Help\ yourself\ get\ started\ quickly\ while\ simultaneously\ helping\ \ \ \ \ *}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ \ \ \ \ *\ \ \ \ to\ support\ the\ FreeRTOS\ project\ by\ purchasing\ a\ FreeRTOS\ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ \ \ \ \ *\ \ \ \ tutorial\ book,\ reference\ manual,\ or\ both:\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ \ \ \ \ *\ \ \ \ http://www.FreeRTOS.org/Documentation\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ \ \ \ \ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ \ \ \ ***************************************************************************}}
+\DoxyCodeLine{00038\ \textcolor{comment}{}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ \ \ \ http://www.FreeRTOS.org/FAQHelp.html\ -\/\ Having\ a\ problem?\ \ Start\ by\ reading}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ \ \ \ the\ FAQ\ page\ "{}My\ application\ does\ not\ run,\ what\ could\ be\ wrong?"{}.\ \ Have\ you}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ \ \ \ defined\ configASSERT()?}}
+\DoxyCodeLine{00042\ \textcolor{comment}{}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ \ \ \ http://www.FreeRTOS.org/support\ -\/\ In\ return\ for\ receiving\ this\ top\ quality}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ \ \ \ embedded\ software\ for\ free\ we\ request\ you\ assist\ our\ global\ community\ by}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ \ \ \ participating\ in\ the\ support\ forum.}}
+\DoxyCodeLine{00046\ \textcolor{comment}{}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ \ \ \ http://www.FreeRTOS.org/training\ -\/\ Investing\ in\ training\ allows\ your\ team\ to}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ \ \ \ be\ as\ productive\ as\ possible\ as\ early\ as\ possible.\ \ Now\ you\ can\ receive}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ \ \ \ FreeRTOS\ training\ directly\ from\ Richard\ Barry,\ CEO\ of\ Real\ Time\ Engineers}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ \ \ \ Ltd,\ and\ the\ world's\ leading\ authority\ on\ the\ world's\ leading\ RTOS.}}
+\DoxyCodeLine{00051\ \textcolor{comment}{}}
+\DoxyCodeLine{00052\ \textcolor{comment}{\ \ \ \ http://www.FreeRTOS.org/plus\ -\/\ A\ selection\ of\ FreeRTOS\ ecosystem\ products,}}
+\DoxyCodeLine{00053\ \textcolor{comment}{\ \ \ \ including\ FreeRTOS+Trace\ -\/\ an\ indispensable\ productivity\ tool,\ a\ DOS}}
+\DoxyCodeLine{00054\ \textcolor{comment}{\ \ \ \ compatible\ FAT\ file\ system,\ and\ our\ tiny\ thread\ aware\ UDP/IP\ stack.}}
+\DoxyCodeLine{00055\ \textcolor{comment}{}}
+\DoxyCodeLine{00056\ \textcolor{comment}{\ \ \ \ http://www.FreeRTOS.org/labs\ -\/\ Where\ new\ FreeRTOS\ products\ go\ to\ incubate.}}
+\DoxyCodeLine{00057\ \textcolor{comment}{\ \ \ \ Come\ and\ try\ FreeRTOS+TCP,\ our\ new\ open\ source\ TCP/IP\ stack\ for\ FreeRTOS.}}
+\DoxyCodeLine{00058\ \textcolor{comment}{}}
+\DoxyCodeLine{00059\ \textcolor{comment}{\ \ \ \ http://www.OpenRTOS.com\ -\/\ Real\ Time\ Engineers\ ltd.\ license\ FreeRTOS\ to\ High}}
+\DoxyCodeLine{00060\ \textcolor{comment}{\ \ \ \ Integrity\ Systems\ ltd.\ to\ sell\ under\ the\ OpenRTOS\ brand.\ \ Low\ cost\ OpenRTOS}}
+\DoxyCodeLine{00061\ \textcolor{comment}{\ \ \ \ licenses\ offer\ ticketed\ support,\ indemnification\ and\ commercial\ middleware.}}
+\DoxyCodeLine{00062\ \textcolor{comment}{}}
+\DoxyCodeLine{00063\ \textcolor{comment}{\ \ \ \ http://www.SafeRTOS.com\ -\/\ High\ Integrity\ Systems\ also\ provide\ a\ safety}}
+\DoxyCodeLine{00064\ \textcolor{comment}{\ \ \ \ engineered\ and\ independently\ SIL3\ certified\ version\ for\ use\ in\ safety\ and}}
+\DoxyCodeLine{00065\ \textcolor{comment}{\ \ \ \ mission\ critical\ applications\ that\ require\ provable\ dependability.}}
+\DoxyCodeLine{00066\ \textcolor{comment}{}}
+\DoxyCodeLine{00067\ \textcolor{comment}{\ \ \ \ 1\ tab\ ==\ 4\ spaces!}}
+\DoxyCodeLine{00068\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#ifndef\ PORTMACRO\_H}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#define\ PORTMACRO\_H}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00078\ \textcolor{comment}{\ *\ Port\ specific\ definitions.}}
+\DoxyCodeLine{00079\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00080\ \textcolor{comment}{\ *\ The\ settings\ in\ this\ file\ configure\ FreeRTOS\ correctly\ for\ the\ given\ hardware}}
+\DoxyCodeLine{00081\ \textcolor{comment}{\ *\ and\ compiler.}}
+\DoxyCodeLine{00082\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00083\ \textcolor{comment}{\ *\ These\ settings\ should\ not\ be\ altered.}}
+\DoxyCodeLine{00084\ \textcolor{comment}{\ *-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00085\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{comment}{/*\ Type\ definitions.\ */}}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#define\ portCHAR\ \ \ \ \ \ \ \ char}}
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#define\ portFLOAT\ \ \ \ \ \ \ float}}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#define\ portDOUBLE\ \ \ \ \ \ double}}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#define\ portLONG\ \ \ \ \ \ \ \ long}}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#define\ portSHORT\ \ \ \ \ \ \ short}}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#define\ portSTACK\_TYPE\ \ uint32\_t}}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#define\ portBASE\_TYPE\ \ \ long}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \textcolor{keyword}{typedef}\ portSTACK\_TYPE\ task\_stack\_t;}
+\DoxyCodeLine{00097\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{long}\ int32\_t;}
+\DoxyCodeLine{00098\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ uint32\_t;}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \textcolor{keyword}{typedef}\ uint32\_t\ uint32\_t;}
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#define\ portMAX\_DELAY\ (\ uint32\_t\ )\ 0xffffffffUL}}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \textcolor{comment}{/*\ 32-\/bit\ tick\ type\ on\ a\ 32-\/bit\ architecture,\ so\ reads\ of\ the\ tick\ count\ do}}
+\DoxyCodeLine{00104\ \textcolor{comment}{not\ need\ to\ be\ guarded\ with\ a\ critical\ section.\ */}}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#define\ portTICK\_TYPE\_IS\_ATOMIC\ 1}}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \textcolor{comment}{/*\ Hardware\ specifics.\ */}}
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#define\ portSTACK\_GROWTH\ \ \ \ \ \ \ \ \ \ \ \ (\ -\/1\ )}}
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#define\ portTICK\_PERIOD\_MS\ \ \ \ \ \ \ \ \ \ (\ (\ uint32\_t\ )\ 1000\ /\ configTICK\_RATE\_HZ\ )}}
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#define\ portBYTE\_ALIGNMENT\ \ \ \ \ \ \ \ \ \ 8}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \textcolor{comment}{/*\ Task\ utilities.\ */}}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \textcolor{comment}{/*\ Called\ at\ the\ end\ of\ an\ ISR\ that\ can\ cause\ a\ context\ switch.\ */}}
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\#define\ portEND\_SWITCHING\_ISR(\ xSwitchRequired\ )\(\backslash\)}}
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{extern\ uint32\_t\ ulPortYieldRequired;\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\ \ \ \ if(\ xSwitchRequired\ !=\ pdFALSE\ )\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ulPortYieldRequired\ =\ pdTRUE;\ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\}}}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\#define\ portYIELD\_FROM\_ISR(\ x\ )\ portEND\_SWITCHING\_ISR(\ x\ )}}
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\#define\ portYIELD()\ \_\_asm\ volatile\ (\ "{}SWI\ 0"{}\ );}}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00134\ \textcolor{comment}{\ *\ Critical\ section\ control}}
+\DoxyCodeLine{00135\ \textcolor{comment}{\ *-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ vPortEnterCritical(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{00138\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ vPortExitCritical(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{00139\ \textcolor{keyword}{extern}\ uint32\_t\ ulPortSetInterruptMask(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{00140\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ vPortClearInterruptMask(\ uint32\_t\ ulNewMaskValue\ );}
+\DoxyCodeLine{00141\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ vPortInstallFreeRTOSVectorTable(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \textcolor{comment}{/*\ These\ macros\ do\ not\ globally\ disable/enable\ interrupts.\ \ They\ do\ mask\ off}}
+\DoxyCodeLine{00144\ \textcolor{comment}{interrupts\ that\ have\ a\ priority\ below\ configMAX\_API\_CALL\_INTERRUPT\_PRIORITY.\ */}}
+\DoxyCodeLine{00145\ \textcolor{preprocessor}{\#define\ portENTER\_CRITICAL()\ \ \ \ \ \ \ \ vPortEnterCritical();}}
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\#define\ portEXIT\_CRITICAL()\ \ \ \ \ \ \ \ \ vPortExitCritical();}}
+\DoxyCodeLine{00147\ \textcolor{preprocessor}{\#define\ portDISABLE\_INTERRUPTS()\ \ \ \ ulPortSetInterruptMask()}}
+\DoxyCodeLine{00148\ \textcolor{preprocessor}{\#define\ portENABLE\_INTERRUPTS()\ \ \ \ \ vPortClearInterruptMask(\ 0\ )}}
+\DoxyCodeLine{00149\ \textcolor{preprocessor}{\#define\ portSET\_INTERRUPT\_MASK\_FROM\_ISR()\ \ \ \ \ \ \ ulPortSetInterruptMask()}}
+\DoxyCodeLine{00150\ \textcolor{preprocessor}{\#define\ portCLEAR\_INTERRUPT\_MASK\_FROM\_ISR(x)\ \ \ \ vPortClearInterruptMask(x)}}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \textcolor{comment}{/*\ Task\ function\ macros\ as\ described\ on\ the\ FreeRTOS.org\ WEB\ site.\ \ These\ are}}
+\DoxyCodeLine{00155\ \textcolor{comment}{not\ required\ for\ this\ port\ but\ included\ in\ case\ common\ demo\ code\ that\ uses\ these}}
+\DoxyCodeLine{00156\ \textcolor{comment}{macros\ is\ used.\ */}}
+\DoxyCodeLine{00157\ \textcolor{preprocessor}{\#define\ portTASK\_FUNCTION\_PROTO(\ vFunction,\ pvParameters\ )\ \ void\ vFunction(\ void\ *pvParameters\ )}}
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\#define\ portTASK\_FUNCTION(\ vFunction,\ pvParameters\ )\ \ \ \ void\ vFunction(\ void\ *pvParameters\ )}}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ \textcolor{comment}{/*\ Prototype\ of\ the\ FreeRTOS\ tick\ handler.\ \ This\ must\ be\ installed\ as\ the}}
+\DoxyCodeLine{00161\ \textcolor{comment}{handler\ for\ whichever\ peripheral\ is\ used\ to\ generate\ the\ RTOS\ tick.\ */}}
+\DoxyCodeLine{00162\ \textcolor{keywordtype}{void}\ FreeRTOS\_Tick\_Handler(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \textcolor{comment}{/*\ If\ configUSE\_TASK\_FPU\_SUPPORT\ is\ set\ to\ 1\ (or\ left\ undefined)\ then\ tasks\ are}}
+\DoxyCodeLine{00165\ \textcolor{comment}{created\ without\ an\ FPU\ context\ and\ must\ call\ vPortTaskUsesFPU()\ to\ give}}
+\DoxyCodeLine{00166\ \textcolor{comment}{themselves\ an\ FPU\ context\ before\ using\ any\ FPU\ instructions.\ \ If}}
+\DoxyCodeLine{00167\ \textcolor{comment}{configUSE\_TASK\_FPU\_SUPPORT\ is\ set\ to\ 2\ then\ all\ tasks\ will\ have\ an\ FPU\ context}}
+\DoxyCodeLine{00168\ \textcolor{comment}{by\ default.\ */}}
+\DoxyCodeLine{00169\ \textcolor{preprocessor}{\#if(\ configUSE\_TASK\_FPU\_SUPPORT\ !=\ 2\ )}}
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{keywordtype}{void}\ vPortTaskUsesFPU(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{00171\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{comment}{/*\ Each\ task\ has\ an\ FPU\ context\ already,\ so\ define\ this\ function\ away\ to}}
+\DoxyCodeLine{00173\ \textcolor{comment}{\ \ \ \ nothing\ to\ prevent\ it\ being\ called\ accidentally.\ */}}
+\DoxyCodeLine{00174\ \textcolor{preprocessor}{\ \ \ \ \#define\ vPortTaskUsesFPU()}}
+\DoxyCodeLine{00175\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00176\ \textcolor{preprocessor}{\#define\ portTASK\_USES\_FLOATING\_POINT()\ vPortTaskUsesFPU()}}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \textcolor{preprocessor}{\#define\ portLOWEST\_INTERRUPT\_PRIORITY\ (\ (\ (\ uint32\_t\ )\ configUNIQUE\_INTERRUPT\_PRIORITIES\ )\ -\/\ 1UL\ )}}
+\DoxyCodeLine{00179\ \textcolor{preprocessor}{\#define\ portLOWEST\_USABLE\_INTERRUPT\_PRIORITY\ (\ portLOWEST\_INTERRUPT\_PRIORITY\ -\/\ 1UL\ )}}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \textcolor{comment}{/*\ Architecture\ specific\ optimisations.\ */}}
+\DoxyCodeLine{00182\ \textcolor{preprocessor}{\#ifndef\ configUSE\_PORT\_OPTIMISED\_TASK\_SELECTION}}
+\DoxyCodeLine{00183\ \textcolor{preprocessor}{\ \ \ \ \#define\ configUSE\_PORT\_OPTIMISED\_TASK\_SELECTION\ 1}}
+\DoxyCodeLine{00184\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ \textcolor{preprocessor}{\#if\ configUSE\_PORT\_OPTIMISED\_TASK\_SELECTION\ ==\ 1}}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \ \ \ \ \textcolor{comment}{/*\ Store/clear\ the\ ready\ priorities\ in\ a\ bit\ map.\ */}}
+\DoxyCodeLine{00189\ \textcolor{preprocessor}{\ \ \ \ \#define\ portRECORD\_READY\_PRIORITY(\ uxPriority,\ uxReadyPriorities\ )\ (\ uxReadyPriorities\ )\ |=\ (\ 1UL\ <<\ (\ uxPriority\ )\ )}}
+\DoxyCodeLine{00190\ \textcolor{preprocessor}{\ \ \ \ \#define\ portRESET\_READY\_PRIORITY(\ uxPriority,\ uxReadyPriorities\ )\ (\ uxReadyPriorities\ )\ \&=\ \string~(\ 1UL\ <<\ (\ uxPriority\ )\ )}}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \ \ \ \ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00194\ \textcolor{preprocessor}{\ \ \ \ \#define\ portGET\_HIGHEST\_PRIORITY(\ uxTopPriority,\ uxReadyPriorities\ )\ uxTopPriority\ =\ (\ 31UL\ -\/\ (\ uint32\_t\ )\ \_\_builtin\_clz(\ uxReadyPriorities\ )\ )}}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00196\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ configUSE\_PORT\_OPTIMISED\_TASK\_SELECTION\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00198\ \textcolor{preprocessor}{\#ifdef\ configASSERT}}
+\DoxyCodeLine{00199\ \ \ \ \ \textcolor{keywordtype}{void}\ vPortValidateInterruptPriority(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{00200\ \textcolor{preprocessor}{\ \ \ \ \#define\ portASSERT\_IF\_INTERRUPT\_PRIORITY\_INVALID()\ \ vPortValidateInterruptPriority()}}
+\DoxyCodeLine{00201\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ configASSERT\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00202\ }
+\DoxyCodeLine{00203\ \textcolor{preprocessor}{\#define\ portNOP()\ \_\_asm\ volatile(\ "{}NOP"{}\ )}}
+\DoxyCodeLine{00204\ \textcolor{preprocessor}{\#define\ portINLINE\ \_\_inline}}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00206\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00207\ \ \ \ \ \}\ \textcolor{comment}{/*\ extern\ C\ */}}
+\DoxyCodeLine{00208\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00211\ \textcolor{comment}{/*\ The\ number\ of\ bits\ to\ shift\ for\ an\ interrupt\ priority\ is\ dependent\ on\ the}}
+\DoxyCodeLine{00212\ \textcolor{comment}{number\ of\ bits\ implemented\ by\ the\ interrupt\ controller.\ */}}
+\DoxyCodeLine{00213\ \textcolor{preprocessor}{\#if\ configUNIQUE\_INTERRUPT\_PRIORITIES\ ==\ 16}}
+\DoxyCodeLine{00214\ \textcolor{preprocessor}{\ \ \ \ \#define\ portPRIORITY\_SHIFT\ 4}}
+\DoxyCodeLine{00215\ \textcolor{preprocessor}{\ \ \ \ \#define\ portMAX\_BINARY\_POINT\_VALUE\ \ 3}}
+\DoxyCodeLine{00216\ \textcolor{preprocessor}{\#elif\ configUNIQUE\_INTERRUPT\_PRIORITIES\ ==\ 32}}
+\DoxyCodeLine{00217\ \textcolor{preprocessor}{\ \ \ \ \#define\ portPRIORITY\_SHIFT\ 3}}
+\DoxyCodeLine{00218\ \textcolor{preprocessor}{\ \ \ \ \#define\ portMAX\_BINARY\_POINT\_VALUE\ \ 2}}
+\DoxyCodeLine{00219\ \textcolor{preprocessor}{\#elif\ configUNIQUE\_INTERRUPT\_PRIORITIES\ ==\ 64}}
+\DoxyCodeLine{00220\ \textcolor{preprocessor}{\ \ \ \ \#define\ portPRIORITY\_SHIFT\ 2}}
+\DoxyCodeLine{00221\ \textcolor{preprocessor}{\ \ \ \ \#define\ portMAX\_BINARY\_POINT\_VALUE\ \ 1}}
+\DoxyCodeLine{00222\ \textcolor{preprocessor}{\#elif\ configUNIQUE\_INTERRUPT\_PRIORITIES\ ==\ 128}}
+\DoxyCodeLine{00223\ \textcolor{preprocessor}{\ \ \ \ \#define\ portPRIORITY\_SHIFT\ 1}}
+\DoxyCodeLine{00224\ \textcolor{preprocessor}{\ \ \ \ \#define\ portMAX\_BINARY\_POINT\_VALUE\ \ 0}}
+\DoxyCodeLine{00225\ \textcolor{preprocessor}{\#elif\ configUNIQUE\_INTERRUPT\_PRIORITIES\ ==\ 256}}
+\DoxyCodeLine{00226\ \textcolor{preprocessor}{\ \ \ \ \#define\ portPRIORITY\_SHIFT\ 0}}
+\DoxyCodeLine{00227\ \textcolor{preprocessor}{\ \ \ \ \#define\ portMAX\_BINARY\_POINT\_VALUE\ \ 0}}
+\DoxyCodeLine{00228\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00229\ \textcolor{preprocessor}{\ \ \ \ \#error\ Invalid\ configUNIQUE\_INTERRUPT\_PRIORITIES\ setting.\ \ configUNIQUE\_INTERRUPT\_PRIORITIES\ must\ be\ set\ to\ the\ number\ of\ unique\ priorities\ implemented\ by\ the\ target\ hardware}}
+\DoxyCodeLine{00230\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00232\ \textcolor{comment}{/*\ Interrupt\ controller\ access\ addresses.\ */}}
+\DoxyCodeLine{00233\ \textcolor{preprocessor}{\#define\ portICCPMR\_PRIORITY\_MASK\_OFFSET\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\ 0x04\ )}}
+\DoxyCodeLine{00234\ \textcolor{preprocessor}{\#define\ portICCIAR\_INTERRUPT\_ACKNOWLEDGE\_OFFSET\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\ 0x0C\ )}}
+\DoxyCodeLine{00235\ \textcolor{preprocessor}{\#define\ portICCEOIR\_END\_OF\_INTERRUPT\_OFFSET\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\ 0x10\ )}}
+\DoxyCodeLine{00236\ \textcolor{preprocessor}{\#define\ portICCBPR\_BINARY\_POINT\_OFFSET\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\ 0x08\ )}}
+\DoxyCodeLine{00237\ \textcolor{preprocessor}{\#define\ portICCRPR\_RUNNING\_PRIORITY\_OFFSET\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\ 0x14\ )}}
+\DoxyCodeLine{00238\ }
+\DoxyCodeLine{00239\ \textcolor{preprocessor}{\#define\ portINTERRUPT\_CONTROLLER\_CPU\_INTERFACE\_ADDRESS\ \ \ \ \ \ (\ configINTERRUPT\_CONTROLLER\_BASE\_ADDRESS\ +\ configINTERRUPT\_CONTROLLER\_CPU\_INTERFACE\_OFFSET\ )}}
+\DoxyCodeLine{00240\ \textcolor{preprocessor}{\#define\ portICCPMR\_PRIORITY\_MASK\_REGISTER\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\ *(\ (\ volatile\ uint32\_t\ *\ )\ (\ portINTERRUPT\_CONTROLLER\_CPU\_INTERFACE\_ADDRESS\ +\ portICCPMR\_PRIORITY\_MASK\_OFFSET\ )\ )\ )}}
+\DoxyCodeLine{00241\ \textcolor{preprocessor}{\#define\ portICCIAR\_INTERRUPT\_ACKNOWLEDGE\_REGISTER\_ADDRESS\ \ \ (\ portINTERRUPT\_CONTROLLER\_CPU\_INTERFACE\_ADDRESS\ +\ portICCIAR\_INTERRUPT\_ACKNOWLEDGE\_OFFSET\ )}}
+\DoxyCodeLine{00242\ \textcolor{preprocessor}{\#define\ portICCEOIR\_END\_OF\_INTERRUPT\_REGISTER\_ADDRESS\ \ \ \ \ \ \ (\ portINTERRUPT\_CONTROLLER\_CPU\_INTERFACE\_ADDRESS\ +\ portICCEOIR\_END\_OF\_INTERRUPT\_OFFSET\ )}}
+\DoxyCodeLine{00243\ \textcolor{preprocessor}{\#define\ portICCPMR\_PRIORITY\_MASK\_REGISTER\_ADDRESS\ \ \ \ \ \ \ \ \ \ \ (\ portINTERRUPT\_CONTROLLER\_CPU\_INTERFACE\_ADDRESS\ +\ portICCPMR\_PRIORITY\_MASK\_OFFSET\ )}}
+\DoxyCodeLine{00244\ \textcolor{preprocessor}{\#define\ portICCBPR\_BINARY\_POINT\_REGISTER\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\ *(\ (\ const\ volatile\ uint32\_t\ *\ )\ (\ portINTERRUPT\_CONTROLLER\_CPU\_INTERFACE\_ADDRESS\ +\ portICCBPR\_BINARY\_POINT\_OFFSET\ )\ )\ )}}
+\DoxyCodeLine{00245\ \textcolor{preprocessor}{\#define\ portICCRPR\_RUNNING\_PRIORITY\_REGISTER\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\ *(\ (\ const\ volatile\ uint32\_t\ *\ )\ (\ portINTERRUPT\_CONTROLLER\_CPU\_INTERFACE\_ADDRESS\ +\ portICCRPR\_RUNNING\_PRIORITY\_OFFSET\ )\ )\ )}}
+\DoxyCodeLine{00246\ }
+\DoxyCodeLine{00247\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ PORTMACRO\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00248\ }
+
+\end{DoxyCode}

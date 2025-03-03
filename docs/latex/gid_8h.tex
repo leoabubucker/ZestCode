@@ -1,0 +1,117 @@
+\doxysection{C\+:/\+Users/leoku/\+One\+Drive/\+Personal\+\_\+\+Coding\+\_\+\+Projects/\+Zest\+Code/include/common/gid.h File Reference}
+\hypertarget{gid_8h}{}\label{gid_8h}\index{C:/Users/leoku/OneDrive/Personal\_Coding\_Projects/ZestCode/include/common/gid.h@{C:/Users/leoku/OneDrive/Personal\_Coding\_Projects/ZestCode/include/common/gid.h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include "{}api.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structgid__metadata}{gid\+\_\+metadata}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{gid_8h_ac610796767ba05e8471f7a42716268b9}\label{gid_8h_ac610796767ba05e8471f7a42716268b9} 
+\#define {\bfseries UINT32\+\_\+\+WIDTH}~32
+\item 
+\#define \mbox{\hyperlink{gid_8h_a6ed7681cb06b4aa7959bbfba9df53ec8}{gid\+\_\+size\+\_\+to\+\_\+words}}(size)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{gid_8h_aef726bf821e4758f7b8ddb3fefe85384}{gid\+\_\+init}} (struct \mbox{\hyperlink{structgid__metadata}{gid\+\_\+metadata}} \texorpdfstring{$\ast$}{*}const metadata)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{gid_8h_a478968c3f3f6331e439c22bd4b5d2eae}{gid\+\_\+alloc}} (struct \mbox{\hyperlink{structgid__metadata}{gid\+\_\+metadata}} \texorpdfstring{$\ast$}{*}const metadata)
+\item 
+void \mbox{\hyperlink{gid_8h_a1cb8b8f598352ca11f3d0ed13802cbc3}{gid\+\_\+free}} (struct \mbox{\hyperlink{structgid__metadata}{gid\+\_\+metadata}} \texorpdfstring{$\ast$}{*}const metadata, uint32\+\_\+t id)
+\item 
+bool \mbox{\hyperlink{gid_8h_a0e4cee54097f33a9e6b7131aaf6e078e}{gid\+\_\+check}} (struct \mbox{\hyperlink{structgid__metadata}{gid\+\_\+metadata}} \texorpdfstring{$\ast$}{*}metadata, uint32\+\_\+t id)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Globally unique Identifer facility header
+
+See \doxylink{gid_8c}{common/gid.\+c} for discussion
+
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2017-\/2024, Purdue University ACM SIGBots. All rights reserved.
+\end{DoxyCopyright}
+This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.\+0. If a copy of the MPL was not distributed with this file, You can obtain one at \href{http://mozilla.org/MPL/2.0/}{\texttt{ http\+://mozilla.\+org/\+MPL/2.\+0/}}. 
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{gid_8h_a6ed7681cb06b4aa7959bbfba9df53ec8}\index{gid.h@{gid.h}!gid\_size\_to\_words@{gid\_size\_to\_words}}
+\index{gid\_size\_to\_words@{gid\_size\_to\_words}!gid.h@{gid.h}}
+\doxysubsubsection{\texorpdfstring{gid\_size\_to\_words}{gid\_size\_to\_words}}
+{\footnotesize\ttfamily \label{gid_8h_a6ed7681cb06b4aa7959bbfba9df53ec8} 
+\#define gid\+\_\+size\+\_\+to\+\_\+words(\begin{DoxyParamCaption}\item[{}]{size}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(((size)\ +\ UINT32\_WIDTH\ -\/\ 1)\ /\ UINT32\_WIDTH)}
+
+\end{DoxyCode}
+convert the maximum number of gids into a number of words needed to store the bitmap 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{gid_8h_a478968c3f3f6331e439c22bd4b5d2eae}\index{gid.h@{gid.h}!gid\_alloc@{gid\_alloc}}
+\index{gid\_alloc@{gid\_alloc}!gid.h@{gid.h}}
+\doxysubsubsection{\texorpdfstring{gid\_alloc()}{gid\_alloc()}}
+{\footnotesize\ttfamily \label{gid_8h_a478968c3f3f6331e439c22bd4b5d2eae} 
+uint32\+\_\+t gid\+\_\+alloc (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structgid__metadata}{gid\+\_\+metadata}} \texorpdfstring{$\ast$}{*}const}]{metadata}{}\end{DoxyParamCaption})}
+
+Allocates a gid from the gid structure and returns it.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em metadata} & The \doxylink{structgid__metadata}{gid\+\_\+metadata} to record to the gid structure\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The gid, or 0 if there are no more gids left. 
+\end{DoxyReturn}
+\Hypertarget{gid_8h_a0e4cee54097f33a9e6b7131aaf6e078e}\index{gid.h@{gid.h}!gid\_check@{gid\_check}}
+\index{gid\_check@{gid\_check}!gid.h@{gid.h}}
+\doxysubsubsection{\texorpdfstring{gid\_check()}{gid\_check()}}
+{\footnotesize\ttfamily \label{gid_8h_a0e4cee54097f33a9e6b7131aaf6e078e} 
+bool gid\+\_\+check (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structgid__metadata}{gid\+\_\+metadata}} \texorpdfstring{$\ast$}{*}}]{metadata}{, }\item[{uint32\+\_\+t}]{id}{}\end{DoxyParamCaption})}
+
+Checks if the gid specified is allocated.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em metadata} & The \doxylink{structgid__metadata}{gid\+\_\+metadata} to check \\
+\hline
+ & {\em id} & The gid value indicating the metadata\textquotesingle{}s position in the gid structure\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the given metadata/id combo is present in the gid structure, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{gid_8h_a1cb8b8f598352ca11f3d0ed13802cbc3}\index{gid.h@{gid.h}!gid\_free@{gid\_free}}
+\index{gid\_free@{gid\_free}!gid.h@{gid.h}}
+\doxysubsubsection{\texorpdfstring{gid\_free()}{gid\_free()}}
+{\footnotesize\ttfamily \label{gid_8h_a1cb8b8f598352ca11f3d0ed13802cbc3} 
+void gid\+\_\+free (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structgid__metadata}{gid\+\_\+metadata}} \texorpdfstring{$\ast$}{*}const}]{metadata}{, }\item[{uint32\+\_\+t}]{id}{}\end{DoxyParamCaption})}
+
+Frees the gid specified from the structure.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em metadata} & The \doxylink{structgid__metadata}{gid\+\_\+metadata} to free from the gid structure \\
+\hline
+ & {\em id} & The gid value indicating the metadata\textquotesingle{}s position in the gid structure \\
+\hline
+\end{DoxyParams}
+\Hypertarget{gid_8h_aef726bf821e4758f7b8ddb3fefe85384}\index{gid.h@{gid.h}!gid\_init@{gid\_init}}
+\index{gid\_init@{gid\_init}!gid.h@{gid.h}}
+\doxysubsubsection{\texorpdfstring{gid\_init()}{gid\_init()}}
+{\footnotesize\ttfamily \label{gid_8h_aef726bf821e4758f7b8ddb3fefe85384} 
+void gid\+\_\+init (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structgid__metadata}{gid\+\_\+metadata}} \texorpdfstring{$\ast$}{*}const}]{metadata}{}\end{DoxyParamCaption})}
+
+Initializes a \doxylink{structgid__metadata}{gid\+\_\+metadata} structure by "{}freeing"{} all IDs in the bitmap
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em metadata} & The \doxylink{structgid__metadata}{gid\+\_\+metadata} structure to initialize \\
+\hline
+\end{DoxyParams}

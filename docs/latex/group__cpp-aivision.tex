@@ -1,0 +1,101 @@
+\doxysection{AI Vision Sensor C++ API}
+\hypertarget{group__cpp-aivision}{}\label{group__cpp-aivision}\index{AI Vision Sensor C++ API@{AI Vision Sensor C++ API}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classpros_1_1v5_1_1_a_i_vision}{pros\+::v5\+::\+AIVision}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__cpp-aivision_gaa4fd97834fe05668ca76616d2cc9a626}{pros\+::v5\+::\+AIVision\+::\+AIVision}} (const std\+::uint8\+\_\+t port)
+\item 
+\Hypertarget{group__cpp-aivision_gaad3f7756e909cb9547599fab3bebca92}\label{group__cpp-aivision_gaad3f7756e909cb9547599fab3bebca92} 
+{\bfseries pros\+::v5\+::\+AIVision\+::\+AIVision} (const \mbox{\hyperlink{classpros_1_1v5_1_1_device}{Device}} \&device)
+\item 
+static std\+::vector$<$ \mbox{\hyperlink{classpros_1_1v5_1_1_a_i_vision}{AIVision}} $>$ \mbox{\hyperlink{group__cpp-aivision_gaecf34e292735aebdecff7221947579bc}{pros\+::v5\+::\+AIVision\+::get\+\_\+all\+\_\+devices}} ()
+\item 
+\Hypertarget{group__cpp-aivision_ga7ffe051369ac396d2ab1a9bfae23a03a}\label{group__cpp-aivision_ga7ffe051369ac396d2ab1a9bfae23a03a} 
+static bool {\bfseries pros\+::v5\+::\+AIVision\+::is\+\_\+type} (Aivision\+Detect\+Type type, const \mbox{\hyperlink{structaivision__object__s__t}{aivision\+\_\+object\+\_\+s\+\_\+t}} \&object)
+\item 
+\Hypertarget{group__cpp-aivision_ga2197b07bcd70a0e90c920a210048d759}\label{group__cpp-aivision_ga2197b07bcd70a0e90c920a210048d759} 
+int32\+\_\+t {\bfseries pros\+::v5\+::\+AIVision\+::reset} ()
+\item 
+\Hypertarget{group__cpp-aivision_gaa9f55a6acb77f482749fadc7af4f0706}\label{group__cpp-aivision_gaa9f55a6acb77f482749fadc7af4f0706} 
+int32\+\_\+t {\bfseries pros\+::v5\+::\+AIVision\+::get\+\_\+enabled\+\_\+detection\+\_\+types} ()
+\item 
+\Hypertarget{group__cpp-aivision_ga1e645a9a0260e4ea4e11d75a7c7688fc}\label{group__cpp-aivision_ga1e645a9a0260e4ea4e11d75a7c7688fc} 
+int32\+\_\+t {\bfseries pros\+::v5\+::\+AIVision\+::enable\+\_\+detection\+\_\+types} (Aivision\+Mode\+Type types\+\_\+mask)
+\item 
+\Hypertarget{group__cpp-aivision_gae3020d04d11fb8f1ebd76c5cafaae1b1}\label{group__cpp-aivision_gae3020d04d11fb8f1ebd76c5cafaae1b1} 
+int32\+\_\+t {\bfseries pros\+::v5\+::\+AIVision\+::disable\+\_\+detection\+\_\+types} (Aivision\+Mode\+Type types\+\_\+mask)
+\item 
+\Hypertarget{group__cpp-aivision_ga4e4e9e47d3923cf6c56e3bb91e3ca0a2}\label{group__cpp-aivision_ga4e4e9e47d3923cf6c56e3bb91e3ca0a2} 
+int32\+\_\+t {\bfseries pros\+::v5\+::\+AIVision\+::set\+\_\+tag\+\_\+family} (Aivision\+Tag\+Family family)
+\item 
+\Hypertarget{group__cpp-aivision_ga580f3070fb4191991ec7e1ee2fca5c0b}\label{group__cpp-aivision_ga580f3070fb4191991ec7e1ee2fca5c0b} 
+int32\+\_\+t {\bfseries pros\+::v5\+::\+AIVision\+::set\+\_\+color} (\mbox{\hyperlink{structaivision__color__s__t}{aivision\+\_\+color\+\_\+s\+\_\+t}} \&color)
+\item 
+\Hypertarget{group__cpp-aivision_ga53a27b05d41553b2408e26d9a6a07551}\label{group__cpp-aivision_ga53a27b05d41553b2408e26d9a6a07551} 
+uint32\+\_\+t {\bfseries pros\+::v5\+::\+AIVision\+::set\+\_\+code} (\mbox{\hyperlink{structaivision__code__s__t}{aivision\+\_\+code\+\_\+s\+\_\+t}} \&code)
+\item 
+\Hypertarget{group__cpp-aivision_gac13fe47b664005d609fba97f2226e38a}\label{group__cpp-aivision_gac13fe47b664005d609fba97f2226e38a} 
+\mbox{\hyperlink{structaivision__color__s__t}{aivision\+\_\+color\+\_\+s\+\_\+t}} {\bfseries pros\+::v5\+::\+AIVision\+::get\+\_\+color} (uint32\+\_\+t id)
+\item 
+\Hypertarget{group__cpp-aivision_gaa9309a7d0adab80ba8edd03ce3a51374}\label{group__cpp-aivision_gaa9309a7d0adab80ba8edd03ce3a51374} 
+uint32\+\_\+t {\bfseries pros\+::v5\+::\+AIVision\+::get\+\_\+class\+\_\+name} (int32\+\_\+t id, uint8\+\_\+t \texorpdfstring{$\ast$}{*}class\+\_\+name)
+\item 
+\Hypertarget{group__cpp-aivision_gac3f77b56eb87987647404888a45aa2a4}\label{group__cpp-aivision_gac3f77b56eb87987647404888a45aa2a4} 
+\mbox{\hyperlink{structaivision__code__s__t}{aivision\+\_\+code\+\_\+s\+\_\+t}} {\bfseries pros\+::v5\+::\+AIVision\+::get\+\_\+code} (uint32\+\_\+t id)
+\item 
+\Hypertarget{group__cpp-aivision_ga5d02ba3504b5c88d7fee4c8f81b93fa0}\label{group__cpp-aivision_ga5d02ba3504b5c88d7fee4c8f81b93fa0} 
+int32\+\_\+t {\bfseries pros\+::v5\+::\+AIVision\+::get\+\_\+object\+\_\+count} ()
+\item 
+\Hypertarget{group__cpp-aivision_ga8d9a88d31c09136a167d22fdf0370784}\label{group__cpp-aivision_ga8d9a88d31c09136a167d22fdf0370784} 
+\mbox{\hyperlink{structaivision__object__s__t}{aivision\+\_\+object\+\_\+s\+\_\+t}} {\bfseries pros\+::v5\+::\+AIVision\+::get\+\_\+object} (uint32\+\_\+t object\+\_\+index)
+\item 
+\Hypertarget{group__cpp-aivision_ga0db9051de8f1058a0d97d617d73590cf}\label{group__cpp-aivision_ga0db9051de8f1058a0d97d617d73590cf} 
+std\+::vector$<$ \mbox{\hyperlink{structaivision__object__s__t}{aivision\+\_\+object\+\_\+s\+\_\+t}} $>$ {\bfseries pros\+::v5\+::\+AIVision\+::get\+\_\+all\+\_\+objects} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyNote}{Note}
+Additional example code for this module can be found in its \doxylink{group__cpp-device_gga0a7387ba6156c831ba1e61d75a04c3d9ad3ee929f5f3ba6e5cff2f6c547493a89}{Tutorial.}
+\end{DoxyNote}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{group__cpp-aivision_gaa4fd97834fe05668ca76616d2cc9a626}\index{AI Vision Sensor C++ API@{AI Vision Sensor C++ API}!AIVision@{AIVision}}
+\index{AIVision@{AIVision}!AI Vision Sensor C++ API@{AI Vision Sensor C++ API}}
+\doxysubsubsection{\texorpdfstring{AIVision()}{AIVision()}}
+{\footnotesize\ttfamily \label{group__cpp-aivision_gaa4fd97834fe05668ca76616d2cc9a626} 
+pros\+::v5\+::\+AIVision\+::\+AIVision (\begin{DoxyParamCaption}\item[{const std\+::uint8\+\_\+t}]{port}{}\end{DoxyParamCaption})}
+
+Create a AI \doxylink{classpros_1_1v5_1_1_vision}{Vision} Sensor object on the given port.
+
+This function uses the following values of errno when an error state is reached\+: ENXIO -\/ The given value is not within the range of V5 ports (1-\/21). ENODEV -\/ The port cannot be configured as an AI vision sensor
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The V5 port number from 1-\/21\\
+\hline
+\end{DoxyParams}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ \Hypertarget{group__cpp-aivision_gaecf34e292735aebdecff7221947579bc}\index{AI Vision Sensor C++ API@{AI Vision Sensor C++ API}!get\_all\_devices@{get\_all\_devices}}
+\index{get\_all\_devices@{get\_all\_devices}!AI Vision Sensor C++ API@{AI Vision Sensor C++ API}}
+\doxysubsubsection{\texorpdfstring{get\_all\_devices()}{get\_all\_devices()}}
+{\footnotesize\ttfamily \label{group__cpp-aivision_gaecf34e292735aebdecff7221947579bc} 
+std\+::vector$<$ \mbox{\hyperlink{classpros_1_1v5_1_1_a_i_vision}{AIVision}} $>$ pros\+::v5\+::\+AIVision\+::get\+\_\+all\+\_\+devices (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Gets all vision sensors.
+
+\begin{DoxyReturn}{Returns}
+A vector of \doxylink{classpros_1_1v5_1_1_a_i_vision}{AIVision} sensor objects.
+\end{DoxyReturn}
+{\bfseries{Example}} 
+\begin{DoxyCode}{0}
+\end{DoxyCode}
+ 
