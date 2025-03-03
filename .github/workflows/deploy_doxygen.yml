@@ -21,11 +21,6 @@ jobs:
       - name: Generate Documentation
         run: doxygen docs/Doxyfile  # Ensure your Doxyfile is in the root of "main" branch
 
-      - name: Checkout gh-pages branch
-        uses: actions/checkout@v4
-        with:
-          ref: gh-pages  # Checkout the gh-pages branch where docs/html is located
-
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
