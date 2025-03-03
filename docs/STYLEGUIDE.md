@@ -44,7 +44,7 @@ For more details, see [.clang-format](../.clang-format).
 - **files, folders** - snake_case
 - **classes, structs, enums, unions, concepts, etc** - PascalCase
   - **enum members** - PascalCase
-  - edge case: names including acronyms shouldn't have consecutive capital letters. Eg: `HTTPRequest` should be `HttpRequst`
+  - **edge case** - names like `HTTPRequest` should be `HttpRequst`
 - **functions** - snake_case
 - **variables** - snake_case
 - **member variables** - m_snake_case (The `m_` is intentional)
