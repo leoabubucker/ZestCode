@@ -9,72 +9,72 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout Main Branch
-        uses: actions/checkout@v4
-        with:
-          ref: main  # Ensure we're working with the "main" branch to access the Doxyfile
+    # steps:
+    #   - name: Checkout Main Branch
+    #     uses: actions/checkout@v4
+    #     with:
+    #       ref: main  # Ensure we're working with the "main" branch to access the Doxyfile
 
-      - name: Install Doxygen
-        run: sudo apt-get install -y doxygen
+    #   - name: Install Doxygen
+    #     run: sudo apt-get install -y doxygen
       
-      - name: Remove Old Documentation
-        run: rm -rf docs/html/*
+    #   - name: Remove Old Documentation
+    #     run: rm -rf docs/html/*
 
-      - name: Generate Documentation
-        run: doxygen docs/Doxyfile  # Ensure your Doxyfile is in the root of "main" branch
+    #   - name: Generate Documentation
+    #     run: doxygen docs/Doxyfile  # Ensure your Doxyfile is in the root of "main" branch
 
-      - name: Commit And Push Main Branch Changes
-        run: |
-          git config --global user.email "actions@github.com"
-          git config --global user.name "GitHub Actions"
-          git add -A
-          if git diff-index --quiet HEAD --; then
-              echo "No changes to commit on main"
-          else
-              git commit -m "*GitHub Action* Update Documentation in Main Branch"
-              git push origin main
-          fi
+    #   - name: Commit And Push Main Branch Changes
+    #     run: |
+    #       git config --global user.email "actions@github.com"
+    #       git config --global user.name "GitHub Actions"
+    #       git add -A
+    #       if git diff-index --quiet HEAD --; then
+    #           echo "No changes to commit on main"
+    #       else
+    #           git commit -m "*GitHub Action* Update Documentation in Main Branch"
+    #           git push origin main
+    #       fi
 
-      - name: Checkout Gh-Pages Branch
-        uses: actions/checkout@v4
-        with:
-          ref: gh-pages
-          fetch-depth: 0
+    #   - name: Checkout Gh-Pages Branch
+    #     uses: actions/checkout@v4
+    #     with:
+    #       ref: gh-pages
+    #       fetch-depth: 0
 
-      - name: Fetch Documentation Files From Main
-        run: |
-          git fetch origin main
-          git branch --track main origin/main || true
-          git checkout main -- docs/html
-          git add docs/html/*
-          git commit -m "*GitHub Action* Update Documentation in Gh Pages Branch"
-          git push origin gh-pages
-      #   uses: actions/checkout@v4
-      #   with:
-      #     ref: main
-      #     sparse-checkout: |
-      #       docs/html
+    #   - name: Fetch Documentation Files From Main
+    #     run: |
+    #       git fetch origin main
+    #       git branch --track main origin/main || true
+    #       git checkout main -- docs/html
+    #       git add docs/html/*
+    #       git commit -m "*GitHub Action* Update Documentation in Gh Pages Branch"
+    #       git push origin gh-pages
+    #   #   uses: actions/checkout@v4
+    #   #   with:
+    #   #     ref: main
+    #   #     sparse-checkout: |
+    #   #       docs/html
 
-      - name: Test
-        run: git ls-tree -r gh-pages --name-only
+    #   - name: Test
+    #     run: git ls-tree -r gh-pages --name-only
 
 
-      - name: Move Documentation Files to Root and Delete Empty docs/html Directory
-        run: |
-          mv docs/html/* .
-          rm -rf docs/html
+    #   - name: Move Documentation Files to Root and Delete Empty docs/html Directory
+    #     run: |
+    #       mv docs/html/* .
+    #       rm -rf docs/html
       
-      - name: Commit And Push Gh-Pages Branch Changes
-        run: |
-          git add .
-          git commit -m "*GitHub Action* Update Documentation"
-          git push origin gh-pages
-            # Deploy to GitHub Pages using the deploy action
+    #   - name: Commit And Push Gh-Pages Branch Changes
+    #     run: |
+    #       git add .
+    #       git commit -m "*GitHub Action* Update Documentation"
+    #       git push origin gh-pages
+    #         # Deploy to GitHub Pages using the deploy action
 
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          branch: main        # Deploy to the gh-pages branch
-          folder: .                # The folder containing the generated docs (root now)
-          clean: true             # Remove old files before deployment
+    #   - name: Deploy to GitHub Pages
+    #     uses: JamesIves/github-pages-deploy-action@v4
+    #     with:
+    #       branch: main        # Deploy to the gh-pages branch
+    #       folder: .                # The folder containing the generated docs (root now)
+    #       clean: true             # Remove old files before deployment
