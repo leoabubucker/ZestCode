@@ -42,13 +42,18 @@ jobs:
           ref: gh-pages
           fetch-depth: 0
 
-      - name: Copy Documentation Files From Main
-        run: |
-          git checkout main -- docs/html/*
-          git add docs/html/*
-          git commit -m "*GitHub Action* Update Documentation in Gh Pages Branch"
-          git push origin gh-pages
-          
+      - name: Fetch Documentation Files From Main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          sparse-checkout: |
+            docs/html
+      # run: |
+        #   git checkout main -- docs/html/*
+        #   git add docs/html/*
+        #   git commit -m "*GitHub Action* Update Documentation in Gh Pages Branch"
+        #   git push origin gh-pages
+
       - name: Move Documentation Files to Root and Delete Empty docs/html Directory
         run: |
           mv docs/html/* .
