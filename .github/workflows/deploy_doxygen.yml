@@ -9,7 +9,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    # steps:
+    steps:
+      - name: Placeholder
+        run: echo "Autoupdating Feature In Progress"
     #   - name: Checkout Main Branch
     #     uses: actions/checkout@v4
     #     with:
