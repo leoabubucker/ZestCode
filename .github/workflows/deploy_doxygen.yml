@@ -48,6 +48,10 @@ jobs:
           ref: main
           sparse-checkout: |
             docs/html
+
+      - name: Test
+        run: git ls-tree -r gh-pages --name-only
+
       # run: |
         #   git checkout main -- docs/html/*
         #   git add docs/html/*
