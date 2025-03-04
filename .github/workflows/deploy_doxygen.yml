@@ -43,20 +43,22 @@ jobs:
           fetch-depth: 0
 
       - name: Fetch Documentation Files From Main
-        uses: actions/checkout@v4
-        with:
-          ref: main
-          sparse-checkout: |
-            docs/html
+        run: |
+          git fetch origin main
+          git branch --track main origin/main || true
+          git checkout main -- docs/html/*
+          git add docs/html/*
+          git commit -m "*GitHub Action* Update Documentation in Gh Pages Branch"
+          git push origin gh-pages
+      #   uses: actions/checkout@v4
+      #   with:
+      #     ref: main
+      #     sparse-checkout: |
+      #       docs/html
 
       - name: Test
         run: git ls-tree -r gh-pages --name-only
 
-      # run: |
-        #   git checkout main -- docs/html/*
-        #   git add docs/html/*
-        #   git commit -m "*GitHub Action* Update Documentation in Gh Pages Branch"
-        #   git push origin gh-pages
 
       - name: Move Documentation Files to Root and Delete Empty docs/html Directory
         run: |
