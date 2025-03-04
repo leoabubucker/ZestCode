@@ -32,7 +32,7 @@ jobs:
           if git diff-index --quiet HEAD --; then
               echo "No changes to commit on main"
           else
-              git commit -m "*GitHub Action* Update Documentation"
+              git commit -m "*GitHub Action* Update Documentation in Main Branch"
               git push origin main
           fi
 
@@ -44,8 +44,11 @@ jobs:
 
       - name: Copy Documentation Files From Main
         run: |
-          git restore --source=main docs/html
-
+          git checkout main -- docs/html/*
+          git add docs/html/*
+          git commit -m "*GitHub Action* Update Documentation in Gh Pages Branch"
+          git push origin gh-pages
+          
       - name: Move Documentation Files to Root and Delete Empty docs/html Directory
         run: |
           mv docs/html/* .
