@@ -5,8 +5,7 @@ Welcome to ZestCode's documentation!
 
 Introduction
 ============
-.. include:: ../.github/README.md
-   :parser: myst_parser
+.. mdinclude:: ../.github/README.md
 
 .. toctree::
    :maxdepth: 2

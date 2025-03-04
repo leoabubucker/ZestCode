@@ -7,7 +7,7 @@ subprocess.call('doxygen', shell=True)
 
 
 # Sphinx extensions
-extensions = ["breathe", "myst_parser"]
+extensions = ["breathe", "m2r2"]
 
 # Breathe configuration
 breathe_projects = {"ZestCode": "xml"}
