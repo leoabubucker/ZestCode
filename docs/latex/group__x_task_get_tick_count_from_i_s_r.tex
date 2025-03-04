@@ -1,0 +1,10 @@
+\doxysection{x\+Task\+Get\+Tick\+Count\+From\+ISR}
+\hypertarget{group__x_task_get_tick_count_from_i_s_r}{}\label{group__x_task_get_tick_count_from_i_s_r}\index{xTaskGetTickCountFromISR@{xTaskGetTickCountFromISR}}
+task. h 
+\begin{DoxyPre}uint32\_t xTaskGetTickCountFromISR( void );\end{DoxyPre}
+
+
+\begin{DoxyReturn}{Returns}
+The count of ticks since rtos\+\_\+sched\+\_\+start was called.
+\end{DoxyReturn}
+This is a version of millis() that is safe to be called from an ISR -\/ provided that uint32\+\_\+t is the natural word size of the microcontroller being used or interrupt nesting is either not supported or not being used. 

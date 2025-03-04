@@ -1,0 +1,93 @@
+\doxysection{tcb.\+h}
+\hypertarget{tcb_8h_source}{}\label{tcb_8h_source}\index{C:/Users/leoku/OneDrive/Personal\_Coding\_Projects/ZestCode/include/rtos/tcb.h@{C:/Users/leoku/OneDrive/Personal\_Coding\_Projects/ZestCode/include/rtos/tcb.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}rtos/FreeRTOS.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}rtos/list.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ Task\ control\ block.\ \ A\ task\ control\ block\ (TCB)\ is\ allocated\ for\ each\ task,}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ and\ stores\ task\ state\ information,\ including\ a\ pointer\ to\ the\ task's\ context}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ (the\ task's\ run\ time\ environment,\ including\ register\ values)}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00011\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtsk_task_control_block}{tskTaskControlBlock}}}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{volatile}\ task\_stack\_t\ \ \ *pxTopOfStack;\ \ \textcolor{comment}{/*<\ Points\ to\ the\ location\ of\ the\ last\ item\ placed\ on\ the\ tasks\ stack.\ \ THIS\ MUST\ BE\ THE\ FIRST\ MEMBER\ OF\ THE\ TCB\ STRUCT.\ */}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ list\_item\_t\ \ \ \ \ \ \ \ \ xStateListItem;\ \textcolor{comment}{/*<\ The\ list\ that\ the\ state\ list\ item\ of\ a\ task\ is\ reference\ from\ denotes\ the\ state\ of\ that\ task\ (Ready,\ Blocked,\ Suspended\ ).\ */}}
+\DoxyCodeLine{00017\ \ \ \ \ list\_item\_t\ \ \ \ \ \ \ \ \ xEventListItem;\ \ \ \ \ \textcolor{comment}{/*<\ Used\ to\ reference\ a\ task\ from\ an\ event\ list.\ */}}
+\DoxyCodeLine{00018\ \ \ \ \ uint32\_t\ \ \ \ \ \ \ \ \ \ \ \ uxPriority;\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*<\ The\ priority\ of\ the\ task.\ \ 0\ is\ the\ lowest\ priority.\ */}}
+\DoxyCodeLine{00019\ \ \ \ \ task\_stack\_t\ \ \ \ \ \ \ \ \ \ \ \ *pxStack;\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*<\ Points\ to\ the\ start\ of\ the\ stack.\ */}}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pcTaskName[\ configMAX\_TASK\_NAME\_LEN\ ];\textcolor{comment}{/*<\ Descriptive\ name\ given\ to\ the\ task\ when\ created.\ \ Facilitates\ debugging\ only.\ */}\ \textcolor{comment}{/*lint\ !e971\ Unqualified\ char\ types\ are\ allowed\ for\ strings\ and\ single\ characters\ only.\ */}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\ \ \ \ \#if\ (\ (\ portSTACK\_GROWTH\ >\ 0\ )\ ||\ (\ configRECORD\_STACK\_HIGH\_ADDRESS\ ==\ 1\ )\ )}}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ task\_stack\_t\ \ \ \ \ \ \ \ *pxEndOfStack;\ \ \ \ \ \ \textcolor{comment}{/*<\ Points\ to\ the\ highest\ valid\ address\ for\ the\ stack.\ */}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\ \ \ \ \#if\ (\ portCRITICAL\_NESTING\_IN\_TCB\ ==\ 1\ )}}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ uint32\_t\ \ \ \ \ \ \ \ uxCriticalNesting;\ \ \textcolor{comment}{/*<\ Holds\ the\ critical\ section\ nesting\ depth\ for\ ports\ that\ do\ not\ maintain\ their\ own\ count\ in\ the\ port\ layer.\ */}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\ \ \ \ \#if\ (\ configUSE\_TRACE\_FACILITY\ ==\ 1\ )}}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ uint32\_t\ \ \ \ \ \ \ \ uxTCBNumber;\ \ \ \ \ \ \ \ \textcolor{comment}{/*<\ Stores\ a\ number\ that\ increments\ each\ time\ a\ TCB\ is\ created.\ \ It\ allows\ debuggers\ to\ determine\ when\ a\ task\ has\ been\ deleted\ and\ then\ recreated.\ */}}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ uint32\_t\ \ \ \ \ \ \ \ uxTaskNumber;\ \ \ \ \ \ \ \textcolor{comment}{/*<\ Stores\ a\ number\ specifically\ for\ use\ by\ third\ party\ trace\ code.\ */}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\ \ \ \ \#if\ (\ configUSE\_MUTEXES\ ==\ 1\ )}}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ uint32\_t\ \ \ \ \ \ \ \ uxBasePriority;\ \ \ \ \ \textcolor{comment}{/*<\ The\ priority\ last\ assigned\ to\ the\ task\ -\/\ used\ by\ the\ priority\ inheritance\ mechanism.\ */}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ uint32\_t\ \ \ \ \ \ \ \ uxMutexesHeld;}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\ \ \ \ \#if\ (\ configUSE\_APPLICATION\_TASK\_TAG\ ==\ 1\ )}}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ TaskHookFunction\_t\ pxTaskTag;}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\ \ \ \ \#if(\ configNUM\_THREAD\_LOCAL\_STORAGE\_POINTERS\ >\ 0\ )}}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ *pvThreadLocalStoragePointers[\ configNUM\_THREAD\_LOCAL\_STORAGE\_POINTERS\ ];}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\ \ \ \ \#if(\ configGENERATE\_RUN\_TIME\_STATS\ ==\ 1\ )}}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ uint32\_t\ \ \ \ \ \ \ \ ulRunTimeCounter;\ \ \ \textcolor{comment}{/*<\ Stores\ the\ amount\ of\ time\ the\ task\ has\ spent\ in\ the\ Running\ state.\ */}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\ \ \ \ \#if\ (\ configUSE\_NEWLIB\_REENTRANT\ ==\ 1\ )}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Allocate\ a\ Newlib\ reent\ structure\ that\ is\ specific\ to\ this\ task.}}
+\DoxyCodeLine{00054\ \textcolor{comment}{\ \ \ \ \ \ \ \ Note\ Newlib\ support\ has\ been\ included\ by\ popular\ demand,\ but\ is\ not}}
+\DoxyCodeLine{00055\ \textcolor{comment}{\ \ \ \ \ \ \ \ used\ by\ the\ FreeRTOS\ maintainers\ themselves.\ \ FreeRTOS\ is\ not}}
+\DoxyCodeLine{00056\ \textcolor{comment}{\ \ \ \ \ \ \ \ responsible\ for\ resulting\ newlib\ operation.\ \ User\ must\ be\ familiar\ with}}
+\DoxyCodeLine{00057\ \textcolor{comment}{\ \ \ \ \ \ \ \ newlib\ and\ must\ provide\ system-\/wide\ implementations\ of\ the\ necessary}}
+\DoxyCodeLine{00058\ \textcolor{comment}{\ \ \ \ \ \ \ \ stubs.\ Be\ warned\ that\ (at\ the\ time\ of\ writing)\ the\ current\ newlib\ design}}
+\DoxyCodeLine{00059\ \textcolor{comment}{\ \ \ \ \ \ \ \ implements\ a\ system-\/wide\ malloc()\ that\ must\ be\ provided\ with\ locks.\ */}}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ \ }\_reent\ xNewLib\_reent;}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\ \ \ \ \#if(\ configUSE\_TASK\_NOTIFICATIONS\ ==\ 1\ )}}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keyword}{volatile}\ uint32\_t\ ulNotifiedValue;}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keyword}{volatile}\ uint8\_t\ ucNotifyState;}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{comment}{/*\ See\ the\ comments\ above\ the\ definition\ of}}
+\DoxyCodeLine{00069\ \textcolor{comment}{\ \ \ \ tskSTATIC\_AND\_DYNAMIC\_ALLOCATION\_POSSIBLE.\ */}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\ \ \ \ \#if(\ tskSTATIC\_AND\_DYNAMIC\_ALLOCATION\_POSSIBLE\ !=\ 0\ )\ }\textcolor{comment}{/*lint\ !e731\ Macro\ has\ been\ consolidated\ for\ readability\ reasons.\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ uint8\_t\ ucStaticallyAllocated;\ \ \ \ \ \ \textcolor{comment}{/*<\ Set\ to\ pdTRUE\ if\ the\ task\ is\ a\ statically\ allocated\ to\ ensure\ no\ attempt\ is\ made\ to\ free\ the\ memory.\ */}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\ \ \ \ \#if(\ INCLUDE\_xTaskAbortDelay\ ==\ 1\ )}}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ uint8\_t\ ucDelayAborted;}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \}\ tskTCB;}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{comment}{/*\ The\ old\ tskTCB\ name\ is\ maintained\ above\ then\ typedefed\ to\ the\ new\ TCB\_t\ name}}
+\DoxyCodeLine{00081\ \textcolor{comment}{below\ to\ enable\ the\ use\ of\ older\ kernel\ aware\ debuggers.\ */}}
+\DoxyCodeLine{00082\ \textcolor{keyword}{typedef}\ tskTCB\ TCB\_t;}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{comment}{/*lint\ -\/save\ -\/e956\ A\ manual\ analysis\ and\ inspection\ has\ been\ used\ to\ determine}}
+\DoxyCodeLine{00085\ \textcolor{comment}{which\ static\ variables\ must\ be\ declared\ volatile.\ */}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{keyword}{extern}\ TCB\_t\ *\ \textcolor{keyword}{volatile}\ pxCurrentTCB;}
+
+\end{DoxyCode}

@@ -1,0 +1,24 @@
+var searchData=
+[
+  ['task_5fabort_5fdelay_0',['task_abort_delay',['../group__apix.html#ga038d6c9efb0a2295b0f2a55242b509f9',1,'apix.h']]],
+  ['task_5fcreate_1',['task_create',['../group__c-rtos.html#ga2e3ed8f26b8c1edcff493bc583f0a76a',1,'rtos.h']]],
+  ['task_5fcreate_5fstatic_2',['task_create_static',['../kapi_8h.html#a0f24b77c29ca853ea5f03d79acc4b726',1,'kapi.h']]],
+  ['task_5fdelay_3',['task_delay',['../group__c-rtos.html#ga3658dea4dcc916f72d05bd6a05bf3d19',1,'rtos.h']]],
+  ['task_5fdelay_5funtil_4',['task_delay_until',['../group__c-rtos.html#ga61c8ccf83a0dc79fc0e9fde5e87a0329',1,'rtos.h']]],
+  ['task_5fdelete_5',['task_delete',['../group__c-rtos.html#gacf328f16126485ade810e438db996180',1,'rtos.h']]],
+  ['task_5fget_5fby_5fname_6',['task_get_by_name',['../group__c-rtos.html#gaad54400367541c9cf7f4eaaec235a9e9',1,'rtos.h']]],
+  ['task_5fget_5fcount_7',['task_get_count',['../group__c-rtos.html#ga7c182e8b87526eb0e4b6ec5a4c858b4e',1,'rtos.h']]],
+  ['task_5fget_5fcurrent_8',['task_get_current',['../group__c-rtos.html#gad8c64e24feaa08391eb61b62ea2cdbd5',1,'rtos.h']]],
+  ['task_5fget_5fname_9',['task_get_name',['../group__c-rtos.html#gac9976fc1a763c7da08204139bc54c631',1,'rtos.h']]],
+  ['task_5fget_5fpriority_10',['task_get_priority',['../group__c-rtos.html#ga8d6d1ffc897a069346a6a1ee5d3acf87',1,'rtos.h']]],
+  ['task_5fget_5fstate_11',['task_get_state',['../group__c-rtos.html#ga5d094df87681d230ebffa2cee23d6f07',1,'rtos.h']]],
+  ['task_5fjoin_12',['task_join',['../group__c-rtos.html#gaf10b92a45faacf8e8337f20f698efa8a',1,'rtos.h']]],
+  ['task_5fnotify_13',['task_notify',['../group__c-rtos.html#ga19e1a0a068f9d5e8493065f6b7944a63',1,'rtos.h']]],
+  ['task_5fnotify_5fclear_14',['task_notify_clear',['../group__c-rtos.html#gae8697be0d552a81063536c88c0358f38',1,'rtos.h']]],
+  ['task_5fnotify_5fext_15',['task_notify_ext',['../group__c-rtos.html#ga81b5dad7acaef5dd60486ab85af5d54b',1,'rtos.h']]],
+  ['task_5fnotify_5ftake_16',['task_notify_take',['../group__c-rtos.html#gaabfb0111c671a56176bc83bb1437635b',1,'rtos.h']]],
+  ['task_5fnotify_5fwhen_5fdeleting_17',['task_notify_when_deleting',['../group__apix.html#gac20573527d51718ab1f1189e69a5cd32',1,'apix.h']]],
+  ['task_5fresume_18',['task_resume',['../group__c-rtos.html#ga58bdeeedfe2d98fa57721bb7dad16fee',1,'rtos.h']]],
+  ['task_5fset_5fpriority_19',['task_set_priority',['../group__c-rtos.html#gaa906731a0dbda5c2382ca7e3cc32cc97',1,'rtos.h']]],
+  ['task_5fsuspend_20',['task_suspend',['../group__c-rtos.html#ga50ab98e83c207eaab4c2b9eb56d9ba0c',1,'rtos.h']]]
+];
