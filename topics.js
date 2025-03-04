@@ -1,5 +1,10 @@
 var topics =
 [
+    [ "(WIP) Why ZestCode?", "index.html#autotoc_md1", null ],
+    [ "FAQ", "index.html#autotoc_md2", null ],
+    [ "License", "index.html#autotoc_md3", null ],
+    [ "Contributing", "index.html#autotoc_md4", null ],
+    [ "Acknowledgements", "index.html#autotoc_md5", null ],
     [ "Extended API", "group__apix.html", "group__apix" ],
     [ "Colors C API", "group__c-colors.html", null ],
     [ "Miscellaneous C API", "group__c-misc.html", "group__c-misc" ],
