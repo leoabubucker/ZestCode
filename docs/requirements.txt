@@ -1,2 +1,6 @@
-sphinx
+sphinx==5.0.2
+    # via
+    #   -r docs/requirements.in
+    #   sphinx-rtd-theme
+sphinx-rtd-theme==1.0.0
 breathe
