@@ -1,5 +1,3 @@
-.. ZestCode documentation master file
-
 Welcome to ZestCode's documentation!
 ====================================
 
@@ -7,9 +5,4 @@ Welcome to ZestCode's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-   api_reference  # This will link to Doxygen-generated API docs
-
-API Reference
-=============
-
-.. doxygenindex::
+   api/index  # Links to generated Doxygen documentation
