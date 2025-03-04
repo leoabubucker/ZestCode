@@ -28,9 +28,13 @@ jobs:
         run: |
           git config --global user.email "actions@github.com"
           git config --global user.name "GitHub Actions"
-          git add *
-          git commit -m "*GitHub Action* Update Documentation"
-          git push origin main
+          git add -A
+          if git diff-index --quiet HEAD --; then
+              echo "No changes to commit on main"
+          else
+              git commit -m "*GitHub Action* Update Documentation"
+              git push origin main
+          fi
 
       - name: Checkout Gh-Pages Branch
         uses: actions/checkout@v4
