@@ -46,14 +46,14 @@ Contributing
 `CONTRIBUTING.md <CONTRIBUTING.md>`_
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-
-   installation
-   usage
-   api_reference
-   contributing
-   changelog
+    :maxdepth: 2
+    :caption: Contents:
+    license
+    installation
+    usage
+    api_reference
+    contributing
+    changelog
 
 Acknowledgements
 -----------------------------------
