@@ -1,7 +1,7 @@
 import subprocess, os
 
 project = "ZestCode"
-# html_theme = "sphinx_rtd_theme"
+html_theme = "sphinx_rtd_theme"
 
 # Sphinx extensions
 extensions = ["breathe", "m2r2"]

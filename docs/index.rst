@@ -18,18 +18,19 @@ Welcome to ZestCode's documentation!
 
 WIP Why ZestCode?
 -----------------------------------
-- |check| designed to be easy to contribute to
-- |check| can be built from source
-- |check| public development discussions and decision making
-- |uncheck| superior contributor documentation
-- |uncheck| superior build system
-- |uncheck| more understandable compiler errors/warnings
-- |uncheck| faster build times
-- |uncheck| smarter package management
-- |uncheck| deterministic builds
+|check| designed to be easy to contribute to
+|check| can be built from source
+|check| public development discussions and decision making
+|uncheck| superior contributor documentation
+|uncheck| superior build system
+|uncheck| more understandable compiler errors/warnings
+|uncheck| faster build times
+|uncheck| smarter package management
+|uncheck| deterministic builds
 
 FAQ
 -----------------------------------
+
 .. admonition:: Is ZestCode Legal?
     Yup, 100% legal. It is not prohibited in the V5RC, VURC, or VAIRC game manual, and it's legal from a copyright standpoint.
 
