@@ -1,13 +1,16 @@
 .. ZestCode documentation master file
-.. toctree:
-..     :maxdepth: 2
-..     :caption: Contents:
-..     :hidden:
+.. toctree::
+    :maxdepth: 2
+    :caption: Contents:
+    :hidden:
     
-..     license
-..     STRUCTURE
-..     STYLEGUIDE
-..     CONTRIBUTING
+    license
+    STRUCTURE
+    STYLEGUIDE
+    CONTRIBUTING
+
+.. contents:: Local Navigation
+
 
 .. |check| raw:: html
 
