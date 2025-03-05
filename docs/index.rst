@@ -4,9 +4,10 @@
     :caption: Contents:
     :hidden:
     
+    index
     license
-    structure
-    styleguide
+    STRUCTURE
+    STYLEGUIDE
 
 .. |check| raw:: html
 
