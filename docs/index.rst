@@ -18,15 +18,15 @@ Welcome to ZestCode's documentation!
 
 WIP Why ZestCode?
 -----------------------------------
-|check| designed to be easy to contribute to
-|check| can be built from source
-|check| public development discussions and decision making
-|uncheck| superior contributor documentation
-|uncheck| superior build system
-|uncheck| more understandable compiler errors/warnings
-|uncheck| faster build times
-|uncheck| smarter package management
-|uncheck| deterministic builds
+- |check| designed to be easy to contribute to
+- |check| can be built from source
+- |check| public development discussions and decision making
+- |uncheck| superior contributor documentation
+- |uncheck| superior build system
+- |uncheck| more understandable compiler errors/warnings
+- |uncheck| faster build times
+- |uncheck| smarter package management
+- |uncheck| deterministic builds
 
 FAQ
 -----------------------------------
