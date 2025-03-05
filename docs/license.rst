@@ -1,15 +1,5 @@
-.. toctree::
-    :maxdepth: 2
-    :caption: Contents:
-    :hidden:
-    
-    index
-    STRUCTURE
-    STYLEGUIDE
-    CONTRIBUTING
-
 .. contents:: Local Navigation
-
+    
 License
 ==================================
 
