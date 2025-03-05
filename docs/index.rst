@@ -39,7 +39,7 @@ FAQ
 
 License
 -----------------------------------
-`Mozilla Public License 2.0 <../LICENSE>`_
+`Mozilla Public License 2.0 <license.html>`_
 
 Contributing
 -----------------------------------
@@ -48,7 +48,8 @@ Contributing
 .. toctree::
     :maxdepth: 2
     :caption: Contents:
-
+    
+    index
     license
 
 Acknowledgements
