@@ -1,4 +1,10 @@
 .. ZestCode documentation master file
+.. toctree::
+    :maxdepth: 2
+    :caption: Contents:
+    
+    index
+    license
 .. |check| raw:: html
 
     <input checked=""  disabled="" type="checkbox">
@@ -45,12 +51,6 @@ Contributing
 -----------------------------------
 `CONTRIBUTING.md <CONTRIBUTING.md>`_
 
-.. toctree::
-    :maxdepth: 2
-    :caption: Contents:
-    
-    index
-    license
 
 Acknowledgements
 -----------------------------------
