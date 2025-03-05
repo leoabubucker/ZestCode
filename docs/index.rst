@@ -1,4 +1,13 @@
 .. ZestCode documentation master file
+.. |check| raw:: html
+
+    <input checked=""  disabled="" type="checkbox">
+
+.. |uncheck| raw:: html
+
+    <input disabled="" type="checkbox">
+
+
 
 Welcome to ZestCode's documentation!
 ====================================
@@ -8,16 +17,16 @@ Welcome to ZestCode's documentation!
     ZestCode is a truly open-source framework for the VEX V5. It's a PROS fork, and exists to address some PROS issues, particularly in reliability, tooling, and community input.
 
 WIP Why ZestCode?
------------------------ ------------
-- [X] designed to be easy to contribute to
-- [X] can be built from source
-- [X] public development discussions and decision making
-- [ ] superior contributor documentation
-- [ ] superior build system
-- [ ] more understandable compiler errors/warnings
-- [ ] faster build times
-- [ ] smarter package management
-- [ ] deterministic builds
+-----------------------------------
+- |check| designed to be easy to contribute to
+- |check| can be built from source
+- |check| public development discussions and decision making
+- |uncheck| superior contributor documentation
+- |uncheck| superior build system
+- |uncheck| more understandable compiler errors/warnings
+- |uncheck| faster build times
+- |uncheck| smarter package management
+- |uncheck| deterministic builds
 
 FAQ
 -----------------------------------
