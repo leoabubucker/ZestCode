@@ -5,6 +5,8 @@
     :hidden:
     
     license
+    structure
+    styleguide
 
 .. |check| raw:: html
 
