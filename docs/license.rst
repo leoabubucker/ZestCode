@@ -1,4 +1,11 @@
-Mozilla Public License Version 2.0
+.. toctree::
+    :maxdepth: 2
+    :caption: Contents:
+    :hidden:
+    
+    index
+
+License
 ==================================
 
 PROS 4.0 contains modified or linked source code from the following packages:
@@ -7,6 +14,9 @@ PROS 4.0 contains modified or linked source code from the following packages:
 Unless otherwise specified, PROS 4.0 is distributed under the Mozilla Public
 License Version 2.0, reproduced below:
 
+
+Mozilla Public License Version 2.0
+**********************************
 
 1. Definitions
 --------------
