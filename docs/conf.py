@@ -1,11 +1,11 @@
 import subprocess, os
 
 project = "ZestCode"
+# html_theme = "sphinx_rtd_theme"
 
 # Sphinx extensions
-extensions = ["breathe", "m2r2", "sphinx_immaterial"]
-# html_theme = "sphinx_rtd_theme"
-html_theme = "sphinx_immaterial"
+extensions = ["breathe", "m2r2"]
+
 # Run Doxygen to generate XML before building Sphinx docs
 subprocess.call('doxygen', shell=True)
 
