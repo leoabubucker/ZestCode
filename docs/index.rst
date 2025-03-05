@@ -48,12 +48,8 @@ Contributing
 .. toctree::
     :maxdepth: 2
     :caption: Contents:
+
     license
-    installation
-    usage
-    api_reference
-    contributing
-    changelog
 
 Acknowledgements
 -----------------------------------
