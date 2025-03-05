@@ -2,9 +2,10 @@
 .. toctree::
     :maxdepth: 2
     :caption: Contents:
+    :hidden:
     
-    index
     license
+
 .. |check| raw:: html
 
     <input checked=""  disabled="" type="checkbox">
