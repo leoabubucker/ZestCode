@@ -6,8 +6,8 @@ License
 PROS 4.0 contains modified or linked source code from the following packages:
     - FreeRTOS (src/rtos/LICENSE)
 
-Unless otherwise specified, PROS 4.0 is distributed under the **Mozilla Public
-License Version 2.0**, reproduced below:
+Unless otherwise specified, PROS 4.0 is distributed under the Mozilla Public
+License Version 2.0, reproduced below:
 
 1. Definitions
 --------------
