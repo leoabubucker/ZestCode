@@ -3,7 +3,7 @@
     :maxdepth: 1
     :caption: Contents:
     :hidden:
-    .   
+      
     license
     STRUCTURE
     STYLEGUIDE
