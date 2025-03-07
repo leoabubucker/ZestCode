@@ -15,5 +15,5 @@ breathe_projects = {"ZestCode": "xml"}
 breathe_default_project = "ZestCode"
 
 breathe_projects_source = {
-    "common" : ("../include/common")
+    "common" : ("../include/common", [f for f in os.listdir("../include/common") if f.endswith(".h")])
 }
