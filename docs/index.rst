@@ -3,7 +3,7 @@
     :maxdepth: 1
     :caption: Contents:
     :hidden:
-      
+
     license
     STRUCTURE
     STYLEGUIDE
@@ -47,19 +47,11 @@ FAQ
 .. admonition:: Why Can ZestCode Be Compiled From Source, But PROS Can't?
     PROS depends on _libv5rts_, which is a private version of the VEX SDK. ZestCode depends on _libv5rta_, which is public.
 
-License
------------------------------------
-`Mozilla Public License 2.0 <license.html>`_
-
-Contributing
------------------------------------
-`CONTRIBUTING.md <CONTRIBUTING.html>`_
-
-
 Acknowledgements
 -----------------------------------
 The authors of ZestCode would like to thank the developers of PROS for their years of service, and for paving the way for alternatives like ZestCode to even exist in the first place. We'd also like to thank the developers of vexide, ZestCode wouldn't exist if not for their feats.
 
 API Reference
 ====================================
-.. doxygenindex::
+.. autodoxygenindex::
+    :project: common
