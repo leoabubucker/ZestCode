@@ -3,14 +3,11 @@
     :maxdepth: 1
     :caption: Contents:
     :hidden:
-    
+    index   
     license
     STRUCTURE
     STYLEGUIDE
     CONTRIBUTING
-
-.. contents:: Local Navigation
-
 
 .. |check| raw:: html
 

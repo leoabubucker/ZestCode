@@ -1,6 +1,4 @@
-.. contents:: Local Navigation
-    
-License
+  License
 ==================================
 
 PROS 4.0 contains modified or linked source code from the following packages:
